@@ -1,0 +1,1246 @@
+/* Definicje kolorów dla motywu jasnego i ciemnego */
+/* Definicje kolorów dla motywu jasnego i ciemnego */
+/* Zaktualizowany fragment :root (jasny motyw) */
+:root {
+    --bg-color: #f2e9d3; 
+    --text-color: #403e3d; 
+    --nav-bg: #f5f3eea5; 
+    --primary-color: #b82b33; 
+    --secondary-color: #249854; 
+    --card-bg: #fcfbfa; 
+    --shadow: rgba(0, 0, 0, 0.06);
+    --nav-border: rgba(0, 0, 0, 0.1);
+    --navbar-base-bg: #f5f3ee; /* NOWE: Śnieżnobiały pasek w jasnym motywie */
+}
+
+body.dark-theme {
+    --bg-color: #232323;
+    --text-color: #eaeaea;
+    --nav-bg: rgba(30, 30, 30, 0.95);
+    --primary-color: #e63946;
+    --secondary-color: #2a9d8f;
+    --card-bg: #242424;
+    --shadow: rgba(0, 0, 0, 0.4);
+    --nav-border: rgba(255, 255, 255, 0.15);
+    --navbar-base-bg: #181818f3; /* NOWE: Ciemny grafit w ciemnym motywie */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/* Zabezpieczenie wszystkich zdjęć przed przeciąganiem i zaznaczaniem */
+img {
+    -webkit-user-drag: none;
+    -moz-user-drag: none;
+    -ms-user-drag: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+html {
+    scroll-behavior: smooth; /* Płynne przewijanie do sekcji */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.4s, color 0.4s;
+}
+
+/* ================================
+   NAWIGACJA I ANIMACJA LOGO
+=================================== */
+/* Pasek nawigacji - odchudzony z góry i z dołu */
+.navbar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%; /* Zmniejszony padding, aby pasek nie ucinał galerii */
+    z-index: 1000;
+    background-color: var(--navbar-base-bg);
+    border-bottom: 1px solid var(--nav-border); 
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-left {
+    flex: 1;
+    display: flex;
+    align-items: center; /* Wyrównanie w pionie */
+    margin-top: 10px;    /* Twój margines od góry, jeśli go potrzebujesz */
+    padding-left: 0;     /* Kasujemy dodatkowe wcięcie, by logo wyrównało się do reszty strony */
+    transition: padding 0.5s ease;
+}
+
+/* Logo początkowe - zmniejszone, by nie rozpychało wysokości paska */
+.logo {
+    width: 120px; 
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: drop-shadow(0 4px 6px var(--shadow));
+}
+
+.nav-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px; /* Zmniejszone odstępy, żeby wszystko zmieściło się w jednym rzędzie */
+}
+
+/* Nowoczesne, idealnie zaokrąglone labele w jednej linii */
+.nav-center a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500; /* Lżejszy font wygląda nowocześniej */
+    font-size: 0.95rem; /* Zmniejszona czcionka */
+    padding: 6px 16px; /* Zgrabniejsze proporcje obramowania */
+    border: 1px solid var(--nav-border);
+    border-radius: 30px; /* Idealnie okrągłe boki pigułki */
+    white-space: nowrap; /* KLUCZOWE: Zakazuje łamania "Strona główna" na dwie linie! */
+    transition: all 0.3s ease;
+}
+
+.nav-center a:hover {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    background-color: rgba(184, 43, 51, 0.05); /* Subtelne, czerwonawe tło po najechaniu */
+    transform: translateY(-2px);
+}
+
+/* ================================
+   PRAWA STRONA NAVBARU (DWIE KOLUMNY)
+=================================== */
+.nav-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px; /* Odstęp między kolumną kontaktową a kolumną ikonek */
+}
+
+/* Lewa kolumna: telefon nad adresem */
+.nav-contact-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Wyrównanie do prawej strony wewnątrz bloku */
+    gap: 4px;
+}
+
+.nav-location {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-color);
+    opacity: 0.85;
+    white-space: nowrap;
+}
+
+/* Prawa kolumna: ikony social media i motyw ustawione w pionie */
+.nav-icons-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px; /* Odstęp między ikonami */
+    border-left: 1px solid var(--nav-border); /* Delikatna linia oddzielająca kontakt od ikonek */
+    padding-left: 12px;
+}
+
+/* Styl pojedynczej ikony społecznościowej */
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    color: var(--text-color);
+    background-color: var(--card-bg);
+    border: 1px solid var(--nav-border);
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.theme-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.theme-btn:hover {
+    transform: scale(1.15);
+}
+
+/* Kontener grupujący telefon i lokalizację w kolumnę */
+.contact-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Wyśrodkowuje tekst idealnie pod przyciskiem */
+    gap: 4px; /* Malutki odstęp między przyciskiem a tekstem */
+}
+
+/* Wygląd samego napisu z lokalizacją */
+.nav-location {
+   background-color: var(--primary-color);
+    color: white !important;
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-size: 1rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.phone-btn {
+    background-color: var(--secondary-color);
+    color: white !important;
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-size: 1rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.nav-location:hover {
+    transform: translateY(-2px);
+}
+
+.phone-btn:hover {
+    transform: translateY(-2px);
+}
+
+.theme-btn {
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.theme-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Stan paska po zjechaniu w dół */
+.navbar.scrolled {
+    background-color: var(--nav-bg);
+    padding: 10px 5%; /* Maksymalna kompresja paska w pionie */
+    box-shadow: 0 4px 15px var(--shadow);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid transparent; 
+}
+
+.navbar.scrolled .nav-left {
+    padding-left: 0;
+}
+
+.navbar.scrolled .logo {
+    width: 85px; /* Miniaturka logo */
+}
+
+/* Klasa nadawana przez JS podczas scrollowania danej sekcji */
+.nav-center a.active-link {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    background-color: rgba(184, 43, 51, 0.05);
+}
+
+/* ================================
+   SEKCJA HERO (Udoskonalony układ)
+=================================== */
+.hero-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-right: 40px; /* Odstęp od slidera po prawej */
+}
+
+.hero-text h1 {
+    font-size: 2.8rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    line-height: 1.15;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+/* Lista wyróżników z ikonami */
+.hero-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px 0; /* Dolny margines odpycha przycisk w dół */
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.hero-features li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.98rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.hero-features li span {
+    font-size: 1.2rem;
+}
+
+/* Przycisk CTA przesunięty na dół */
+.hero-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: var(--primary-color);
+    color: white !important;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.05rem;
+    border-radius: 30px;
+    box-shadow: 0 6px 20px rgba(184, 43, 51, 0.25);
+    transition: all 0.3s ease;
+}
+
+.hero-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(184, 43, 51, 0.35);
+}
+
+/* Drobne poprawki dla urządzeń mobilnych */
+@media (max-width: 991px) {
+    .hero-text {
+        padding-right: 0;
+        text-align: center;
+        align-items: center;
+    }
+
+    .hero-features {
+        align-items: flex-start; /* Lub center, jeśli wolisz wyśrodkowane punkty na telefonie */
+        text-align: left;
+    }
+}
+
+/* ================================
+   WIDOK MOBILNY (Poniżej 1050px)
+=================================== */
+@media (max-width: 1050px) {
+    .navbar {
+        flex-wrap: wrap; /* Pozwala przełamać pasek na dwie warstwy */
+        padding: 12px 5%;
+    }
+
+    /* Warstwa pierwsza - Lewa strona (Logo) */
+    .nav-left {
+        flex: 1;
+        padding-left: 0;
+    }
+
+    .logo {
+        width: 100px; /* Znacznie mniejsze logo na start na telefonie */;
+    }
+
+    /* Warstwa pierwsza - Prawa strona (Telefon i motyw) */
+    .nav-right {
+        flex: 1;
+        justify-content: flex-end;
+        gap: 8px;
+    }
+
+    .phone-btn {
+        padding: 5px 10px;
+        font-size: 0.8rem; 
+        white-space: nowrap; 
+    }
+
+    .nav-location {
+        font-size: 0.65rem; 
+    }
+
+    /* Zmniejszenie ikonek na telefonie, by pasowały wysokością */
+    .social-icon {
+        width: 26px;
+        height: 26px;
+    }
+    .social-icon svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    .theme-btn {
+        font-size: 1rem;
+        width: 26px;
+        height: 26px;
+    }
+    /* Ukrycie galerii slajdów na ekranach mobilnych */
+    .slider-container {
+        display: none;
+    }
+
+    
+    /* Warstwa druga - Labele pod logo i telefonem */
+    .nav-center {
+        position: relative;
+        left: 0;
+        transform: none;
+        width: 100%;
+        order: 3; /* Spycha menu pod logo i przyciski */
+        display: flex;
+        flex-direction: row; /* Ustawiamy w rzędzie, NIE w kolumnie */
+        flex-wrap: wrap; /* Pozwalamy pigułkom "przelewać" się do nowych linii */
+        justify-content: center;
+        gap: 6px;
+        margin-top: 15px; /* Dystans od logo i przycisku telefonu */
+    }
+
+    .nav-center a {
+        font-size: 0.75rem; /* Bardzo mała, ale wciąż czytelna czcionka */
+        padding: 5px 12px;
+        width: auto; /* Pigułka owija się tylko wokół tekstu */
+    }
+    .nav-location {
+        font-size: 0.65rem; /* Zmniejszenie czcionki lokalizacji na telefonie */
+    }
+
+    /* Odsunięcie głównej sekcji, żeby zaktualizowany pasek jej nie zasłaniał */
+    .hero {
+        padding-top: 180px; 
+    }
+}
+
+
+.phone-btn {
+    background-color: var(--secondary-color);
+    color: white !important;
+    padding: 8px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.phone-btn:hover {
+    transform: translateY(-2px);
+}
+
+.theme-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.theme-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Stan nawigacji po zjechaniu w dół */
+.navbar.scrolled {
+    background-color: var(--nav-bg);
+    padding: 10px 5%;
+    box-shadow: 0 4px 15px var(--shadow);
+    backdrop-filter: blur(10px);
+}
+
+.navbar.scrolled .logo {
+    left: 5%;
+    top: 10px;
+    transform: translateX(0);
+    width: 70px; /* Zmniejsza się i leci na lewo */
+}
+
+/* ================================
+   SEKCJA HERO I RESZTA
+=================================== */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Duży padding z góry robi miejsce na wielkie logo na środku */
+    padding: 240px 5% 60px; 
+    text-align: center;
+    gap: 40px;
+}
+/* Kontener slidera ustawia proporcje i trzyma zdjęcia w jednym miejscu */
+
+/* ================================
+   SLIDER ZDJĘĆ W SEKCJI HERO
+=================================== */
+.slider-container {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-image-slider {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px var(--shadow);
+    overflow: hidden;
+}
+
+.slides-wrapper {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slide {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Wygląd strzałek nawigacyjnych */
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.85);
+    color: var(--primary-color);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.3s, transform 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.slider-arrow:hover {
+    background-color: #fff;
+    transform: translateY(-50%) scale(1.1); /* Lekkie powiększenie po najechaniu */
+}
+
+.left-arrow { left: 15px; }
+.right-arrow { right: 15px; }
+
+/* Kropki pod sliderem */
+.slider-dots {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px; /* Odsuwa kropki od dołu zdjęcia */
+    justify-content: center;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: #ccc; /* Szare tło, by były widoczne na stronie */
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+body.dark-theme .dot {
+    background-color: #444; /* Ciemniejsze kropki dla motywu ciemnego */
+}
+
+.dot:hover {
+    background-color: #999;
+}
+
+.dot.active {
+    background-color: var(--primary-color);
+    transform: scale(1.3);
+}
+
+/*================================
+   TREŚĆ SEKCJI HERO        
+=================================== */
+.hero-content h1 {
+    font-size: 3rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.primary-btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 15px 35px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.primary-btn:hover {
+    background-color: #a01820;
+    transform: translateY(-3px);
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px var(--shadow);
+}
+
+.menu-highlights {
+    padding: 80px 5%;
+    text-align: center;
+}
+
+.menu-grid {
+    display: grid;
+    /* Zmiana z auto-fit na auto-fill zapobiega rozciąganiu 
+       pojedynczego elementu na całą szerokość ekranu */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.menu-item {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px var(--shadow);
+    transition: transform 0.3s;
+    /* Dodane blokady szerokości */
+    max-width: 450px; 
+    margin: 0 auto; 
+    width: 100%;
+}
+
+.menu-item:hover {
+    transform: translateY(-8px);
+}
+
+.menu-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.price {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-top: 10px;
+}
+
+/* ================================
+   SEKCJA PROMOCJE
+=================================== */
+.promocje-section {
+    padding: 100px 5%;
+    background-color: var(--bg-color);
+    text-align: center;
+}
+
+.promocje-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.promocje-section h2 {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.promocje-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 50px;
+    opacity: 0.8;
+}
+
+.promocje-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.promocja-card {
+    position: relative;
+    background-color: var(--card-bg);
+    padding: 40px 30px 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px var(--shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: left;
+    overflow: hidden;
+    border: 1px solid var(--nav-border);
+}
+
+.promocja-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px var(--shadow);
+}
+
+/* Elegancka "flaga" z badge'em promocyjnym w rogu karty */
+.promo-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 5px 12px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.promocja-card h3 {
+    font-size: 1.4rem;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+.promocja-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    opacity: 0.85;
+    margin-bottom: 25px;
+}
+
+.promo-info {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    border-top: 1px solid var(--nav-border);
+    padding-top: 15px;
+}
+
+/* ================================
+   SEKCJA "O NAS" (Lustrzane odbicie z białym tłem)
+=================================== */
+/* Klasa wymuszająca czystą biel dla kontrastu */
+.bg-white {
+    background-color: #ffffff; 
+}
+
+/* W trybie ciemnym białe tło podmieniamy na ciemny grafit */
+body.dark-theme .bg-white {
+    background-color: #1a1a1a; 
+}
+
+.about-section {
+    padding: 100px 5%;
+    overflow: hidden;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+/* Tekst po lewej */
+.about-text {
+    flex: 1;
+    /* Używamy Twojego kremowego tła, by kafelek odcinał się od białej sekcji */
+    background-color: var(--bg-color); 
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px var(--shadow);
+    /* Magia lustrzanego odbicia: tekst "wjeżdża" na prawe zdjęcie */
+    margin-right: -120px; 
+    z-index: 2;
+}
+
+.about-text h2 {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    line-height: 1.8;
+    opacity: 0.9;
+}
+
+/* Obrazek po prawej */
+.about-image-wrapper {
+    flex: 1;
+    position: relative;
+}
+
+.about-img {
+    width: 100%;
+    min-height: 450px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px var(--shadow);
+    /* Leciutkie przyciemnienie */
+    filter: brightness(0.8); 
+}
+
+/* Modyfikacja dla ekranów mobilnych (telefonów) */
+@media (max-width: 991px) {
+    .about-container {
+        /* Na telefonie ustawiamy tekst pod zdjęciem */
+        flex-direction: column-reverse; 
+    }
+    .about-text {
+        margin-right: 0;
+        margin-top: -60px; /* Tekst nachodzi na zdjęcie od dołu, tak jak w "spodach" */
+        padding: 35px 25px;
+    }
+    .about-img {
+        min-height: 350px;
+    }
+}
+
+/* ================================
+   SEKCJA KONTAKTOWA
+=================================== */
+.contact-section {
+    padding: 80px 5%;
+    background-color: var(--card-bg);
+    text-align: center;
+}
+
+.contact-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.contact-section h2 {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.contact-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 50px;
+    opacity: 0.8;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.contact-card {
+    text-align: center;
+    padding: 35px 20px;
+    border-radius: 15px;
+    background-color: var(--bg-color);
+    box-shadow: 0 4px 15px var(--shadow);
+    transition: transform 0.3s;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+}
+
+.contact-card h3 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+.phone-link {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.phone-link:hover {
+    color: var(--primary-color);
+}
+
+/* ================================
+   SEKCJA SPODY (UKŁAD PROFESJONALNY Z NAŁOŻENIEM)
+=================================== */
+.spody-section {
+    padding: 100px 5%;
+    overflow: hidden; /* Zapobiega pojawieniu się bocznego paska przewijania przy animacji */
+}
+
+.spody-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+/* Obrazek po lewej */
+.spody-image-wrapper {
+    flex: 1; /* Zajmuje połowę szerokości kontenera */
+    position: relative;
+}
+
+.spody-img {
+    width: 100%;
+    min-height: 450px;
+    object-fit: cover;
+    border-radius: 20px;
+    /* Zgodnie z prośbą - zaciemnienie zdjęcia, aby nie odciągało nadmiernie uwagi */
+    filter: brightness(0.5); 
+    box-shadow: 0 15px 40px var(--shadow);
+}
+
+/* Tekst po prawej, nachodzący na obrazek */
+.spody-text {
+    flex: 1; /* Zajmuje drugą połowę */
+    background-color: var(--card-bg);
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px var(--shadow);
+    /* To jest magia efektu "troszkę obok i robiącego za tło" */
+    margin-left: -120px; 
+    z-index: 2; /* Gwarantuje, że tekst jest nad obrazkiem, a nie pod nim */
+}
+
+.spody-text h2 {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+}
+
+.spody-text p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    line-height: 1.8;
+    opacity: 0.9;
+}
+
+/* Klasy do animacji pojawiania się (Fade-in-up) */
+.fade-in {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Modyfikacja dla telefonów - wyłączamy nachodzenie na boki, 
+   a puszczamy blok z tekstem lekko z dołu na obrazek */
+@media (max-width: 991px) {
+    .spody-container {
+        flex-direction: column;
+    }
+    .spody-text {
+        margin-left: 0;
+        margin-top: -60px; /* Nachodzi od dołu zamiast z boku */
+        padding: 35px 25px;
+    }
+    .spody-img {
+        min-height: 350px;
+    }
+}
+
+/* ================================
+   STOPKA (FOOTER)
+=================================== */
+.footer {
+    background-color: #1a1a1a;
+    color: #eaeaea;
+    padding: 70px 5% 20px;
+}
+
+body.dark-theme .footer {
+    background-color: #111111;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.footer-brand h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.footer-brand p {
+    opacity: 0.7;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.footer-links h4, .footer-socials h4 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a, .footer-socials a {
+    color: #eaeaea;
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.3s, color 0.3s;
+}
+
+.footer-links a:hover, .footer-socials a:hover {
+    opacity: 1;
+    color: var(--primary-color);
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 25px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.85rem;
+    opacity: 0.5;
+}
+
+/* ================================
+   STRZAŁKA POWROTU NA GÓRĘ
+=================================== */
+.scroll-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--secondary-color);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 15px var(--shadow);
+    z-index: 999;
+}
+
+.scroll-top-btn.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Media Query dla PC */
+@media (min-width: 992px) {
+    .hero {
+        flex-direction: row;
+        text-align: left;
+        padding: 200px 10% 100px;
+    }
+    .hero-content { flex: 1; }
+    .hero-image { flex: 1; }
+}
+
+
+/* ================================
+   SEKCJA MENU Z PODKARTAMI (PASMA)
+=================================== */
+/* Nowe, alternatywne tło dla uzyskania efektu pasków na stronie */
+.bg-striped {
+    background-color: var(--card-bg); 
+}
+
+body.dark-theme .bg-striped {
+    background-color: #202020; /* Subtelnie inny odcień szarości w ciemnym motywie */
+}
+
+.menu-section {
+    padding: 100px 5%;
+    text-align: center;
+}
+
+.menu-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.menu-section h2 {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.menu-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 35px;
+    opacity: 0.8;
+}
+
+/* Przyciski zakładek (Tabs) */
+.menu-tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.tab-btn {
+    background-color: transparent;
+    color: var(--text-color);
+    border: 1px solid var(--nav-border);
+    padding: 10px 22px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.tab-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+/* Aktywna zakładka */
+.tab-btn.active {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 15px rgba(184, 43, 51, 0.3);
+}
+
+/* Ukrywanie i pokazywanie kategorii */
+.menu-category {
+    display: none; /* Domyślnie wszystkie kategorie są ukryte */
+    animation: fadeInCategory 0.5s ease-in-out;
+}
+
+.menu-category.active {
+    display: block; /* Pokazujemy tylko tę z klasą active */
+}
+
+/* Prosta animacja pojawiania się zawartości zakładki */
+@keyframes fadeInCategory {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ================================
+   RESPONSYWNOŚĆ MENU DLA TELEFONÓW
+=================================== */
+@media (max-width: 768px) {
+    .menu-section {
+        padding: 60px 4%; /* Mniejszy padding sekcji na telefonie */
+    }
+
+    .menu-section h2 {
+        font-size: 1.8rem; /* Mniejszy nagłówek */
+    }
+
+    /* Zmniejszenie i lepsze ułożenie przycisków zakładek na małych ekranach */
+    .menu-tabs {
+        gap: 8px;
+        margin-bottom: 25px;
+        justify-content: flex-start; /* Pozwala na przewijanie paska, jeśli przycisków zabraknie */
+        overflow-x: auto; /* Włącza płynne przewijanie poziome paska zakładek, gdy jest ich dużo */
+        flex-wrap: nowrap;
+        padding-bottom: 10px;
+        /* Ukrycie paska przewijania dla estetyki */
+        scrollbar-width: none; 
+    }
+    
+    .menu-tabs::-webkit-scrollbar {
+        display: none;
+    }
+
+    .tab-btn {
+        font-size: 0.85rem; /* Mniejsza czcionka w zakładkach */
+        padding: 8px 16px; /* Węższe przyciski */
+        flex-shrink: 0; /* Zapobiega ściskaniu przycisków */
+    }
+
+    /* Zmniejszenie czcionek w samych kafelkach dań na telefonie */
+    .menu-item {
+        padding: 15px;
+    }
+
+    .menu-item h3 {
+        font-size: 1.1rem;
+    }
+
+    .menu-item p {
+        font-size: 0.85rem;
+    }
+
+    .price {
+        font-size: 1.1rem;
+    }
+    /* Spłaszczenie zdjęć dań w menu na telefonie przy zachowaniu szerokości */
+    .menu-item img {
+        width: 100%;
+        height: 120px; /* Tutaj możesz dostosować wysokość, np. 120px lub 150px */
+        object-fit: cover;
+        border-radius: 12px;
+        margin-bottom: 10px;
+    }
+}
