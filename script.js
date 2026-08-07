@@ -227,7 +227,14 @@ tabButtons.forEach(button => {
     });
 });
 
-// Pobieranie i generowanie menu z pliku JSON
+// Funkcja ukrywająca ekran ładowania z łagodnym zanikaniem
+function hidePreloader() {
+    const preloader = document.getElementById('loader-wrapper');
+    if (preloader) {
+        preloader.classList.add('fade-out');
+    }
+}
+
 async function loadMenuFromJSON() {
     try {
         const response = await fetch('menu.json');
@@ -236,14 +243,11 @@ async function loadMenuFromJSON() {
         }
         const menuData = await response.json();
 
-        // Iterujemy po wszystkich kategoriach w obiekcie JSON (pinsy, napoje, dania, itd.)
         Object.keys(menuData).forEach(categoryKey => {
             const container = document.querySelector(`#${categoryKey} .menu-grid`);
-            
             if (container) {
-                // Mapujemy pozycje z danej kategorii na kod HTML
                 container.innerHTML = menuData[categoryKey].map(item => `
-                    <div class="menu-item">
+                    <div class="menu-item ${!item.image ? 'no-image' : ''}">
                         ${item.image ? `<img src="${item.image}" alt="${item.name}" loading="lazy" decoding="async">` : ''}
                         <h3>${item.name}</h3>
                         <p>${item.description}</p>
@@ -254,8 +258,11 @@ async function loadMenuFromJSON() {
         });
     } catch (error) {
         console.error('Nie udało się załadować menu:', error);
+    } finally {
+        hidePreloader();
     }
 }
 
-// Inicjalizacja ładowania danych po wygenerowaniu drzewa DOM
-document.addEventListener('DOMContentLoaded', loadMenuFromJSON);
+window.addEventListener('load', () => {
+    setTimeout(hidePreloader, 300);
+});

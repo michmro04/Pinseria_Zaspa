@@ -1,5 +1,13 @@
-/* Definicje kolorów dla motywu jasnego i ciemnego */
-/* Definicje kolorów dla motywu jasnego i ciemnego */
+/* Płynne przewijanie + zapas miejsca na przyklejony navbar na górze */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 70px; /* Wysokość Twojego navbaru + delikatny zapas */
+}
+
+/* Zabezpieczenie dla wszystkich sekcji z ID */
+section[id] {
+    scroll-margin-top: 5px;
+}
 /* Zaktualizowany fragment :root (jasny motyw) */
 :root {
     --bg-color: #f2e9d3; 
@@ -1245,4 +1253,71 @@ body.dark-theme .bg-striped {
         border-radius: 12px;
         margin-bottom: 10px;
     }
+}
+
+/* ================================
+   EKRAN ŁADOWANIA (PRELOADER)
+=================================== */
+#loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bg-color, #fdfbf7); /* Dostosowuje się do motywu */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999; /* Wyżej niż navbar i reszta elementów */
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+/* Animowane kręcenie i pulsowanie pizzy */
+.pizza-spinner {
+    animation: rotatePizza 2s linear infinite, pulsePizza 1.2s ease-in-out infinite alternate;
+}
+
+.loader-text {
+    margin-top: 20px;
+    font-family: inherit;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--primary-color, #b82b33);
+    letter-spacing: 0.5px;
+    animation: textPulse 1.5s ease-in-out infinite alternate;
+}
+
+/* Keyframes dla animacji */
+@keyframes rotatePizza {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulsePizza {
+    0% {
+        scale: 0.95;
+    }
+    100% {
+        scale: 1.1;
+    }
+}
+
+@keyframes textPulse {
+    0% {
+        opacity: 0.4;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Klasa używana w JS do łagodnego schowania loader-a */
+#loader-wrapper.fade-out {
+    opacity: 0;
+    visibility: hidden;
 }

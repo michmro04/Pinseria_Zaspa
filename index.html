@@ -9,6 +9,47 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Ekran ładowania (Preloader) z symetryczną pizzą -->
+<div id="loader-wrapper">
+    <div class="pizza-spinner">
+        <svg viewBox="0 0 100 100" width="85" height="85">
+            <!-- Spód i Sos -->
+            <circle cx="50" cy="50" r="45" fill="#e29578" stroke="#b05228" stroke-width="4" />
+            <circle cx="50" cy="50" r="40" fill="#f4a261" />
+            <circle cx="50" cy="50" r="36" fill="#e76f51" />
+            <circle cx="50" cy="50" r="32" fill="#e9c46a" />
+            
+            <!-- Linie krojenia -->
+            <line x1="50" y1="18" x2="50" y2="82" stroke="#b82b33" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.4" />
+            <line x1="18" y1="50" x2="82" y2="50" stroke="#b82b33" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.4" />
+            <line x1="27" y1="27" x2="73" y2="73" stroke="#b82b33" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.4" />
+            <line x1="27" y1="73" x2="73" y2="27" stroke="#b82b33" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.4" />
+
+            <!-- 6 x Salami (Czerwone) -->
+            <circle cx="37" cy="35" r="4.5" fill="#b82b33" />
+            <circle cx="63" cy="35" r="4.3" fill="#b82b33" />
+            <circle cx="66" cy="55" r="4.6" fill="#b82b33" />
+            <circle cx="52" cy="66" r="4.2" fill="#b82b33" />
+            <circle cx="35" cy="57" r="4.5" fill="#b82b33" />
+            <circle cx="45" cy="45" r="4.0" fill="#b82b33" />
+
+            <!-- 4 x Bazylia (Zielona) -->
+            <circle cx="50" cy="29" r="3.2" fill="#2a9d8f" />
+            <circle cx="70" cy="44" r="3.0" fill="#2a9d8f" />
+            <circle cx="41" cy="67" r="3.1" fill="#2a9d8f" />
+            <circle cx="29" cy="46" r="2.9" fill="#2a9d8f" />
+
+            <!-- 6 x Czarne oliwki -->
+            <circle cx="39" cy="26" r="2.3" fill="#2d2d2d" />
+            <circle cx="60" cy="27" r="2.3" fill="#2d2d2d" />
+            <circle cx="56" cy="43" r="2.2" fill="#2d2d2d" />
+            <circle cx="62" cy="66" r="2.4" fill="#2d2d2d" />
+            <circle cx="28" cy="57" r="2.3" fill="#2d2d2d" />
+            <circle cx="47" cy="56" r="2.2" fill="#2d2d2d" />
+        </svg>
+    </div>
+    <p class="loader-text">Wypiekamy Twoją stronę...</p>
+</div>
 
     <!-- Navbar -->
     <nav class="navbar" id="navbar">
@@ -211,7 +252,7 @@
                 <p>Brakuje Ci czasu na gotowanie, ale masz ochotę na coś wyjątkowego? Zamów nasze rzemieślnicze spody do pinsy! Wypiekamy je na miejscu z tego samego, dojrzewającego ciasta.</p>
                 <p>Wystarczy, że kupisz spód, dodasz na niego składniki z własnej lodówki i wstawisz do piekarnika na kilka minut. To idealne rozwiązanie na szybki obiad, domową imprezę czy niespodziewaną kolację z bliskimi.</p>
                 <br>
-                <a href="tel:+48720996677" class="primary-btn">Zamów spody telefonicznie</a>
+                <span class="primary-btn">Zamów spody telefonicznie pod numerem 720 996 677</span>
             </div>
         </div>
     </section>

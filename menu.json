@@ -2,55 +2,200 @@
   "pinsy": [
     {
       "name": "Pinsa Margherita",
-      "description": "Sos pomidorowy, mozzarella fior di latte, świeża bazylia",
-      "price": "100zł",
+      "description": "Sos z pomidorów San Marzano, mozzarella fior di latte, świeża bazylia, oliwa extra virgin",
+      "price": "32 zł",
       "image": "Images/pinsa/pinsa2.webp"
     },
     {
-      "name": "Pinsa Prosciutto",
-      "description": "Sos pomidorowy, mozzarella, szynka parmeńska, rukola, grana padano",
-      "price": "42 zł",
+      "name": "Pinsa Prosciutto e Crudo",
+      "description": "Sos pomidorowy, mozzarella, szynka parmeńska 24m, rukola, płatki Grana Padano, pomidorki koktajlowe",
+      "price": "44 zł",
       "image": "Images/pinsa/pinsa1.webp"
+    },
+    {
+      "name": "Pinsa Diavola",
+      "description": "Sos pomidorowy, mozzarella fior di latte, pikantne włoskie salami Spianata Calabra, papryczki jalapeño",
+      "price": "39 zł",
+      "image": "Images/pinsa/pinsa4.webp"
+    },
+    {
+      "name": "Pinsa Quattro Formaggi",
+      "description": "Biała baza, mozzarella fior di latte, gorgonzola D.O.P., ricotta, taleggio, orzechy włoskie",
+      "price": "45 zł",
+        "image": "Images/pinsa/pinsa3.webp"
+
+    },
+    {
+      "name": "Pinsa Mortadella e Pistacchio",
+      "description": "Biała baza, mozzarella, oryginalna włoska mortadella z Pistacjami, krem z pistacji, kruszone pistacje",
+      "price": "48 zł",
+        "image": "Images/pinsa/pinsa6.webp"
+
+    },
+    {
+      "name": "Pinsa Capricciosa",
+      "description": "Sos pomidorowy, mozzarella, szynka gotowana Cotto, pieczarki portobello, karczochy, czarne oliwki",
+      "price": "42 zł",
+            "image": "Images/pinsa/pinsa7.webp"
+
+    },
+    {
+      "name": "Pinsa Vegana",
+      "description": "Sos pomidorowy, wegański ser, grillowana cukinia, bakłażan, suszone pomidory, prażone pestki dyni",
+      "price": "38 zł",
+            "image": "Images/pinsa/pinsa8.webp"
+
     }
   ],
+
   "napoje": [
     {
-      "name": "Włoska Lemoniada",
-      "description": "Domowa lemoniada z sycylijską cytryną i świeżą miętą",
+      "name": "Piwo Peroni Nastro Azzurro",
+      "description": "Klasyczne, orzeźwiające włoskie piwo jasne pełne (500ml)",
+      "price": "16 zł",
+      "image": "Images/napoje/peroni.webp"
+    },
+    {
+      "name": "Piwo Książęce Złote Pszeniczne",
+      "description": "Naturalnie mętne piwo pszeniczne o orzeźwiającym cytrusowym smaku (500ml)",
+      "price": "14 zł",
+      "image": "Images/napoje/ksiazece.webp"
+    },
+    {
+      "name": "Piwo Książęce Czerwony Tłok / Ciemne",
+      "description": "Aromatyczne piwo o bogatym słodowo-karmelowym bukiecie (500ml)",
+      "price": "14 zł",
+      "image": "Images/napoje/ksiazece2.webp"
+    },
+    {
+      "name": "Piwo Książęce IPA",
+      "description": "Chmielowe piwo górnej fermentacji z nutami owoców cytrusowych (500ml)",
+      "price": "15 zł",
+      "image": "Images/napoje/ksiazece3.webp"
+    },
+    {
+      "name": "Piwo Beczkowe / Lane",
+      "description": "Świeżo serwowane z kija piwo jasne (500ml)",
+      "price": "13 zł",
+      "image": "Images/napoje/piwo1.jpg"
+    },
+    {
+      "name": "Włoski Gin Malfy",
+      "description": "Ekskluzywny włoski gin destylowany z sycylijskimi cytrusami i jałowcem (40ml)",
+      "price": "22 zł",
+      "image": "Images/napoje/malfy.webp"
+    },
+    {
+      "name": "Gin Beefeater London Dry",
+      "description": "Klasyczny brytyjski gin ziołowy, idealny do toniku z limonką (40ml)",
+      "price": "18 zł",
+      "image": "Images/napoje/beefeater.webp"
+    },
+    {
+      "name": "Rum Havana Club",
+      "description": "Oryginalny kubański rum o gładkim, waniliowo-dębowym profilu (40ml)",
+      "price": "18 zł",
+      "image": "Images/napoje/havanaclub.webp"
+    },
+    {
+      "name": "Rum Dictador 12 YO",
+      "description": "Kolumbijski rum ultra-premium starzony w dębowych beczkach, nuty miodu i kawy (40ml)",
+      "price": "28 zł",
+      "image": "Images/napoje/dictador.webp"
+    },
+    {
+      "name": "Wino Domowe (Białe / Czerwone)",
+      "description": "Wyselekcjonowane wytrawne wino włoskie z regionu Toskanii (kieliszek 150ml / karafka 500ml)",
+      "price": "16 / 45 zł",
+      "image": "Images/napoje/wino2.webp"
+    },
+    {
+      "name": "Włoskie Prosecco D.O.C.",
+      "description": "Musujące wino wytrawne z regionu Veneto, idealne jako aperitif (kieliszek 150ml / butelka 750ml)",
+      "price": "18 / 75 zł",
+      "image": "Images/napoje/wino3.webp"
+    },
+    {
+      "name": "Włoska Lemoniada Cytrusowa",
+      "description": "Domowa lemoniada na bazie sycylijskich cytryn, pomarańczy i świeżej mięty (400ml)",
       "price": "14 zł"
     },
     {
-      "name": "Kawa Espresso / Cappuccino",
-      "description": "Świeżo parzona włoska kawa z wyselekcjonowanych ziaren",
-      "price": "10 / 14 zł"
+      "name": "Kawa Espresso / Cappuccino / Latte",
+      "description": "Świeżo parzona włoska kawa z lokalnej palarni ziarna 100% Arabica",
+      "price": "10 / 14 / 16 zł"
     }
   ],
+
   "dania": [
     {
-      "name": "Tagliatelle al Limone",
-      "description": "Ręcznie robiony makaron w kremowym sosie cytrynowym z krewetkami",
+      "name": "Tagliatelle al Limone e Gamberi",
+      "description": "Ręcznie robiony makaron w delikatnym sosie winno-maślanym z cytrusami i krewetkami",
       "price": "46 zł"
+    },
+    {
+      "name": "Spaghetti Carbonara",
+      "description": "Tradycyjna receptura bez śmietany: dojrzewające policzki wieprzowe Guanciale, żółtka jaj, Pecorino Romano",
+      "price": "42 zł"
+    },
+    {
+      "name": "Gnocchi al Pesto Genovese",
+      "description": "Włoskie kluseczki ziemniaczane w domowym pesto ze świeżej bazylii, orzeszków piniowych i parmezanu",
+      "price": "39 zł"
+    },
+    {
+      "name": "Penne all'Arrabbiata",
+      "description": "Makaron w lekko pikantnym sosie z pomidorów San Marzano, czosnku, papryczek chilli i natki pietruszki",
+      "price": "35 zł"
     }
   ],
+
   "zupy": [
     {
-      "name": "Minestrone",
-      "description": "Tradycyjna włoska zupa ze świeżych sezonowych warzyw",
-      "price": "18 zł"
+      "name": "Krem z pomidorów San Marzano",
+      "description": "Gęsty, aromatyczny krem ze słodkich pomidorów z dodatkiem kleksu z rzemieślniczej mozzarelli i pesto",
+      "price": "22 zł"
+    },
+    {
+      "name": "Minestrone di Verdure",
+      "description": "Tradycyjna, sycąca włoska zupa ze świeżych, sezonowych warzyw z odrobiną oliwy truflowej",
+      "price": "19 zł"
     }
   ],
+
   "desery": [
     {
-      "name": "Tiramisu",
-      "description": "tiramisu opis",
-      "price": "100 zł"
+      "name": "Tiramisu Classico",
+      "description": "Klasyczny włoski deser z biszkoptami nasączonymi mocnym espresso, likierem Amaretto i puszystym kremem z mascarpone",
+      "price": "24 zł"
+    },
+    {
+      "name": "Cannoli Siciliani",
+      "description": "Chrupiące rurki sycylijskie nadziewane słodkim kremem na bazie sera ricotta z kawałkami czekolady i pistacjami",
+      "price": "20 zł"
+    },
+    {
+      "name": "Poriot Pinsa Dolce",
+      "description": "Mini chrupiąca pinsa na słodko przekładana kremem Nutella, świeżymi truskawkami i posypana pistacjami",
+      "price": "28 zł"
     }
   ],
+  
   "dodatki": [
     {
       "name": "Focaccia z rozmarynem",
-      "description": "Wypiekana na miejscu z oliwą z oliwek extra virgin i morską solą",
+      "description": "Wypiekane na miejscu pieczywo ziołowe z dodatkiem oliwy z oliwek extra virgin i soli morskiej",
       "price": "16 zł"
+    },
+    {
+      "name": "Oliwki Taggiasche",
+      "description": "Porcja oryginalnych, drobnych włoskich oliwek drylowanych w oliwie ziołowej",
+      "price": "12 zł"
+    },
+    {
+      "name": "Sosy autorskie",
+      "description": "Do wyboru: czosnkowy na bazie jogurtu greckiego, pomidorowy ostry lub oliwa pikantna/czosnkowa",
+      "price": "5 zł"
     }
   ]
 }
