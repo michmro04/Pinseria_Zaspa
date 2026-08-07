@@ -76,99 +76,149 @@ body {
     border-bottom: 1px solid var(--nav-border); 
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
+/* ================================
+   NAWIGACJA I ANIMACJA LOGO
+=================================== */
 
-.nav-left {
-    flex: 1;
+/* Główny kontener paska nawigacji */
+.navbar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
     display: flex;
-    align-items: center; /* Wyrównanie w pionie */
-    margin-top: 10px;    /* Twój margines od góry, jeśli go potrzebujesz */
-    padding-left: 0;     /* Kasujemy dodatkowe wcięcie, by logo wyrównało się do reszty strony */
-    transition: padding 0.5s ease;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 30px;
+    z-index: 1000;
+    background-color: var(--navbar-base-bg);
+    border-bottom: 1px solid var(--nav-border); 
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Logo początkowe - zmniejszone, by nie rozpychało wysokości paska */
+/* Lewa strona (Logo) oraz Prawa strona NIE MOGĄ się ściskać */
+.nav-left,
+.navbar-right,
+.nav-right {
+    flex-shrink: 0; 
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
 .logo {
-    width: 120px; 
+    width: 110px; 
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     filter: drop-shadow(0 4px 6px var(--shadow));
 }
 
+/* Środkowa sekcja nawigacji - elastyczny Flexbox w 100% dopasowany do wolnego miejsca */
 .nav-center {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
     display: flex;
-    gap: 8px; /* Zmniejszone odstępy, żeby wszystko zmieściło się w jednym rzędzie */
+    align-items: center;
+    justify-content: center;
+    flex: 1; /* Wypełnia przestrzeń MIĘDZY logo a prawą stroną */
+    gap: 8px;
 }
 
-/* Nowoczesne, idealnie zaokrąglone labele w jednej linii */
+/* Wygląd pojedynczej pigułki/labela w nawigacji */
 .nav-center a {
     text-decoration: none;
     color: var(--text-color);
-    font-weight: 500; /* Lżejszy font wygląda nowocześniej */
-    font-size: 0.95rem; /* Zmniejszona czcionka */
-    padding: 6px 16px; /* Zgrabniejsze proporcje obramowania */
+    font-weight: 500;
+    font-size: 0.88rem;
+    padding: 6px 14px;
     border: 1px solid var(--nav-border);
-    border-radius: 30px; /* Idealnie okrągłe boki pigułki */
-    white-space: nowrap; /* KLUCZOWE: Zakazuje łamania "Strona główna" na dwie linie! */
+    border-radius: 30px;
+    white-space: nowrap; /* Zakaz łamania tekstu na dwie linie */
+    flex-shrink: 0;
     transition: all 0.3s ease;
 }
 
-.nav-center a:hover {
+.nav-center a:hover,
+.nav-center a.active-link {
     color: var(--primary-color);
     border-color: var(--primary-color);
-    background-color: rgba(184, 43, 51, 0.05); /* Subtelne, czerwonawe tło po najechaniu */
+    background-color: rgba(184, 43, 51, 0.05);
     transform: translateY(-2px);
+}
+
+/* Płynne zmniejszanie marginesów na ekranach laptopów przed trybem mobilnym */
+@media (max-width: 1280px) and (min-width: 1051px) {
+    .nav-center {
+        gap: 10px;
+    }
+
+    .nav-center a {
+        padding: 5px 10px;
+        font-size: 0.82rem;
+    }
 }
 
 /* ================================
    PRAWA STRONA NAVBARU (DWIE KOLUMNY)
 =================================== */
 .nav-right {
-    flex: 1;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 15px; /* Odstęp między kolumną kontaktową a kolumną ikonek */
+    gap: 15px;
 }
 
-/* Lewa kolumna: telefon nad adresem */
 .nav-contact-col {
     display: flex;
     flex-direction: column;
-    align-items: flex-end; /* Wyrównanie do prawej strony wewnątrz bloku */
+    align-items: flex-end;
     gap: 4px;
 }
 
-.nav-location {
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: var(--text-color);
-    opacity: 0.85;
+.phone-btn {
+    background-color: var(--secondary-color);
+    color: white !important;
+    padding: 6px 16px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
     white-space: nowrap;
 }
 
-/* Prawa kolumna: ikony social media i motyw ustawione w pionie */
+.nav-location {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-color);
+    opacity: 0.85;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.phone-btn:hover,
+.nav-location:hover {
+    transform: translateY(-2px);
+}
+
 .nav-icons-col {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 6px; /* Odstęp między ikonami */
-    border-left: 1px solid var(--nav-border); /* Delikatna linia oddzielająca kontakt od ikonek */
+    gap: 6px;
+    border-left: 1px solid var(--nav-border);
     padding-left: 12px;
 }
 
-/* Styl pojedynczej ikony społecznościowej */
 .social-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 30px;
-    height: 30px;
+    width: 28px;
+    height: 28px;
     border-radius: 50%;
     color: var(--text-color);
     background-color: var(--card-bg);
     border: 1px solid var(--nav-border);
+    cursor: pointer;
     transition: all 0.3s ease;
 }
 
@@ -178,6 +228,17 @@ body {
     transform: translateY(-2px);
 }
 
+/* Stan paska po zjechaniu w dół */
+.navbar.scrolled {
+    background-color: var(--nav-bg);
+    padding: 8px 30px;
+    box-shadow: 0 4px 15px var(--shadow);
+    backdrop-filter: blur(10px);
+}
+
+.navbar.scrolled .logo {
+    width: 80px;
+}
 .theme-btn {
     display: flex;
     align-items: center;
@@ -246,22 +307,13 @@ body {
     transform: scale(1.1);
 }
 
-/* Stan paska po zjechaniu w dół */
-.navbar.scrolled {
-    background-color: var(--nav-bg);
-    padding: 10px 5%; /* Maksymalna kompresja paska w pionie */
-    box-shadow: 0 4px 15px var(--shadow);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid transparent; 
-}
+
 
 .navbar.scrolled .nav-left {
     padding-left: 0;
 }
 
-.navbar.scrolled .logo {
-    width: 85px; /* Miniaturka logo */
-}
+
 
 /* Klasa nadawana przez JS podczas scrollowania danej sekcji */
 .nav-center a.active-link {
@@ -1320,4 +1372,54 @@ body.dark-theme .bg-striped {
 #loader-wrapper.fade-out {
     opacity: 0;
     visibility: hidden;
+}
+
+/* ================================
+   DOPASOWANIE DLA MAŁYCH EKRANÓW (iPhone SE / <= 380px)
+=================================== */
+@media (max-width: 380px) {
+    /* Pigułki nawigacyjne */
+    .nav-center {
+        gap: 4px;
+        margin-top: 8px;
+    }
+
+    .nav-center a {
+        font-size: 0.68rem;  /* Zmniejszona czcionka w menu */
+        padding: 4px 8px;    /* Kompaktowe marginesy wewnętrzne */
+    }
+
+    /* Prawy panel nawigacji (Telefon i Adres) */
+    .phone-btn {
+        padding: 4px 8px;
+        font-size: 0.75rem;
+    }
+
+    .nav-location {
+        font-size: 0.6rem;
+    }
+
+    /* Sekcja Hero - zmniejszenie nagłówka i tekstów */
+    .hero {
+        padding-top: 220px; /* Mniejsze odsetki od góry */
+    }
+
+    .hero-text h1 {
+        font-size: 1.8rem; /* Zmniejszenie "Prawdziwa włoska pinsa" */
+        margin-bottom: 10px;
+    }
+
+    .hero-description {
+        font-size: 0.9rem;
+        line-height: 1.45;
+        margin-bottom: 15px;
+    }
+
+    .hero-features {
+        gap: 8px;
+    }
+
+    .hero-features li {
+        font-size: 0.82rem;
+    }
 }

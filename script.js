@@ -228,6 +228,7 @@ tabButtons.forEach(button => {
 });
 
 // Funkcja ukrywająca ekran ładowania z łagodnym zanikaniem
+// Funkcja ukrywająca ekran ładowania
 function hidePreloader() {
     const preloader = document.getElementById('loader-wrapper');
     if (preloader) {
@@ -263,6 +264,5 @@ async function loadMenuFromJSON() {
     }
 }
 
-window.addEventListener('load', () => {
-    setTimeout(hidePreloader, 300);
-});
+// Wywołujemy ładowanie menu od razu po załadowaniu struktury HTML
+document.addEventListener('DOMContentLoaded', loadMenuFromJSON);
