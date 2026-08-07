@@ -1,0 +1,56 @@
+{
+  "pinsy": [
+    {
+      "name": "Pinsa Margherita",
+      "description": "Sos pomidorowy, mozzarella fior di latte, świeża bazylia",
+      "price": "100zł",
+      "image": "Images/pinsa/pinsa2.webp"
+    },
+    {
+      "name": "Pinsa Prosciutto",
+      "description": "Sos pomidorowy, mozzarella, szynka parmeńska, rukola, grana padano",
+      "price": "42 zł",
+      "image": "Images/pinsa/pinsa1.webp"
+    }
+  ],
+  "napoje": [
+    {
+      "name": "Włoska Lemoniada",
+      "description": "Domowa lemoniada z sycylijską cytryną i świeżą miętą",
+      "price": "14 zł"
+    },
+    {
+      "name": "Kawa Espresso / Cappuccino",
+      "description": "Świeżo parzona włoska kawa z wyselekcjonowanych ziaren",
+      "price": "10 / 14 zł"
+    }
+  ],
+  "dania": [
+    {
+      "name": "Tagliatelle al Limone",
+      "description": "Ręcznie robiony makaron w kremowym sosie cytrynowym z krewetkami",
+      "price": "46 zł"
+    }
+  ],
+  "zupy": [
+    {
+      "name": "Minestrone",
+      "description": "Tradycyjna włoska zupa ze świeżych sezonowych warzyw",
+      "price": "18 zł"
+    }
+  ],
+  "desery": [
+    {
+      "name": "Tiramisu",
+      "description": "tiramisu opis",
+      "price": "100 zł"
+    }
+  ],
+  "dodatki": [
+    {
+      "name": "Focaccia z rozmarynem",
+      "description": "Wypiekana na miejscu z oliwą z oliwek extra virgin i morską solą",
+      "price": "16 zł"
+    }
+  ]
+}

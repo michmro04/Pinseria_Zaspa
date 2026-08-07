@@ -227,3 +227,35 @@ tabButtons.forEach(button => {
     });
 });
 
+// Pobieranie i generowanie menu z pliku JSON
+async function loadMenuFromJSON() {
+    try {
+        const response = await fetch('menu.json');
+        if (!response.ok) {
+            throw new Error(`Błąd sieci: ${response.status}`);
+        }
+        const menuData = await response.json();
+
+        // Iterujemy po wszystkich kategoriach w obiekcie JSON (pinsy, napoje, dania, itd.)
+        Object.keys(menuData).forEach(categoryKey => {
+            const container = document.querySelector(`#${categoryKey} .menu-grid`);
+            
+            if (container) {
+                // Mapujemy pozycje z danej kategorii na kod HTML
+                container.innerHTML = menuData[categoryKey].map(item => `
+                    <div class="menu-item">
+                        ${item.image ? `<img src="${item.image}" alt="${item.name}">` : ''}
+                        <h3>${item.name}</h3>
+                        <p>${item.description}</p>
+                        <span class="price">${item.price}</span>
+                    </div>
+                `).join('');
+            }
+        });
+    } catch (error) {
+        console.error('Nie udało się załadować menu:', error);
+    }
+}
+
+// Inicjalizacja ładowania danych po wygenerowaniu drzewa DOM
+document.addEventListener('DOMContentLoaded', loadMenuFromJSON);
