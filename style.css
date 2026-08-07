@@ -644,12 +644,14 @@ body.dark-theme .dot {
     transform: translateY(-8px);
 }
 
+/* Rezerwacja miejsca na zdjęcie przed jego załadowaniem */
 .menu-item img {
     width: 100%;
-    height: 220px;
+    height: 140px; /* Sztywna wysokość zarezerwowana w strukturze */
     object-fit: cover;
+    background-color: var(--nav-border); /* Szare tło/zaślepka widoczna podczas pobierania */
     border-radius: 12px;
-    margin-bottom: 15px;
+    display: block;
 }
 
 .price {

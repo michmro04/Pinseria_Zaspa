@@ -244,7 +244,7 @@ async function loadMenuFromJSON() {
                 // Mapujemy pozycje z danej kategorii na kod HTML
                 container.innerHTML = menuData[categoryKey].map(item => `
                     <div class="menu-item">
-                        ${item.image ? `<img src="${item.image}" alt="${item.name}">` : ''}
+                        ${item.image ? `<img src="${item.image}" alt="${item.name}" loading="lazy" decoding="async">` : ''}
                         <h3>${item.name}</h3>
                         <p>${item.description}</p>
                         <span class="price">${item.price}</span>
