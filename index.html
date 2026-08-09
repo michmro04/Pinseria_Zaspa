@@ -3,10 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pinseria - Gdańsk Zaspa</title>
+    
+    <!-- 1. Podstawowe metatagi SEO -->
+    <title>Pinseria Gdańsk Zaspa – Prawdziwa Włoska Pinsa na Wynos i Dostawę</title>
+    <meta name="description" content="Odkryj prawdziwą włoską pinsę na gdańskiej Zaspie! Chrupiące, lekkostrawne ciasto dojrzewające przez kilkadziesiąt godzin. Zamów z odbiorem osobistym przy ul. Hynka 18.">
+    <meta name="keywords" content="pinseria gdańsk, pinsa zaspa, pizza zaspa, włoska pinseria gdańsk, spody do pinsy gdańsk, jedzenie na wynos zaspa">
+    <meta name="author" content="Pinseria Gdańsk">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://pinseriagdansk.pl/">
+
+    <!-- 2. Ikona w karcie przeglądarki (Twoje istniejące logo) -->
     <link rel="icon" href="Images/logo.png" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"  rel="stylesheet">
+
+    <!-- 3. Czcionki i Style -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+
+    <!-- 4. Podstawowy Open Graph dla social mediów (tytuł i opis bez zdjęcia) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pinseriagdansk.pl/">
+    <meta property="og:title" content="Pinseria Gdańsk Zaspa – Prawdziwa Włoska Pinsa">
+    <meta property="og:description" content="Chrupiąca na zewnątrz, lekka i puszysta w środku. Spróbuj tradycyjnej receptury na gdańskiej Zaspie przy ul. Hynka 18!">
+    <meta property="og:locale" content="pl_PL">
+
+    <!-- 5. Strukturalne Dane Google dla Restauracji (Schema.org / JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FastFoodRestaurant",
+      "name": "Pinseria Gdańsk Zaspa",
+      "@id": "https://pinseriagdansk.pl/#restaurant",
+      "url": "https://pinseriagdansk.pl/",
+      "telephone": "+48720996677",
+      "priceRange": "$$",
+      "servesCuisine": ["Italian", "Pinsa", "Pizza"],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "ul. Hynka 18",
+        "addressLocality": "Gdańsk",
+        "postalCode": "80-465",
+        "addressCountry": "PL"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 54.3981,
+        "longitude": 18.5991
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+          "opens": "13:00",
+          "closes": "21:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Friday",
+          "opens": "13:00",
+          "closes": "22:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "12:00",
+          "closes": "22:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday",
+          "opens": "12:00",
+          "closes": "21:00"
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
     <!-- Ekran ładowania (Preloader) z symetryczną pizzą -->
