@@ -1,0 +1,486 @@
+/* ===================================================
+   SKLEP.CSS - SKLEPIK B2C, KOSZYK I FORMULARZ ZAMÓWIENIA
+====================================================== */
+
+/* 1. SEKCJA SKLEPIK & BANNER INFORMACYJNY */
+.sklep-section {
+    padding: 90px 5%;
+    text-align: center;
+}
+
+.sklep-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.sklep-section h2 {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.sklep-subtitle {
+    font-size: 1.05rem;
+    opacity: 0.85;
+    margin-bottom: 25px;
+}
+
+.sklep-info-banner {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: rgba(36, 152, 84, 0.08);
+    border: 1px solid var(--secondary-color);
+    padding: 14px 20px;
+    border-radius: 12px;
+    font-size: 0.92rem;
+    text-align: left;
+    margin-bottom: 35px;
+    color: var(--text-color);
+    line-height: 1.5;
+}
+
+.sklep-info-banner svg {
+    stroke: var(--secondary-color);
+    flex-shrink: 0;
+}
+
+/* 2. SIATKA I KAFELKI PRODUKTÓW */
+.sklep-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.product-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--nav-border);
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    box-shadow: 0 4px 15px var(--shadow);
+    transition: box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    box-shadow: 0 8px 25px var(--shadow);
+}
+
+.product-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    background-color: var(--nav-border);
+}
+
+.product-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: var(--text-color);
+}
+
+.product-card p {
+    font-size: 0.85rem;
+    opacity: 0.8;
+    line-height: 1.4;
+    flex: 1;
+    margin-bottom: 15px;
+}
+
+.product-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+.product-price {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--primary-color);
+}
+
+/* 3. STABILNE PRZYCISKI I KONTROLER ILOŚCI (SZTYWNE 34px - BEZ SKOKÓW) */
+.product-action {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 34px;
+}
+
+.add-to-cart-btn {
+    background-color: var(--secondary-color);
+    color: #ffffff;
+    border: none;
+    padding: 0 16px;
+    height: 34px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #1b7a42;
+}
+
+.store-qty-control {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--card-bg);
+    border: 1.5px solid var(--secondary-color);
+    padding: 0 6px;
+    height: 34px;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+
+.store-qty-btn {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--secondary-color);
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 800;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    transition: background-color 0.2s ease;
+}
+
+.store-qty-btn:hover {
+    background-color: #1b7a42;
+}
+
+.store-qty-num {
+    font-size: 0.9rem;
+    font-weight: 800;
+    min-width: 18px;
+    text-align: center;
+    color: var(--text-color);
+}
+
+/* 4. PŁYWAJĄCY PRZYCISK KOSZYKA (LEWY DOLNY RÓG) */
+.cart-float-btn {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border: none;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(184, 43, 51, 0.4);
+    z-index: 998;
+    transition: background-color 0.2s ease;
+}
+
+.cart-float-btn:hover {
+    background-color: #a01820;
+}
+
+.cart-count-badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background-color: var(--secondary-color);
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 800;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ffffff;
+}
+
+/* 5. MODAL / DRAWER BOCZNY KOSZYKA */
+.cart-modal {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 10000;
+    display: flex;
+    justify-content: flex-end;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.cart-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.cart-modal-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(3px);
+}
+
+.cart-modal-content {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    height: 100%;
+    background-color: var(--card-bg);
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.25);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 2;
+    box-sizing: border-box;
+}
+
+.cart-modal.active .cart-modal-content {
+    transform: translateX(0);
+}
+
+.cart-view {
+    display: none;
+    flex-direction: column;
+    height: 100%;
+}
+
+.cart-view.active {
+    display: flex;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--nav-border);
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.cart-header h3 {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+.close-cart-btn {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    color: var(--text-color);
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.close-cart-btn:hover {
+    opacity: 1;
+}
+
+.back-cart-btn {
+    background: none;
+    border: none;
+    color: var(--secondary-color);
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    padding: 0;
+}
+
+/* 6. LISTA POZYCJI W KOSZYKU */
+.cart-items-list {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-right: 4px;
+}
+
+.cart-item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    background-color: var(--bg-color);
+    border: 1px solid var(--nav-border);
+    border-radius: 12px;
+}
+
+.cart-item-info h4 {
+    font-size: 0.92rem;
+    margin-bottom: 4px;
+    color: var(--text-color);
+}
+
+.cart-item-info p {
+    font-size: 0.82rem;
+    opacity: 0.8;
+    margin: 0;
+}
+
+.cart-item-qty {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.qty-btn {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: 1px solid var(--nav-border);
+    background: var(--card-bg);
+    color: var(--text-color);
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    transition: background-color 0.2s;
+}
+
+.qty-btn:hover {
+    background-color: var(--nav-border);
+}
+
+/* 7. PODSUMOWANIE I FORMULARZ ZAMÓWIENIA (CHECKOUT) */
+.cart-footer {
+    border-top: 1px solid var(--nav-border);
+    padding-top: 18px;
+    margin-top: 15px;
+}
+
+.cart-total-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.15rem;
+    margin-bottom: 16px;
+}
+
+.cart-total-row strong {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+}
+
+.checkout-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.cart-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    text-align: left;
+}
+
+.cart-form-group label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    opacity: 0.85;
+}
+
+.cart-input,
+.cart-textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--nav-border);
+    border-radius: 8px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: inherit;
+    font-size: 0.88rem;
+    box-sizing: border-box;
+}
+
+.cart-input:focus,
+.cart-textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.cart-textarea {
+    resize: vertical;
+    min-height: 55px;
+}
+
+.checkout-summary-box {
+    background-color: rgba(36, 152, 84, 0.08);
+    border: 1px solid var(--secondary-color);
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 0.78rem;
+    opacity: 0.9;
+    margin-top: 5px;
+    line-height: 1.4;
+}
+
+.w-100 {
+    width: 100%;
+    text-align: center;
+}
+
+/* 8. RESPONSYWNOŚĆ DLA SMARTFONÓW */
+@media (max-width: 480px) {
+    .cart-float-btn {
+        bottom: 20px;
+        left: 20px;
+        width: 52px;
+        height: 52px;
+    }
+
+    .cart-modal-content {
+        padding: 18px;
+    }
+
+    .sklep-info-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 0.85rem;
+    }
+
+    .product-bottom {
+        gap: 8px;
+    }
+
+    .store-qty-control {
+        gap: 6px;
+        padding: 0 4px;
+    }
+
+    .store-qty-btn {
+        width: 22px;
+        height: 22px;
+        font-size: 0.85rem;
+    }
+
+    .store-qty-num {
+        font-size: 0.85rem;
+        min-width: 14px;
+    }
+}

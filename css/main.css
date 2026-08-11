@@ -1,0 +1,196 @@
+/* ================================
+   MAIN.CSS - ZMIENNE, RESET I STYLE GLOBALNE
+=================================== */
+
+/* Płynne przewijanie + zapas miejsca na przyklejony navbar na górze */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 70px; /* Wysokość Twojego navbaru + delikatny zapas */
+}
+
+/* Zabezpieczenie dla wszystkich sekcji z ID */
+section[id] {
+    scroll-margin-top: 5px;
+}
+
+/* Zaktualizowany fragment :root (jasny motyw) */
+:root {
+    --font-heading: 'DM Serif Display', 'TAN Mon Cheri', serif;
+    --bg-color: #f2e9d3; 
+    --text-color: #403e3d; 
+    --nav-bg: #f5f3eea5; 
+    --primary-color: #b82b33; 
+    --secondary-color: #249854; 
+    --card-bg: #fcfbfa; 
+    --shadow: rgba(0, 0, 0, 0.06);
+    --nav-border: rgba(0, 0, 0, 0.1);
+    --navbar-base-bg: #f5f3ee;
+}
+
+h1, h2, h3, .hero-text h1, .promocje-section h2 {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+body.dark-theme {
+    --bg-color: #232323;
+    --text-color: #eaeaea;
+    --nav-bg: rgba(30, 30, 30, 0.95);
+    --primary-color: #e63946;
+    --secondary-color: #2a9d8f;
+    --card-bg: #242424;
+    --shadow: rgba(0, 0, 0, 0.4);
+    --nav-border: rgba(255, 255, 255, 0.15);
+    --navbar-base-bg: #181818f3;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Zabezpieczenie wszystkich zdjęć przed przeciąganiem i zaznaczaniem */
+img {
+    -webkit-user-drag: none;
+    -moz-user-drag: none;
+    -ms-user-drag: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.4s, color 0.4s;
+}
+
+/* Klasy pomocnicze tła */
+.bg-white {
+    background-color: #ffffff; 
+}
+
+body.dark-theme .bg-white {
+    background-color: #1a1a1a; 
+}
+
+.bg-striped {
+    background-color: var(--card-bg); 
+}
+
+body.dark-theme .bg-striped {
+    background-color: #202020;
+}
+
+/* Przyciski główne */
+.primary-btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 15px 35px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: transform 0.3s, background-color 0.3s;
+    font-family: var(--font-heading);
+    letter-spacing: 1px;
+}
+
+.primary-btn:hover {
+    background-color: #a01820;
+    transform: translateY(-3px);
+}
+
+/* Animacje wejścia (Fade In) */
+.fade-in {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Ekran Ładowania (Preloader) */
+#loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bg-color, #fdfbf7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.pizza-spinner {
+    animation: rotatePizza 2s linear infinite, pulsePizza 1.2s ease-in-out infinite alternate;
+}
+
+.loader-text {
+    margin-top: 20px;
+    font-family: inherit;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--primary-color, #b82b33);
+    letter-spacing: 0.5px;
+    animation: textPulse 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes rotatePizza {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes pulsePizza {
+    0% { scale: 0.95; }
+    100% { scale: 1.1; }
+}
+
+@keyframes textPulse {
+    0% { opacity: 0.4; }
+    100% { opacity: 1; }
+}
+
+#loader-wrapper.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Strzałka powrotu na górę */
+.scroll-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--secondary-color);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 15px var(--shadow);
+    z-index: 999;
+}
+
+.scroll-top-btn.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}

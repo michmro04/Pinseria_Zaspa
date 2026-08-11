@@ -1,0 +1,758 @@
+/* ================================
+   SECTIONS.CSS - PROMOCJE, LOKALE, O NAS, SPODY, PIEC MOBILNY, SOCIAL MEDIA, FOOTER
+=================================== */
+
+/* ================================
+   1. SEKCJA PROMOCJE
+=================================== */
+.promocje-section {
+    padding: 100px 5%;
+    background-color: var(--bg-color);
+    text-align: center;
+}
+
+.promocje-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.promocje-section h2 {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.promocje-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 50px;
+    opacity: 0.8;
+}
+
+.promocje-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.promocja-card {
+    position: relative;
+    background-color: var(--card-bg);
+    padding: 40px 30px 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px var(--shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: left;
+    overflow: hidden;
+    border: 1px solid var(--nav-border);
+}
+
+.promocja-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px var(--shadow);
+}
+
+.promo-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 5px 12px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.promocja-card h3 {
+    font-size: 1.4rem;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+.promocja-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    opacity: 0.85;
+    margin-bottom: 25px;
+}
+
+.promo-info {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    border-top: 1px solid var(--nav-border);
+    padding-top: 15px;
+}
+
+/* ================================
+   2. SEKCJA NASZE LOKALE / KONTAKT
+=================================== */
+.contact-section {
+    padding: 80px 5%;
+    background-color: var(--card-bg);
+    text-align: center;
+}
+
+.contact-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.contact-section h2 {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.contact-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 50px;
+    opacity: 0.8;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.contact-card {
+    text-align: center;
+    padding: 35px 20px;
+    border-radius: 15px;
+    background-color: var(--bg-color);
+    box-shadow: 0 4px 15px var(--shadow);
+    transition: transform 0.3s;
+}
+
+.contact-card h3 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+.phone-link {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.phone-link:hover {
+    color: var(--primary-color);
+}
+
+/* Kafelki 2 Lokalizacji */
+.contact-grid-two-locations {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.location-card {
+    text-align: left;
+    padding: 30px;
+    border-radius: 20px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--nav-border);
+    box-shadow: 0 6px 20px var(--shadow);
+}
+
+.location-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    gap: 12px;
+}
+
+.location-header h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    line-height: 1;
+}
+
+.location-header h3 svg {
+    display: block;
+    stroke: var(--primary-color);
+    flex-shrink: 0;
+}
+
+.map-link {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 700;
+    padding: 6px 14px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 20px;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.map-link:hover {
+    background-color: var(--secondary-color);
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.location-address {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 14px;
+    opacity: 0.85;
+}
+
+.location-phone {
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: white;
+    background-color: var(--secondary-color);
+    padding: 8px 16px;
+    border-radius: 25px;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+.phone-accent {
+    background-color: var(--primary-color);
+}
+
+.location-phone-clean {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    text-decoration: none;
+    margin-bottom: 22px;
+    line-height: 1;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.location-phone-clean svg {
+    display: block;
+    stroke: var(--secondary-color);
+    flex-shrink: 0;
+}
+
+.location-phone-clean:hover {
+    transform: translateX(3px);
+    opacity: 0.9;
+}
+
+.location-hours h4 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.98rem;
+    margin-bottom: 12px;
+    color: var(--text-color);
+    line-height: 1;
+}
+
+.location-hours h4 svg {
+    display: block;
+    stroke: var(--text-color);
+    opacity: 0.85;
+    flex-shrink: 0;
+}
+
+.hours-table {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    max-width: 280px;
+}
+
+.hours-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.hours-row .day {
+    text-align: right;
+    font-weight: 600;
+    opacity: 0.9;
+    font-size: 0.9rem;
+}
+
+.hours-row .time {
+    text-align: left;
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+
+/* ================================
+   3. SEKCJA "O NAS"
+=================================== */
+.about-section {
+    padding: 100px 5%;
+    overflow: hidden;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.about-text {
+    flex: 1;
+    background-color: var(--bg-color); 
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px var(--shadow);
+    margin-right: -120px; 
+    z-index: 2;
+}
+
+.about-text h2 {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    line-height: 1.8;
+    opacity: 0.9;
+}
+
+.about-image-wrapper {
+    flex: 1;
+    position: relative;
+}
+
+.about-img {
+    width: 100%;
+    min-height: 450px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px var(--shadow);
+    filter: brightness(0.8); 
+}
+
+@media (max-width: 991px) {
+    .about-container {
+        flex-direction: column-reverse; 
+    }
+    .about-text {
+        margin-right: 0;
+        margin-top: -60px;
+        padding: 35px 25px;
+    }
+    .about-img {
+        min-height: 350px;
+    }
+}
+
+/* ================================
+   4. SEKCJA SPODY
+=================================== */
+.spody-section {
+    padding: 100px 5%;
+    overflow: hidden;
+}
+
+.spody-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.spody-image-wrapper {
+    flex: 1;
+    position: relative;
+}
+
+.spody-img {
+    width: 100%;
+    min-height: 450px;
+    object-fit: cover;
+    border-radius: 20px;
+    filter: brightness(0.5); 
+    box-shadow: 0 15px 40px var(--shadow);
+}
+
+.spody-text {
+    flex: 1;
+    background-color: var(--card-bg);
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px var(--shadow);
+    margin-left: -120px; 
+    z-index: 2;
+}
+
+.spody-text h2 {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+}
+
+.spody-text p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    line-height: 1.8;
+    opacity: 0.9;
+}
+
+@media (max-width: 991px) {
+    .spody-container {
+        flex-direction: column;
+    }
+    .spody-text {
+        margin-left: 0;
+        margin-top: -60px;
+        padding: 35px 25px;
+    }
+    .spody-img {
+        min-height: 350px;
+    }
+}
+
+/* ================================
+   5. SEKCJA PIEC MOBILNY / CATERING
+=================================== */
+.eventy-section {
+    padding: 100px 5%;
+    overflow: hidden;
+}
+
+.eventy-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.eventy-text {
+    flex: 1;
+    text-align: left;
+}
+
+.eventy-text h2 {
+    font-size: 2.4rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.eventy-subtitle {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.eventy-text p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    opacity: 0.9;
+}
+
+.eventy-features {
+    list-style: none;
+    padding: 0;
+    margin: 25px 0 35px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.eventy-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.eventy-features li svg {
+    stroke: var(--secondary-color);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.eventy-image-wrapper {
+    flex: 1;
+}
+
+.eventy-img {
+    width: 100%;
+    min-height: 420px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px var(--shadow);
+}
+
+@media (max-width: 991px) {
+    .eventy-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .eventy-text {
+        text-align: center;
+    }
+
+    .eventy-features li {
+        text-align: left;
+    }
+
+    .eventy-img {
+        min-height: 300px;
+    }
+}
+
+/* ================================
+   6. SEKCJA SOCIAL MEDIA
+=================================== */
+.socials-section {
+    padding: 80px 5%;
+    text-align: center;
+}
+
+.socials-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.socials-section h2 {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.socials-subtitle {
+    font-size: 1.05rem;
+    margin-bottom: 40px;
+    opacity: 0.85;
+}
+
+.socials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+}
+
+.social-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--nav-border);
+    padding: 30px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 6px 20px var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px var(--shadow);
+}
+
+.social-card-icon {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    background-color: rgba(0, 0, 0, 0.03);
+    border: 1px solid var(--nav-border);
+    transition: all 0.3s ease;
+}
+
+body.dark-theme .social-card-icon {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.social-card:hover .social-card-icon {
+    transform: scale(1.1);
+}
+
+.social-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 4px;
+}
+
+.social-card p {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    margin-bottom: 18px;
+}
+
+.social-card-btn {
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 6px 16px;
+    border-radius: 20px;
+    border: 1px solid var(--nav-border);
+    transition: all 0.2s ease;
+}
+
+/* Akcenty kolorystyczne Social Media */
+.fb-card .social-card-icon { 
+    color: #1877f2; 
+}
+.fb-card:hover .social-card-icon { 
+    background-color: #1877f2; 
+    color: #ffffff; 
+    border-color: #1877f2; 
+}
+.fb-card:hover .social-card-btn { 
+    background-color: #1877f2; 
+    color: #ffffff; 
+    border-color: #1877f2; 
+}
+
+.ig-card .social-card-icon .ig-icon-path {
+    fill: url(#ig-grad);
+    transition: fill 0.3s ease;
+}
+.ig-card:hover .social-card-icon { 
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+    border-color: transparent; 
+}
+.ig-card:hover .social-card-icon .ig-icon-path {
+    fill: #ffffff !important; 
+}
+.ig-card:hover .social-card-btn { 
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+    color: #ffffff; 
+    border-color: transparent; 
+}
+
+.tt-card .social-card-icon { 
+    color: var(--text-color); 
+}
+.tt-card .social-card-icon svg {
+    filter: drop-shadow(-1.5px 1.5px 0px #25F4EE) drop-shadow(1.5px -1.5px 0px #FE2C55);
+    transition: filter 0.3s ease;
+}
+.tt-card:hover .social-card-icon { 
+    background-color: #000000; 
+    color: #ffffff; 
+    border-color: #000000; 
+}
+.tt-card:hover .social-card-icon svg {
+    filter: drop-shadow(-2px 2px 0px #25F4EE) drop-shadow(2px -2px 0px #FE2C55);
+}
+.tt-card:hover .social-card-btn { 
+    background-color: #000000; 
+    color: #ffffff; 
+    border-color: #000000; 
+    box-shadow: -2px 2px 0px #25F4EE, 2px -2px 0px #FE2C55; 
+}
+
+.yt-card .social-card-icon { 
+    color: #ff0000; 
+}
+.yt-card:hover .social-card-icon { 
+    background-color: #ff0000; 
+    color: #ffffff; 
+    border-color: #ff0000; 
+}
+.yt-card:hover .social-card-btn { 
+    background-color: #ff0000; 
+    color: #ffffff; 
+    border-color: #ff0000; 
+}
+
+/* ================================
+   7. STOPKA (FOOTER)
+=================================== */
+.footer {
+    background-color: #1a1a1a;
+    color: #eaeaea;
+    padding: 70px 5% 20px;
+}
+
+body.dark-theme .footer {
+    background-color: #111111;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.footer-brand h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.footer-brand p {
+    opacity: 0.7;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.footer-links h4, .footer-socials h4 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a, .footer-socials a {
+    color: #eaeaea;
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.3s, color 0.3s;
+}
+
+.footer-links a:hover, .footer-socials a:hover {
+    opacity: 1;
+    color: var(--primary-color);
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 25px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.85rem;
+    opacity: 0.5;
+}

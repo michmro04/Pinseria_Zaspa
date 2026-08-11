@@ -1,0 +1,316 @@
+/* ================================
+   MENU.CSS - SEKCJA MENU, ZAKŁADKI I KAFELKI DAŃ
+=================================== */
+
+/* Alternatywne tło pasów */
+.bg-striped {
+    background-color: var(--card-bg); 
+}
+
+body.dark-theme .bg-striped {
+    background-color: #202020;
+}
+
+.menu-section {
+    padding: 100px 5%;
+    text-align: center;
+}
+
+.menu-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.menu-section h2 {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.menu-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 35px;
+    opacity: 0.8;
+}
+
+/* Przyciski zakładek (Tabs) */
+.menu-tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.tab-btn {
+    background-color: transparent;
+    color: var(--text-color);
+    border: 1px solid var(--nav-border);
+    padding: 10px 22px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.tab-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+/* Aktywna zakładka */
+.tab-btn.active {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 15px rgba(184, 43, 51, 0.3);
+}
+
+/* Ukrywanie i pokazywanie kategorii */
+.menu-category {
+    display: none;
+    animation: fadeInCategory 0.5s ease-in-out;
+}
+
+.menu-category.active {
+    display: block;
+}
+
+@keyframes fadeInCategory {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================================
+   UKŁAD LISTY MENU (JEDEN POD DRUGIM)
+=================================== */
+.menu-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    max-width: 900px;
+    margin: 30px auto 0 auto;
+}
+
+.menu-list-item {
+    display: flex;
+    align-items: center;
+    background-color: var(--card-bg);
+    border: 1px solid var(--nav-border);
+    border-radius: 16px;
+    padding: 16px 20px;
+    gap: 20px;
+    text-align: left;
+    box-shadow: 0 8px 25px var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Obrazek po lewej z powiększaniem (hover) */
+.menu-item-img-wrapper {
+    width: 110px;
+    height: 110px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.menu-item-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+    display: block;
+}
+
+.menu-item-img-wrapper img:hover {
+    transform: scale(1.15);
+}
+
+/* Środek - Nazwa, opisy, tagi, alergeny */
+.menu-item-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.menu-item-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.menu-item-content h3 {
+    font-size: 1.25rem;
+    color: var(--text-color);
+    margin: 0;
+}
+
+/* Badge / Plakietki */
+.menu-item-badges {
+    display: flex;
+    gap: 6px;
+}
+
+.badge {
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 12px;
+    white-space: nowrap;
+}
+
+.badge-bestseller { background-color: #f39c12; color: #fff; }
+.badge-vege { background-color: #27ae60; color: #fff; }
+.badge-spicy { background-color: #e74c3c; color: #fff; }
+
+.menu-item-desc {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    opacity: 0.85;
+    margin: 0;
+}
+
+.menu-item-allergens {
+    font-size: 0.75rem;
+    opacity: 0.65;
+    font-style: italic;
+}
+
+/* Prawa strona - Cena */
+.menu-item-price-col {
+    flex-shrink: 0;
+    text-align: right;
+}
+
+.menu-item-price-col .price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    white-space: nowrap;
+}
+
+/* Stare klasy menu-item (jeśli używane awaryjnie) */
+.menu-highlights {
+    padding: 80px 5%;
+    text-align: center;
+}
+
+.menu-item {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px var(--shadow);
+    transition: transform 0.3s;
+    max-width: 450px; 
+    margin: 0 auto; 
+    width: 100%;
+}
+
+.menu-item:hover {
+    transform: translateY(-8px);
+}
+
+.menu-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    background-color: var(--nav-border);
+    border-radius: 12px;
+    display: block;
+}
+
+.price {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-top: 10px;
+}
+
+/* ================================
+   RESPONSYWNOŚĆ MENU (TABLETY I TELEFONY)
+=================================== */
+@media (max-width: 768px) {
+    .menu-section {
+        padding: 60px 4%;
+    }
+
+    .menu-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .menu-tabs {
+        gap: 8px;
+        margin-bottom: 25px;
+        justify-content: flex-start;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 10px;
+        scrollbar-width: none; 
+    }
+    
+    .menu-tabs::-webkit-scrollbar {
+        display: none;
+    }
+
+    .tab-btn {
+        font-size: 0.85rem;
+        padding: 8px 16px;
+        flex-shrink: 0;
+    }
+
+    .menu-item {
+        padding: 15px;
+    }
+
+    .menu-item h3 {
+        font-size: 1.1rem;
+    }
+
+    .menu-item p {
+        font-size: 0.85rem;
+    }
+
+    .price {
+        font-size: 1.1rem;
+    }
+
+    .menu-item img {
+        width: 100%;
+        height: 120px;
+        object-fit: cover;
+        border-radius: 12px;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .menu-list-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 14px;
+    }
+
+    .menu-item-img-wrapper {
+        width: 100%;
+        height: 160px;
+    }
+
+    .menu-item-price-col {
+        width: 100%;
+        text-align: left;
+        border-top: 1px dashed var(--nav-border);
+        padding-top: 8px;
+    }
+}
