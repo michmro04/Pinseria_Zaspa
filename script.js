@@ -504,3 +504,41 @@ async function handleOrderSubmit(event) {
     }
 }
 document.addEventListener('DOMContentLoaded', loadSklepProducts);
+
+// ================================
+// LOGIKA MODALU SOCIAL MEDIA NA DZIEŃ DOBRY
+// ================================
+function initSocialWelcomeModal() {
+    const welcomeModal = document.getElementById('social-welcome-modal');
+    const closeBtn = document.getElementById('close-welcome-btn');
+    const overlay = document.getElementById('social-welcome-overlay');
+
+    if (!welcomeModal) return;
+
+    // Sprawdzamy, czy użytkownik widział już modal w tej sesji
+    const hasSeenModal = sessionStorage.getItem('socialWelcomeShown');
+
+    if (!hasSeenModal) {
+        // Pokazujemy okienko z krótkim opóźnieniem (1.2s po załadowaniu)
+        setTimeout(() => {
+            welcomeModal.classList.add('active');
+            sessionStorage.setItem('socialWelcomeShown', 'true');
+        }, 1200);
+    }
+
+    function closeWelcomeModal() {
+        welcomeModal.classList.remove('active');
+    }
+
+    if (closeBtn) closeBtn.addEventListener('click', closeWelcomeModal);
+    if (overlay) overlay.addEventListener('click', closeWelcomeModal);
+
+    // Zamknięcie klawiszem ESC
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && welcomeModal.classList.contains('active')) {
+            closeWelcomeModal();
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', initSocialWelcomeModal);
