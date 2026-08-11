@@ -2651,3 +2651,35 @@ body.dark-theme .social-card-icon {
         min-width: 14px;
     }
 }
+
+/* Przełączanie widoków wewnątrz koszyka */
+.cart-view {
+    display: none;
+    flex-direction: column;
+    height: 100%;
+}
+
+.cart-view.active {
+    display: flex;
+}
+
+.back-cart-btn {
+    background: none;
+    border: none;
+    color: var(--secondary-color);
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    padding: 0;
+}
+
+.checkout-summary-box {
+    background-color: rgba(36, 152, 84, 0.08);
+    border: 1px border var(--secondary-color);
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 0.78rem;
+    opacity: 0.9;
+    margin-top: 5px;
+    line-height: 1.4;
+}

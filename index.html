@@ -482,22 +482,74 @@
     <div id="cart-modal" class="cart-modal">
         <div class="cart-modal-overlay" id="cart-overlay"></div>
         <div class="cart-modal-content">
-            <div class="cart-header">
-                <h3>Twój Koszyk</h3>
-                <button id="close-cart-btn" class="close-cart-btn">&times;</button>
-            </div>
-
-            <div id="cart-items-list" class="cart-items-list">
-                <!-- Pusty koszyk / Elementy -->
-            </div>
-
-            <div class="cart-footer">
-                <div class="cart-total-row">
-                    <span>Razem do zapłaty:</span>
-                    <strong id="cart-total-price">0 zł</strong>
+            
+            <!-- WIDOK 1: LISTA PRODUKTÓW W KOSZYKU -->
+            <div id="cart-view-items" class="cart-view active">
+                <div class="cart-header">
+                    <h3>Twój Koszyk</h3>
+                    <button class="close-cart-btn" onclick="closeCartModal()">&times;</button>
                 </div>
-                <button id="checkout-btn" class="btn primary-btn w-100" disabled>Przejdź do zamówienia ➔</button>
+
+                <div id="cart-items-list" class="cart-items-list">
+                    <!-- Dynamicznie generowane pozycje -->
+                </div>
+
+                <div class="cart-footer">
+                    <div class="cart-total-row">
+                        <span>Razem do zapłaty:</span>
+                        <strong id="cart-total-price">0 zł</strong>
+                    </div>
+                    <button id="go-to-checkout-btn" class="btn primary-btn w-100" onclick="showCheckoutView()" disabled>
+                        Przejdź do zamówienia ➔
+                    </button>
+                </div>
             </div>
+
+            <!-- WIDOK 2: FORMULARZ DANYCH ZAMAWIAJĄCEGO -->
+            <div id="cart-view-form" class="cart-view">
+                <div class="cart-header">
+                    <button class="back-cart-btn" onclick="showItemsView()">← Wróć</button>
+                    <h3>Dane do wysyłki</h3>
+                    <button class="close-cart-btn" onclick="closeCartModal()">&times;</button>
+                </div>
+
+                <form id="order-form" class="checkout-form" onsubmit="handleOrderSubmit(event)">
+                    <div class="cart-form-group">
+                        <label for="client-name">Imię i Nazwisko *</label>
+                        <input type="text" id="client-name" class="cart-input" required placeholder="np. Jan Kowalski">
+                    </div>
+
+                    <div class="cart-form-group">
+                        <label for="client-phone">Numer telefonu *</label>
+                        <input type="tel" id="client-phone" class="cart-input" required placeholder="np. 500 100 200">
+                    </div>
+
+                    <div class="cart-form-group">
+                        <label for="client-email">Adres e-mail *</label>
+                        <input type="email" id="client-email" class="cart-input" required placeholder="jan@example.com">
+                    </div>
+
+                    <div class="cart-form-group">
+                        <label for="client-address">Adres dostawy (Ulica, nr, miasto) *</label>
+                        <input type="text" id="client-address" class="cart-input" required placeholder="ul. Długa 5/2, Gdańsk">
+                    </div>
+
+                    <div class="cart-form-group">
+                        <label for="client-notes">Uwagi do zamówienia (Opcjonalnie)</label>
+                        <textarea id="client-notes" class="cart-textarea" placeholder="np. Kod do domofonu 1234"></textarea>
+                    </div>
+
+                    <div class="checkout-summary-box">
+                        <p>📦 Wysyłka po zaksięgowaniu wpłaty (w przeciągu 48h).</p>
+                        <p>Dane do przelewu prześlemy w odpowiedzi na e-mail.</p>
+                    </div>
+
+                    <button type="submit" id="submit-order-btn" class="btn primary-btn w-100">
+                        Złóż zamówienie i zapłać
+                    </button>
+                </form>
+            </div>
+
         </div>
     </div>
 

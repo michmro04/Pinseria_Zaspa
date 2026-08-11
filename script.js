@@ -4,16 +4,14 @@ const scrollTopBtn = document.getElementById('scroll-top');
 const themeToggleBtn = document.getElementById('theme-toggle');
 const body = document.body;
 
-// 1. Zmiana wyglądu paska nawigacji i pojawianie się strzałki podczas scrollowania
+// 1. Navbar & Przycisk Powrót na Górę przy scrollowaniu
 window.addEventListener('scroll', () => {
-    // Jeśli zjechaliśmy w dół o więcej niż 80 pikseli
     if (window.scrollY > 80) {
         navbar.classList.add('scrolled');
     } else {
         navbar.classList.remove('scrolled');
     }
 
-    // Strzałka pojawia się po 300 pikselach
     if (window.scrollY > 300) {
         scrollTopBtn.classList.add('visible');
     } else {
@@ -21,80 +19,56 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// 2. Obsługa powrotu na górę po kliknięciu strzałki
 scrollTopBtn.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-// Definicje ikonek SVG, żeby kod był czytelny
+// 2. Dark Mode
 const sunSvg = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1.22" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="22.78" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
-
 const moonSvg = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
 
-// 3. Obsługa trybu ciemnego (Dark Mode)
-themeToggleBtn.addEventListener('click', () => {
-    body.classList.toggle('dark-theme');
-    
-    // Zmiana ikonki SVG w zależności od aktywnego trybu
-    if (body.classList.contains('dark-theme')) {
-        themeToggleBtn.innerHTML = sunSvg;
-        localStorage.setItem('theme', 'dark');
-    } else {
-        themeToggleBtn.innerHTML = moonSvg;
-        localStorage.setItem('theme', 'light');
-    }
-});
+if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', () => {
+        body.classList.toggle('dark-theme');
+        if (body.classList.contains('dark-theme')) {
+            themeToggleBtn.innerHTML = sunSvg;
+            localStorage.setItem('theme', 'dark');
+        } else {
+            themeToggleBtn.innerHTML = moonSvg;
+            localStorage.setItem('theme', 'light');
+        }
+    });
+}
 
-// 4. Sprawdzanie preferencji użytkownika przy ładowaniu strony
 window.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
         body.classList.add('dark-theme');
-        themeToggleBtn.innerHTML = sunSvg;
+        if (themeToggleBtn) themeToggleBtn.innerHTML = sunSvg;
     } else {
-        themeToggleBtn.innerHTML = moonSvg;
+        if (themeToggleBtn) themeToggleBtn.innerHTML = moonSvg;
     }
 });
 
-// 5. Blokada menu kontekstowego na zdjęciach (Zapisz jako / Otwórz w nowej karcie)
+// 3. Ochrona obrazków przed przeciąganiem
 document.addEventListener('contextmenu', (event) => {
-    // Sprawdzamy, czy kliknięty element to obrazek
-    if (event.target.tagName === 'IMG') {
-        event.preventDefault(); // Zatrzymuje domyślną akcję przeglądarki
-    }
+    if (event.target.tagName === 'IMG') event.preventDefault();
 });
 
-
-// 6. Animacja pojawiania się elementów przy scrollowaniu (Intersection Observer)
-// Szukamy wszystkich elementów z klasą .fade-in (w naszym przypadku sekcja Spody)
+// 4. Observer dla animacji Fade-In
 const fadeElements = document.querySelectorAll('.fade-in');
-
-// Konfigurujemy obserwatora
-const appearOptions = {
-    threshold: 0.2, // Animacja odpali się, gdy 20% elementu pojawi się na ekranie
-    rootMargin: "0px 0px -50px 0px" // Delikatne opóźnienie wyzwolenia przed samym dołem ekranu
-};
-
-const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+const appearOnScroll = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
-        if (!entry.isIntersecting) {
-            return; // Jeśli elementu nie widać, nic nie rób
-        } else {
-            entry.target.classList.add('appear'); // Dodaj klasę aktywującą przejście CSS
-            observer.unobserve(entry.target); // Przestań obserwować po jednorazowym odpaleniu
+        if (entry.isIntersecting) {
+            entry.target.classList.add('appear');
+            observer.unobserve(entry.target);
         }
     });
-}, appearOptions);
+}, { threshold: 0.15 });
 
-// Przypisujemy obserwatora do znalezionych elementów
-fadeElements.forEach(element => {
-    appearOnScroll.observe(element);
-});
+fadeElements.forEach(element => appearOnScroll.observe(element));
 
-// 7. Slider zdjęć w sekcji Hero (Przesuwanie, kropki i strzałki)
+// 5. Slider Zdjęć Hero
 const wrapper = document.getElementById('slides-wrapper');
 const slides = document.querySelectorAll('.slide');
 const dotsContainer = document.getElementById('slider-dots');
@@ -104,56 +78,50 @@ const nextBtn = document.getElementById('next-slide');
 let currentSlide = 0;
 let slideInterval;
 
-if (slides.length > 0) {
-    // 1. Generowanie kropek
+if (slides.length > 0 && wrapper) {
     slides.forEach((_, index) => {
         const dot = document.createElement('div');
         dot.classList.add('dot');
         if (index === 0) dot.classList.add('active');
-        
         dot.addEventListener('click', () => {
             goToSlide(index);
             resetInterval();
         });
-        
-        dotsContainer.appendChild(dot);
+        if (dotsContainer) dotsContainer.appendChild(dot);
     });
 
     const dots = document.querySelectorAll('.dot');
 
-    // 2. Główna funkcja przesuwająca taśmę ze zdjęciami
     function goToSlide(index) {
         currentSlide = index;
         wrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
-        
         dots.forEach(d => d.classList.remove('active'));
-        dots[currentSlide].classList.add('active');
+        if (dots[currentSlide]) dots[currentSlide].classList.add('active');
     }
 
-    // 3. Obsługa lewej strzałki
-    prevBtn.addEventListener('click', () => {
-        // Zabezpieczenie przed ujemnym indeksem
-        let prevIndex = (currentSlide - 1 + slides.length) % slides.length;
-        goToSlide(prevIndex);
-        resetInterval();
-    });
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            let prevIndex = (currentSlide - 1 + slides.length) % slides.length;
+            goToSlide(prevIndex);
+            resetInterval();
+        });
+    }
 
-    // 4. Obsługa prawej strzałki
-    nextBtn.addEventListener('click', () => {
-        let nextIndex = (currentSlide + 1) % slides.length;
-        goToSlide(nextIndex);
-        resetInterval();
-    });
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            let nextIndex = (currentSlide + 1) % slides.length;
+            goToSlide(nextIndex);
+            resetInterval();
+        });
+    }
 
-    // 5. Automatyczne przesuwanie
     function startInterval() {
         slideInterval = setInterval(() => {
             let nextIndex = (currentSlide + 1) % slides.length;
             goToSlide(nextIndex);
-        }, 4000); // 4 sekundy
+        }, 4000);
     }
 
-    // 6. Resetowanie zegara po ręcznym kliknięciu
     function resetInterval() {
         clearInterval(slideInterval);
         startInterval();
@@ -162,61 +130,36 @@ if (slides.length > 0) {
     startInterval();
 }
 
-// 8. Podświetlanie linków w nawigacji podczas scrollowania (ScrollSpy)
-// Pobieramy wszystkie główne sekcje na stronie i wszystkie linki z paska
+// 6. ScrollSpy (Podświetlanie linków)
 const pageSections = document.querySelectorAll('section');
 const navLinks = document.querySelectorAll('.nav-center a');
 
-// Konfigurujemy obserwatora dla sekcji
-const scrollSpyOptions = {
-    root: null,
-    rootMargin: '0px',
-    // threshold: 0.3 oznacza, że sekcja musi zajmować co najmniej 30% wysokości ekranu, 
-    // aby skrypt uznał, że użytkownik faktycznie na nią patrzy
-    threshold: 0.3 
-};
-
 const scrollSpyObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-        // Jeśli sekcja pojawia się w polu widzenia
         if (entry.isIntersecting) {
-            // Pobieramy jej ID (np. "home", "menu", "about")
             const currentId = entry.target.getAttribute('id');
-            
-            // Czyścimy wszystkie linki z aktywnej klasy
             navLinks.forEach(link => {
                 link.classList.remove('active-link');
-                
-                // Jeśli atrybut href linku pasuje do ID sekcji (np. href="#menu" pasuje do id="menu")
                 if (link.getAttribute('href') === `#${currentId}`) {
-                    // Nadajemy aktywną klasę, która zmienia wygląd CSS
                     link.classList.add('active-link');
                 }
             });
         }
     });
-}, scrollSpyOptions);
+}, { threshold: 0.3 });
 
-// Zlecamy obserwatorowi śledzenie każdej sekcji na stronie
-pageSections.forEach(section => {
-    scrollSpyObserver.observe(section);
-});
+pageSections.forEach(section => scrollSpyObserver.observe(section));
 
-// 9. Obsługa podkarty w sekcji Menu (Tabs)
+// 7. Zakładki w sekcji Menu (Tabs)
 const tabButtons = document.querySelectorAll('.tab-btn');
 const menuCategories = document.querySelectorAll('.menu-category');
 
 tabButtons.forEach(button => {
     button.addEventListener('click', () => {
-        // Usuwamy klasę active ze wszystkich przycisków
         tabButtons.forEach(btn => btn.classList.remove('active'));
-        // Dodajemy klasę active do klikniętego przycisku
         button.classList.add('active');
-
-        // Pobieramy nazwę kategorii z atrybutu data-category
         const category = button.getAttribute('data-category');
 
-        // Przechodzimy przez wszystkie podkarty menu
         menuCategories.forEach(cat => {
             if (cat.getAttribute('id') === category) {
                 cat.classList.add('active');
@@ -227,8 +170,7 @@ tabButtons.forEach(button => {
     });
 });
 
-// Funkcja ukrywająca ekran ładowania z łagodnym zanikaniem
-// Funkcja ukrywająca ekran ładowania
+// 8. Pobieranie danych Menu z JSON + Ukrywanie Preloadera
 function hidePreloader() {
     const preloader = document.getElementById('loader-wrapper');
     if (preloader) {
@@ -239,9 +181,7 @@ function hidePreloader() {
 async function loadMenuFromJSON() {
     try {
         const response = await fetch('menu.json');
-        if (!response.ok) {
-            throw new Error(`Błąd sieci: ${response.status}`);
-        }
+        if (!response.ok) throw new Error(`Błąd sieci: ${response.status}`);
         const menuData = await response.json();
 
         Object.keys(menuData).forEach(categoryKey => {
@@ -249,14 +189,11 @@ async function loadMenuFromJSON() {
             if (container) {
                 container.innerHTML = menuData[categoryKey].map(item => `
                     <div class="menu-list-item ${!item.image ? 'no-image' : ''}">
-                        <!-- Zdjęcie po lewej stronie -->
                         ${item.image ? `
                             <div class="menu-item-img-wrapper">
                                 <img src="${item.image}" alt="${item.name}" loading="lazy" decoding="async">
                             </div>
                         ` : ''}
-
-                        <!-- Treść w środku -->
                         <div class="menu-item-content">
                             <div class="menu-item-header">
                                 <h3>${item.name}</h3>
@@ -269,8 +206,6 @@ async function loadMenuFromJSON() {
                             <p class="menu-item-desc">${item.description}</p>
                             ${item.allergens ? `<span class="menu-item-allergens">ℹ️ ${item.allergens}</span>` : ''}
                         </div>
-
-                        <!-- Cena po prawej stronie -->
                         <div class="menu-item-price-col">
                             <span class="price">${item.price}</span>
                         </div>
@@ -285,21 +220,18 @@ async function loadMenuFromJSON() {
     }
 }
 
-// Wywołujemy ładowanie menu od razu po załadowaniu struktury HTML
 document.addEventListener('DOMContentLoaded', loadMenuFromJSON);
 
-// 10. Obsługa rozwijanego menu (Hamburger)
+// 9. Menu Hamburger mobilne
 const hamburgerBtn = document.getElementById('hamburger-btn');
 const navCenterMenu = document.getElementById('nav-center');
 
 if (hamburgerBtn && navCenterMenu) {
-    // Otwieranie / zamykanie po kliknięciu w hamburgera
     hamburgerBtn.addEventListener('click', () => {
         hamburgerBtn.classList.toggle('active');
         navCenterMenu.classList.toggle('active');
     });
 
-    // Automatyczne zamykanie menu po kliknięciu w którykolwiek link
     document.querySelectorAll('.nav-center a').forEach(link => {
         link.addEventListener('click', () => {
             hamburgerBtn.classList.remove('active');
@@ -309,13 +241,12 @@ if (hamburgerBtn && navCenterMenu) {
 }
 
 // ================================
-// LOGIKA SKLEPIKU I KOSZYKA (Z INTERAKTYWNYMI LICZNIKAMI)
+// LOGIKA SKLEPIKU I KOSZYKA
 // ================================
 
 let cart = [];
 let sklepProducts = [];
 
-// 1. Ładowanie produktów z pliku sklep.json
 async function loadSklepProducts() {
     try {
         const response = await fetch('sklep.json');
@@ -327,7 +258,6 @@ async function loadSklepProducts() {
     }
 }
 
-// 2. Generowanie siatki produktów w sklepiku
 function renderSklepGrid() {
     const grid = document.getElementById('sklep-grid');
     if (!grid) return;
@@ -352,7 +282,6 @@ function renderSklepGrid() {
     }).join('');
 }
 
-// 3. Generowanie HTML przycisku (Dodaj VS Licznik - +)
 function renderProductActionHtml(id, name, price, qty) {
     if (qty > 0) {
         return `
@@ -369,7 +298,6 @@ function renderProductActionHtml(id, name, price, qty) {
     }
 }
 
-// 4. Dodawanie do koszyka
 function addToCart(id, name, price) {
     const existing = cart.find(item => item.id === id);
     if (existing) {
@@ -380,7 +308,6 @@ function addToCart(id, name, price) {
     updateCartUI();
 }
 
-// 5. Zmiana ilości (działa zarówno dla kafelka, jak i dla koszyka)
 function changeQty(id, delta) {
     const item = cart.find(i => i.id === id);
     if (item) {
@@ -392,12 +319,11 @@ function changeQty(id, delta) {
     updateCartUI();
 }
 
-// Zoptymalizowana funkcja updateCartUI w script.js
 function updateCartUI() {
     const countBadge = document.getElementById('cart-count-badge');
     const itemsList = document.getElementById('cart-items-list');
     const totalPriceEl = document.getElementById('cart-total-price');
-    const checkoutBtn = document.getElementById('checkout-btn');
+    const checkoutBtn = document.getElementById('go-to-checkout-btn');
 
     const totalCount = cart.reduce((sum, item) => sum + item.qty, 0);
     const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
@@ -406,7 +332,6 @@ function updateCartUI() {
     if (totalPriceEl) totalPriceEl.innerText = `${totalPrice} zł`;
     if (checkoutBtn) checkoutBtn.disabled = cart.length === 0;
 
-    // Aktualizacja listy w otwartym koszyku
     if (itemsList) {
         if (cart.length === 0) {
             itemsList.innerHTML = '<p style="text-align:center; opacity:0.6; margin-top:30px;">Twój koszyk jest pusty.</p>';
@@ -427,7 +352,6 @@ function updateCartUI() {
         }
     }
 
-    // Aktualizacja kontrolerów tylko na kafelkach sklepiku
     sklepProducts.forEach(prod => {
         const actionEl = document.getElementById(`prod-action-${prod.id}`);
         if (actionEl) {
@@ -435,7 +359,6 @@ function updateCartUI() {
             const qty = cartItem ? cartItem.qty : 0;
             const newHtml = renderProductActionHtml(prod.id, prod.name, prod.price, qty);
             
-            // Podmieniamy HTML tylko jeśli uległ zmianie (unikamy zbędnych spięć w DOM)
             if (actionEl.innerHTML.trim() !== newHtml.trim()) {
                 actionEl.innerHTML = newHtml;
             }
@@ -443,16 +366,93 @@ function updateCartUI() {
     });
 }
 
-// 7. Otwieranie / zamykanie draweru koszyka
+// 10. Nawigacja koszyka & Obsługa Zamówienia
+function showCheckoutView() {
+    document.getElementById('cart-view-items').classList.remove('active');
+    document.getElementById('cart-view-form').classList.add('active');
+}
+
+function showItemsView() {
+    document.getElementById('cart-view-form').classList.remove('active');
+    document.getElementById('cart-view-items').classList.add('active');
+}
+
+function closeCartModal() {
+    const modal = document.getElementById('cart-modal');
+    if (modal) modal.classList.remove('active');
+    setTimeout(showItemsView, 300);
+}
+
 const cartFloatBtn = document.getElementById('cart-float-btn');
-const cartModal = document.getElementById('cart-modal');
-const closeCartBtn = document.getElementById('close-cart-btn');
 const cartOverlay = document.getElementById('cart-overlay');
 
-if (cartFloatBtn && cartModal) {
-    cartFloatBtn.addEventListener('click', () => cartModal.classList.add('active'));
-    closeCartBtn.addEventListener('click', () => cartModal.classList.remove('active'));
-    cartOverlay.addEventListener('click', () => cartModal.classList.remove('active'));
+if (cartFloatBtn) {
+    cartFloatBtn.addEventListener('click', () => {
+        const modal = document.getElementById('cart-modal');
+        if (modal) modal.classList.add('active');
+    });
+}
+
+if (cartOverlay) {
+    cartOverlay.addEventListener('click', closeCartModal);
+}
+
+// 3. Obsługa automatycznej wysyłki zamówienia na e-mail (FormSubmit API)
+async function handleOrderSubmit(event) {
+    event.preventDefault();
+
+    const submitBtn = document.getElementById('submit-order-btn');
+    const originalBtnText = submitBtn.innerText;
+    
+    // Zmiana stanu przycisku na czas wysyłki
+    submitBtn.disabled = true;
+    submitBtn.innerText = 'Wysyłanie zamówienia...';
+
+    const name = document.getElementById('client-name').value;
+    const phone = document.getElementById('client-phone').value;
+    const email = document.getElementById('client-email').value;
+    const address = document.getElementById('client-address').value;
+    const notes = document.getElementById('client-notes').value;
+
+    const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+    let itemsText = cart.map(item => `- ${item.name} x${item.qty} (${item.price * item.qty} zł)`).join('\n');
+
+    try {
+        const response = await fetch('https://formsubmit.co/ajax/mrg.mrowicki@gmail.com', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                _subject: `🛒 Nowe zamówienie w sklepiku: ${name}`,
+                _template: 'table',
+                'Imię i Nazwisko': name,
+                'Telefon': phone,
+                'E-mail klienta': email,
+                'Adres dostawy': address,
+                'Uwagi': notes || 'Brak',
+                'Zamówione produkty': itemsText,
+                'Suma do zapłaty': `${totalPrice} zł`
+            })
+        });
+
+        if (response.ok) {
+            alert('Dziękujemy! Twoje zamówienie zostało wysłane. Wkrótce otrzymasz odpowiedź z danymi do przelewu.');
+            cart = [];
+            updateCartUI();
+            document.getElementById('order-form').reset();
+            closeCartModal();
+        } else {
+            alert('Wystąpił błąd podczas wysyłania zamówienia. Spróbuj ponownie lub skontaktuj się z nami telefonicznie.');
+        }
+    } catch (error) {
+        console.error('Błąd wysyłki zamówienia:', error);
+        alert('Problem z połączeniem internetowym. Spróbuj ponownie za chwilę.');
+    } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerText = originalBtnText;
+    }
 }
 
 document.addEventListener('DOMContentLoaded', loadSklepProducts);
