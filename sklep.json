@@ -1,0 +1,34 @@
+[
+  {
+    "id": "oliwa-extra",
+    "name": "Oliwa Extra Virgin San Francesco 500ml",
+    "description": "Tłoczona na zimno, filtrowana oliwa z oliwek z pierwszego tłoczenia z Toskanii.",
+    "price": 45,
+    "unit": "zł",
+    "image": "Images/pinsa/pinsa1.webp"
+  },
+  {
+    "id": "oliwa-spicy",
+    "name": "Oliwa Pikantna Pepperoncino 250ml",
+    "description": "Oliwa z oliwek infused włoską papryczką chilli. Idealna do polewania pinsy.",
+    "price": 32,
+    "unit": "zł",
+    "image": "Images/pinsa/pinsa2.webp"
+  },
+  {
+    "id": "oliwki-taggiasche",
+    "name": "Oliwki Taggiasche w oliwie 280g",
+    "description": "Oryginalne drobne oliwki drylowane z Ligurii o maślanym, głębokim smaku.",
+    "price": 28,
+    "unit": "zł",
+    "image": "Images/pinsa/pinsa3.webp"
+  },
+  {
+    "id": "maka-pinsa",
+    "name": "Mąka do Pinsy Włoskiej Di Marco 1kg",
+    "description": "Oryginalna mieszanka mąki pszennej, sojowej i ryżowej do wypieku domowej pinsy.",
+    "price": 18,
+    "unit": "zł",
+    "image": "Images/pinsa/pinsa4.webp"
+  }
+]

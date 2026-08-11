@@ -148,6 +148,7 @@
             <a href="#contact">Nasze lokale</a>
             <a href="#about">O nas</a>
             <a href="#socials">Media</a>
+            <a href="#sklep">Sklepik</a>
             <a href="#spody">Zamów spody</a>
             <a href="#eventy">Piec mobilny</a> 
         </div>
@@ -454,6 +455,52 @@
             </div>
         </div>
     </section>
+
+    <!-- Sekcja: Sklepik z Produktami -->
+    <section id="sklep" class="sklep-section bg-white">
+        <div class="sklep-container">
+            <h2>Włoski Sklepik Pana od Pinsy</h2>
+            <p class="sklep-subtitle">Oryginalne oliwy, oliwki i dodatki sprowadzane bezpośrednio z Włoch.</p>
+
+            <div class="sklep-info-banner">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                <span><strong>Jak zamawiać?</strong> Dodaj produkty do koszyka i wypełnij formularz. Zamówienie trafi bezpośrednio na nasz e-mail. Wysyłka następuje w przeciągu <strong>48h</strong> od zaksięgowania wpłaty na konto (dane do przelewu prześlemy w odpowiedzi).</span>
+            </div>
+
+            <!-- Grid produktów (generowany w JS) -->
+            <div id="sklep-grid" class="sklep-grid"></div>
+        </div>
+    </section>
+
+    <!-- Pływający Przycisk Koszyka (Widoczny w rogu ekranu) -->
+    <button id="cart-float-btn" class="cart-float-btn" aria-label="Koszyk">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        <span id="cart-count-badge" class="cart-count-badge">0</span>
+    </button>
+
+    <!-- Okno Modalne / Drawer Koszyka -->
+    <div id="cart-modal" class="cart-modal">
+        <div class="cart-modal-overlay" id="cart-overlay"></div>
+        <div class="cart-modal-content">
+            <div class="cart-header">
+                <h3>Twój Koszyk</h3>
+                <button id="close-cart-btn" class="close-cart-btn">&times;</button>
+            </div>
+
+            <div id="cart-items-list" class="cart-items-list">
+                <!-- Pusty koszyk / Elementy -->
+            </div>
+
+            <div class="cart-footer">
+                <div class="cart-total-row">
+                    <span>Razem do zapłaty:</span>
+                    <strong id="cart-total-price">0 zł</strong>
+                </div>
+                <button id="checkout-btn" class="btn primary-btn w-100" disabled>Przejdź do zamówienia ➔</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Sekcja: Zamów spody -->
     <section id="spody" class="spody-section">
         <div class="spody-container">

@@ -307,3 +307,152 @@ if (hamburgerBtn && navCenterMenu) {
         });
     });
 }
+
+// ================================
+// LOGIKA SKLEPIKU I KOSZYKA (Z INTERAKTYWNYMI LICZNIKAMI)
+// ================================
+
+let cart = [];
+let sklepProducts = [];
+
+// 1. Ładowanie produktów z pliku sklep.json
+async function loadSklepProducts() {
+    try {
+        const response = await fetch('sklep.json');
+        if (!response.ok) return;
+        sklepProducts = await response.json();
+        renderSklepGrid();
+    } catch (err) {
+        console.error('Błąd ładowania produktów sklepiku:', err);
+    }
+}
+
+// 2. Generowanie siatki produktów w sklepiku
+function renderSklepGrid() {
+    const grid = document.getElementById('sklep-grid');
+    if (!grid) return;
+
+    grid.innerHTML = sklepProducts.map(prod => {
+        const cartItem = cart.find(item => item.id === prod.id);
+        const qty = cartItem ? cartItem.qty : 0;
+
+        return `
+            <div class="product-card" id="prod-card-${prod.id}">
+                <img src="${prod.image}" alt="${prod.name}" loading="lazy">
+                <h3>${prod.name}</h3>
+                <p>${prod.description}</p>
+                <div class="product-bottom">
+                    <span class="product-price">${prod.price} ${prod.unit}</span>
+                    <div class="product-action" id="prod-action-${prod.id}">
+                        ${renderProductActionHtml(prod.id, prod.name, prod.price, qty)}
+                    </div>
+                </div>
+            </div>
+        `;
+    }).join('');
+}
+
+// 3. Generowanie HTML przycisku (Dodaj VS Licznik - +)
+function renderProductActionHtml(id, name, price, qty) {
+    if (qty > 0) {
+        return `
+            <div class="store-qty-control">
+                <button class="store-qty-btn" onclick="changeQty('${id}', -1)" aria-label="Zmniejsz ilość">-</button>
+                <span class="store-qty-num">${qty}</span>
+                <button class="store-qty-btn" onclick="changeQty('${id}', 1)" aria-label="Zwiększ ilość">+</button>
+            </div>
+        `;
+    } else {
+        return `
+            <button class="add-to-cart-btn" onclick="addToCart('${id}', '${name}', ${price})">+ Dodaj</button>
+        `;
+    }
+}
+
+// 4. Dodawanie do koszyka
+function addToCart(id, name, price) {
+    const existing = cart.find(item => item.id === id);
+    if (existing) {
+        existing.qty += 1;
+    } else {
+        cart.push({ id, name, price, qty: 1 });
+    }
+    updateCartUI();
+}
+
+// 5. Zmiana ilości (działa zarówno dla kafelka, jak i dla koszyka)
+function changeQty(id, delta) {
+    const item = cart.find(i => i.id === id);
+    if (item) {
+        item.qty += delta;
+        if (item.qty <= 0) {
+            cart = cart.filter(i => i.id !== id);
+        }
+    }
+    updateCartUI();
+}
+
+// Zoptymalizowana funkcja updateCartUI w script.js
+function updateCartUI() {
+    const countBadge = document.getElementById('cart-count-badge');
+    const itemsList = document.getElementById('cart-items-list');
+    const totalPriceEl = document.getElementById('cart-total-price');
+    const checkoutBtn = document.getElementById('checkout-btn');
+
+    const totalCount = cart.reduce((sum, item) => sum + item.qty, 0);
+    const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+
+    if (countBadge) countBadge.innerText = totalCount;
+    if (totalPriceEl) totalPriceEl.innerText = `${totalPrice} zł`;
+    if (checkoutBtn) checkoutBtn.disabled = cart.length === 0;
+
+    // Aktualizacja listy w otwartym koszyku
+    if (itemsList) {
+        if (cart.length === 0) {
+            itemsList.innerHTML = '<p style="text-align:center; opacity:0.6; margin-top:30px;">Twój koszyk jest pusty.</p>';
+        } else {
+            itemsList.innerHTML = cart.map(item => `
+                <div class="cart-item-row">
+                    <div class="cart-item-info">
+                        <h4>${item.name}</h4>
+                        <p>${item.price} zł x ${item.qty} = <strong>${item.price * item.qty} zł</strong></p>
+                    </div>
+                    <div class="cart-item-qty">
+                        <button class="qty-btn" onclick="changeQty('${item.id}', -1)">-</button>
+                        <span>${item.qty}</span>
+                        <button class="qty-btn" onclick="changeQty('${item.id}', 1)">+</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+    }
+
+    // Aktualizacja kontrolerów tylko na kafelkach sklepiku
+    sklepProducts.forEach(prod => {
+        const actionEl = document.getElementById(`prod-action-${prod.id}`);
+        if (actionEl) {
+            const cartItem = cart.find(item => item.id === prod.id);
+            const qty = cartItem ? cartItem.qty : 0;
+            const newHtml = renderProductActionHtml(prod.id, prod.name, prod.price, qty);
+            
+            // Podmieniamy HTML tylko jeśli uległ zmianie (unikamy zbędnych spięć w DOM)
+            if (actionEl.innerHTML.trim() !== newHtml.trim()) {
+                actionEl.innerHTML = newHtml;
+            }
+        }
+    });
+}
+
+// 7. Otwieranie / zamykanie draweru koszyka
+const cartFloatBtn = document.getElementById('cart-float-btn');
+const cartModal = document.getElementById('cart-modal');
+const closeCartBtn = document.getElementById('close-cart-btn');
+const cartOverlay = document.getElementById('cart-overlay');
+
+if (cartFloatBtn && cartModal) {
+    cartFloatBtn.addEventListener('click', () => cartModal.classList.add('active'));
+    closeCartBtn.addEventListener('click', () => cartModal.classList.remove('active'));
+    cartOverlay.addEventListener('click', () => cartModal.classList.remove('active'));
+}
+
+document.addEventListener('DOMContentLoaded', loadSklepProducts);
