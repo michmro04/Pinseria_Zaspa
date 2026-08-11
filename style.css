@@ -10,6 +10,7 @@ section[id] {
 }
 /* Zaktualizowany fragment :root (jasny motyw) */
 :root {
+    --font-heading: 'DM Serif Display', 'TAN Mon Cheri', serif;
     --bg-color: #f2e9d3; 
     --text-color: #403e3d; 
     --nav-bg: #f5f3eea5; 
@@ -20,6 +21,13 @@ section[id] {
     --nav-border: rgba(0, 0, 0, 0.1);
     --navbar-base-bg: #f5f3ee; /* NOWE: Śnieżnobiały pasek w jasnym motywie */
 }
+
+h1, h2, h3, .hero-text h1, .promocje-section h2 {
+    font-family: var(--font-heading);
+    font-weight: 400; /* Czcionki typu display najlepiej wyglądają w wadze 400 */
+    letter-spacing: 0.5px;
+}
+
 
 body.dark-theme {
     --bg-color: #232323;
@@ -381,9 +389,12 @@ body {
     font-weight: 600;
     font-size: 1.05rem;
     border-radius: 30px;
+     font-family: var(--font-heading);
+    letter-spacing: 1px;
     box-shadow: 0 6px 20px rgba(184, 43, 51, 0.25);
     transition: all 0.3s ease;
 }
+
 
 .hero-btn:hover {
     transform: translateY(-3px);
@@ -660,7 +671,10 @@ body.dark-theme .dot {
     font-weight: bold;
     font-size: 1.1rem;
     transition: transform 0.3s, background-color 0.3s;
+    font-family: var(--font-heading);
+    letter-spacing: 1px;
 }
+
 
 .primary-btn:hover {
     background-color: #a01820;
