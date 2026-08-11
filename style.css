@@ -1898,3 +1898,100 @@ body.dark-theme .bg-striped {
     opacity: 0.8;
     font-size: 0.9rem;
 }
+
+/* ================================
+   SEKCJA: PIEC MOBILNY / CATERING
+=================================== */
+
+.eventy-section {
+    padding: 100px 5%;
+    overflow: hidden;
+}
+
+.eventy-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.eventy-text {
+    flex: 1;
+    text-align: left;
+}
+
+.eventy-text h2 {
+    font-size: 2.4rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.eventy-subtitle {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.eventy-text p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    opacity: 0.9;
+}
+
+.eventy-features {
+    list-style: none;
+    padding: 0;
+    margin: 25px 0 35px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.eventy-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.eventy-features li svg {
+    stroke: var(--secondary-color);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.eventy-image-wrapper {
+    flex: 1;
+}
+
+.eventy-img {
+    width: 100%;
+    min-height: 420px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px var(--shadow);
+}
+
+/* Responsywność mobilna */
+@media (max-width: 991px) {
+    .eventy-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .eventy-text {
+        text-align: center;
+    }
+
+    .eventy-features li {
+        text-align: left;
+    }
+
+    .eventy-img {
+        min-height: 300px;
+    }
+}
