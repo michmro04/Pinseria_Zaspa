@@ -180,7 +180,7 @@ function hidePreloader() {
 
 async function loadMenuFromJSON() {
     try {
-        const response = await fetch('menu.json');
+        const response = await fetch('json/menu.json');
         if (!response.ok) throw new Error(`Błąd sieci: ${response.status}`);
         const menuData = await response.json();
 
@@ -198,9 +198,9 @@ async function loadMenuFromJSON() {
                             <div class="menu-item-header">
                                 <h3>${item.name}</h3>
                                 <div class="menu-item-badges">
-                                    ${item.isBestseller ? '<span class="badge badge-bestseller">⭐ Bestseller</span>' : ''}
-                                    ${item.isVege ? '<span class="badge badge-vege">🥬 Wege</span>' : ''}
-                                    ${item.isSpicy ? '<span class="badge badge-spicy">🌶️ Ostre</span>' : ''}
+                                    ${item.isBestseller ? '<span class="badge badge-bestseller">Bestseller</span>' : ''}
+                                    ${item.isVege ? '<span class="badge badge-vege">Wege</span>' : ''}
+                                    ${item.isSpicy ? '<span class="badge badge-spicy">Ostre</span>' : ''}
                                 </div>
                             </div>
                             <p class="menu-item-desc">${item.description}</p>
@@ -249,7 +249,7 @@ let sklepProducts = [];
 
 async function loadSklepProducts() {
     try {
-        const response = await fetch('sklep.json');
+        const response = await fetch('json/sklep.json');
         if (!response.ok) return;
         sklepProducts = await response.json();
         renderSklepGrid();
