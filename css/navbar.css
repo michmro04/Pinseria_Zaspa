@@ -1,8 +1,8 @@
 /* ================================
-   NAVBAR.CSS - NAWIGACJA, LOGO, PRZYCISKI I HAMBURGER
+   NAVBAR.CSS - RESPONSYWNY UKŁAD (DESKTOP / TABLET / MOBILE)
 =================================== */
 
-/* Główny kontener paska nawigacji - odsunięty od krawędzi ekranu */
+/* Główny kontener paska nawigacji */
 .navbar {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -10,43 +10,69 @@
     justify-content: space-between;
     align-items: center;
     gap: 15px;
-    padding: 10px 45px; /* Odsuwamy zawartość od lewej i prawej krawędzi strony */
+    padding: 10px 30px;
     z-index: 1000;
     background-color: var(--navbar-base-bg);
     border-bottom: 1px solid var(--nav-border); 
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.4s ease;
 }
 
-/* Lewa strona (Logo) oraz Prawa strona */
-.nav-left,
-.nav-right {
-    flex-shrink: 0; 
+/* 1. Lewa strona (Logo) */
+.nav-left {
     display: flex;
     align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
 }
 
 .logo {
-    width: 105px; 
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 95px; 
+    transition: all 0.3s ease;
     filter: drop-shadow(0 4px 6px var(--shadow));
 }
 
-/* Środkowa sekcja nawigacji - bardziej zwarta */
+/* Przycisk Hamburgera (Ukryty na desktopie) */
+.hamburger-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 26px;
+    height: 19px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    flex-shrink: 0;
+    z-index: 1001;
+}
+
+.hamburger-btn span {
+    width: 100%;
+    height: 3px;
+    background-color: var(--text-color);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.hamburger-btn.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.hamburger-btn.active span:nth-child(2) { opacity: 0; }
+.hamburger-btn.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+/* 2. Środkowa sekcja z labelami (Desktop) */
 .nav-center {
     display: flex;
     align-items: center;
     justify-content: center;
     flex: 1;
-    gap: 8px; /* Mniejszy odstęp między pigułkami */
+    gap: 8px;
 }
 
-/* Kompaktowe pigułki / labele sekcji */
 .nav-center a {
     text-decoration: none;
     color: var(--text-color);
     font-weight: 600;
-    font-size: 0.88rem; /* Zmniejszona czcionka */
-    padding: 9px 18px;  /* Zmniejszony padding wewnętrzny */
+    font-size: 0.85rem;
+    padding: 6px 13px;
     border: 1px solid var(--nav-border);
     border-radius: 30px;
     white-space: nowrap;
@@ -62,10 +88,9 @@
     transform: translateY(-2px);
 }
 
-/* Prawa strona nawigacji (Telefony + Ikony) */
+/* 3. Prawa strona (Telefony i Ikony - Desktop) */
 .nav-right {
     display: flex;
-    justify-content: flex-end;
     align-items: center;
     gap: 12px;
     flex-shrink: 0;
@@ -82,9 +107,9 @@
 .phone-btn {
     background-color: var(--secondary-color);
     color: white !important;
-    padding: 9px 18px;
-    border-radius: 25px;
-    font-size: 0.88rem;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.82rem;
     text-decoration: none;
     font-weight: bold;
     transition: background-color 0.3s, transform 0.3s;
@@ -95,7 +120,7 @@
 .phone-morena { background-color: var(--primary-color); }
 
 .phone-btn small {
-    font-size: 1.0em;
+    font-size: 0.72em;
     opacity: 0.9;
     font-weight: normal;
 }
@@ -104,7 +129,7 @@
     transform: translateY(-2px);
 }
 
-/* SIATKA IKON SPOŁECZNOŚCIOWYCH (2 KOLUMNY) */
+/* Siatka dla małych ikonek w nawigacji */
 .nav-icons-col {
     display: grid;
     grid-template-columns: repeat(2, auto);
@@ -115,15 +140,14 @@
     flex-shrink: 0;
 }
 
-/* POJEDYNCZE KÓŁECZKO IKONY */
 .social-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 26px;
-    height: 26px;
-    min-width: 26px;
-    min-height: 26px;
+    width: 25px;
+    height: 25px;
+    min-width: 25px;
+    min-height: 25px;
     flex-shrink: 0;
     border-radius: 50%;
     color: var(--text-color);
@@ -135,9 +159,8 @@
 }
 
 .social-icon svg {
-    width: 14px;
-    height: 14px;
-    flex-shrink: 0;
+    width: 13px;
+    height: 13px;
     display: block;
 }
 
@@ -147,110 +170,47 @@
     transform: translateY(-2px);
 }
 
-/* Przycisk Hamburgera (Ukryty na PC) */
-.hamburger-btn {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 28px;
-    height: 20px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    margin-left: 10px;
-    z-index: 1001;
-    flex-shrink: 0;
-}
-
-.hamburger-btn span {
-    width: 100%;
-    height: 3px;
-    background-color: var(--text-color);
-    border-radius: 3px;
-    transition: all 0.3s ease;
-}
-
-.hamburger-btn.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-.hamburger-btn.active span:nth-child(2) { opacity: 0; }
-.hamburger-btn.active span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
-
-/* Stan po przescrollowaniu */
+/* Stan paska po przescrollowaniu */
 .navbar.scrolled {
     background-color: var(--nav-bg);
-    padding: 8px 45px;
+    padding: 8px 30px;
     box-shadow: 0 4px 15px var(--shadow);
     backdrop-filter: blur(10px);
 }
 
 .navbar.scrolled .logo {
-    width: 80px;
+    width: 75px;
 }
 
-/* ================================
-   RESPONSYWNOŚĆ
-=================================== */
-@media (max-width: 1280px) and (min-width: 1051px) {
-    .navbar { padding: 10px 25px; }
-    .nav-center { gap: 6px; }
-    .nav-center a { padding: 5px 10px; font-size: 0.8rem; }
-}
-
-@media (max-width: 1050px) {
+/* ===================================================
+   EKRANY ŚREDNIE / TABLETY (Gdy labele się nie mieszczą: <= 1150px)
+====================================================== */
+@media (max-width: 1150px) {
     .navbar {
-        flex-wrap: wrap;
-        padding: 12px 5%;
+        padding: 8px 20px;
     }
 
-    .nav-left { flex: 1; }
-    .logo { width: 95px; }
-
-    .nav-right {
-        flex: 1;
-        justify-content: flex-end;
-        gap: 8px;
-    }
-
-    .phone-btn {
-        padding: 5px 10px;
-        font-size: 0.8rem;
-    }
-
-    .nav-center {
-        width: 100%;
-        order: 3;
+    .hamburger-btn {
         display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 6px;
-        margin-top: 15px;
     }
 
-    .nav-center a {
-        font-size: 0.75rem;
-        padding: 5px 12px;
-        width: auto;
+    .logo {
+        width: 65px;
     }
-}
-
-@media (max-width: 991px) {
-    .navbar { padding: 8px 16px; }
-    .logo { width: 60px !important; }
-    .hamburger-btn { display: flex; }
 
     .nav-center {
         position: fixed;
-        top: 60px; left: 0; right: 0;
+        top: 62px;
+        left: 0; right: 0;
         background-color: var(--navbar-base-bg);
         border-bottom: 2px solid var(--nav-border);
         flex-direction: column;
-        padding: 20px;
-        gap: 12px;
+        padding: 18px;
+        gap: 10px;
         box-shadow: 0 10px 20px var(--shadow);
         opacity: 0;
         visibility: hidden;
-        transform: translateY(-20px);
+        transform: translateY(-15px);
         transition: all 0.3s ease;
     }
 
@@ -263,18 +223,93 @@
     .nav-center a {
         width: 100%;
         text-align: center;
-        padding: 10px;
-        font-size: 1rem;
-    }
-
-    .phone-btn {
-        padding: 4px 8px;
-        font-size: 0.72rem;
+        padding: 9px;
+        font-size: 0.95rem;
     }
 }
 
-@media (max-width: 380px) {
-    .nav-center { gap: 4px; margin-top: 8px; }
-    .nav-center a { font-size: 0.68rem; padding: 4px 8px; }
-    .phone-btn { padding: 4px 8px; font-size: 0.75rem; }
+/* ===================================================
+   EKRANY MOBILNE (iPhone SE / 12 Pro / <= 680px)
+   RZRĄD 1: [LOGO] - [NUMERY TELEFONÓW] - [HAMBURGER]
+   RZĄD 2: [KÓŁECZKA Z SOCIALAMI I MOTYWEM]
+====================================================== */
+@media (max-width: 680px) {
+    .navbar {
+        padding: 8px 12px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    /* Rozpakowanie kontenerów, by móc użyć atrybutu 'order' */
+    .nav-left,
+    .nav-right {
+        display: contents;
+    }
+
+    /* RZĄD 1 - ITEM 1: Logo po lewej stronie */
+    .logo {
+        width: 48px !important;
+        order: 1;
+        flex-shrink: 0;
+    }
+
+    /* RZĄD 1 - ITEM 2: Numery telefonów idealnie na środku */
+    .nav-contact-col {
+        order: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 3px;
+        flex: 1;
+        padding: 0 4px;
+    }
+
+    .phone-btn {
+        padding: 3px 8px;
+        font-size: 0.68rem;
+        border-radius: 12px;
+        white-space: nowrap;
+    }
+
+    /* RZĄD 1 - ITEM 3: Hamburger menu po prawej stronie */
+    .hamburger-btn {
+        display: flex;
+        order: 3;
+        flex-shrink: 0;
+    }
+
+    /* RZĄD 2: Kółeczka w osobnym rzędzie poniżej, rozłożone równomiernie */
+    .nav-icons-col {
+        order: 4;
+        width: 100%;
+        display: flex;
+        grid-template-columns: none;
+        justify-content: space-evenly;
+        align-items: center;
+        border-left: none;
+        border-top: 1px dashed var(--nav-border);
+        padding-left: 0;
+        padding-top: 6px;
+        margin-top: 4px;
+    }
+
+    .social-icon {
+        width: 26px;
+        height: 26px;
+        min-width: 26px;
+        min-height: 26px;
+    }
+
+    .social-icon svg {
+        width: 13px;
+        height: 13px;
+    }
+
+    /* Pozycja rozwijanej listy nawigacyjnej */
+    .nav-center {
+        top: 95px;
+    }
 }

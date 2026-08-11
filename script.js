@@ -367,9 +367,26 @@ function updateCartUI() {
 }
 
 // 10. Nawigacja koszyka & Obsługa Zamówienia
+// 1. Otwieranie widoku formularza z re-aktywacją pól i przycisku
 function showCheckoutView() {
     document.getElementById('cart-view-items').classList.remove('active');
     document.getElementById('cart-view-form').classList.add('active');
+
+    const submitBtn = document.getElementById('submit-order-btn');
+    const statusMsg = document.getElementById('order-status-msg');
+    
+    if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerText = 'Złóż zamówienie i zapłać';
+    }
+    if (statusMsg) {
+        statusMsg.style.display = 'none';
+    }
+
+    // Odblokowujemy pola tekstowe na wypadek nowego zamówienia
+    document.querySelectorAll('#order-form input, #order-form textarea').forEach(input => {
+        input.disabled = false;
+    });
 }
 
 function showItemsView() {
@@ -397,16 +414,25 @@ if (cartOverlay) {
     cartOverlay.addEventListener('click', closeCartModal);
 }
 
-// 3. Obsługa automatycznej wysyłki zamówienia na e-mail (FormSubmit API)
+// Obsługa wysyłki zamówienia na e-mail z komunikatem wewnątrz koszyka
+
+// 2. Obsługa wysyłki zamówienia na e-mail (bez automatycznego zamykania)
 async function handleOrderSubmit(event) {
     event.preventDefault();
 
+    if (cart.length === 0) return;
+
     const submitBtn = document.getElementById('submit-order-btn');
-    const originalBtnText = submitBtn.innerText;
+    const statusMsg = document.getElementById('order-status-msg');
     
-    // Zmiana stanu przycisku na czas wysyłki
     submitBtn.disabled = true;
     submitBtn.innerText = 'Wysyłanie zamówienia...';
+
+    if (statusMsg) {
+        statusMsg.className = 'order-status-msg';
+        statusMsg.style.display = 'none';
+        statusMsg.innerText = '';
+    }
 
     const name = document.getElementById('client-name').value;
     const phone = document.getElementById('client-phone').value;
@@ -438,21 +464,43 @@ async function handleOrderSubmit(event) {
         });
 
         if (response.ok) {
-            alert('Dziękujemy! Twoje zamówienie zostało wysłane. Wkrótce otrzymasz odpowiedź z danymi do przelewu.');
+            // A. Czyszczenie koszyka i kafelków na stronie
             cart = [];
             updateCartUI();
-            document.getElementById('order-form').reset();
-            closeCartModal();
+
+            // B. Zablokowanie edycji wszystkich pól tekstowych
+            document.querySelectorAll('#order-form input, #order-form textarea').forEach(input => {
+                input.disabled = true;
+            });
+
+            // C. Wyświetlenie zielonego komunikatu sukcesu
+            if (statusMsg) {
+                statusMsg.innerText = 'Dziękujemy! Zamówienie zostało wysłane. Wkrótce odpowiemy na e-mail z danymi do przelewu.';
+                statusMsg.className = 'order-status-msg success';
+                statusMsg.style.display = 'block';
+            }
+
+            // D. Blokujemy przycisk wysyłki
+            submitBtn.disabled = true;
+            submitBtn.innerText = 'Zamówienie wysłane ✓';
         } else {
-            alert('Wystąpił błąd podczas wysyłania zamówienia. Spróbuj ponownie lub skontaktuj się z nami telefonicznie.');
+            if (statusMsg) {
+                statusMsg.innerText = 'Wystąpił błąd podczas wysyłania. Spróbuj ponownie lub zadzwoń do nas.';
+                statusMsg.className = 'order-status-msg error';
+                statusMsg.style.display = 'block';
+            }
+            submitBtn.disabled = false;
+            submitBtn.innerText = 'Złóż zamówienie i zapłać';
         }
     } catch (error) {
         console.error('Błąd wysyłki zamówienia:', error);
-        alert('Problem z połączeniem internetowym. Spróbuj ponownie za chwilę.');
-    } finally {
+        if (statusMsg) {
+            statusMsg.innerText = 'Błąd połączenia. Sprawdź dostęp do sieci i spróbuj ponownie.';
+            statusMsg.className = 'order-status-msg error';
+            statusMsg.style.display = 'block';
+        }
         submitBtn.disabled = false;
-        submitBtn.innerText = originalBtnText;
+        submitBtn.innerText = 'Złóż zamówienie i zapłać';
     }
 }
-
 document.addEventListener('DOMContentLoaded', loadSklepProducts);
