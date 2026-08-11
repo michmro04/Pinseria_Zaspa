@@ -4,47 +4,57 @@
       "name": "Pinsa Margherita",
       "description": "Sos z pomidorów San Marzano, mozzarella fior di latte, świeża bazylia, oliwa extra virgin",
       "price": "32 zł",
-      "image": "Images/pinsa/pinsa2.webp"
+      "image": "Images/pinsa/pinsa2.webp",
+      "isVege": true,
+      "isBestseller": true,
+      "allergens": "Alergeny: gluten, laktoza"
     },
     {
       "name": "Pinsa Prosciutto e Crudo",
       "description": "Sos pomidorowy, mozzarella, szynka parmeńska 24m, rukola, płatki Grana Padano, pomidorki koktajlowe",
       "price": "44 zł",
-      "image": "Images/pinsa/pinsa1.webp"
+      "image": "Images/pinsa/pinsa1.webp",
+      "isBestseller": true,
+      "allergens": "Alergeny: gluten, laktoza"
     },
     {
       "name": "Pinsa Diavola",
       "description": "Sos pomidorowy, mozzarella fior di latte, pikantne włoskie salami Spianata Calabra, papryczki jalapeño",
       "price": "39 zł",
-      "image": "Images/pinsa/pinsa4.webp"
+      "image": "Images/pinsa/pinsa4.webp",
+      "isSpicy": true,
+      "allergens": "Alergeny: gluten, laktoza"
     },
     {
       "name": "Pinsa Quattro Formaggi",
       "description": "Biała baza, mozzarella fior di latte, gorgonzola D.O.P., ricotta, taleggio, orzechy włoskie",
       "price": "45 zł",
-        "image": "Images/pinsa/pinsa3.webp"
-
+      "image": "Images/pinsa/pinsa3.webp",
+      "isVege": true,
+      "allergens": "Alergeny: gluten, laktoza, orzechy"
     },
     {
       "name": "Pinsa Mortadella e Pistacchio",
-      "description": "Biała baza, mozzarella, oryginalna włoska mortadella z Pistacjami, krem z pistacji, kruszone pistacje",
+      "description": "Biała baza, mozzarella, oryginalna włoska mortadella z pistacjami, krem z pistacji, kruszone pistacje",
       "price": "48 zł",
-        "image": "Images/pinsa/pinsa6.webp"
-
+      "image": "Images/pinsa/pinsa6.webp",
+      "isBestseller": true,
+      "allergens": "Alergeny: gluten, laktoza, orzechy"
     },
     {
       "name": "Pinsa Capricciosa",
       "description": "Sos pomidorowy, mozzarella, szynka gotowana Cotto, pieczarki portobello, karczochy, czarne oliwki",
       "price": "42 zł",
-            "image": "Images/pinsa/pinsa7.webp"
-
+      "image": "Images/pinsa/pinsa7.webp",
+      "allergens": "Alergeny: gluten, laktoza"
     },
     {
       "name": "Pinsa Vegana",
       "description": "Sos pomidorowy, wegański ser, grillowana cukinia, bakłażan, suszone pomidory, prażone pestki dyni",
       "price": "38 zł",
-            "image": "Images/pinsa/pinsa8.webp"
-
+      "image": "Images/pinsa/pinsa8.webp",
+      "isVege": true,
+      "allergens": "Alergeny: gluten, nasiona"
     }
   ],
 
@@ -53,31 +63,36 @@
       "name": "Piwo Peroni Nastro Azzurro",
       "description": "Klasyczne, orzeźwiające włoskie piwo jasne pełne (500ml)",
       "price": "16 zł",
-      "image": "Images/napoje/peroni.webp"
+      "image": "Images/napoje/peroni.webp",
+      "allergens": "Alergeny: gluten (słód jęczmienny)"
     },
     {
       "name": "Piwo Książęce Złote Pszeniczne",
       "description": "Naturalnie mętne piwo pszeniczne o orzeźwiającym cytrusowym smaku (500ml)",
       "price": "14 zł",
-      "image": "Images/napoje/ksiazece.webp"
+      "image": "Images/napoje/ksiazece.webp",
+      "allergens": "Alergeny: gluten (pszenica, jęczmień)"
     },
     {
       "name": "Piwo Książęce Czerwony Tłok / Ciemne",
       "description": "Aromatyczne piwo o bogatym słodowo-karmelowym bukiecie (500ml)",
       "price": "14 zł",
-      "image": "Images/napoje/ksiazece2.webp"
+      "image": "Images/napoje/ksiazece2.webp",
+      "allergens": "Alergeny: gluten (słód jęczmienny)"
     },
     {
       "name": "Piwo Książęce IPA",
       "description": "Chmielowe piwo górnej fermentacji z nutami owoców cytrusowych (500ml)",
       "price": "15 zł",
-      "image": "Images/napoje/ksiazece3.webp"
+      "image": "Images/napoje/ksiazece3.webp",
+      "allergens": "Alergeny: gluten (słód jęczmienny)"
     },
     {
       "name": "Piwo Beczkowe / Lane",
       "description": "Świeżo serwowane z kija piwo jasne (500ml)",
       "price": "13 zł",
-      "image": "Images/napoje/piwo1.jpg"
+      "image": "Images/napoje/piwo1.jpg",
+      "allergens": "Alergeny: gluten"
     },
     {
       "name": "Włoski Gin Malfy",
@@ -107,23 +122,28 @@
       "name": "Wino Domowe (Białe / Czerwone)",
       "description": "Wyselekcjonowane wytrawne wino włoskie z regionu Toskanii (kieliszek 150ml / karafka 500ml)",
       "price": "16 / 45 zł",
-      "image": "Images/napoje/wino2.webp"
+      "image": "Images/napoje/wino2.webp",
+      "allergens": "Alergeny: siarczany"
     },
     {
       "name": "Włoskie Prosecco D.O.C.",
       "description": "Musujące wino wytrawne z regionu Veneto, idealne jako aperitif (kieliszek 150ml / butelka 750ml)",
       "price": "18 / 75 zł",
-      "image": "Images/napoje/wino3.webp"
+      "image": "Images/napoje/wino3.webp",
+      "allergens": "Alergeny: siarczany"
     },
     {
       "name": "Włoska Lemoniada Cytrusowa",
       "description": "Domowa lemoniada na bazie sycylijskich cytryn, pomarańczy i świeżej mięty (400ml)",
-      "price": "14 zł"
+      "price": "14 zł",
+      "isVege": true
     },
     {
       "name": "Kawa Espresso / Cappuccino / Latte",
       "description": "Świeżo parzona włoska kawa z lokalnej palarni ziarna 100% Arabica",
-      "price": "10 / 14 / 16 zł"
+      "price": "10 / 14 / 16 zł",
+      "isVege": true,
+      "allergens": "Alergeny: laktoza (dla kaw mlecznych)"
     }
   ],
 
@@ -131,22 +151,31 @@
     {
       "name": "Tagliatelle al Limone e Gamberi",
       "description": "Ręcznie robiony makaron w delikatnym sosie winno-maślanym z cytrusami i krewetkami",
-      "price": "46 zł"
+      "price": "46 zł",
+      "isBestseller": true,
+      "allergens": "Alergeny: gluten, jaja, laktoza, skorupiaki"
     },
     {
       "name": "Spaghetti Carbonara",
       "description": "Tradycyjna receptura bez śmietany: dojrzewające policzki wieprzowe Guanciale, żółtka jaj, Pecorino Romano",
-      "price": "42 zł"
+      "price": "42 zł",
+      "isBestseller": true,
+      "allergens": "Alergeny: gluten, jaja, laktoza"
     },
     {
       "name": "Gnocchi al Pesto Genovese",
       "description": "Włoskie kluseczki ziemniaczane w domowym pesto ze świeżej bazylii, orzeszków piniowych i parmezanu",
-      "price": "39 zł"
+      "price": "39 zł",
+      "isVege": true,
+      "allergens": "Alergeny: gluten, laktoza, orzechy"
     },
     {
       "name": "Penne all'Arrabbiata",
       "description": "Makaron w lekko pikantnym sosie z pomidorów San Marzano, czosnku, papryczek chilli i natki pietruszki",
-      "price": "35 zł"
+      "price": "35 zł",
+      "isVege": true,
+      "isSpicy": true,
+      "allergens": "Alergeny: gluten"
     }
   ],
 
@@ -154,12 +183,17 @@
     {
       "name": "Krem z pomidorów San Marzano",
       "description": "Gęsty, aromatyczny krem ze słodkich pomidorów z dodatkiem kleksu z rzemieślniczej mozzarelli i pesto",
-      "price": "22 zł"
+      "price": "22 zł",
+      "isVege": true,
+      "isBestseller": true,
+      "allergens": "Alergeny: laktoza, orzechy"
     },
     {
       "name": "Minestrone di Verdure",
       "description": "Tradycyjna, sycąca włoska zupa ze świeżych, sezonowych warzyw z odrobiną oliwy truflowej",
-      "price": "19 zł"
+      "price": "19 zł",
+      "isVege": true,
+      "allergens": "Alergeny: seler"
     }
   ],
 
@@ -167,17 +201,24 @@
     {
       "name": "Tiramisu Classico",
       "description": "Klasyczny włoski deser z biszkoptami nasączonymi mocnym espresso, likierem Amaretto i puszystym kremem z mascarpone",
-      "price": "24 zł"
+      "price": "24 zł",
+      "isVege": true,
+      "isBestseller": true,
+      "allergens": "Alergeny: gluten, jaja, laktoza"
     },
     {
       "name": "Cannoli Siciliani",
       "description": "Chrupiące rurki sycylijskie nadziewane słodkim kremem na bazie sera ricotta z kawałkami czekolady i pistacjami",
-      "price": "20 zł"
+      "price": "20 zł",
+      "isVege": true,
+      "allergens": "Alergeny: gluten, laktoza, orzechy"
     },
     {
       "name": "Poriot Pinsa Dolce",
       "description": "Mini chrupiąca pinsa na słodko przekładana kremem Nutella, świeżymi truskawkami i posypana pistacjami",
-      "price": "28 zł"
+      "price": "28 zł",
+      "isVege": true,
+      "allergens": "Alergeny: gluten, laktoza, orzechy"
     }
   ],
   
@@ -185,17 +226,22 @@
     {
       "name": "Focaccia z rozmarynem",
       "description": "Wypiekane na miejscu pieczywo ziołowe z dodatkiem oliwy z oliwek extra virgin i soli morskiej",
-      "price": "16 zł"
+      "price": "16 zł",
+      "isVege": true,
+      "allergens": "Alergeny: gluten"
     },
     {
       "name": "Oliwki Taggiasche",
       "description": "Porcja oryginalnych, drobnych włoskich oliwek drylowanych w oliwie ziołowej",
-      "price": "12 zł"
+      "price": "12 zł",
+      "isVege": true
     },
     {
       "name": "Sosy autorskie",
       "description": "Do wyboru: czosnkowy na bazie jogurtu greckiego, pomidorowy ostry lub oliwa pikantna/czosnkowa",
-      "price": "5 zł"
+      "price": "5 zł",
+      "isVege": true,
+      "allergens": "Alergeny: laktoza (sos czosnkowy)"
     }
   ]
 }

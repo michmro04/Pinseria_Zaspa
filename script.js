@@ -248,11 +248,32 @@ async function loadMenuFromJSON() {
             const container = document.querySelector(`#${categoryKey} .menu-grid`);
             if (container) {
                 container.innerHTML = menuData[categoryKey].map(item => `
-                    <div class="menu-item ${!item.image ? 'no-image' : ''}">
-                        ${item.image ? `<img src="${item.image}" alt="${item.name}" loading="lazy" decoding="async">` : ''}
-                        <h3>${item.name}</h3>
-                        <p>${item.description}</p>
-                        <span class="price">${item.price}</span>
+                    <div class="menu-list-item ${!item.image ? 'no-image' : ''}">
+                        <!-- Zdjęcie po lewej stronie -->
+                        ${item.image ? `
+                            <div class="menu-item-img-wrapper">
+                                <img src="${item.image}" alt="${item.name}" loading="lazy" decoding="async">
+                            </div>
+                        ` : ''}
+
+                        <!-- Treść w środku -->
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3>${item.name}</h3>
+                                <div class="menu-item-badges">
+                                    ${item.isBestseller ? '<span class="badge badge-bestseller">⭐ Bestseller</span>' : ''}
+                                    ${item.isVege ? '<span class="badge badge-vege">🥬 Wege</span>' : ''}
+                                    ${item.isSpicy ? '<span class="badge badge-spicy">🌶️ Ostre</span>' : ''}
+                                </div>
+                            </div>
+                            <p class="menu-item-desc">${item.description}</p>
+                            ${item.allergens ? `<span class="menu-item-allergens">ℹ️ ${item.allergens}</span>` : ''}
+                        </div>
+
+                        <!-- Cena po prawej stronie -->
+                        <div class="menu-item-price-col">
+                            <span class="price">${item.price}</span>
+                        </div>
                     </div>
                 `).join('');
             }

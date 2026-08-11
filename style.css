@@ -1437,3 +1437,138 @@ body.dark-theme .bg-striped {
         font-size: 0.82rem;
     }
 }
+
+/* ================================
+   NOWY UKŁAD MENU (JEDEN POD DRUGIM)
+=================================== */
+
+.menu-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    max-width: 900px;
+    margin: 30px auto 0 auto;
+}
+
+.menu-list-item {
+    display: flex;
+    align-items: center;
+    background-color: var(--card-bg);
+    border: 1px solid var(--nav-border);
+    border-radius: 16px;
+    padding: 16px 20px;
+    gap: 20px;
+    box-shadow: 0 4px 15px var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    box-shadow: 0 8px 25px var(--shadow);
+}
+
+
+
+/* 1. Obrazek po lewej z powiększaniem (hover) */
+.menu-item-img-wrapper {
+    width: 110px;
+    height: 110px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.menu-item-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.menu-list-item:hover .menu-item-img-wrapper img {
+    transform: scale(1.15); /* Efekt zoomu po najechaniu na kafelek */
+}
+
+/* 2. Srodek - Nazwa, opisy, tagi, alergeny */
+.menu-item-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.menu-item-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.menu-item-content h3 {
+    font-size: 1.25rem;
+    color: var(--text-color);
+    margin: 0;
+}
+
+/* Badge / Plakietki */
+.menu-item-badges {
+    display: flex;
+    gap: 6px;
+}
+
+.badge {
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 12px;
+    white-space: nowrap;
+}
+
+.badge-bestseller { background-color: #f39c12; color: #fff; }
+.badge-vege { background-color: #27ae60; color: #fff; }
+.badge-spicy { background-color: #e74c3c; color: #fff; }
+
+.menu-item-desc {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    opacity: 0.85;
+    margin: 0;
+}
+
+.menu-item-allergens {
+    font-size: 0.75rem;
+    opacity: 0.65;
+    font-style: italic;
+}
+
+/* 3. Prawa strona - Cena */
+.menu-item-price-col {
+    flex-shrink: 0;
+    text-align: right;
+}
+
+.menu-item-price-col .price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    white-space: nowrap;
+}
+
+/* Responsywność dla telefonów */
+@media (max-width: 600px) {
+    .menu-list-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 14px;
+    }
+
+    .menu-item-img-wrapper {
+        width: 100%;
+        height: 160px;
+    }
+
+    .menu-item-price-col {
+        width: 100%;
+        text-align: left;
+        border-top: 1px dashed var(--nav-border);
+        padding-top: 8px;
+    }
+}
