@@ -1482,7 +1482,7 @@ body.dark-theme .bg-striped {
     transition: transform 0.4s ease;
 }
 
-.menu-list-item:hover .menu-item-img-wrapper img {
+.menu-item-img-wrapper img:hover {
     transform: scale(1.15); /* Efekt zoomu po najechaniu na kafelek */
 }
 
