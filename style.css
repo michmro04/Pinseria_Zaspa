@@ -127,16 +127,16 @@ body {
     align-items: center;
     justify-content: center;
     flex: 1; /* Wypełnia przestrzeń MIĘDZY logo a prawą stroną */
-    gap: 8px;
+    gap: 12px;
 }
 
 /* Wygląd pojedynczej pigułki/labela w nawigacji */
 .nav-center a {
     text-decoration: none;
     color: var(--text-color);
-    font-weight: 500;
-    font-size: 0.88rem;
-    padding: 6px 14px;
+    font-weight: 600;
+    font-size: 0.98rem;
+    padding: 10px 20px;
     border: 1px solid var(--nav-border);
     border-radius: 30px;
     white-space: nowrap; /* Zakaz łamania tekstu na dwie linie */
@@ -947,9 +947,6 @@ body.dark-theme .bg-white {
     transition: transform 0.3s;
 }
 
-.contact-card:hover {
-    transform: translateY(-5px);
-}
 
 .contact-card h3 {
     margin-bottom: 15px;
@@ -1571,4 +1568,333 @@ body.dark-theme .bg-striped {
         border-top: 1px dashed var(--nav-border);
         padding-top: 8px;
     }
+}
+
+/* ================================
+   ETAP 2: OBSŁUGA 2 LOKALI & HAMBURGER MENU
+=================================== */
+
+/* Styl przycisków telefonicznych Zaspa / Morena */
+.phone-zaspa {
+    background-color: var(--secondary-color);
+}
+
+.phone-morena {
+    background-color: var(--primary-color);
+}
+
+.phone-btn small {
+    font-size: 0.7em;
+    opacity: 0.9;
+    font-weight: normal;
+}
+
+/* Przycisk Hamburgera (Domyślnie ukryty na PC) */
+.hamburger-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 10px;
+    z-index: 1001;
+}
+
+.hamburger-btn span {
+    width: 100%;
+    height: 3px;
+    background-color: var(--text-color);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* Animacja ikony X po otwarciu */
+.hamburger-btn.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger-btn.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-btn.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* KAFELKI LOKALIZACJI W SEKCJI KONTAKT */
+.contact-grid-two-locations {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.location-card {
+    text-align: left;
+    padding: 30px;
+    border-radius: 20px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--nav-border);
+    box-shadow: 0 6px 20px var(--shadow);
+}
+
+.location-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.location-header h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+.map-link {
+    font-size: 0.8rem;
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.location-address {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    opacity: 0.9;
+}
+
+.location-phone {
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: white;
+    background-color: var(--secondary-color);
+    padding: 8px 16px;
+    border-radius: 25px;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+.phone-accent {
+    background-color: var(--primary-color);
+}
+
+.location-hours h4 {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    color: var(--text-color);
+}
+
+.location-hours p {
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+    opacity: 0.8;
+}
+
+/* ================================
+   RESPONSYWNOŚĆ HAMBURGERA (Poniżej 991px)
+=================================== */
+@media (max-width: 991px) {
+    .navbar {
+        padding: 8px 12px;
+    }
+
+    .logo {
+        width: 60px !important;
+    }
+
+    .hamburger-btn {
+        display: flex; /* Pokazujemy przycisk na tabletach i telefonach */
+    }
+
+    /* Rozwijany panel z labelami sekcji po kliknięciu hamburgera */
+    .nav-center {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: var(--navbar-base-bg);
+        border-bottom: 2px solid var(--nav-border);
+        flex-direction: column;
+        padding: 20px;
+        gap: 12px;
+        box-shadow: 0 10px 20px var(--shadow);
+        
+        /* Domyślnie schowane nad ekranem */
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-20px);
+        transition: all 0.3s ease;
+    }
+
+    /* Stan po kliknięciu przycisku */
+    .nav-center.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .nav-center a {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+        font-size: 1rem;
+    }
+
+    /* Kompaktowe przyciski telefonów w navbarze */
+    .phone-btn {
+        padding: 4px 8px;
+        font-size: 0.72rem;
+    }
+
+    .hero {
+        padding-top: 130px;
+    }
+}
+
+/* ================================
+   KAFELKI LOKALIZACJI (WYRÓWNANE SVG I WIĘKSZA MAPA)
+=================================== */
+
+.contact-grid-two-locations {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.location-card {
+    text-align: left;
+    padding: 30px;
+    border-radius: 20px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--nav-border);
+    box-shadow: 0 6px 20px var(--shadow);
+}
+
+.location-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    gap: 12px;
+}
+
+/* Tytuł z pinezką - idealna linia */
+.location-header h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    line-height: 1;
+}
+
+.location-header h3 svg {
+    display: block;
+    stroke: var(--primary-color);
+    flex-shrink: 0;
+}
+
+/* Powiększony i wyróżniony przycisk mapy */
+.map-link {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 700;
+    padding: 6px 14px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 20px;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.map-link:hover {
+    background-color: var(--secondary-color);
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.location-address {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 14px;
+    opacity: 0.85;
+}
+
+/* Telefon z idealnie wyrównaną ikonką */
+.location-phone-clean {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    text-decoration: none;
+    margin-bottom: 22px;
+    line-height: 1;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.location-phone-clean svg {
+    display: block;
+    stroke: var(--secondary-color);
+    flex-shrink: 0;
+}
+
+.location-phone-clean:hover {
+    transform: translateX(3px);
+    opacity: 0.9;
+}
+
+/* Zegar z nagłówkiem otwarcia - idealna linia */
+.location-hours h4 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.98rem;
+    margin-bottom: 12px;
+    color: var(--text-color);
+    line-height: 1;
+}
+
+.location-hours h4 svg {
+    display: block;
+    stroke: var(--text-color);
+    opacity: 0.85;
+    flex-shrink: 0;
+}
+
+/* Tabela godzin */
+.hours-table {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    max-width: 280px;
+}
+
+.hours-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.hours-row .day {
+    text-align: right;
+    font-weight: 600;
+    opacity: 0.9;
+    font-size: 0.9rem;
+}
+
+.hours-row .time {
+    text-align: left;
+    opacity: 0.8;
+    font-size: 0.9rem;
 }

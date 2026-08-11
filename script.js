@@ -287,3 +287,23 @@ async function loadMenuFromJSON() {
 
 // Wywołujemy ładowanie menu od razu po załadowaniu struktury HTML
 document.addEventListener('DOMContentLoaded', loadMenuFromJSON);
+
+// 10. Obsługa rozwijanego menu (Hamburger)
+const hamburgerBtn = document.getElementById('hamburger-btn');
+const navCenterMenu = document.getElementById('nav-center');
+
+if (hamburgerBtn && navCenterMenu) {
+    // Otwieranie / zamykanie po kliknięciu w hamburgera
+    hamburgerBtn.addEventListener('click', () => {
+        hamburgerBtn.classList.toggle('active');
+        navCenterMenu.classList.toggle('active');
+    });
+
+    // Automatyczne zamykanie menu po kliknięciu w którykolwiek link
+    document.querySelectorAll('.nav-center a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburgerBtn.classList.remove('active');
+            navCenterMenu.classList.remove('active');
+        });
+    });
+}
