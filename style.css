@@ -1995,3 +1995,203 @@ body.dark-theme .bg-striped {
         min-height: 300px;
     }
 }
+
+/* ================================
+   1. PODWÓJNA SIATKA IKON W NAVBARZE
+=================================== */
+
+.nav-icons-col {
+    display: grid;
+    grid-template-columns: repeat(2, auto); /* Dwie kolumny dla małych ikonek */
+    gap: 4px 6px;
+    border-left: 1px solid var(--nav-border);
+    padding-left: 10px;
+    align-items: center;
+}
+
+.social-icon {
+    width: 24px;
+    height: 24px;
+}
+
+/* ================================
+   2. SEKCJA SOCIAL MEDIA
+=================================== */
+
+.socials-section {
+    padding: 80px 5%;
+    text-align: center;
+}
+
+.socials-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.socials-section h2 {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.socials-subtitle {
+    font-size: 1.05rem;
+    margin-bottom: 40px;
+    opacity: 0.85;
+}
+
+.socials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+}
+
+/* Kafelki poszczególnych sieci */
+.social-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--nav-border);
+    padding: 30px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 6px 20px var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px var(--shadow);
+}
+
+.social-card-icon {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    transition: transform 0.3s ease;
+}
+
+.social-card:hover .social-card-icon {
+    transform: scale(1.1);
+}
+
+.social-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 4px;
+}
+
+.social-card p {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    margin-bottom: 18px;
+}
+
+.social-card-btn {
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 6px 16px;
+    border-radius: 20px;
+    border: 1px solid var(--nav-border);
+    transition: all 0.2s ease;
+}
+
+/* ================================
+   AKCENTY SOCIAL MEDIA (KOLOROWE IKONY, WYPEŁNIENIE PO HOVERZE)
+=================================== */
+
+/* Baza kółka ikony - neutralna na start */
+.social-card-icon {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    background-color: rgba(0, 0, 0, 0.03);
+    border: 1px solid var(--nav-border);
+    transition: all 0.3s ease;
+}
+
+body.dark-theme .social-card-icon {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* 1. Facebook */
+.fb-card .social-card-icon { 
+    color: #1877f2; 
+}
+.fb-card:hover .social-card-icon { 
+    background-color: #1877f2; 
+    color: #ffffff; 
+    border-color: #1877f2; 
+}
+.fb-card:hover .social-card-btn { 
+    background-color: #1877f2; 
+    color: #ffffff; 
+    border-color: #1877f2; 
+}
+
+/* 2. Instagram */
+.ig-card .social-card-icon .ig-icon-path {
+    fill: url(#ig-grad); /* Gradient wewnątrz linii SVG */
+    transition: fill 0.3s ease;
+}
+.ig-card:hover .social-card-icon { 
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+    border-color: transparent; 
+}
+.ig-card:hover .social-card-icon .ig-icon-path {
+    fill: #ffffff !important; /* Po hoverze linia robi się biała */
+}
+.ig-card:hover .social-card-btn { 
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+    color: #ffffff; 
+    border-color: transparent; 
+}
+
+/* 3. TikTok (Nuta z glitch cieniem w stanie spoczynku) */
+.tt-card .social-card-icon { 
+    color: var(--text-color); 
+}
+.tt-card .social-card-icon svg {
+    /* Efekt glitch na samej nutce */
+    filter: drop-shadow(-1.5px 1.5px 0px #25F4EE) drop-shadow(1.5px -1.5px 0px #FE2C55);
+    transition: filter 0.3s ease;
+}
+.tt-card:hover .social-card-icon { 
+    background-color: #000000; 
+    color: #ffffff; 
+    border-color: #000000; 
+}
+.tt-card:hover .social-card-icon svg {
+    /* Mocniejszy glitch po hoverze na czarnym tle */
+    filter: drop-shadow(-2px 2px 0px #25F4EE) drop-shadow(2px -2px 0px #FE2C55);
+}
+.tt-card:hover .social-card-btn { 
+    background-color: #000000; 
+    color: #ffffff; 
+    border-color: #000000; 
+    box-shadow: -2px 2px 0px #25F4EE, 2px -2px 0px #FE2C55; 
+}
+
+/* 4. YouTube */
+.yt-card .social-card-icon { 
+    color: #ff0000; 
+}
+.yt-card:hover .social-card-icon { 
+    background-color: #ff0000; 
+    color: #ffffff; 
+    border-color: #ff0000; 
+}
+.yt-card:hover .social-card-btn { 
+    background-color: #ff0000; 
+    color: #ffffff; 
+    border-color: #ff0000; 
+}
