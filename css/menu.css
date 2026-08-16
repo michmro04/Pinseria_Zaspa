@@ -96,10 +96,10 @@ body.dark-theme .bg-striped {
     display: flex !important;
     flex-direction: column !important;
     gap: 16px !important;
-    max-width: 900px;
+    max-width: 1080px; /* Rozszerzenie do krawędzi pierwszego i ostatniego tabsa */
+    width: 100%;
     margin: 30px auto 0 auto;
 }
-
 .menu-list-item {
     display: flex;
     align-items: center;
@@ -312,5 +312,137 @@ body.dark-theme .bg-striped {
         text-align: left;
         border-top: 1px dashed var(--nav-border);
         padding-top: 8px;
+    }
+}
+/* ===================================================
+   KOMPAKTOWE KAFELKI LOKALI NAD MENU (LINIA: NAZWA - ADRES)
+====================================================== */
+.menu-order-wrapper {
+    max-width: 760px;
+    margin: 0 auto 35px auto;
+    background-color: var(--card-bg);
+    border: 1px solid var(--nav-border);
+    border-radius: 16px;
+    padding: 14px 18px 16px;
+    box-shadow: 0 4px 15px var(--shadow);
+}
+
+.menu-delivery-badge {
+    font-size: 0.88rem;
+    color: var(--secondary-color);
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px dashed var(--nav-border);
+    text-align: center;
+}
+
+.menu-locations-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.menu-loc-card {
+    background-color: var(--bg-color);
+    border: 1px solid var(--nav-border);
+    border-radius: 12px;
+    padding: 10px 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 8px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.menu-loc-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--primary-color);
+}
+
+/* Górny rząd: Nazwa po lewej, Adres po prawej */
+.menu-loc-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 8px;
+}
+
+.menu-loc-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.menu-loc-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    flex-shrink: 0;
+}
+
+.menu-loc-dot.dot-morena {
+    background-color: var(--primary-color);
+}
+
+.menu-loc-header h4 {
+    font-size: 0.95rem;
+    margin: 0;
+    color: var(--text-color);
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.menu-loc-address {
+    font-size: 0.8rem;
+    opacity: 0.85;
+    margin: 0;
+    text-align: right;
+    white-space: nowrap;
+}
+
+/* Dolny rząd: Przycisk z telefonem na całą szerokość kafelka */
+.menu-loc-phone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #ffffff !important;
+    text-decoration: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.menu-loc-phone:hover {
+    opacity: 0.92;
+    transform: translateY(-1px);
+}
+
+/* Responsywność dla małych ekranów smartfonów */
+@media (max-width: 580px) {
+    .menu-locations-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .menu-order-wrapper {
+        padding: 12px;
+    }
+}
+
+@media (max-width: 360px) {
+    .menu-loc-header h4 {
+        font-size: 0.85rem;
+    }
+    
+    .menu-loc-address {
+        font-size: 0.74rem;
     }
 }

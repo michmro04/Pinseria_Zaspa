@@ -1,8 +1,4 @@
 /* ================================
-   SECTIONS.CSS - PROMOCJE, LOKALE, O NAS, SPODY, PIEC MOBILNY, SOCIAL MEDIA, FOOTER
-=================================== */
-
-/* ================================
    1. SEKCJA PROMOCJE
 =================================== */
 .promocje-section {
@@ -971,5 +967,523 @@ body.dark-theme .footer {
 @media (max-width: 360px) {
     .welcome-social-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+/* ================================
+   SEKCJA NASZE LOKALE & O NAS
+=================================== */
+.contact-section {
+    padding: 90px 5%;
+    background-color: var(--bg-color);
+    text-align: center;
+}
+
+.contact-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Pudełko "O nas" z opisem receptury */
+.about-intro-box {
+    background-color: var(--card-bg);
+    border: 1px solid var(--nav-border);
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px var(--shadow);
+    margin-bottom: 45px;
+    text-align: center;
+}
+
+.about-intro-box h2 {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.about-lead {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    opacity: 0.9;
+    max-width: 900px;
+    margin: 0 auto 20px auto;
+}
+
+.lokale-email-info {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: rgba(184, 43, 51, 0.06);
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 0.92rem;
+    font-weight: 600;
+}
+
+.lokale-email-info a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.lokale-heading {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin-bottom: 30px;
+}
+
+/* Kafelki Lokali */
+.contact-grid-two-locations {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.location-card {
+    position: relative;
+    text-align: left;
+    padding: 35px 25px 25px;
+    border-radius: 20px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--nav-border);
+    box-shadow: 0 8px 25px var(--shadow);
+}
+
+.location-badge {
+    position: absolute;
+    top: -12px;
+    left: 25px;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    font-size: 0.78rem;
+    font-weight: 800;
+    padding: 4px 12px;
+    border-radius: 12px;
+    letter-spacing: 0.5px;
+}
+
+.location-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.location-header h3 {
+    font-size: 1.45rem;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+}
+
+.map-link {
+    font-size: 0.82rem;
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 700;
+    padding: 5px 12px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 20px;
+    transition: all 0.2s ease;
+}
+
+.map-link:hover {
+    background-color: var(--secondary-color);
+    color: #ffffff;
+}
+
+.location-address {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    opacity: 0.85;
+}
+
+.location-phone-clean {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--text-color);
+    text-decoration: none;
+    margin-bottom: 18px;
+    transition: color 0.2s;
+}
+
+.location-phone-clean:hover {
+    color: var(--primary-color);
+}
+
+/* Banerek dostawy wewnątrz kafelka lokalu */
+.location-delivery-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(36, 152, 84, 0.08);
+    border: 1px dashed var(--secondary-color);
+    padding: 12px 16px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.delivery-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.delivery-info strong {
+    font-size: 0.92rem;
+    color: var(--secondary-color);
+}
+
+.delivery-info span {
+    font-size: 0.78rem;
+    opacity: 0.85;
+}
+
+.delivery-order-btn {
+    background-color: var(--secondary-color);
+    color: #ffffff !important;
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 700;
+    padding: 8px 12px;
+    border-radius: 20px;
+    white-space: nowrap;
+    transition: background-color 0.2s;
+}
+
+.delivery-order-btn:hover {
+    background-color: #1b7a42;
+}
+
+.location-hours h4 {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+}
+
+.hours-table {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.hours-row {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    font-size: 0.88rem;
+}
+
+.hours-row .day {
+    font-weight: 600;
+    opacity: 0.85;
+}
+
+.hours-row .time {
+    opacity: 0.8;
+}
+
+@media (max-width: 480px) {
+    .location-delivery-box {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .delivery-order-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* ===================================================
+   STYLE SEKCJI SPODY DO PINSY & SPECYFIKACJA
+====================================================== */
+.section-tag {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--secondary-color);
+    background-color: rgba(36, 152, 84, 0.1);
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+}
+
+.spody-specs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin: 20px 0 25px 0;
+}
+
+.spody-spec-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--bg-color);
+    border: 1px solid var(--nav-border);
+    padding: 10px 14px;
+    border-radius: 12px;
+    text-align: left;
+}
+
+.spec-icon {
+    font-size: 1.3rem;
+}
+
+.spody-spec-item strong {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    line-height: 1.2;
+}
+
+.spody-spec-item small {
+    font-size: 0.75rem;
+    opacity: 0.75;
+}
+
+.spody-cta-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.spody-phone-btn {
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 0.95rem;
+    padding: 12px 20px;
+    border: 1px solid var(--primary-color);
+    border-radius: 30px;
+    transition: all 0.2s ease;
+}
+
+.spody-phone-btn:hover {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+/* ===================================================
+   STYLE SEKCJI OFERTA DLA GASTRONOMII (B2B)
+====================================================== */
+.gastro-section {
+    padding: 90px 5%;
+    text-align: center;
+}
+
+.gastro-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.gastro-header {
+    margin-bottom: 45px;
+}
+
+.gastro-header h2 {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 12px;
+}
+
+.gastro-subtitle {
+    font-size: 1.05rem;
+    opacity: 0.85;
+    max-width: 750px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.gastro-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.gastro-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--nav-border);
+    border-radius: 18px;
+    padding: 30px 22px;
+    text-align: left;
+    box-shadow: 0 6px 20px var(--shadow);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.gastro-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px var(--shadow);
+}
+
+.gastro-icon {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.gastro-card h3 {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.gastro-card p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    opacity: 0.85;
+    margin: 0;
+}
+
+.gastro-bottom-box {
+    background-color: var(--card-bg);
+    border: 1px dashed var(--secondary-color);
+    padding: 25px 20px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.gastro-bottom-box p {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* Responsywność dla małych telefonów */
+@media (max-width: 600px) {
+    .spody-specs-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .spody-cta-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .spody-cta-row a {
+        text-align: center;
+    }
+}
+
+/* ===================================================
+   CATERING, SZKOLENIA & GŁÓWNY FORMULARZ KONTAKTOWY
+====================================================== */
+.training-info-card {
+    background-color: var(--bg-color);
+    border: 1px solid var(--nav-border);
+    padding: 16px 20px;
+    border-radius: 14px;
+    margin: 20px 0 25px 0;
+    text-align: left;
+}
+
+.training-info-card h4 {
+    font-size: 1rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.training-info-card .eventy-features {
+    margin: 0;
+    gap: 8px;
+}
+
+.eventy-cta {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* Formularz Kontaktowy Ogólny */
+.contact-form-section {
+    padding: 90px 5%;
+    text-align: center;
+}
+
+.contact-form-container {
+    max-width: 750px;
+    margin: 0 auto;
+    background-color: var(--card-bg);
+    border: 1px solid var(--nav-border);
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px var(--shadow);
+}
+
+.contact-form-container h2 {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.contact-form-subtitle {
+    font-size: 0.95rem;
+    opacity: 0.85;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+.main-contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-align: left;
+}
+
+.form-row-two {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-field label {
+    font-size: 0.82rem;
+    font-weight: 700;
+    opacity: 0.85;
+}
+
+select.cart-input {
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .form-row-two {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .contact-form-container {
+        padding: 30px 18px;
+    }
+
+    .eventy-cta {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .eventy-cta a {
+        text-align: center;
     }
 }

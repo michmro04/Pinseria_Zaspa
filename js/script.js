@@ -542,3 +542,76 @@ function initSocialWelcomeModal() {
 }
 
 document.addEventListener('DOMContentLoaded', initSocialWelcomeModal);
+
+// ===================================================
+// OBSŁUGA FORMULARZA ZAPYTAŃ OGÓLNYCH (panodpinsy@gmail.com)
+// ===================================================
+async function handleContactSubmit(event) {
+    event.preventDefault();
+
+    const submitBtn = document.getElementById('submit-contact-btn');
+    const statusMsg = document.getElementById('contact-status-msg');
+    const originalBtnText = submitBtn.innerText;
+
+    const name = document.getElementById('contact-name').value;
+    const phone = document.getElementById('contact-phone').value;
+    const email = document.getElementById('contact-email').value;
+    const topic = document.getElementById('contact-topic').value;
+    const message = document.getElementById('contact-message').value;
+
+    submitBtn.disabled = true;
+    submitBtn.innerText = 'Wysyłanie wiadomości...';
+
+    if (statusMsg) {
+        statusMsg.className = 'order-status-msg';
+        statusMsg.style.display = 'none';
+        statusMsg.innerText = '';
+    }
+
+    try {
+        const response = await fetch('https://formsubmit.co/ajax/mrg.mrowicki@gmail.com', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                _subject: `📩 Nowe zapytanie od: ${name} [${topic}]`,
+                _template: 'table',
+                'Imię i Nazwisko / Firma': name,
+                'Telefon': phone,
+                'E-mail': email,
+                'Temat zapytania': topic,
+                'Treść wiadomości': message
+            })
+        });
+
+        if (response.ok) {
+            document.querySelectorAll('#general-contact-form input, #general-contact-form select, #general-contact-form textarea').forEach(el => el.disabled = true);
+            
+            if (statusMsg) {
+                statusMsg.innerText = 'Dziękujemy za kontakt! Twoja wiadomość została wysłana. Skontaktujemy się z Tobą najszybciej jak to możliwe.';
+                statusMsg.className = 'order-status-msg success';
+                statusMsg.style.display = 'block';
+            }
+            submitBtn.innerText = 'Wiadomość wysłana ✓';
+        } else {
+            if (statusMsg) {
+                statusMsg.innerText = 'Wystąpił problem z wysłaniem wiadomości. Spróbuj ponownie lub zadzwoń do nas.';
+                statusMsg.className = 'order-status-msg error';
+                statusMsg.style.display = 'block';
+            }
+            submitBtn.disabled = false;
+            submitBtn.innerText = originalBtnText;
+        }
+    } catch (error) {
+        console.error('Błąd wysyłki formularza kontaktowego:', error);
+        if (statusMsg) {
+            statusMsg.innerText = 'Błąd połączenia. Sprawdź internet i spróbuj ponownie.';
+            statusMsg.className = 'order-status-msg error';
+            statusMsg.style.display = 'block';
+        }
+        submitBtn.disabled = false;
+        submitBtn.innerText = originalBtnText;
+    }
+}

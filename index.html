@@ -132,14 +132,12 @@
     <p class="loader-text">Wypiekamy Twoją stronę...</p>
 </div>
 
-    <!-- Navbar -->
-    <!-- Navbar z obsługą dwóch lokali i małym przyciskiem menu -->
+    <!-- Navbar z nowym układem zakładek -->
     <nav class="navbar" id="navbar">
         <div class="nav-left">
             <a href="#home">
                 <img src="images/logo.png" alt="Logo Pan od Pinsy" class="logo">
             </a>
-            <!-- Przycisk hamburgera do rozwijania sekcji na mobilkach -->
             <button class="hamburger-btn" id="hamburger-btn" aria-label="Otwórz menu">
                 <span></span>
                 <span></span>
@@ -147,27 +145,25 @@
             </button>
         </div>
         
-        <!-- Navbar - center (rozwijany kafelkiem na telefonie) -->
+        <!-- Navbar - Nowa kolejność linków -->
         <div class="nav-center" id="nav-center">
-            <a href="#home">Strona główna</a>
             <a href="#menu">Menu</a>
-            <a href="#promocje">Promocje</a>
-            <a href="#contact">Nasze lokale</a>
-            <a href="#about">O nas</a>
-            <a href="#socials">Media</a>
             <a href="#sklep">Sklep</a>
-            <a href="#spody">Zamów spody</a>
-            <a href="#eventy">Piec mobilny</a> 
+            <a href="#spody">Spody do pinsy</a>
+            <a href="#catering">Catering & Szkolenia</a>
+            <a href="#lokale">Nasze Lokale</a>
+            <a href="#gastronomia">Dla Gastronomii</a>
+            <a href="#socials">Social Media</a>
+            <a href="#kontakt">Kontakt</a>
         </div>
         
-        <!-- Navbar - right (Zawsze widoczne 2 lokale) -->
+        <!-- Prawa strona: Telefony i Social Media -->
         <div class="nav-right">
             <div class="nav-contact-col">
-                <a href="tel:720996677" class="phone-btn phone-zaspa">📞 720 996 677 <small>(Zaspa)</small></a>
-                <a href="tel:726767814" class="phone-btn phone-morena">📞 726 767 814 <small>(Morena)</small></a>
+                <a href="tel:720996677" class="phone-btn phone-zaspa">📞 720 996 677 (Zaspa)</a>
+                <a href="tel:726767814" class="phone-btn phone-morena">📞 726 767 814 (Morena)</a>
             </div>
-
-            <!-- Prawa podkolumna: Ikfony społecznościowe i motyw w siatce 2x3 -->
+            
             <div class="nav-icons-col">
                 <!-- Facebook -->
                 <a href="https://www.facebook.com/p/PinseriaGdansk-61558180975096/" target="_blank" class="social-icon" aria-label="Facebook">
@@ -183,7 +179,7 @@
                 <a href="https://www.tiktok.com/@pan_od_pins" target="_blank" class="social-icon" aria-label="TikTok">
                     <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743 2.895 2.895 0 0 1 3.109-4.508V9.382a6.34 6.34 0 0 0-1.353-.146 6.338 6.338 0 1 0 6.345 6.338V8.182a8.217 8.217 0 0 0 4.773 1.526V6.262a4.83 4.83 0 0 1-.458-.024z"/></svg>
                 </a>
-
+                
                 <!-- YouTube -->
                 <a href="https://www.youtube.com/@Panodpinsy" target="_blank" class="social-icon" aria-label="YouTube">
                     <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
@@ -197,7 +193,7 @@
         </div>
     </nav>
 
-    <!-- Sekcja Hero (Strona główna) -->
+    <!-- Sekcja: Hero (Strona główna) -->
     <section id="home" class="hero">
         <div class="hero-text">
             <h1>Prawdziwa włoska pinsa</h1>
@@ -205,14 +201,14 @@
             <p class="hero-description">
                 Chrupiąca na zewnątrz, niezwykle lekka i puszysta w środku. Odkryj sekret tradycyjnej receptury dojrzewającej przez kilkadziesiąt godzin!
             </p>
-
+            
             <!-- Nowe punkty z zaletami -->
             <ul class="hero-features">
                 <li><span>🌾</span> Wyjątkowo lekkostrawne ciasto o niskiej kaloryczności</li>
                 <li><span>🍖</span> 100% oryginalne włoskie sery, wędliny i sosy</li>
                 <li><span>⚡</span> Szybki odbiór osobisty na Zaspie lub dostawa do domu</li>
             </ul>
-
+            
             <!-- Przycisk przesunięty na sam dół bloku -->
             <a href="#menu" class="btn btn-primary hero-btn">Zobacz Menu</a>
         </div>
@@ -238,36 +234,70 @@
         </div>
     </section>
 
+    <!-- Sekcja: Menu -->
     <section id="menu" class="menu-section bg-striped">
         <div class="menu-container">
-            <h1>Menu</h1>
-            <p class="menu-subtitle">Wybierz kategorię, aby zobaczyć pyszne propozycje</p>
+            <h1>Karta Menu</h1>
+            <p class="menu-subtitle">Tradycyjna rzymska pinsa na zakwasie, świeże antipasti, desery i włoskie trunki</p>
 
-            <!-- Przyciski zakładek (Tabs) -->
-            <div class="menu-tabs">
-                <button class="tab-btn active" data-category="pinsy">Pinsy</button>
-                <button class="tab-btn" data-category="napoje">Napoje</button>
-                <button class="tab-btn" data-category="dania">Dania główne</button>
-                <button class="tab-btn" data-category="zupy">Zupy</button>
-                <button class="tab-btn" data-category="desery">Desery</button>
-                <button class="tab-btn" data-category="dodatki">Dodatki</button>
+            <!-- KAFELKI LOKALI (ZAMAWIANIE I DOSTAWA) -->
+            <div class="menu-order-wrapper fade-in">
+                <div class="menu-delivery-badge">
+                    🛵 <strong>Dostawa do 6 km</strong> z wybranego lokalu — koszt: <strong>9.90 zł</strong>
+                </div>
+
+                <div class="menu-locations-grid">
+                    <!-- Lokal: Zaspa -->
+                    <div class="menu-loc-card">
+                        <div class="menu-loc-top-row">
+                            <div class="menu-loc-header">
+                                <span class="menu-loc-dot"></span>
+                                <h4>Gdańsk Zaspa</h4>
+                            </div>
+                            <p class="menu-loc-address">ul. Hynka 18/10</p>
+                        </div>
+                        <a href="tel:720996677" class="menu-loc-phone phone-zaspa">
+                            📞 720 996 677
+                        </a>
+                    </div>
+
+                    <!-- Lokal: Morena -->
+                    <div class="menu-loc-card">
+                        <div class="menu-loc-top-row">
+                            <div class="menu-loc-header">
+                                <span class="menu-loc-dot dot-morena"></span>
+                                <h4>Gdańsk Morena</h4>
+                            </div>
+                            <p class="menu-loc-address">Królewskie Wzgórze 1</p>
+                        </div>
+                        <a href="tel:726767814" class="menu-loc-phone phone-morena">
+                            📞 726 767 814
+                        </a>
+                    </div>
+                </div>
             </div>
 
+            <!-- PRZYCISKI ZAKŁADEK (TABS) -->
+            <div class="menu-tabs">
+                <button class="tab-btn active" data-category="pinsa-rossa">Pinsa Rossa (z sosem)</button>
+                <button class="tab-btn" data-category="pinsa-bianca">Pinsa Bianca (bez sosu)</button>
+                <button class="tab-btn" data-category="przystawki">Przystawki</button>
+                <button class="tab-btn" data-category="desery">Desery</button>
+                <button class="tab-btn" data-category="napoje">Napoje & Kawa</button>
+                <button class="tab-btn" data-category="alkohole">Piwo & Drinki</button>
+            </div>
+
+            <!-- KONTENERY DLA KATEGORII (Dynamicznie ładowane przez JS) -->
             <div class="menu-content-wrapper">
-                <!-- Puste kontenery - wygenerowane zostaną dynamicznie przez JS -->
-                <div class="menu-category active" id="pinsy">
+                <div class="menu-category active" id="pinsa-rossa">
                     <div class="menu-grid"></div>
                 </div>
 
-                <div class="menu-category" id="napoje">
+                <div class="menu-category" id="pinsa-bianca">
                     <div class="menu-grid"></div>
                 </div>
 
-                <div class="menu-category" id="dania">
-                    <div class="menu-grid"></div>
-                </div>
-
-                <div class="menu-category" id="zupy">
+                <div class="menu-category" id="przystawki">
                     <div class="menu-grid"></div>
                 </div>
 
@@ -275,195 +305,18 @@
                     <div class="menu-grid"></div>
                 </div>
 
-                <div class="menu-category" id="dodatki">
+                <div class="menu-category" id="napoje">
+                    <div class="menu-grid"></div>
+                </div>
+
+                <div class="menu-category" id="alkohole">
                     <div class="menu-grid"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Sekcja: Promocje -->
-    <section id="promocje" class="promocje-section">
-        <div class="promocje-container">
-            <h2 class="fade-in">Specjalne oferty i rabaty</h2>
-            <p class="promocje-subtitle fade-in">Skosztuj włoskich smaków w jeszcze lepszych cenach!</p>
-            
-            <div class="promocje-grid">
-                <!-- Karta promocji 1 -->
-                <div class="promocja-card fade-in">
-                    <div class="promo-badge">Hit tygodnia</div>
-                    <h3>Zestaw Duet</h3>
-                    <p>Wybierz dowolne dwie pinsy, a do zapłaty doliczymy tylko 50% ceny drugiej, tańszej sztuki!</p>
-                    <span class="promo-info">Obowiązuje od poniedziałku do czwartku</span>
-                </div>
-
-                <!-- Karta promocji 2 -->
-                <div class="promocja-card fade-in">
-                    <div class="promo-badge">Odbiór osobisty</div>
-                    <h3>-10% na wynos</h3>
-                    <p>Zamów telefonicznie z odbiorem własnym na Zaspie, a otrzymasz stały rabat 10% na cały rachunek.</p>
-                    <span class="promo-info">Promocja stała</span>
-                </div>
-
-                <!-- Karta promocji 3 -->
-                <div class="promocja-card fade-in">
-                    <div class="promo-badge">Dla studentów</div>
-                    <h3>Studencka Środa</h3>
-                    <p>Pokaż legitymację studencką przy odbiorze zamówienia i zyskaj darmowy napój do każdej pinsy.</p>
-                    <span class="promo-info">W każdą środę</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sekcja: Kontakt (Dwa Lokale z ikonicznym układem SVG i wyrównanymi godzinami) -->
-    <section id="contact" class="contact-section">
-        <div class="contact-container">
-            <h2>Nasze Lokale</h2>
-            <p class="contact-subtitle">Wybierz dogodny dla siebie lokal i zamów z odbiorem osobistym lub dostawą.</p>
-            
-            <div class="contact-grid-two-locations">
-                <!-- Karta 1: Zaspa -->
-                <div class="contact-card location-card">
-                    <div class="location-header">
-                        <h3>
-                            <svg class="loc-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                            <span>Gdańsk Zaspa</span>
-                        </h3>
-                        <a href="https://maps.app.goo.gl/xJwKAeDmVw5rhLiD9" target="_blank" class="map-link">Pokaż na mapie ↗</a>
-                    </div>
-                    <p class="location-address">ul. Hynka 18, Gdańsk</p>
-
-                    <a href="tel:720996677" class="location-phone-clean">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                        <span>720 996 677</span>
-                    </a>
-
-                    <div class="location-hours">
-                        <h4>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                            <span>Godziny otwarcia:</span>
-                        </h4>
-                        <div class="hours-table">
-                            <div class="hours-row"><span class="day">Pn - Czw:</span><span class="time">13:00 - 21:00</span></div>
-                            <div class="hours-row"><span class="day">Piątek:</span><span class="time">13:00 - 22:00</span></div>
-                            <div class="hours-row"><span class="day">Sobota:</span><span class="time">12:00 - 22:00</span></div>
-                            <div class="hours-row"><span class="day">Niedziela:</span><span class="time">12:00 - 21:00</span></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Karta 2: Morena -->
-                <div class="contact-card location-card">
-                    <div class="location-header">
-                        <h3>
-                            <svg class="loc-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                            <span>Gdańsk Morena</span>
-                        </h3>
-                        <a href="https://maps.google.com/?q=Królewskie+Wzgórze+1+Gdańsk" target="_blank" class="map-link">Pokaż na mapie ↗</a>
-                    </div>
-                    <p class="location-address">Królewskie Wzgórze 1, Gdańsk</p>
-
-                    <a href="tel:726767814" class="location-phone-clean">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                        <span>726 767 814</span>
-                    </a>
-
-                    <div class="location-hours">
-                        <h4>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                            <span>Godziny otwarcia:</span>
-                        </h4>
-                        <div class="hours-table">
-                            <div class="hours-row"><span class="day">Pn - Czw:</span><span class="time">12:00 - 21:00</span></div>
-                            <div class="hours-row"><span class="day">Pt - Sb:</span><span class="time">12:00 - 22:00</span></div>
-                            <div class="hours-row"><span class="day">Niedziela:</span><span class="time">12:00 - 21:00</span></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sekcja: O nas  -->
-    <section id="about" class="about-section bg-white">
-        <div class="about-container">
-            <!-- Pudełko z tekstem (po lewej, nachodzące na prawe zdjęcie) -->
-            <div class="about-text fade-in">
-                <h2>Prawdziwy smak Włoch na gdańskiej Zaspie</h2>
-                <p>Jesteśmy lokalną pinserią, dla której liczy się jakość i autentyczność. Nasze ciasto dojrzewa przez wiele godzin, dzięki czemu staje się niezwykle lekkostrawne – obłędnie chrupiące na zewnątrz i idealnie puszyste w środku.</p>
-                <p>Używamy tylko starannie wyselekcjonowanych, oryginalnych składników, by w każdym kęsie oddać klimat słonecznej Italii. Wpadnij do nas, rozgość się i poczuj różnicę!</p>
-            </div>
-
-            <!-- Pudełko ze zdjęciem (po prawej) -->
-            <div class="about-image-wrapper fade-in">
-                <img src="images/pinsa/pinsa10.jpg" alt="Wypiekamy z pasją" class="about-img">
-            </div>
-        </div>
-    </section>
-
-    <!-- Sekcja: Social Media -->
-    <section id="socials" class="socials-section bg-striped">
-        <div class="socials-container">
-            <h2>Zaobserwuj Pana od Pinsy!</h2>
-            <p class="socials-subtitle">Zobacz kulisy wypieku, relacje z imprez plenerowych i zdobywaj specjalne kody rabatowe.</p>
-
-            <div class="socials-grid">
-                <!-- Facebook -->
-                <a href="https://www.facebook.com/p/PinseriaGdansk-61558180975096/" target="_blank" class="social-card fb-card">
-                    <div class="social-card-icon">
-                        <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                    </div>
-                    <h3>Facebook</h3>
-                    <p>@PinseriaGdansk</p>
-                    <span class="social-card-btn">Dołącz ↗</span>
-                </a>
-
-                <!-- Instagram z gradientem wewnątrz linii SVG -->
-                <a href="https://www.instagram.com/pinseria.gdansk/" target="_blank" class="social-card ig-card">
-                    <div class="social-card-icon">
-                        <svg width="30" height="30" viewBox="0 0 24 24">
-                            <defs>
-                                <linearGradient id="ig-grad" x1="0%" y1="100%" x2="100%" y2="0%">
-                                    <stop offset="0%" stop-color="#f09433"/>
-                                    <stop offset="25%" stop-color="#e6683c"/>
-                                    <stop offset="50%" stop-color="#dc2743"/>
-                                    <stop offset="75%" stop-color="#cc2366"/>
-                                    <stop offset="100%" stop-color="#bc1888"/>
-                                </linearGradient>
-                            </defs>
-                            <path class="ig-icon-path" fill="url(#ig-grad)" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                        </svg>
-                    </div>
-                    <h3>Instagram</h3>
-                    <p>@pinseria.gdansk</p>
-                    <span class="social-card-btn">Obserwuj ↗</span>
-                </a>
-
-                <!-- TikTok -->
-                <a href="https://www.tiktok.com/@pan_od_pins" target="_blank" class="social-card tt-card">
-                    <div class="social-card-icon">
-                        <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743 2.895 2.895 0 0 1 3.109-4.508V9.382a6.34 6.34 0 0 0-1.353-.146 6.338 6.338 0 1 0 6.345 6.338V8.182a8.217 8.217 0 0 0 4.773 1.526V6.262a4.83 4.83 0 0 1-.458-.024z"/></svg>
-                    </div>
-                    <h3>TikTok</h3>
-                    <p>@pan_od_pins</p>
-                    <span class="social-card-btn">Oglądaj ↗</span>
-                </a>
-
-                <!-- YouTube -->
-                <a href="https://www.youtube.com/@Panodpinsy" target="_blank" class="social-card yt-card">
-                    <div class="social-card-icon">
-                        <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                    </div>
-                    <h3>YouTube</h3>
-                    <p>@Panodpinsy</p>
-                    <span class="social-card-btn">Subskrybuj ↗</span>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sekcja: sklep z Produktami -->
+    <!-- Sekcja: sklep z produktami -->
     <section id="sklep" class="sklep-section bg-white">
         <div class="sklep-container">
             <h2>Włoski sklep Pana od Pinsy</h2>
@@ -479,7 +332,7 @@
         </div>
     </section>
 
-    <!-- Pływający Przycisk Koszyka (Widoczny w rogu ekranu) -->
+    <!-- Pływający Przycisk Koszyka -->
     <button id="cart-float-btn" class="cart-float-btn" aria-label="Koszyk">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
         <span id="cart-count-badge" class="cart-count-badge">0</span>
@@ -562,59 +415,364 @@
 
         </div>
     </div>
-
-    <!-- Sekcja: Zamów spody -->
+    
+    <!--Sekcja: Spody do Pinsy-->
     <section id="spody" class="spody-section">
         <div class="spody-container">
-            <!-- Pudełko ze zdjęciem (animowane przy scrollu) -->
+            <!-- Zdjęcie spodu -->
             <div class="spody-image-wrapper fade-in">
-                <img src="images/zamow_spody.webp" alt="Rzemieślnicze spody do pinsy" class="spody-img">
+                <img src="images/zamow_spody.webp" alt="Rzemieślnicze spody do pinsy 300g" class="spody-img">
             </div>
             
-            <!-- Pudełko z tekstem  -->
+            <!-- Treść sekcji -->
             <div class="spody-text fade-in">
-                <h2>Zrób własną pinsę w domu</h2>
-                <p>Brakuje Ci czasu na gotowanie, ale masz ochotę na coś wyjątkowego? Zamów nasze rzemieślnicze spody do pinsy! Wypiekamy je na miejscu z tego samego, dojrzewającego ciasta.</p>
-                <p>Wystarczy, że kupisz spód, dodasz na niego składniki z własnej lodówki i wstawisz do piekarnika na kilka minut. To idealne rozwiązanie na szybki obiad, domową imprezę czy niespodziewaną kolację z bliskimi.</p>
-                <br>
-                <span class="primary-btn">Zamów spody telefonicznie pod numerem 720 996 677</span>
+                <span class="section-tag">Rzemiosło & Jakość</span>
+                <h2>Rzemieślnicze Spody do Pinsy</h2>
+                <p>
+                    Zamów nasze rzemieślnicze spody do pinsy, które wyrabiamy sami na <strong>własnym zakwasie</strong> i autorskiej mieszance <strong>trzech włoskich mąk</strong>. Dzięki temu uzyskujemy najwyższą możliwą jakość – idealnie chrupkie z zewnątrz i niesamowicie miękkie w środku.
+                </p>
+
+                <!-- Kafelki parametrów produktu -->
+                <div class="spody-specs-grid">
+                    <div class="spody-spec-item">
+                        <span class="spec-icon">⚖️</span>
+                        <div>
+                            <strong>Aż 300 g</strong>
+                            <small>Gramatura jednego spodu</small>
+                        </div>
+                    </div>
+                    <div class="spody-spec-item">
+                        <span class="spec-icon">📋</span>
+                        <div>
+                            <strong>Karta produktu</strong>
+                            <small>Dołączana do zamówienia</small>
+                        </div>
+                    </div>
+                    <div class="spody-spec-item">
+                        <span class="spec-icon">📦</span>
+                        <div>
+                            <strong>Wysyłka od 1 sztuki</strong>
+                            <small>Dla każdego klienta</small>
+                        </div>
+                    </div>
+                    <div class="spody-spec-item">
+                        <span class="spec-icon">⏱️</span>
+                        <div>
+                            <strong>Czas realizacji</strong>
+                            <small>24h – 72h (wg ilości)</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="spody-cta-row">
+                    <a href="#sklep" class="btn primary-btn">Kup spody w sklepie ➔</a>
+                    <a href="tel:720996677" class="spody-phone-btn">📞 720 996 677</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Sekcja: Piec Mobilny / Catering Eventowy -->
-    <section id="eventy" class="eventy-section bg-white">
+    <!-- Sekcja: Catering z Pinsą & Szkolenia -->
+    <section id="catering" class="eventy-section bg-white">
         <div class="eventy-container">
             <div class="eventy-text fade-in">
-                <h2>Pan od Pinsy na Twoim evencie!</h2>
-                <p class="eventy-subtitle">Mobilny piec i chrupiący wypiek w plenerze – wesela, poprawiny, urodziny i imprezy firmowe.</p>
-                <p>Chcesz zaskoczyć swoich gości niebanalnym, włoskim jedzeniem? Przyjedziemy do Ciebie z naszym mobilnym piecem i będziemy serwować gorącą, aromatyczną pinsę robioną na żywo na Twoim przyjęciu!</p>
+                <span class="section-tag">Eventy & Edukacja</span>
+                <h2>Catering z Pinsą & Szkolenia</h2>
+                <p class="eventy-subtitle">
+                    Mobilny piec na Twojej imprezie oraz profesjonalne szkolenia z wypieku ciasta o wysokiej hydracji.
+                </p>
                 
-                <ul class="eventy-features">
-                    <li>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                        <span><strong>Wypiek na żywo:</strong> Goście obserwują proces tworzenia i jedzą pinsę prosto z pieca.</span>
-                    </li>
-                    <li>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                        <span><strong>Samowystarczalne stanowisko:</strong> Przywozimy własny sprzęt, namiot plenerowy i składniki.</span>
-                    </li>
-                    <li>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                        <span><strong>Menu skrojone na miarę:</strong> Dobieramy składniki i ilość porcji indywidualnie pod Twoją imprezę.</span>
-                    </li>
-                </ul>
+                <p>
+                    Chcesz zaskoczyć swoich gości niebanalnym włoskim jedzeniem? Przyjedziemy do Ciebie z naszym <strong>mobilnym piecem</strong> i zaserwujemy gorącą, chrupiącą pinsę robioną na żywo na weselu, poprawinach, urodzinach czy evencie firmowym!
+                </p>
+
+                <!-- Karta Szkolenia -->
+                <div class="training-info-card">
+                    <h4>🎓 Prowadzimy również profesjonalne szkolenia:</h4>
+                    <ul class="eventy-features">
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span>Autorski sposób przygotowania ciasta i praca z wysoką hydracją.</span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span>Wdrażanie produktu do menu Twojego lokalu gastronomicznego.</span>
+                        </li>
+                    </ul>
+                </div>
 
                 <div class="eventy-cta">
-                    <a href="tel:720996677" class="btn primary-btn">Rezerwuj termin: 720 996 677</a>
+                    <a href="#kontakt" class="btn primary-btn">Zapytaj o ofertę / termin ➔</a>
+                    <a href="tel:720996677" class="spody-phone-btn">📞 720 996 677</a>
                 </div>
             </div>
 
             <div class="eventy-image-wrapper fade-in">
-                <img src="images/pinsa/pinsa5.webp" alt="Pan od Pinsy - Mobilny piec na imprezy" class="eventy-img">
+                <img src="images/pinsa/pinsa5.webp" alt="Pan od Pinsy - Mobilny piec na imprezy i szkolenia" class="eventy-img">
             </div>
         </div>
     </section>
+
+    <!-- Sekcja: Nasze lokale / O nas-->
+    <section id="lokale" class="contact-section">
+        <div class="contact-container">
+            
+            <!-- Wstęp "O nas" z opisem ciasta i rzemiosła -->
+            <div class="about-intro-box fade-in">
+                <h2>Jesteśmy pierwszą Pinserią w Trójmieście!</h2>
+                <p class="about-lead">
+                    Specjalizujemy się wyłącznie w przygotowaniu autentycznej <strong>PINSY</strong> – nie robimy zwykłej pizzy. 
+                    Nasze ciasto powstaje z mieszanki <strong>trzech włoskich mąk</strong>, na naturalnym zakwasie i przy zachowaniu wielogodzinnej fermentacji. 
+                    Dzięki temu pinsa jest niesamowicie lekka, chrupiąca z zewnątrz i delikatnie puszysta w środku. Ma tradycyjny owalny kształt, a gramatura spodu to aż <strong>300 g</strong> czystego rzemiosła!
+                </p>
+                <div class="lokale-email-info">
+                    <span>Napisz do nas:</span> 
+                    <a href="mailto:pizzeria.pinseria@gmail.com">pizzeria.pinseria@gmail.com</a>
+                </div>
+            </div>
+
+            <h3 class="lokale-heading">Odwiedź nas lub zamów z dostawą</h3>
+            
+            <div class="contact-grid-two-locations">
+                
+                <!-- Lokal: Zaspa -->
+                <div class="contact-card location-card fade-in">
+                    <div class="location-header">
+                        <h3>
+                            <svg class="loc-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span>Gdańsk Zaspa</span>
+                        </h3>
+                        <a href="https://maps.app.goo.gl/xJwKAeDmVw5rhLiD9" target="_blank" rel="noopener" class="map-link">Pokaż pinezkę ↗</a>
+                    </div>
+                    
+                    <p class="location-address">ul. Hynka 18/10, Gdańsk</p>
+
+                    <a href="tel:720996677" class="location-phone-clean">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        <span>720 996 677</span>
+                    </a>
+
+                    <!-- Opcja zamówienia z dostawą -->
+                    <div class="location-delivery-box">
+                        <div class="delivery-info">
+                            <strong>🛵 Dostawa do 6 km</strong>
+                            <span>Koszt dostawy: 9.90 zł</span>
+                        </div>
+                        <a href="tel:720996677" class="delivery-order-btn">Zamów z Zaspy ➔</a>
+                    </div>
+
+                    <div class="location-hours">
+                        <h4>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            <span>Godziny otwarcia:</span>
+                        </h4>
+                        <div class="hours-table">
+                            <div class="hours-row"><span class="day">Pn - Czw:</span><span class="time">13:00 - 21:00</span></div>
+                            <div class="hours-row"><span class="day">Piątek:</span><span class="time">13:00 - 22:00</span></div>
+                            <div class="hours-row"><span class="day">Sobota:</span><span class="time">12:00 - 22:00</span></div>
+                            <div class="hours-row"><span class="day">Niedziela:</span><span class="time">12:00 - 21:00</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lokal: Morena -->
+                <div class="contact-card location-card fade-in">
+                    <div class="location-header">
+                        <h3>
+                            <svg class="loc-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span>Gdańsk Morena</span>
+                        </h3>
+                        <a href="https://maps.google.com/?q=Królewskie+Wzgórze+1+Gdańsk" target="_blank" rel="noopener" class="map-link">Pokaż pinezkę ↗</a>
+                    </div>
+                    
+                    <p class="location-address">Królewskie Wzgórze 1, Gdańsk</p>
+
+                    <a href="tel:726767814" class="location-phone-clean">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        <span>726 767 814</span>
+                    </a>
+
+                    <!-- Opcja zamówienia z dostawą -->
+                    <div class="location-delivery-box">
+                        <div class="delivery-info">
+                            <strong>🛵 Dostawa do 6 km</strong>
+                            <span>Koszt dostawy: 9.90 zł</span>
+                        </div>
+                        <a href="tel:726767814" class="delivery-order-btn">Zamów z Moreny ➔</a>
+                    </div>
+
+                    <div class="location-hours">
+                        <h4>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            <span>Godziny otwarcia:</span>
+                        </h4>
+                        <div class="hours-table">
+                            <div class="hours-row"><span class="day">Pn - Czw:</span><span class="time">12:00 - 21:00</span></div>
+                            <div class="hours-row"><span class="day">Pt - Sb:</span><span class="time">12:00 - 22:00</span></div>
+                            <div class="hours-row"><span class="day">Niedziela:</span><span class="time">12:00 - 21:00</span></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Sekcja: oferta dla Gastronimii -->
+    <section id="gastronomia" class="gastro-section bg-striped">
+        <div class="gastro-container">
+            <div class="gastro-header fade-in">
+                <span class="section-tag">Współpraca B2B</span>
+                <h2>Oferta dla Gastronomii</h2>
+                <p class="gastro-subtitle">
+                    Wprowadź autentyczną, chrupiącą pinsę do swojego lokalu – bez inwestycji w drogi sprzęt piekarniczy i bez zatrudniania pizzaiolo!
+                </p>
+            </div>
+
+            <div class="gastro-grid">
+                <!-- Kafelek 1 -->
+                <div class="gastro-card fade-in">
+                    <div class="gastro-icon">☕</div>
+                    <h3>Dla kawiarni, barów i food trucków</h3>
+                    <p>Zaopatrujemy punkty gastronomiczne bez rozbudowanego zaplecza kuchennego. Nasze spody wypieczesz w zwykłym piecu konwekcyjnym lub opiekaczu w kilka minut.</p>
+                </div>
+
+                <!-- Kafelek 2 -->
+                <div class="gastro-card fade-in">
+                    <div class="gastro-icon">👨‍🍳</div>
+                    <h3>Szkolenia & Wdrożenie produktu</h3>
+                    <p>Pomagamy wprowadzić pinsę do Twojego menu. Szkolimy Twój zespół, uczymy pracy z wysoką hydracją oraz pokazujemy sprawdzone receptury i kompozycje smakowe.</p>
+                </div>
+
+                <!-- Kafelek 3 -->
+                <div class="gastro-card fade-in">
+                    <div class="gastro-icon">📈</div>
+                    <h3>Stałe dostawy i wysoka marża</h3>
+                    <p>Gwarantujemy powtarzalną jakość, stabilne dostawy hurtowe oraz atrakcyjne warunki cenowe, które pozwolą Ci wygenerować świetną marżę na nowej pozycji w menu.</p>
+                </div>
+            </div>
+
+            <div class="gastro-bottom-box fade-in">
+                <p>Planujesz większe zamówienia lub chcesz otrzymać próbki do testów w swoim lokalu?</p>
+                <a href="#kontakt" class="btn primary-btn">Zapytaj o ofertę hurtową ➔</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Sekcja: Social Media -->
+    <section id="socials" class="socials-section bg-striped">
+        <div class="socials-container">
+            <h2>Zaobserwuj Pana od Pinsy!</h2>
+            <p class="socials-subtitle">Zobacz kulisy wypieku, relacje z imprez plenerowych i zdobywaj specjalne kody rabatowe.</p>
+
+            <div class="socials-grid">
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/p/PinseriaGdansk-61558180975096/" target="_blank" class="social-card fb-card">
+                    <div class="social-card-icon">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </div>
+                    <h3>Facebook</h3>
+                    <p>@PinseriaGdansk</p>
+                    <span class="social-card-btn">Dołącz ↗</span>
+                </a>
+
+                <!-- Instagram z gradientem wewnątrz linii SVG -->
+                <a href="https://www.instagram.com/pinseria.gdansk/" target="_blank" class="social-card ig-card">
+                    <div class="social-card-icon">
+                        <svg width="30" height="30" viewBox="0 0 24 24">
+                            <defs>
+                                <linearGradient id="ig-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+                                    <stop offset="0%" stop-color="#f09433"/>
+                                    <stop offset="25%" stop-color="#e6683c"/>
+                                    <stop offset="50%" stop-color="#dc2743"/>
+                                    <stop offset="75%" stop-color="#cc2366"/>
+                                    <stop offset="100%" stop-color="#bc1888"/>
+                                </linearGradient>
+                            </defs>
+                            <path class="ig-icon-path" fill="url(#ig-grad)" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </div>
+                    <h3>Instagram</h3>
+                    <p>@pinseria.gdansk</p>
+                    <span class="social-card-btn">Obserwuj ↗</span>
+                </a>
+
+                <!-- TikTok -->
+                <a href="https://www.tiktok.com/@pan_od_pins" target="_blank" class="social-card tt-card">
+                    <div class="social-card-icon">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743 2.895 2.895 0 0 1 3.109-4.508V9.382a6.34 6.34 0 0 0-1.353-.146 6.338 6.338 0 1 0 6.345 6.338V8.182a8.217 8.217 0 0 0 4.773 1.526V6.262a4.83 4.83 0 0 1-.458-.024z"/></svg>
+                    </div>
+                    <h3>TikTok</h3>
+                    <p>@pan_od_pins</p>
+                    <span class="social-card-btn">Oglądaj ↗</span>
+                </a>
+
+                <!-- YouTube -->
+                <a href="https://www.youtube.com/@Panodpinsy" target="_blank" class="social-card yt-card">
+                    <div class="social-card-icon">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    </div>
+                    <h3>YouTube</h3>
+                    <p>@Panodpinsy</p>
+                    <span class="social-card-btn">Subskrybuj ↗</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Sekcja: kontakt - formularz email -->
+    <section id="kontakt" class="contact-form-section bg-white">
+        <div class="contact-form-container fade-in">
+            <span class="section-tag">Napisz do nas</span>
+            <h2>Skontaktuj się z Panem od Pinsy</h2>
+            <p class="contact-form-subtitle">
+                Masz pytania o catering, spody dla gastronomii, szkolenia lub rezerwację? Wypełnij formularz – odpowiemy najszybciej jak to możliwe!
+            </p>
+
+            <form id="general-contact-form" class="main-contact-form" onsubmit="handleContactSubmit(event)">
+                <div class="form-row-two">
+                    <div class="form-field">
+                        <label for="contact-name">Imię i Nazwisko / Nazwa firmy *</label>
+                        <input type="text" id="contact-name" class="cart-input" required placeholder="np. Jan Kowalski">
+                    </div>
+                    <div class="form-field">
+                        <label for="contact-phone">Numer telefonu *</label>
+                        <input type="tel" id="contact-phone" class="cart-input" required placeholder="np. 500 100 200">
+                    </div>
+                </div>
+
+                <div class="form-row-two">
+                    <div class="form-field">
+                        <label for="contact-email">Adres e-mail *</label>
+                        <input type="email" id="contact-email" class="cart-input" required placeholder="twoj@email.pl">
+                    </div>
+                    <div class="form-field">
+                        <label for="contact-topic">Temat zapytania *</label>
+                        <select id="contact-topic" class="cart-input" required>
+                            <option value="" disabled selected>Wybierz temat...</option>
+                            <option value="Catering & Piec Mobilny">Catering z piecem mobilnym (eventy/wesela)</option>
+                            <option value="Szkolenia Pinsa">Szkolenia z przygotowania Pinsy</option>
+                            <option value="Współpraca B2B / Spody">Oferta dla gastronomii (hurt spody)</option>
+                            <option value="Inne zapytanie">Inne zapytanie ogólne</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-field">
+                    <label for="contact-message">Treść wiadomości *</label>
+                    <textarea id="contact-message" class="cart-textarea" rows="4" required placeholder="Opisz swoje zapytanie (np. data imprezy, szacowana liczba gości lub zapotrzebowanie)..."></textarea>
+                </div>
+
+                <button type="submit" id="submit-contact-btn" class="btn primary-btn w-100">
+                    Wyślij zapytanie ➔
+                </button>
+
+                <div id="contact-status-msg" class="order-status-msg"></div>
+            </form>
+        </div>
+    </section>
+
 
     <!-- Stopka (Footer) -->
     <footer class="footer">
@@ -628,11 +786,9 @@
                 <ul>
                     <li><a href="#home">Strona główna</a></li>
                     <li><a href="#menu">Menu</a></li>
-                    <li><a href="#promocje">Promocje</a></li>
                     <li><a href="#sklep">Sklep</a></li>
                     <li><a href="#about">O nas</a></li>
                     <li><a href="#spody">Zamów spody</a></li>
-                    <li><a href="#eventy">Catering Eventowy</a></li>
                     <li><a href="#contact">Kontakt</a></li>
 
                 </ul>
@@ -665,7 +821,7 @@
     </linearGradient>
     </svg>
 
-    <!-- Modal Social Media "Na Dzień Dobry" -->
+    <!-- Okno powitalne z social mediami -->
     <div id="social-welcome-modal" class="social-welcome-modal">
         <div class="social-welcome-overlay" id="social-welcome-overlay"></div>
         <div class="social-welcome-content">

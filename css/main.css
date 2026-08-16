@@ -5,7 +5,7 @@
 /* Płynne przewijanie + zapas miejsca na przyklejony navbar na górze */
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 70px; /* Wysokość Twojego navbaru + delikatny zapas */
+    scroll-padding-top: 50px; /* Wysokość Twojego navbaru + delikatny zapas */
 }
 
 /* Zabezpieczenie dla wszystkich sekcji z ID */
