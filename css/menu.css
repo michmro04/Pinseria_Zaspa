@@ -383,10 +383,6 @@ body.dark-theme .bg-striped {
     flex-shrink: 0;
 }
 
-.menu-loc-dot.dot-morena {
-    background-color: var(--primary-color);
-}
-
 .menu-loc-header h4 {
     font-size: 0.95rem;
     margin: 0;
@@ -418,11 +414,14 @@ body.dark-theme .bg-striped {
     transition: opacity 0.2s ease, transform 0.2s ease;
     width: 100%;
     box-sizing: border-box;
+    background-color: var(--secondary-color); /* Domyślna zieleń */
+    color: #ffffff !important;
 }
 
 .menu-loc-phone:hover {
     opacity: 0.92;
     transform: translateY(-1px);
+    background-color: #4bb49a; /* Ciemniejsza zieleń po najechaniu */
 }
 
 /* Responsywność dla małych ekranów smartfonów */

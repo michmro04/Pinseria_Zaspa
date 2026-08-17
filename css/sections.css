@@ -1254,25 +1254,28 @@ body.dark-theme .footer {
 .spody-cta-row {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
     flex-wrap: wrap;
+    margin-top: 24px;
 }
 
 .spody-phone-btn {
     font-weight: 700;
-    color: var(--primary-color);
+    color: var(--secondary-color);
     text-decoration: none;
-    font-size: 0.95rem;
-    padding: 12px 20px;
-    border: 1px solid var(--primary-color);
+    font-size: 1.0rem;
+    padding: 14px 25px;
+    border: 1px solid var(--secondary-color);
     border-radius: 30px;
     transition: all 0.2s ease;
 }
 
 .spody-phone-btn:hover {
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     color: #ffffff;
 }
+
+
 
 /* ===================================================
    STYLE SEKCJI OFERTA DLA GASTRONOMII (B2B)
@@ -1487,51 +1490,84 @@ select.cart-input {
         text-align: center;
     }
 }
-/* ===================================================
-   SPODY DO PINSY & CATERING - SPÓJNE KAFELKI I UKŁAD
-====================================================== */
-.spody-section,
-.eventy-section {
-    padding: 80px 5%;
-    overflow: hidden;
-}
 
+/* ===================================================
+   IDEALNIE RÓWNY, ZWARTY ODSTĘP W SPODACH I CATERINGU
+====================================================== */
 .spody-container,
 .eventy-container {
-    max-width: 1150px;
+    max-width: 1080px;
     margin: 0 auto;
     display: flex;
     align-items: center;
-    gap: 45px;
+    justify-content: center;
+    gap: 20px; /* Zwarty odstęp identyczny jak w Spodach */
 }
 
-/* Identyczny kafelek z treścią dla obu sekcji */
+/* Kafelki z tekstem - jednakowa szerokość i brak marginesów */
 .spody-text,
 .eventy-text {
-    flex: 1.2;
+    flex: 1;
+    max-width: 720px;
     background-color: var(--card-bg);
     border: 1px solid var(--nav-border);
-    padding: 40px 35px;
+    padding: 38px 32px;
     border-radius: 24px;
     box-shadow: 0 10px 35px var(--shadow);
     text-align: left;
+    margin: 0 !important;
     box-sizing: border-box;
 }
 
-.spody-text h2,
-.eventy-text h2 {
-    font-size: 2.2rem;
-    color: var(--primary-color);
-    margin-bottom: 15px;
-    line-height: 1.2;
+/* Kontenery wideo - zablokowane na stałą szerokość telefonu bez rozpychania */
+.reel-container,
+.spody-image-wrapper,
+.eventy-image-wrapper {
+    flex: 0 0 310px !important; /* Stała szerokość bez pustej przestrzeni */
+    max-width: 310px;
+    width: 100%;
+    margin: 0 !important;
+    display: flex;
+    justify-content: center;
 }
 
-.spody-text p,
-.eventy-text p {
-    font-size: 1rem;
-    line-height: 1.65;
-    opacity: 0.9;
-    margin-bottom: 18px;
+.reel-wrapper {
+    width: 100%;
+    max-width: 310px;
+    aspect-ratio: 9 / 16;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 16px 40px var(--shadow);
+    border: 2px solid var(--nav-border);
+    background-color: #000;
+    position: relative;
+}
+
+/* Responsywność na telefonach */
+@media (max-width: 991px) {
+    .spody-container {
+        flex-direction: column-reverse;
+        gap: 24px;
+    }
+
+    .eventy-container {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .spody-text,
+    .eventy-text {
+        max-width: 100%;
+        width: 100%;
+        padding: 28px 20px;
+    }
+
+    .reel-container,
+    .spody-image-wrapper,
+    .eventy-image-wrapper {
+        flex: 0 0 auto !important;
+        max-width: 280px;
+    }
 }
 
 /* ===================================================
@@ -1633,3 +1669,4 @@ select.cart-input {
         padding: 24px 18px;
     }
 }
+
