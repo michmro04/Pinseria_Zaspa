@@ -1670,3 +1670,30 @@ select.cart-input {
     }
 }
 
+
+/* Sekcja standardowa */
+section {
+    background-color: var(--bg-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Co druga sekcja (ciemniejszy beż w jasnym / jaśniejsza szarość w ciemnym) */
+.bg-alt,
+.bg-striped {
+    background-color: var(--bg-alt) !important;
+}
+
+/* Wygląd kafelków z subtelną ramką */
+.card,
+.menu-loc-card,
+.spody-text,
+.eventy-text,
+.gastro-card,
+.contact-form-container,
+.about-intro-box,
+.location-card,
+.menu-item-card {
+    background-color: var(--card-bg) !important;
+    border: 1px solid var(--nav-border) !important;
+    color: var(--text-color);
+}
