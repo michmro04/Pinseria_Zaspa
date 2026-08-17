@@ -633,3 +633,20 @@ function toggleSound(videoId, btn) {
         btn.classList.remove('unmuted');
     }
 }
+
+// Kliknięcie w rolkę zatrzymuje lub wznawia odtwarzanie
+document.querySelectorAll('.reel-wrapper').forEach(wrapper => {
+    wrapper.addEventListener('click', (e) => {
+        // Jeśli kliknięto w guzik dźwięku, nie pauzujemy
+        if (e.target.classList.contains('sound-toggle-btn')) return;
+        
+        const video = wrapper.querySelector('video');
+        if (!video) return;
+
+        if (video.paused) {
+            video.play();
+        } else {
+            video.pause();
+        }
+    });
+});

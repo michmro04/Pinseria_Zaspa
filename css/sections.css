@@ -1487,45 +1487,58 @@ select.cart-input {
         text-align: center;
     }
 }
-
 /* ===================================================
-   RESPONSYWNE KONTENERY WIDEO (SPODY & CATERING)
+   SPODY DO PINSY & CATERING - SPÓJNE KAFELKI I UKŁAD
 ====================================================== */
-.spody-video,
-.eventy-video {
-    width: 100%;
-    min-height: 440px;
-    max-height: 520px;
-    object-fit: cover;
-    border-radius: 20px;
-    box-shadow: 0 15px 40px var(--shadow);
-    display: block;
+.spody-section,
+.eventy-section {
+    padding: 80px 5%;
+    overflow: hidden;
+}
+
+.spody-container,
+.eventy-container {
+    max-width: 1150px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 45px;
+}
+
+/* Identyczny kafelek z treścią dla obu sekcji */
+.spody-text,
+.eventy-text {
+    flex: 1.2;
     background-color: var(--card-bg);
+    border: 1px solid var(--nav-border);
+    padding: 40px 35px;
+    border-radius: 24px;
+    box-shadow: 0 10px 35px var(--shadow);
+    text-align: left;
+    box-sizing: border-box;
 }
 
-/* Responsywność dla tabletów i telefonów */
-@media (max-width: 991px) {
-    .spody-video,
-    .eventy-video {
-        min-height: 320px;
-        max-height: 380px;
-        aspect-ratio: 16 / 9;
-    }
+.spody-text h2,
+.eventy-text h2 {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    line-height: 1.2;
 }
 
-@media (max-width: 480px) {
-    .spody-video,
-    .eventy-video {
-        min-height: 240px;
-        border-radius: 16px;
-    }
+.spody-text p,
+.eventy-text p {
+    font-size: 1rem;
+    line-height: 1.65;
+    opacity: 0.9;
+    margin-bottom: 18px;
 }
 
 /* ===================================================
-   PIONOWY ODTWARZACZ W STYLU REELS / SMARTFONA (9:16)
+   PIONOWY ODTWARZACZ REELS Z MASKOWANIEM ZNAKU WODNEGO
 ====================================================== */
 .reel-container {
-    flex: 1;
+    flex: 0.9;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1535,12 +1548,12 @@ select.cart-input {
 .reel-wrapper {
     position: relative;
     width: 100%;
-    max-width: 310px; /* Szerokość smartfona */
+    max-width: 310px;
     aspect-ratio: 9 / 16;
     border-radius: 24px;
-    overflow: hidden;
+    overflow: hidden; /* Odcina przeskalowane krawędzie ze znakiem wodnym */
     box-shadow: 0 16px 40px var(--shadow);
-    border: 3px solid var(--nav-border);
+    border: 2px solid var(--nav-border);
     background-color: #000;
 }
 
@@ -1549,32 +1562,74 @@ select.cart-input {
     height: 100%;
     object-fit: cover;
     display: block;
+    /* Skalowanie o 12.1% wypycha znak wodny poza widoczny obszar */
+    transform: scale(1.0);
+    transform-origin: center center;
 }
 
-/* Przycisk włączania / wyłączania dźwięku na rolce */
+/* Przycisk dźwięku na rolce */
 .sound-toggle-btn {
     position: absolute;
-    top: 14px;
-    right: 14px;
-    background-color: rgba(0, 0, 0, 0.7);
+    bottom: 12px;
+    right: 24px;
+    background-color: rgba(0, 0, 0, 0.75);
     color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 6px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    padding: 6px 14px;
     border-radius: 20px;
     font-size: 0.78rem;
     font-weight: 700;
     cursor: pointer;
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(5px);
     z-index: 5;
     transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .sound-toggle-btn:hover {
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     transform: scale(1.05);
 }
 
 .sound-toggle-btn.unmuted {
-    background-color: var(--secondary-color);
-    border-color: var(--secondary-color);
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* ===================================================
+   RESPONSYWNOŚĆ (TABLETY I TELEFONY)
+====================================================== */
+@media (max-width: 991px) {
+    /* Spody: odwracamy kolejność, by tekst był na górze, a wideo na dole */
+    .spody-container {
+        flex-direction: column-reverse;
+        gap: 30px;
+    }
+
+    /* Catering: zachowujemy kolejność domyślną (tekst góra, wideo dół) */
+    .eventy-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .spody-text,
+    .eventy-text {
+        width: 100%;
+        padding: 30px 22px;
+    }
+
+    .reel-wrapper {
+        max-width: 270px;
+    }
+}
+
+@media (max-width: 480px) {
+    .spody-text h2,
+    .eventy-text h2 {
+        font-size: 1.7rem;
+    }
+
+    .spody-text,
+    .eventy-text {
+        padding: 24px 18px;
+    }
 }
