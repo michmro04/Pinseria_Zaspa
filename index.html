@@ -417,48 +417,41 @@
     <!--Sekcja: Spody do Pinsy-->
     <section id="spody" class="spody-section">
         <div class="spody-container">
-            <!-- Zdjęcie spodu -->
-            <div class="spody-image-wrapper fade-in">
-                <img src="images/zamow_spody.webp" alt="Rzemieślnicze spody do pinsy 300g" class="spody-img">
+            <!-- Wideo spody -->
+            <div class="reel-container fade-in">
+                <div class="reel-wrapper">
+                    <video id="spody-video" class="reel-video" autoplay muted loop playsinline preload="metadata" poster="images/zamow_spody.webp" controls>
+                        <source src="videos/spody.mp4" type="video/mp4">
+                    </video>
+                    <button class="sound-toggle-btn" onclick="toggleSound('spody-video', this)" aria-label="Włącz dźwięk">
+                        🔇 Włącz dźwięk
+                    </button>
+                </div>
             </div>
             
-            <!-- Treść sekcji -->
             <div class="spody-text fade-in">
                 <span class="section-tag">Rzemiosło & Jakość</span>
                 <h2>Rzemieślnicze Spody do Pinsy</h2>
                 <p>
                     Zamów nasze rzemieślnicze spody do pinsy, które wyrabiamy sami na <strong>własnym zakwasie</strong> i autorskiej mieszance <strong>trzech włoskich mąk</strong>. Dzięki temu uzyskujemy najwyższą możliwą jakość – idealnie chrupkie z zewnątrz i niesamowicie miękkie w środku.
                 </p>
-
-                <!-- Kafelki parametrów produktu -->
+                
                 <div class="spody-specs-grid">
                     <div class="spody-spec-item">
                         <span class="spec-icon">⚖️</span>
-                        <div>
-                            <strong>Aż 300 g</strong>
-                            <small>Gramatura jednego spodu</small>
-                        </div>
+                        <div><strong>Aż 300 g</strong><small>Gramatura jednego spodu</small></div>
                     </div>
                     <div class="spody-spec-item">
                         <span class="spec-icon">📋</span>
-                        <div>
-                            <strong>Karta produktu</strong>
-                            <small>Dołączana do zamówienia</small>
-                        </div>
+                        <div><strong>Karta produktu</strong><small>Dołączana do zamówienia</small></div>
                     </div>
                     <div class="spody-spec-item">
                         <span class="spec-icon">📦</span>
-                        <div>
-                            <strong>Wysyłka od 1 sztuki</strong>
-                            <small>Dla każdego klienta</small>
-                        </div>
+                        <div><strong>Wysyłka od 1 sztuki</strong><small>Dla każdego klienta</small></div>
                     </div>
                     <div class="spody-spec-item">
                         <span class="spec-icon">⏱️</span>
-                        <div>
-                            <strong>Czas realizacji</strong>
-                            <small>24h – 72h (wg ilości)</small>
-                        </div>
+                        <div><strong>Czas realizacji</strong><small>24h – 72h (wg ilości)</small></div>
                     </div>
                 </div>
 
@@ -484,7 +477,6 @@
                     Chcesz zaskoczyć swoich gości niebanalnym włoskim jedzeniem? Przyjedziemy do Ciebie z naszym <strong>mobilnym piecem</strong> i zaserwujemy gorącą, chrupiącą pinsę robioną na żywo na weselu, poprawinach, urodzinach czy evencie firmowym!
                 </p>
 
-                <!-- Karta Szkolenia -->
                 <div class="training-info-card">
                     <h4>🎓 Prowadzimy również profesjonalne szkolenia:</h4>
                     <ul class="eventy-features">
@@ -505,8 +497,16 @@
                 </div>
             </div>
 
-            <div class="eventy-image-wrapper fade-in">
-                <img src="images/pinsa/pinsa5.webp" alt="Pan od Pinsy - Mobilny piec na imprezy i szkolenia" class="eventy-img">
+            <!-- Wideo Catering / Wesela -->
+            <div class="reel-container fade-in">
+                <div class="reel-wrapper">
+                    <video id="catering-video" class="reel-video" autoplay muted loop playsinline preload="metadata" poster="images/pinsa/pinsa5.webp" controls>
+                        <source src="videos/uslugi.mp4" type="video/mp4">
+                    </video>
+                    <button class="sound-toggle-btn" onclick="toggleSound('catering-video', this)" aria-label="Włącz dźwięk">
+                        🔇 Włącz dźwięk
+                    </button>
+                </div>
             </div>
         </div>
     </section>

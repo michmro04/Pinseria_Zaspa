@@ -615,3 +615,21 @@ async function handleContactSubmit(event) {
         submitBtn.innerText = originalBtnText;
     }
 }
+
+// ===================================================
+// OBSŁUGA DŹWIĘKU W PIONOWYCH ROLKACH WIDEO
+// ===================================================
+function toggleSound(videoId, btn) {
+    const video = document.getElementById(videoId);
+    if (!video) return;
+
+    if (video.muted) {
+        video.muted = false;
+        btn.innerText = '🔊 Wycisz';
+        btn.classList.add('unmuted');
+    } else {
+        video.muted = true;
+        btn.innerText = '🔇 Włącz dźwięk';
+        btn.classList.remove('unmuted');
+    }
+}

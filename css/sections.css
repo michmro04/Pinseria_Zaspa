@@ -1487,3 +1487,94 @@ select.cart-input {
         text-align: center;
     }
 }
+
+/* ===================================================
+   RESPONSYWNE KONTENERY WIDEO (SPODY & CATERING)
+====================================================== */
+.spody-video,
+.eventy-video {
+    width: 100%;
+    min-height: 440px;
+    max-height: 520px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px var(--shadow);
+    display: block;
+    background-color: var(--card-bg);
+}
+
+/* Responsywność dla tabletów i telefonów */
+@media (max-width: 991px) {
+    .spody-video,
+    .eventy-video {
+        min-height: 320px;
+        max-height: 380px;
+        aspect-ratio: 16 / 9;
+    }
+}
+
+@media (max-width: 480px) {
+    .spody-video,
+    .eventy-video {
+        min-height: 240px;
+        border-radius: 16px;
+    }
+}
+
+/* ===================================================
+   PIONOWY ODTWARZACZ W STYLU REELS / SMARTFONA (9:16)
+====================================================== */
+.reel-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.reel-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 310px; /* Szerokość smartfona */
+    aspect-ratio: 9 / 16;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 16px 40px var(--shadow);
+    border: 3px solid var(--nav-border);
+    background-color: #000;
+}
+
+.reel-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Przycisk włączania / wyłączania dźwięku na rolce */
+.sound-toggle-btn {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    cursor: pointer;
+    backdrop-filter: blur(4px);
+    z-index: 5;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.sound-toggle-btn:hover {
+    background-color: var(--primary-color);
+    transform: scale(1.05);
+}
+
+.sound-toggle-btn.unmuted {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
