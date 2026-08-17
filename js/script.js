@@ -444,7 +444,7 @@ async function handleOrderSubmit(event) {
     let itemsText = cart.map(item => `- ${item.name} x${item.qty} (${item.price * item.qty} zł)`).join('\n');
 
     try {
-        const response = await fetch('https://formsubmit.co/ajax/mrg.mrowicki@gmail.com', {
+        const response = await fetch('https://formsubmit.co/ajax/panodpinsy@gmail.com', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -456,8 +456,8 @@ async function handleOrderSubmit(event) {
                 'Imię i Nazwisko': name,
                 'Telefon': phone,
                 'E-mail klienta': email,
-                'Adres dostawy': address,
-                'Uwagi': notes || 'Brak',
+                'Paczkomat InPost / Adres': address,
+                'Uwagi do zamówienia': notes || 'Brak',
                 'Zamówione produkty': itemsText,
                 'Suma do zapłaty': `${totalPrice} zł`
             })

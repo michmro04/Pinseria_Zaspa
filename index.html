@@ -365,10 +365,10 @@
                 </div>
             </div>
 
-            <!-- WIDOK 2: FORMULARZ DANYCH ZAMAWIAJĄCEGO -->
+            <!-- WIDOK 2: FORMULARZ DANYCH ZAMAWIAJĄCEGO (INPOST / KURIER) -->
             <div id="cart-view-form" class="cart-view">
                 <div class="cart-header">
-                    <button class="back-cart-btn" onclick="showItemsView()">← Wróć</button>
+                    <button class="back-cart-btn" onclick="showItemsView()">← Wróć do koszyka</button>
                     <h3>Dane do wysyłki</h3>
                     <button class="close-cart-btn" onclick="closeCartModal()">&times;</button>
                 </div>
@@ -390,29 +390,27 @@
                     </div>
 
                     <div class="cart-form-group">
-                        <label for="client-address">Adres dostawy (Ulica, nr, miasto) *</label>
-                        <input type="text" id="client-address" class="cart-input" required placeholder="ul. Długa 5/2, Gdańsk">
+                        <label for="client-address">Paczkomat InPost (kod np. GDA01M) lub adres dostawy *</label>
+                        <input type="text" id="client-address" class="cart-input" required placeholder="np. Paczkomat GDA02A lub ul. Długa 5/2, Gdańsk">
                     </div>
 
                     <div class="cart-form-group">
                         <label for="client-notes">Uwagi do zamówienia (Opcjonalnie)</label>
-                        <textarea id="client-notes" class="cart-textarea" placeholder="np. Kod do domofonu 1234"></textarea>
+                        <textarea id="client-notes" class="cart-textarea" placeholder="np. Informacje dodatkowe do zamówienia..."></textarea>
                     </div>
 
                     <div class="checkout-summary-box">
-                        <p>📦 Wysyłka po zaksięgowaniu wpłaty (w przeciągu 48h).</p>
-                        <p>Dane do przelewu prześlemy w odpowiedzi na e-mail.</p>
+                        <p>📦 <strong>Sugerowana dostawa:</strong> Paczkomaty InPost lub kurier.</p>
+                        <p>Wysyłka w przeciągu 24–72h. Dane do przelewu prześlemy w odpowiedzi na e-mail.</p>
                     </div>
 
                     <button type="submit" id="submit-order-btn" class="btn primary-btn w-100">
-                        Wyślij zamówienie 
+                        Złóż zamówienie i zapłać
                     </button>
 
-                    <!-- Komunikat statusu wysyłki zamówienia -->
                     <div id="order-status-msg" class="order-status-msg"></div>
                 </form>
             </div>
-
         </div>
     </div>
     
