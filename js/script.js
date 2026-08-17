@@ -544,75 +544,94 @@ function initSocialWelcomeModal() {
 document.addEventListener('DOMContentLoaded', initSocialWelcomeModal);
 
 // ===================================================
-// OBSŁUGA FORMULARZA ZAPYTAŃ OGÓLNYCH (panodpinsy@gmail.com)
+// OBSŁUGA FORMULARZA KONTAKTOWEGO (Z ZIELONYM BANEREM I RESETEM NA ŻĄDANIE)
 // ===================================================
 async function handleContactSubmit(event) {
     event.preventDefault();
 
-    const submitBtn = document.getElementById('submit-contact-btn');
+    const form = event.target;
+    const submitBtn = form.querySelector('button[type="submit"]');
     const statusMsg = document.getElementById('contact-status-msg');
-    const originalBtnText = submitBtn.innerText;
 
-    const name = document.getElementById('contact-name').value;
-    const phone = document.getElementById('contact-phone').value;
-    const email = document.getElementById('contact-email').value;
-    const topic = document.getElementById('contact-topic').value;
-    const message = document.getElementById('contact-message').value;
-
-    submitBtn.disabled = true;
-    submitBtn.innerText = 'Wysyłanie wiadomości...';
-
-    if (statusMsg) {
-        statusMsg.className = 'order-status-msg';
-        statusMsg.style.display = 'none';
-        statusMsg.innerText = '';
+    // JEŚLI WIADOMOŚĆ BYŁA JUŻ WYSŁANA -> KLIKNIĘCIE CZYŚCI FORMULARZ I PRZYWRACA STAN POCZĄTKOWY
+    if (submitBtn.dataset.state === 'sent') {
+        form.reset();
+        if (statusMsg) statusMsg.innerHTML = '';
+        submitBtn.innerText = 'Wyślij zapytanie ➔';
+        delete submitBtn.dataset.state;
+        return;
     }
 
+    // POBRANIE WARTOŚCI PÓL
+    const name = document.getElementById('contact-name')?.value || '';
+    const phone = document.getElementById('contact-phone')?.value || '';
+    const email = document.getElementById('contact-email')?.value || '';
+    const topic = document.getElementById('contact-topic')?.value || 'Zapytanie ogólne';
+    const message = document.getElementById('contact-message')?.value || '';
+
+    // STAN WYSYŁANIA
+    submitBtn.disabled = true;
+    submitBtn.style.opacity = '0.7';
+    submitBtn.innerText = 'Wysyłanie wiadomości...';
+    if (statusMsg) statusMsg.innerHTML = '';
+
     try {
-        const response = await fetch('https://formsubmit.co/ajax/mrg.mrowicki@gmail.com', {
+        const response = await fetch('https://formsubmit.co/ajax/panodpinsy@gmail.com', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
             },
             body: JSON.stringify({
-                _subject: `📩 Nowe zapytanie od: ${name} [${topic}]`,
+                _subject: `📩 Nowe zapytanie: ${topic} - ${name}`,
                 _template: 'table',
-                'Imię i Nazwisko / Firma': name,
+                'Imię i Nazwisko': name,
                 'Telefon': phone,
                 'E-mail': email,
                 'Temat zapytania': topic,
-                'Treść wiadomości': message
+                'Wiadomość': message
             })
         });
 
         if (response.ok) {
-            document.querySelectorAll('#general-contact-form input, #general-contact-form select, #general-contact-form textarea').forEach(el => el.disabled = true);
-            
+            // POKAZANIE ZIELONEGO KAFELKA SUKCESU (POLA POZOSTAJĄ WYPEŁNIONE)
             if (statusMsg) {
-                statusMsg.innerText = 'Dziękujemy za kontakt! Twoja wiadomość została wysłana. Skontaktujemy się z Tobą najszybciej jak to możliwe.';
-                statusMsg.className = 'order-status-msg success';
-                statusMsg.style.display = 'block';
+                statusMsg.innerHTML = `
+                    <div class="contact-success-card">
+                        <div class="success-icon">✓</div>
+                        <div class="success-content">
+                            <h4>Wiadomość wysłana pomyślnie!</h4>
+                            <p>Dziękujemy za kontakt. Odezwiemy się najszybciej jak to możliwe.</p>
+                        </div>
+                    </div>
+                `;
             }
-            submitBtn.innerText = 'Wiadomość wysłana ✓';
-        } else {
-            if (statusMsg) {
-                statusMsg.innerText = 'Wystąpił problem z wysłaniem wiadomości. Spróbuj ponownie lub zadzwoń do nas.';
-                statusMsg.className = 'order-status-msg error';
-                statusMsg.style.display = 'block';
-            }
+
+            // ODBLOKOWANIE PRZYCISKU Z NOWYM TEKSTEM I FLAGĄ
             submitBtn.disabled = false;
-            submitBtn.innerText = originalBtnText;
+            submitBtn.style.opacity = '1';
+            submitBtn.innerText = 'Wyślij kolejną wiadomość ➔';
+            submitBtn.dataset.state = 'sent';
+
+        } else {
+            throw new Error('Błąd serwera');
         }
     } catch (error) {
-        console.error('Błąd wysyłki formularza kontaktowego:', error);
-        if (statusMsg) {
-            statusMsg.innerText = 'Błąd połączenia. Sprawdź internet i spróbuj ponownie.';
-            statusMsg.className = 'order-status-msg error';
-            statusMsg.style.display = 'block';
-        }
         submitBtn.disabled = false;
-        submitBtn.innerText = originalBtnText;
+        submitBtn.style.opacity = '1';
+        submitBtn.innerText = 'Spróbuj ponownie ➔';
+        
+        if (statusMsg) {
+            statusMsg.innerHTML = `
+                <div class="contact-error-card">
+                    <div class="error-icon">⚠️</div>
+                    <div class="error-content">
+                        <h4>Nie udało się wysłać</h4>
+                        <p>Skontaktuj się bezpośrednio pod numerem: <a href="tel:720996677">720 996 677</a>.</p>
+                    </div>
+                </div>
+            `;
+        }
     }
 }
 
@@ -695,3 +714,27 @@ window.addEventListener('scroll', () => {
         pillBtn.classList.remove('docked');
     }
 });
+
+// Otwieranie / zamykanie modala polityki na środku ekranu
+function openPrivacyModal(event) {
+    if (event) {
+        event.preventDefault();
+        event.stopPropagation();
+    }
+    const modal = document.getElementById('privacy-modal');
+    if (modal) {
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Blokuje scrollowanie tła pod spodem
+    }
+}
+
+function closePrivacyModal(event) {
+    if (event && event.target !== event.currentTarget && !event.target.classList.contains('close-cart-btn')) {
+        return;
+    }
+    const modal = document.getElementById('privacy-modal');
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = ''; // Przywraca normalny scroll
+    }
+}

@@ -409,6 +409,15 @@
                         <p>Wysyłka w przeciągu 24–72h. Dane do przelewu prześlemy w odpowiedzi na e-mail.</p>
                     </div>
 
+                    <div class="rodo-checkbox-group">
+                        <label class="rodo-label">
+                            <input type="checkbox" id="order-rodo" required>
+                            <span>
+                                Akceptuję zasady realizacji zamówienia oraz <a href="#polityka" onclick="openPrivacyModal(event)">Politykę Prywatności</a> i wyrażam zgodę na przetwarzanie danych w celu realizacji wysyłki. *
+                            </span>
+                        </label>
+                    </div>
+
                     <button type="submit" id="submit-order-btn" class="btn primary-btn w-100">
                         Złóż zamówienie i zapłać
                     </button>
@@ -768,9 +777,19 @@
                     <textarea id="contact-message" class="cart-textarea" rows="4" required placeholder="Opisz swoje zapytanie (np. data imprezy, szacowana liczba gości lub zapotrzebowanie)..."></textarea>
                 </div>
 
-                <button type="submit" id="submit-contact-btn" class="btn primary-btn w-100">
+                <div class="rodo-checkbox-group">
+                    <label class="rodo-label">
+                        <input type="checkbox" id="contact-rodo" required>
+                        <span>
+                            Wyrażam zgodę na przetwarzanie moich danych osobowych w celu obsługi zapytania i kontaktu zwrotnego zgodnie z <a href="#polityka" onclick="openPrivacyModal(event)">Polityką Prywatności</a>. *
+                        </span>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn primary-btn w-100">
                     Wyślij zapytanie ➔
                 </button>
+                <div id="contact-status-msg" class="contact-status-msg"></div>
 
                 <div id="contact-status-msg" class="order-status-msg"></div>
             </form>
@@ -887,6 +906,26 @@
                     <span class="welcome-card-arrow">↗</span>
                 </a>
             </div>
+        </div>
+    </div>
+
+    <!-- Modal Polityki Prywatności -->
+    <div id="privacy-modal" class="custom-modal-overlay" onclick="closePrivacyModal(event)">
+        <div class="privacy-modal-content" onclick="event.stopPropagation()">
+            <button class="close-cart-btn" onclick="closePrivacyModal()">&times;</button>
+            <h3>Polityka Prywatności i Informacja RODO</h3>
+            <div class="privacy-modal-body">
+                <p><strong>1. Administrator Danych:</strong> Administratorem Twoich danych osobowych jest Pan od Pinsy (pizzeria.pinseria@gmail.com, tel. 720 996 677).</p>
+                <p><strong>2. Cel przetwarzania:</strong> Dane podane w formularzach (imię, telefon, e-mail, adres dostawy/Paczkomatu) przetwarzane są wyłącznie w celu:
+                    <ul>
+                        <li>odpowiedzi na przesłaną wiadomość (formularz kontaktowy / catering / szkolenia),</li>
+                        <li>przygotowania i realizacji zamówienia na spody lub produkty ze sklepiku.</li>
+                    </ul>
+                </p>
+                <p><strong>3. Odbiorcy danych:</strong> Dane nie są odsprzedawane podmiotom trzecim. Mogą być przekazywane wyłącznie operatorom pocztowym / kurierskim (np. InPost) w celu doręczenia paczki.</p>
+                <p><strong>4. Twoje prawa:</strong> Masz prawo wglądu do swoich danych, ich sprostowania, żądania usunięcia lub ograniczenia przetwarzania.</p>
+            </div>
+            <button class="btn primary-btn w-100" onclick="closePrivacyModal()">Rozumiem i akceptuję</button>
         </div>
     </div>
 </body>
