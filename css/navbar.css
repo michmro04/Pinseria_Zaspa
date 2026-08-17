@@ -117,7 +117,7 @@
 }
 
 .phone-zaspa { background-color: var(--secondary-color); }
-.phone-morena { background-color: var(--primary-color); }
+.phone-morena { background-color: var(--secondary-color); }
 
 .phone-btn small {
     font-size: 0.72em;

@@ -445,3 +445,55 @@ body.dark-theme .bg-striped {
         font-size: 0.74rem;
     }
 }
+
+/* ===================================================
+   PŁYWAJĄCA STRZAŁKA POWROTU NA POCZĄTEK MENU
+====================================================== */
+.menu-scroll-pill {
+    position: fixed;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+    border: 1.5px solid var(--primary-color);
+    padding: 8px 18px;
+    border-radius: 25px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    box-shadow: 0 8px 25px var(--shadow);
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 90;
+    white-space: nowrap;
+}
+
+#menu {
+    position: relative;
+}
+
+.menu-scroll-pill.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.menu-scroll-pill:hover {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+.menu-scroll-pill.docked {
+    position: absolute;
+    bottom: 20px;
+    top: auto;
+}
+
+@media (max-width: 480px) {
+    .menu-scroll-pill {
+        font-size: 0.8rem;
+        padding: 7px 16px;
+    }
+}

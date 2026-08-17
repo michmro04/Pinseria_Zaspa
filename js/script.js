@@ -650,3 +650,48 @@ document.querySelectorAll('.reel-wrapper').forEach(wrapper => {
         }
     });
 });
+
+// ===================================================
+// PŁYWAJĄCA PIGUŁKA MENU Z ZATRZYMANIEM NA DOLE SEKCJI
+// ===================================================
+function scrollToMenuTop() {
+    const tabs = document.querySelector('.menu-tabs');
+    if (tabs) {
+        const navbarOffset = 90; // Wysokość przyklejonego navbaru + zapas miejsca
+        const stala = 65;
+        const elementPosition = tabs.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - navbarOffset - stala;
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+        });
+    }
+}
+
+window.addEventListener('scroll', () => {
+    const menuSection = document.getElementById('menu');
+    const pillBtn = document.getElementById('menu-scroll-top');
+    
+    if (!menuSection || !pillBtn) return;
+
+    const rect = menuSection.getBoundingClientRect();
+    const viewportHeight = window.innerHeight;
+
+    // 1. Pokazuje się, gdy użytkownik minie 200px od góry Menu i sekcja jest jeszcze na ekranie
+    const isInsideMenu = rect.top < -200 && rect.bottom > 80;
+
+    if (isInsideMenu) {
+        pillBtn.classList.add('visible');
+
+        // 2. Jeśli dół sekcji Menu dotrze do dołu ekranu, blokujemy ją na dole sekcji (docked)
+        if (rect.bottom <= viewportHeight) {
+            pillBtn.classList.add('docked');
+        } else {
+            pillBtn.classList.remove('docked');
+        }
+    } else {
+        pillBtn.classList.remove('visible');
+        pillBtn.classList.remove('docked');
+    }
+});
