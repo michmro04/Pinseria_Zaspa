@@ -753,6 +753,21 @@ body.dark-theme .footer {
     opacity: 0.5;
 }
 
+.footer-author-link {
+    color: #eaeaea;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+.footer-author-link:hover {
+    color: #eaeaea;
+    text-decoration: underline;
+    background-color: var(--primary-color);
+    transition: color 0.2s ease, text-decoration 0.3s ease, background-color 0.2s ease;
+}
+
 /* ================================
    RESPONSYWNY MODAL SOCIAL MEDIA NA DZIEŃ DOBRY
 =================================== */
@@ -1891,3 +1906,5 @@ section {
         transform: translateY(0);
     }
 }
+
+
