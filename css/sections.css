@@ -753,20 +753,7 @@ body.dark-theme .footer {
     opacity: 0.5;
 }
 
-.footer-author-link {
-    color: #eaeaea;
-    text-decoration: none;
-    font-weight: 700;
-    padding: 5px 10px;
-    border-radius: 20px;
-}
 
-.footer-author-link:hover {
-    color: #eaeaea;
-    text-decoration: underline;
-    background-color: var(--primary-color);
-    transition: color 0.2s ease, text-decoration 0.3s ease, background-color 0.2s ease;
-}
 
 /* ================================
    RESPONSYWNY MODAL SOCIAL MEDIA NA DZIEŃ DOBRY
@@ -1907,4 +1894,209 @@ section {
     }
 }
 
+/* ===================================================
+   ZINTEGROWANY HUB: LOKALE & KARTA MENU
+====================================================== */
+.lokale-menu-hub {
+    padding: 85px 5% 70px;
+    text-align: center;
+    position: relative;
+}
 
+.hub-header {
+    margin-bottom: 28px;
+}
+
+.hub-header h2 {
+    font-size: 2.3rem;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+}
+
+.hub-subtitle {
+    font-size: 1.05rem;
+    opacity: 0.85;
+    margin: 0;
+}
+
+/* Siatka 2 większych kafelków lokali */
+.locations-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 24px;
+    max-width: 960px;
+    margin: 0 auto 28px auto;
+}
+
+.hub-location-card {
+    background-color: var(--card-bg) !important;
+    border: 1px solid var(--nav-border) !important;
+    border-radius: 20px;
+    padding: 26px 24px;
+    text-align: left;
+    box-shadow: 0 8px 25px var(--shadow);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.hub-location-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px var(--shadow);
+}
+
+/* Górny pasek kafelka (Nazwa i ulica po lewej, linki po prawej) */
+.hub-loc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--nav-border);
+    margin-bottom: 16px;
+}
+
+.hub-loc-title h3 {
+    font-size: 1.35rem;
+    color: var(--primary-color);
+    margin: 0 0 6px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.hub-loc-street {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin: 0;
+    opacity: 0.85;
+}
+
+.hub-loc-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.hub-loc-phone {
+    font-size: 0.92rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    text-decoration: none;
+    background-color: rgba(184, 43, 51, 0.08);
+    padding: 4px 10px;
+    border-radius: 12px;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+.hub-loc-phone:hover {
+    background-color: var(--primary-color);
+    color: #ffffff !important;
+}
+
+/* Godziny otwarcia */
+.hub-loc-hours h4 {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.92rem;
+    margin: 0 0 10px 0;
+    color: var(--text-color);
+}
+
+.hub-hours-table {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.hub-hour-row {
+    display: grid;
+    grid-template-columns: 95px 1fr;
+    font-size: 0.86rem;
+}
+
+.hub-hour-row .day {
+    font-weight: 700;
+    opacity: 0.85;
+}
+
+.hub-hour-row .time {
+    opacity: 0.8;
+}
+
+/* Płynny mostek: Baner dostawy */
+.hub-delivery-banner {
+    max-width: 960px;
+    margin: 0 auto 40px auto;
+    background-color: var(--card-bg);
+    border: 1.5px solid var(--secondary-color);
+    padding: 16px 24px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    text-align: left;
+    box-shadow: 0 4px 15px var(--shadow);
+}
+
+.hub-delivery-icon {
+    font-size: 2.2rem;
+    flex-shrink: 0;
+}
+
+.hub-delivery-text strong {
+    display: block;
+    font-size: 1.02rem;
+    color: var(--secondary-color);
+    margin-bottom: 3px;
+}
+
+.hub-delivery-text p {
+    font-size: 0.88rem;
+    margin: 0;
+    opacity: 0.85;
+    line-height: 1.4;
+}
+
+.hub-delivery-text span {
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+/* Obszar Menu */
+.hub-menu-wrapper {
+    margin-top: 10px;
+}
+
+/* Responsywność */
+@media (max-width: 768px) {
+    .locations-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .hub-loc-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .hub-loc-links {
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .hub-delivery-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 14px 18px;
+    }
+}

@@ -671,15 +671,15 @@ document.querySelectorAll('.reel-wrapper').forEach(wrapper => {
 });
 
 // ===================================================
-// PŁYWAJĄCA PIGUŁKA MENU Z ZATRZYMANIEM NA DOLE SEKCJI
+// PŁYWAJĄCA PIGUŁKA MENU - PRZEWIJANIE DO ZAKŁADEK
 // ===================================================
 function scrollToMenuTop() {
     const tabs = document.querySelector('.menu-tabs');
     if (tabs) {
-        const navbarOffset = 90; // Wysokość przyklejonego navbaru + zapas miejsca
-        const stala = 65;
+        const navbarOffset = 90;
+        const tabsOffset = 50;
         const elementPosition = tabs.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - navbarOffset - stala;
+        const offsetPosition = elementPosition + window.pageYOffset - navbarOffset - tabsOffset;
 
         window.scrollTo({
             top: offsetPosition,
@@ -689,21 +689,21 @@ function scrollToMenuTop() {
 }
 
 window.addEventListener('scroll', () => {
-    const menuSection = document.getElementById('menu');
+    const menuBlock = document.getElementById('menu');
     const pillBtn = document.getElementById('menu-scroll-top');
     
-    if (!menuSection || !pillBtn) return;
+    if (!menuBlock || !pillBtn) return;
 
-    const rect = menuSection.getBoundingClientRect();
+    const rect = menuBlock.getBoundingClientRect();
     const viewportHeight = window.innerHeight;
 
-    // 1. Pokazuje się, gdy użytkownik minie 200px od góry Menu i sekcja jest jeszcze na ekranie
-    const isInsideMenu = rect.top < -200 && rect.bottom > 80;
+    // Pokazuje się po minięciu zakładek i znika po wyjściu poza dół menu
+    const isInsideMenu = rect.top < -150 && rect.bottom > 120;
 
     if (isInsideMenu) {
         pillBtn.classList.add('visible');
 
-        // 2. Jeśli dół sekcji Menu dotrze do dołu ekranu, blokujemy ją na dole sekcji (docked)
+        // Zatrzymanie na dole sekcji (docked)
         if (rect.bottom <= viewportHeight) {
             pillBtn.classList.add('docked');
         } else {

@@ -147,11 +147,10 @@
         
         <!-- Navbar - Nowa kolejność linków -->
         <div class="nav-center" id="nav-center">
-            <a href="#menu">Menu</a>
             <a href="#sklep">Sklep</a>
             <a href="#spody">Spody do pinsy</a>
             <a href="#catering">Catering & Szkolenia</a>
-            <a href="#lokale">Nasze Lokale</a>
+            <a href="#lokale">Lokale & Menu</a>
             <a href="#gastronomia">Dla Gastronomii</a>
             <a href="#socials">Social Media</a>
             <a href="#kontakt">Kontakt</a>
@@ -226,92 +225,6 @@
             
             <!-- Kontener na kropki wyrzucony pod slider -->
             <div class="slider-dots" id="slider-dots"></div>
-        </div>
-    </section>
-
-    <!-- Sekcja: Menu -->
-    <section id="menu" class="menu-section bg-striped">
-        <div class="menu-container">
-            <h1>Karta Menu</h1>
-            <p class="menu-subtitle">Tradycyjna rzymska pinsa na zakwasie, świeże antipasti, desery i włoskie trunki</p>
-
-            <!-- KAFELKI LOKALI (ZAMAWIANIE I DOSTAWA) -->
-            <div class="menu-order-wrapper fade-in">
-                <div class="menu-delivery-badge">
-                    🛵 <strong>Dostawa do 6 km</strong> z wybranego lokalu — koszt: <strong>9.90 zł</strong>
-                </div>
-
-                <div class="menu-locations-grid">
-                    <!-- Lokal: Zaspa -->
-                    <div class="menu-loc-card">
-                        <div class="menu-loc-top-row">
-                            <div class="menu-loc-header">
-                                <span class="menu-loc-dot"></span>
-                                <h4>Gdańsk Zaspa</h4>
-                            </div>
-                            <p class="menu-loc-address">ul. Hynka 18/10</p>
-                        </div>
-                        <a href="tel:720996677" class="menu-loc-phone">
-                            📞 720 996 677
-                        </a>
-                    </div>
-
-                    <!-- Lokal: Morena -->
-                    <div class="menu-loc-card">
-                        <div class="menu-loc-top-row">
-                            <div class="menu-loc-header">
-                                <span class="menu-loc-dot dot-morena"></span>
-                                <h4>Gdańsk Morena</h4>
-                            </div>
-                            <p class="menu-loc-address">Królewskie Wzgórze 1</p>
-                        </div>
-                        <a href="tel:726767814" class="menu-loc-phone">
-                            📞 726 767 814
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PRZYCISKI ZAKŁADEK (TABS) -->
-            <div class="menu-tabs">
-                <button class="tab-btn active" data-category="pinsa-rossa">Pinsa Rossa (z sosem)</button>
-                <button class="tab-btn" data-category="pinsa-bianca">Pinsa Bianca (bez sosu)</button>
-                <button class="tab-btn" data-category="przystawki">Przystawki</button>
-                <button class="tab-btn" data-category="desery">Desery</button>
-                <button class="tab-btn" data-category="napoje">Napoje & Kawa</button>
-            </div>
-
-            <!-- KONTENERY DLA KATEGORII (Dynamicznie ładowane przez JS) -->
-            <div class="menu-content-wrapper">
-                <div class="menu-category active" id="pinsa-rossa">
-                    <div class="menu-grid"></div>
-                </div>
-
-                <div class="menu-category" id="pinsa-bianca">
-                    <div class="menu-grid"></div>
-                </div>
-
-                <div class="menu-category" id="przystawki">
-                    <div class="menu-grid"></div>
-                </div>
-
-                <div class="menu-category" id="desery">
-                    <div class="menu-grid"></div>
-                </div>
-
-                <div class="menu-category" id="napoje">
-                    <div class="menu-grid"></div>
-                </div>
-
-                <div class="menu-category" id="alkohole">
-                    <div class="menu-grid"></div>
-                </div>
-            </div>
-            
-            <!-- Pływający przycisk powrotu na początek menu -->
-            <button id="menu-scroll-top" class="menu-scroll-pill" onclick="scrollToMenuTop()">
-                ↑ Wróć na górę menu ↑
-            </button>
         </div>
     </section>
 
@@ -520,11 +433,11 @@
         </div>
     </section>
 
-    <!-- Sekcja: Nasze lokale / O nas-->
-    <section id="lokale" class="contact-section">
-        <div class="contact-container">
+    <!-- ZINTEGROWANA SEKCJA: LOKALE & KARTA MENU -->
+    <section id="lokale" class="lokale-menu-hub bg-striped">
+        <div class="menu-container">
             
-            <!-- Wstęp "O nas" z opisem ciasta i rzemiosła -->
+            <!-- Wstęp o rzemiośle -->
             <div class="about-intro-box fade-in">
                 <h2>Jesteśmy pierwszą Pinserią w Trójmieście!</h2>
                 <p class="about-lead">
@@ -532,96 +445,127 @@
                     Nasze ciasto powstaje z mieszanki <strong>trzech włoskich mąk</strong>, na naturalnym zakwasie i przy zachowaniu wielogodzinnej fermentacji. 
                     Dzięki temu pinsa jest niesamowicie lekka, chrupiąca z zewnątrz i delikatnie puszysta w środku. Ma tradycyjny owalny kształt, a gramatura spodu to aż <strong>300 g</strong> czystego rzemiosła!
                 </p>
-                <div class="lokale-email-info">
-                    <span>Napisz do nas:</span> 
-                    <a href="mailto:pizzeria.pinseria@gmail.com">pizzeria.pinseria@gmail.com</a>
-                </div>
+                <a class="btn primary-btn" href="#kontakt">Napisz do nas</a>
             </div>
 
-            <h3 class="lokale-heading">Odwiedź nas lub zamów z dostawą</h3>
-            
-            <div class="contact-grid-two-locations">
+            <div class="hub-header fade-in">
+                <h2>Nasze Lokale & Karta Menu</h2>
+                <p class="hub-subtitle">Wybierz swój lokal, sprawdź menu i zadzwoń, aby złożyć zamówienie</p>
+            </div>
+
+            <!-- Duże, czytelne kafelki obu lokali -->
+            <div class="locations-cards-grid fade-in">
                 
-                <!-- Lokal: Zaspa -->
-                <div class="contact-card location-card fade-in">
-                    <div class="location-header">
-                        <h3>
-                            <svg class="loc-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                            <span>Gdańsk Zaspa</span>
-                        </h3>
-                        <a href="https://maps.app.goo.gl/xJwKAeDmVw5rhLiD9" target="_blank" rel="noopener" class="map-link">Pokaż pinezkę ↗</a>
-                    </div>
-                    
-                    <p class="location-address">ul. Hynka 18/10, Gdańsk</p>
-
-                    <a href="tel:720996677" class="location-phone-clean">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                        <span>720 996 677</span>
-                    </a>
-
-                    <!-- Opcja zamówienia z dostawą -->
-                    <div class="location-delivery-box">
-                        <div class="delivery-info">
-                            <strong>🛵 Dostawa do 6 km</strong>
-                            <span>Koszt dostawy: 9.90 zł</span>
+                <!-- Karta: Zaspa -->
+                <div class="hub-location-card">
+                    <div class="hub-loc-header">
+                        <div class="hub-loc-title">
+                            <h3>
+                                <svg class="loc-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                <span>Gdańsk Zaspa</span>
+                            </h3>
+                            <p class="hub-loc-street">ul. Hynka 18/10, Gdańsk</p>
                         </div>
-                        <a href="tel:720996677" class="delivery-order-btn">Zamów z Zaspy ➔</a>
+                        <div class="hub-loc-links">
+                            <a href="https://maps.app.goo.gl/xJwKAeDmVw5rhLiD9" target="_blank" rel="noopener" class="map-link">Pokaż na mapie ↗</a>
+                            <a href="tel:720996677" class="hub-loc-phone">📞 720 996 677</a>
+                        </div>
                     </div>
 
-                    <div class="location-hours">
+                    <div class="hub-loc-hours">
                         <h4>
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                             <span>Godziny otwarcia:</span>
                         </h4>
-                        <div class="hours-table">
-                            <div class="hours-row"><span class="day">Pn - Czw:</span><span class="time">13:00 - 21:00</span></div>
-                            <div class="hours-row"><span class="day">Piątek:</span><span class="time">13:00 - 22:00</span></div>
-                            <div class="hours-row"><span class="day">Sobota:</span><span class="time">12:00 - 22:00</span></div>
-                            <div class="hours-row"><span class="day">Niedziela:</span><span class="time">12:00 - 21:00</span></div>
+                        <div class="hub-hours-table">
+                            <div class="hub-hour-row"><span class="day">Pn – Czw:</span><span class="time">13:00 – 21:00</span></div>
+                            <div class="hub-hour-row"><span class="day">Piątek:</span><span class="time">13:00 – 22:00</span></div>
+                            <div class="hub-hour-row"><span class="day">Sobota:</span><span class="time">12:00 – 22:00</span></div>
+                            <div class="hub-hour-row"><span class="day">Niedziela:</span><span class="time">12:00 – 21:00</span></div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Lokal: Morena -->
-                <div class="contact-card location-card fade-in">
-                    <div class="location-header">
-                        <h3>
-                            <svg class="loc-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                            <span>Gdańsk Morena</span>
-                        </h3>
-                        <a href="https://maps.google.com/?q=Królewskie+Wzgórze+1+Gdańsk" target="_blank" rel="noopener" class="map-link">Pokaż pinezkę ↗</a>
-                    </div>
-                    
-                    <p class="location-address">Królewskie Wzgórze 1, Gdańsk</p>
-
-                    <a href="tel:726767814" class="location-phone-clean">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                        <span>726 767 814</span>
-                    </a>
-
-                    <!-- Opcja zamówienia z dostawą -->
-                    <div class="location-delivery-box">
-                        <div class="delivery-info">
-                            <strong>🛵 Dostawa do 6 km</strong>
-                            <span>Koszt dostawy: 9.90 zł</span>
+                <!-- Karta: Morena -->
+                <div class="hub-location-card">
+                    <div class="hub-loc-header">
+                        <div class="hub-loc-title">
+                            <h3>
+                                <svg class="loc-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                <span>Gdańsk Morena</span>
+                            </h3>
+                            <p class="hub-loc-street">Królewskie Wzgórze 1, Gdańsk</p>
                         </div>
-                        <a href="tel:726767814" class="delivery-order-btn">Zamów z Moreny ➔</a>
+                        <div class="hub-loc-links">
+                            <a href="https://maps.google.com/?q=Królewskie+Wzgórze+1+Gdańsk" target="_blank" rel="noopener" class="map-link">Pokaż na mapie ↗</a>
+                            <a href="tel:726767814" class="hub-loc-phone">📞 726 767 814</a>
+                        </div>
                     </div>
 
-                    <div class="location-hours">
+                    <div class="hub-loc-hours">
                         <h4>
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                             <span>Godziny otwarcia:</span>
                         </h4>
-                        <div class="hours-table">
-                            <div class="hours-row"><span class="day">Pn - Czw:</span><span class="time">12:00 - 21:00</span></div>
-                            <div class="hours-row"><span class="day">Pt - Sb:</span><span class="time">12:00 - 22:00</span></div>
-                            <div class="hours-row"><span class="day">Niedziela:</span><span class="time">12:00 - 21:00</span></div>
+                        <div class="hub-hours-table">
+                            <div class="hub-hour-row"><span class="day">Pn – Czw:</span><span class="time">12:00 – 21:00</span></div>
+                            <div class="hub-hour-row"><span class="day">Pt – Sb:</span><span class="time">12:00 – 22:00</span></div>
+                            <div class="hub-hour-row"><span class="day">Niedziela:</span><span class="time">12:00 – 21:00</span></div>
                         </div>
                     </div>
                 </div>
 
             </div>
+
+            <!-- Wspólny baner informacyjny o dostawie i telefonach -->
+            <div class="hub-delivery-banner fade-in">
+                <div class="hub-delivery-icon">🛵</div>
+                <div class="hub-delivery-text">
+                    <strong>Dostawa do 6 km z każdego lokalu — koszt stały: 9.90 zł</strong>
+                    <p>Zamówienia przyjmujemy <span>wyłącznie telefonicznie</span> pod numerami lokali podanymi wyżej. Nie prowadzimy zamówień online.</p>
+                </div>
+            </div>
+
+            <!-- KARTA MENU (Zakotwiczenie pod id="menu" dla linków nawigacji) -->
+            <div id="menu" class="hub-menu-wrapper">
+                
+                <!-- Zakładki kategorii -->
+                <div class="menu-tabs">
+                    <button class="tab-btn active" data-category="pinsa-rossa">Pinsa Rossa (z sosem)</button>
+                    <button class="tab-btn" data-category="pinsa-bianca">Pinsa Bianca (bez sosu)</button>
+                    <button class="tab-btn" data-category="przystawki">Przystawki</button>
+                    <button class="tab-btn" data-category="desery">Desery</button>
+                    <button class="tab-btn" data-category="napoje">Napoje & Kawa</button>
+                </div>
+
+                <!-- Kontenery ładowane dynamicznie z pliku menu.json -->
+                <div class="menu-content-wrapper">
+                    <div class="menu-category active" id="pinsa-rossa">
+                        <div class="menu-grid"></div>
+                    </div>
+
+                    <div class="menu-category" id="pinsa-bianca">
+                        <div class="menu-grid"></div>
+                    </div>
+
+                    <div class="menu-category" id="przystawki">
+                        <div class="menu-grid"></div>
+                    </div>
+
+                    <div class="menu-category" id="desery">
+                        <div class="menu-grid"></div>
+                    </div>
+
+                    <div class="menu-category" id="napoje">
+                        <div class="menu-grid"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pływający przycisk powrotu do zakładek -->
+            <button id="menu-scroll-top" class="menu-scroll-pill" onclick="scrollToMenuTop()">
+                🍕 Wróć do zakładek menu ↑
+            </button>
         </div>
     </section>
 
