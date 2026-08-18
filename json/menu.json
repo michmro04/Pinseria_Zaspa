@@ -314,54 +314,5 @@
       "isBestseller": false,
       "isSpicy": false
     }
-  ],
-  "alkohole": [
-    {
-      "name": "Birra Peroni Nastro Azzurro (330ml)",
-      "description": "Kultowe włoskie piwo jasne pełne / dostępne również 0.0%.",
-      "price": "14 zł",
-      "image": "images/pinsa/pinsa2.webp",
-      "isVege": true,
-      "isBestseller": true,
-      "isSpicy": false,
-      "allergens": "Gluten"
-    },
-    {
-      "name": "Piwo Książęce (500ml)",
-      "description": "Złote Pszeniczne, IPA, Czerwony Lager lub Cherry Ale.",
-      "price": "15 zł",
-      "image": "images/pinsa/pinsa3.webp",
-      "isVege": true,
-      "isBestseller": false,
-      "isSpicy": false,
-      "allergens": "Gluten"
-    },
-    {
-      "name": "Aperol Spritz",
-      "description": "Aperol, Prosecco DOC, woda gazowana, świeży plaster pomarańczy.",
-      "price": "28 zł",
-      "image": "images/pinsa/pinsa4.webp",
-      "isVege": true,
-      "isBestseller": true,
-      "isSpicy": false
-    },
-    {
-      "name": "Malfy Gin & Tonic",
-      "description": "Włoski gin Malfy (Rosa / Con Limone / Originale), tonik, świeże cytrusy.",
-      "price": "32 zł",
-      "image": "images/pinsa/pinsa5.webp",
-      "isVege": true,
-      "isBestseller": false,
-      "isSpicy": false
-    },
-    {
-      "name": "Chivas Regal 12YO (40ml)",
-      "description": "Szkocka whisky blended klasy premium podawana na lodzie.",
-      "price": "24 zł",
-      "image": "images/pinsa/pinsa1.webp",
-      "isVege": true,
-      "isBestseller": false,
-      "isSpicy": false
-    }
   ]
 }

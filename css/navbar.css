@@ -104,21 +104,6 @@
     flex-shrink: 0;
 }
 
-.phone-btn {
-    background-color: var(--secondary-color);
-    color: white !important;
-    padding: 5px 12px;
-    border-radius: 20px;
-    font-size: 0.82rem;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s, transform 0.3s;
-    white-space: nowrap;
-}
-
-.phone-zaspa { background-color: var(--secondary-color); }
-.phone-morena { background-color: var(--secondary-color); }
-
 .phone-btn small {
     font-size: 0.72em;
     opacity: 0.9;
@@ -132,7 +117,7 @@
 /* Siatka dla małych ikonek w nawigacji */
 .nav-icons-col {
     display: grid;
-    grid-template-columns: repeat(2, auto);
+    grid-template-columns: repeat(3, auto);
     gap: 4px 6px;
     border-left: 1px solid var(--nav-border);
     padding-left: 10px;
@@ -144,8 +129,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 25px;
-    height: 25px;
+    width: 40px;
+    height: 40px;
     min-width: 25px;
     min-height: 25px;
     flex-shrink: 0;
