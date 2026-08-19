@@ -2,110 +2,130 @@
   "pinsa-rossa": [
     {
       "name": "1. Margherita",
-      "description": "Sos pomidorowy z włoskich pomidorów San Marzano, mozzarella fior di latte, świeża bazylia, oliwa extra vergine.",
-      "price": "33 zł",
-      "image": "images/pinsa/pinsa1.webp",
+      "description": "Sos pomidorowy, mozzarella fior di latte, świeża bazylia.",
+      "price": "29 zł",
+      "image": "images/pinsa_r/Margherita.webp",
       "isVege": true,
       "isBestseller": false,
       "isSpicy": false,
       "allergens": "Gluten, Mleko"
     },
     {
-      "name": "2. Salame Napoli",
-      "description": "Sos pomidorowy, mozzarella fior di latte, tradycyjne łagodne salami Napoli, świeża bazylia.",
-      "price": "38 zł",
-      "image": "images/pinsa/pinsa2.webp",
-      "isVege": false,
-      "isBestseller": false,
-      "isSpicy": false,
-      "allergens": "Gluten, Mleko"
-    },
-    {
-      "name": "3. Piccante & 'Nduja",
-      "description": "Sos pomidorowy, mozzarella fior di latte, pikantna spianata calabrese, kalabryjska 'nduja, papryczki jalapeño.",
-      "price": "42 zł",
-      "image": "images/pinsa/pinsa3.webp",
+      "name": "2. Diavola",
+      "description": "Sos pomidorowy, mozzarella fior di latte, salami piccante, czerwona cebula, mascarpone.",
+      "price": "39 zł",
+      "image": "images/pinsa_r/Diavola.webp",
       "isVege": false,
       "isBestseller": true,
       "isSpicy": true,
       "allergens": "Gluten, Mleko"
     },
     {
-      "name": "4. Prosciutto Cotto e Funghi",
-      "description": "Sos pomidorowy, mozzarella fior di latte, włoska gotowana szynka Cotto, świeże pieczarki.",
-      "price": "39 zł",
-      "image": "images/pinsa/pinsa4.webp",
-      "isVege": false,
-      "isBestseller": false,
-      "isSpicy": false,
-      "allergens": "Gluten, Mleko"
-    },
-    {
-      "name": "5. Capricciosa",
-      "description": "Sos pomidorowy, mozzarella fior di latte, prosciutto cotto, pieczarki, włoskie karczochy, czarne oliwki.",
-      "price": "43 zł",
-      "image": "images/pinsa/pinsa5.webp",
-      "isVege": false,
-      "isBestseller": false,
-      "isSpicy": false,
-      "allergens": "Gluten, Mleko"
-    },
-    {
-      "name": "6. Parma e Rucola",
-      "description": "Sos pomidorowy, mozzarella fior di latte, Prosciutto di Parma, świeża rukola, pomidorki cherry, płatki parmezanu, krem balsamiczny.",
-      "price": "46 zł",
-      "image": "images/pinsa/pinsa1.webp",
-      "isVege": false,
-      "isBestseller": true,
-      "isSpicy": false,
-      "allergens": "Gluten, Mleko"
-    },
-    {
-      "name": "7. Burrata e Crudo",
-      "description": "Sos pomidorowy, mozzarella fior di latte, cała kremowa burrata (125g), Prosciutto Crudo, pomidorki, świeża bazylia.",
-      "price": "48 zł",
-      "image": "images/pinsa/pinsa2.webp",
-      "isVege": false,
-      "isBestseller": true,
-      "isSpicy": false,
-      "allergens": "Gluten, Mleko"
-    },
-    {
-      "name": "8. Tonno e Cipolla",
-      "description": "Sos pomidorowy, mozzarella fior di latte, kawałki tuńczyka, czerwona cebula, kapary z zalewy, oregano.",
-      "price": "42 zł",
-      "image": "images/pinsa/pinsa3.webp",
-      "isVege": false,
-      "isBestseller": false,
-      "isSpicy": false,
-      "allergens": "Gluten, Mleko, Ryby"
-    },
-    {
-      "name": "9. Vegana Ortolana",
-      "description": "Sos pomidorowy, grillowana cukinia, grillowany bakłażan, pieczarki, karczochy, pomidorki, oliwki, świeża bazylia.",
-      "price": "39 zł",
-      "image": "images/pinsa/pinsa4.webp",
-      "isVege": true,
-      "isBestseller": false,
-      "isSpicy": false,
-      "allergens": "Gluten"
-    },
-    {
-      "name": "10. Diavola Extra",
-      "description": "Sos pomidorowy, mozzarella fior di latte, Spianata Piccante, suszone pomidory, czosnek, płatki chili, oliwa pikantna.",
-      "price": "43 zł",
-      "image": "images/pinsa/pinsa5.webp",
+      "name": "3. Nduja",
+      "description": "Sos pomidorowy, mozzarella fior di latte, kalabryjska 'nduja, czerwona cebula.",
+      "price": "37 zł",
+      "image": "images/pinsa_r/Nduja.webp",
       "isVege": false,
       "isBestseller": false,
       "isSpicy": true,
       "allergens": "Gluten, Mleko"
     },
     {
-      "name": "11. Quattro Formaggi Rossa",
-      "description": "Sos pomidorowy, mozzarella fior di latte, gorgonzola DOP, taleggio DOP, parmezan dojrzewający.",
+      "name": "4. Nduja Mango",
+      "description": "Sos pomidorowy, mozzarella fior di latte, mascarpone, cząstki mango, pikantna 'nduja.",
       "price": "44 zł",
-      "image": "images/pinsa/pinsa1.webp",
+      "image": "images/pinsa_r/Nduja_Mango.webp",
+      "isVege": false,
+      "isBestseller": true,
+      "isSpicy": true,
+      "allergens": "Gluten, Mleko"
+    },
+    {
+      "name": "5. Prosciutto Cotto",
+      "description": "Sos pomidorowy, mozzarella fior di latte, włoska szynka cotto.",
+      "price": "36 zł",
+      "image": "images/pinsa_r/Prosciutto_Cotto.webp",
+      "isVege": false,
+      "isBestseller": false,
+      "isSpicy": false,
+      "allergens": "Gluten, Mleko"
+    },
+    {
+      "name": "6. Vege",
+      "description": "Sos pomidorowy, mozzarella fior di latte, konfitowane pomidorki, karczochy, ricotta, bazylia, puder z oliwek.",
+      "price": "43 zł",
+      "image": "images/pinsa_r/Vege.webp",
       "isVege": true,
+      "isBestseller": false,
+      "isSpicy": false,
+      "allergens": "Gluten, Mleko"
+    },
+    {
+      "name": "7. Quattro Formaggi",
+      "description": "Sos pomidorowy, mozzarella fior di latte, cheddar, gorgonzola, grana padano.",
+      "price": "39 zł",
+      "image": "images/pinsa_r/Quattro_Fromaggi.webp",
+      "isVege": true,
+      "isBestseller": false,
+      "isSpicy": false,
+      "allergens": "Gluten, Mleko"
+    },
+    {
+      "name": "8. Dolce e Piccante",
+      "description": "Sos pomidorowy, mozzarella fior di latte, 'nduja, chutney z ananasa, świeża kolendra.",
+      "price": "42 zł",
+      "image": "images/pinsa_r/Dolce_E_Picante.webp",
+      "isVege": false,
+      "isBestseller": false,
+      "isSpicy": true,
+      "allergens": "Gluten, Mleko"
+    },
+    {
+      "name": "9. Gambero",
+      "description": "Sos pomidorowy, mozzarella fior di latte, krewetki, miód chilli, konfitowany czosnek, kolendra, limonka.",
+      "price": "54 zł",
+      "image": "images/pinsa_r/Gambero.webp",
+      "isVege": false,
+      "isBestseller": true,
+      "isSpicy": true,
+      "allergens": "Gluten, Mleko, Skorupiaki"
+    },
+    {
+      "name": "10. Spicy Chorizo",
+      "description": "Sos pomidorowy, mozzarella fior di latte, wyraziste chorizo, peperoncino, świeża rukola.",
+      "price": "45 zł",
+      "image": "images/pinsa_r/Spicy_Chorizo.webp",
+      "isVege": false,
+      "isBestseller": false,
+      "isSpicy": true,
+      "allergens": "Gluten, Mleko"
+    },
+    {
+      "name": "11. Burrata 2.0",
+      "description": "Sos pomidorowy, mozzarella fior di latte, cała kremowa burrata, kalabryjska 'nduja.",
+      "price": "49 zł",
+      "image": "images/pinsa_r/Buratta2.webp",
+      "isVege": false,
+      "isBestseller": true,
+      "isSpicy": true,
+      "allergens": "Gluten, Mleko"
+    },
+    {
+      "name": "12. Salami e Miele",
+      "description": "Sos pomidorowy, mozzarella fior di latte, salami finocchiona, miód chilli, orzechy włoskie.",
+      "price": "45 zł",
+      "image": "images/pinsa_r/Salami_E_Miele.webp",
+      "isVege": false,
+      "isBestseller": false,
+      "isSpicy": true,
+      "allergens": "Gluten, Mleko, Orzechy"
+    },
+    {
+      "name": "13. Toscana",
+      "description": "Sos pomidorowy, mozzarella fior di latte, prosciutto crudo, oliwa truflowa, czarne oliwki.",
+      "price": "43 zł",
+      "image": "images/pinsa_r/Capriciosa.webp",
+      "isVege": false,
       "isBestseller": false,
       "isSpicy": false,
       "allergens": "Gluten, Mleko"
@@ -113,203 +133,317 @@
   ],
   "pinsa-bianca": [
     {
-      "name": "12. Pistacchio e Mortadella",
-      "description": "Mozzarella fior di latte, oryginalna mortadella bolońska IGP, cała kremowa burrata (125g), kruszone pistacje, sos pistacjowy.",
+      "name": "1. Carbonara",
+      "description": "Baza biała, mozzarella fior di latte, dojrzewające guanciale, żółtko, świeżo mielony pieprz.",
+      "price": "41 zł",
+      "image": "images/pinsa_b/Carbonara.webp",
+      "isVege": false,
+      "isBestseller": true,
+      "isSpicy": false,
+      "allergens": "Gluten, Mleko, Jaja"
+    },
+    {
+      "name": "2. Mortadela 2.0",
+      "description": "Mozzarella fior di latte, mortadella bolońska IGP, straciatella, pesto bazyliowe, kruszone pistacje.",
       "price": "49 zł",
-      "image": "images/pinsa/pinsa2.webp",
+      "image": "images/pinsa_b/Mortadella.webp",
       "isVege": false,
       "isBestseller": true,
       "isSpicy": false,
       "allergens": "Gluten, Mleko, Orzechy (pistacje)"
     },
     {
-      "name": "13. Quattro Formaggi con Miele",
-      "description": "Biała baza, mozzarella fior di latte, gorgonzola DOP, taleggio DOP, parmezan, orzechy włoskie, miód lipowy.",
-      "price": "44 zł",
-      "image": "images/pinsa/pinsa3.webp",
-      "isVege": true,
-      "isBestseller": true,
-      "isSpicy": false,
-      "allergens": "Gluten, Mleko, Orzechy"
-    },
-    {
-      "name": "14. Tartufo e Salsiccia",
-      "description": "Mozzarella fior di latte, pasta truflowa, włoska kiełbaska salsiccia, pieczarki, parmezan, oliwa truflowa.",
-      "price": "47 zł",
-      "image": "images/pinsa/pinsa4.webp",
-      "isVege": false,
-      "isBestseller": true,
-      "isSpicy": false,
-      "allergens": "Gluten, Mleko"
-    },
-    {
-      "name": "15. Patate e Scamorza",
-      "description": "Mozzarella fior di latte, pieczone plastry ziemniaków z rozmarynem, salsiccia, wędzony ser scamorza affumicata.",
-      "price": "42 zł",
-      "image": "images/pinsa/pinsa5.webp",
-      "isVege": false,
-      "isBestseller": false,
-      "isSpicy": false,
-      "allergens": "Gluten, Mleko"
-    },
-    {
-      "name": "16. Pera e Gorgonzola",
-      "description": "Mozzarella fior di latte, wyrazista gorgonzola DOP, karmelizowana gruszka, orzechy włoskie, rukola, krem balsamiczny.",
-      "price": "43 zł",
-      "image": "images/pinsa/pinsa1.webp",
-      "isVege": true,
-      "isBestseller": false,
-      "isSpicy": false,
-      "allergens": "Gluten, Mleko, Orzechy"
-    },
-    {
-      "name": "17. Pancetta e Scamorza",
-      "description": "Mozzarella fior di latte, chrupiący włoski boczek pancetta, wędzona scamorza, suszone pomidory, czosnek.",
-      "price": "43 zł",
-      "image": "images/pinsa/pinsa2.webp",
-      "isVege": false,
-      "isBestseller": false,
-      "isSpicy": false,
-      "allergens": "Gluten, Mleko"
-    },
-    {
-      "name": "18. Gamberi e Zucchine",
-      "description": "Mozzarella fior di latte, krewetki smażone na maśle czosnkowym z białym winem, paski cukinii, pomidorki, pietruszka, cytryna.",
+      "name": "3. Prosciutto Crudo",
+      "description": "Mozzarella fior di latte, Prosciutto Crudo, grana padano, pomidorki konfitowane, rukola.",
       "price": "49 zł",
-      "image": "images/pinsa/pinsa3.webp",
+      "image": "images/pinsa_b/Prosciutto_Crudo.webp",
       "isVege": false,
       "isBestseller": false,
       "isSpicy": false,
-      "allergens": "Gluten, Mleko, Skorupiaki"
+      "allergens": "Gluten, Mleko"
+    },
+    {
+      "name": "4. Patata",
+      "description": "Mozzarella fior di latte, guanciale, pieczone plastry ziemniaka, czerwona cebula, rozmaryn, pieprz, kawior.",
+      "price": "39 zł",
+      "image": "images/pinsa_b/Patata.webp",
+      "isVege": false,
+      "isBestseller": false,
+      "isSpicy": false,
+      "allergens": "Gluten, Mleko, Ryby"
+    },
+    {
+      "name": "5. Funghi Creme",
+      "description": "Creme fraiche, mozzarella fior di latte, grzyby leśne, włoska kiełbaska salsiccia, świeża pietruszka.",
+      "price": "46 zł",
+      "image": "images/pinsa_b/Tartuffo_Vege.webp",
+      "isVege": false,
+      "isBestseller": false,
+      "isSpicy": false,
+      "allergens": "Gluten, Mleko"
+    },
+    {
+      "name": "6. Pera",
+      "description": "Mozzarella fior di latte, marynowana słodka gruszka, gorgonzola, miód lipowy, orzechy włoskie.",
+      "price": "39 zł",
+      "image": "images/pinsa_b/Pera.webp",
+      "isVege": true,
+      "isBestseller": true,
+      "isSpicy": false,
+      "allergens": "Gluten, Mleko, Orzechy"
+    },
+    {
+      "name": "7. Tartufo",
+      "description": "Pasta truflowa, mozzarella fior di latte, pikantne salami piccante, kremowe mascarpone.",
+      "price": "44 zł",
+      "image": "images/pinsa_b/Tartuffo.webp",
+      "isVege": false,
+      "isBestseller": false,
+      "isSpicy": true,
+      "allergens": "Gluten, Mleko"
+    },
+    {
+      "name": "8. Confi Garlic",
+      "description": "Mozzarella fior di latte, confitowany czosnek, chrupiące guanciale, miód, peperoncino, pietruszka.",
+      "price": "46 zł",
+      "image": "images/pinsa_b/Conte_Garlic.webp",
+      "isVege": false,
+      "isBestseller": false,
+      "isSpicy": true,
+      "allergens": "Gluten, Mleko"
+    },
+    {
+      "name": "9. Caccio e Pepe",
+      "description": "Creme fraiche, mozzarella fior di latte, wyrazisty ser pecorino, świeży tłuczony pieprz, oliwa Extra Vergine.",
+      "price": "39 zł",
+      "image": "images/pinsa_b/Buratta.webp",
+      "isVege": true,
+      "isBestseller": false,
+      "isSpicy": false,
+      "allergens": "Gluten, Mleko"
+    },
+    {
+      "name": "10. Francuska",
+      "description": "Mozzarella fior di latte, ser camembert, guanciale, karmelizowana czerwona cebula, konfitura z żurawiny, pieprz.",
+      "price": "46 zł",
+      "image": "images/pinsa_b/Franceska.webp",
+      "isVege": false,
+      "isBestseller": true,
+      "isSpicy": false,
+      "allergens": "Gluten, Mleko"
     }
   ],
   "przystawki": [
     {
-      "name": "Focaccia Classica",
-      "description": "Rzemieślnicze pieczywo pinsa, oliwa extra vergine, świeży rozmaryn, sól morska.",
-      "price": "22 zł",
-      "image": "images/pinsa/pinsa4.webp",
-      "isVege": true,
+      "name": "Focaccia Bresaola",
+      "description": "Wypiekany spód pinsy, suszona wołowina bresaola, oliwa truflowa, świeża bazylia.",
+      "price": "29 zł",
+      "image": "",
+      "isVege": false,
       "isBestseller": false,
       "isSpicy": false,
       "allergens": "Gluten"
     },
     {
-      "name": "Focaccia z Parmezanem i Czosnkiem",
-      "description": "Oliwa czosnkowa extra vergine, tarty parmezan, oregano, rozmaryn.",
-      "price": "26 zł",
-      "image": "images/pinsa/pinsa5.webp",
-      "isVege": true,
-      "isBestseller": false,
-      "isSpicy": false,
-      "allergens": "Gluten, Mleko"
-    },
-    {
-      "name": "Burrata z Pomidorkami",
-      "description": "Kremowa włoska burrata (125g), kolorowe pomidorki, pesto bazyliowe, krem balsamiczny, podawana z chrupiącą mini focaccią.",
-      "price": "39 zł",
-      "image": "images/pinsa/pinsa1.webp",
-      "isVege": true,
-      "isBestseller": true,
-      "isSpicy": false,
-      "allergens": "Gluten, Mleko, Orzechy"
-    },
-    {
-      "name": "Deska Włoskich Przysmaków (dla 2 osób)",
-      "description": "Selekcja wędlin (Prosciutto Crudo, Spianata Piccante, Mortadella IGP, Salami Napoli), sery włoskie, karczochy, oliwki, mini focaccia.",
-      "price": "59 zł",
-      "image": "images/pinsa/pinsa2.webp",
+      "name": "Focaccia Mortadella & Straciatella",
+      "description": "Ciepła focaccia, mortadella bolońska IGP, kremowa straciatella, domowe pesto, prażone pistacje.",
+      "price": "28 zł",
+      "image": "images/przystawki/Stracciatella.webp",
       "isVege": false,
       "isBestseller": true,
       "isSpicy": false,
-      "allergens": "Gluten, Mleko"
-    },
-    {
-      "name": "Bruschetta Classica (3 szt.)",
-      "description": "Grzanki z ciasta pinsa, pomidorki koktajlowe, czosnek, świeża bazylia, oliwa z oliwek.",
-      "price": "24 zł",
-      "image": "images/pinsa/pinsa3.webp",
-      "isVege": true,
-      "isBestseller": false,
-      "isSpicy": false,
-      "allergens": "Gluten"
-    }
-  ],
-  "desery": [
-    {
-      "name": "Tiramisu Classico",
-      "description": "Domowe włoskie tiramisu z biszkoptami nasączonymi espresso Illy i likierem Amaretto, puszysty krem mascarpone, kakao.",
-      "price": "23 zł",
-      "image": "images/pinsa/pinsa4.webp",
-      "isVege": true,
-      "isBestseller": true,
-      "isSpicy": false,
-      "allergens": "Gluten, Mleko, Jaja"
-    },
-    {
-      "name": "Pinsa Dolce Nutella & Pistacchio",
-      "description": "Chrupiący spód pinsy podawany na ciepło z kremem Nutella, bananem i siekanymi pistacjami.",
-      "price": "29 zł",
-      "image": "images/pinsa/pinsa5.webp",
-      "isVege": true,
-      "isBestseller": false,
-      "isSpicy": false,
       "allergens": "Gluten, Mleko, Orzechy"
     },
     {
-      "name": "Cannoli Siciliani (2 szt.)",
-      "description": "Kruche rurki sycylijskie nadziewane słodkim kremem z ricotty z kawałkami czekolady i kandyzowaną pomarańczą.",
-      "price": "21 zł",
-      "image": "images/pinsa/pinsa1.webp",
+      "name": "Focaccia Pesto Siciliano",
+      "description": "Pesto siciliano, kremowa ricotta, czarne włoskie oliwki.",
+      "price": "26 zł",
+      "image": "",
       "isVege": true,
       "isBestseller": false,
       "isSpicy": false,
       "allergens": "Gluten, Mleko"
-    }
-  ],
-  "napoje": [
-    {
-      "name": "Kawa Illy Espresso / Doppio",
-      "description": "Klasyczna włoska kawa 100% Arabica Illy.",
-      "price": "9 / 12 zł",
-      "image": "images/pinsa/pinsa2.webp",
-      "isVege": true,
-      "isBestseller": false,
-      "isSpicy": false
     },
     {
-      "name": "Kawa Illy Cappuccino / Flat White",
-      "description": "Aromatyczne espresso Illy ze spienionym mlekiem.",
-      "price": "14 zł",
-      "image": "images/pinsa/pinsa3.webp",
+      "name": "Caprese",
+      "description": "Plastry mozzarelli, aromatyczne pesto bazyliowe, soczyste pomidory, redukcja balsamiczna.",
+      "price": "26 zł",
+      "image": "",
       "isVege": true,
       "isBestseller": false,
       "isSpicy": false,
       "allergens": "Mleko"
     },
     {
-      "name": "Włoskie Napoje San Pellegrino (330ml)",
-      "description": "Aranciata, Limonata, Aranciata Rossa, Pompelmo.",
+      "name": "Zapiekany Camembert z Żurawiną",
+      "description": "Gorący ser camembert zapiekany w piecu, podawany ze słodką konfiturą z żurawiny i chrupiącą focaccią.",
+      "price": "28 zł",
+      "image": "images/przystawki/Zapiekany_Camembert.webp",
+      "isVege": true,
+      "isBestseller": true,
+      "isSpicy": false,
+      "allergens": "Gluten, Mleko"
+    },
+    {
+      "name": "Krewetki alla Nduja",
+      "description": "Krewetki duszone w sosie winno-pomidorowym z pikantną 'ndują, świeżą pietruszką, sokiem z limonki i focaccią.",
+      "price": "39 zł",
+      "image": "images/przystawki/Krewetka_Ala_Nduja.webp",
+      "isVege": false,
+      "isBestseller": true,
+      "isSpicy": true,
+      "allergens": "Gluten, Skorupiaki"
+    },
+    {
+      "name": "Carpaccio di Bresaola",
+      "description": "Cienko krojona bresaola, pasta truflowa, świeża rukola, płatki parmezanu, kapary, podawana z mini focaccią.",
+      "price": "45 zł",
+      "image": "images/przystawki/Carpacio_Di_Bresola.webp",
+      "isVege": false,
+      "isBestseller": false,
+      "isSpicy": false,
+      "allergens": "Gluten, Mleko"
+    },
+    {
+      "name": "Antipasti (Deska wędlin i serów)",
+      "description": "Bogata selekcja oryginalnych włoskich wędlin, serów regionalnych, oliwek i pieczywa focaccia (idealna dla 2 osób).",
+      "price": "69 zł",
+      "image": "images/przystawki/Dish_Composition.webp",
+      "isVege": false,
+      "isBestseller": true,
+      "isSpicy": false,
+      "allergens": "Gluten, Mleko"
+    }
+  ],
+  "desery": [
+    {
+      "name": "Tiramisu",
+      "description": "Klasyczne domowe włoskie tiramisu z biszkoptami nasączonymi espresso Illy i kremem mascarpone.",
+      "price": "26 zł",
+      "image": "",
+      "isVege": true,
+      "isBestseller": true,
+      "isSpicy": false,
+      "allergens": "Gluten, Mleko, Jaja"
+    },
+    {
+      "name": "Pinsa na Słodko",
+      "description": "Chrupiący spód pinsy serwowany na ciepło z kremem czekoladowo-orzechowym i dodatkami.",
+      "price": "37 zł",
+      "image": "",
+      "isVege": true,
+      "isBestseller": false,
+      "isSpicy": false,
+      "allergens": "Gluten, Mleko, Orzechy"
+    },
+    {
+      "name": "Affogato",
+      "description": "Gałka kremowych lodów waniliowych zalana gorącym włoskim espresso Illy.",
+      "price": "22 zł",
+      "image": "",
+      "isVege": true,
+      "isBestseller": false,
+      "isSpicy": false,
+      "allergens": "Mleko"
+    }
+  ],
+  "napoje": [
+    {
+      "name": "Kawa Espresso / Podwójne Espresso",
+      "description": "Oryginalna włoska kawa Illy.",
+      "price": "9 / 12 zł",
+      "image": "",
+      "isVege": true,
+      "isBestseller": false,
+      "isSpicy": false
+    },
+    {
+      "name": "Kawa Americano",
+      "description": "Klasyczna czarna kawa Illy.",
+      "price": "10 zł",
+      "image": "",
+      "isVege": true,
+      "isBestseller": false,
+      "isSpicy": false
+    },
+    {
+      "name": "Kawa Cappuccino / Biała Kawa",
+      "description": "Espresso z aksamitnie spienionym mlekiem.",
       "price": "12 zł",
-      "image": "images/pinsa/pinsa4.webp",
+      "image": "",
+      "isVege": true,
+      "isBestseller": false,
+      "isSpicy": false,
+      "allergens": "Mleko"
+    },
+    {
+      "name": "Espresso Tonic / Espresso Orange",
+      "description": "Orzeźwiające połączenie espresso z tonikiem lub sokiem pomarańczowym na lodzie.",
+      "price": "18 / 19 zł",
+      "image": "",
+      "isVege": true,
+      "isBestseller": true,
+      "isSpicy": false
+    },
+    {
+      "name": "Herbata / Herbata Smakowa",
+      "description": "Napar z liściastej herbaty premium serwowany w dzbanuszku.",
+      "price": "9 / 10 zł",
+      "image": "",
       "isVege": true,
       "isBestseller": false,
       "isSpicy": false
     },
     {
-      "name": "Coca-Cola / Cola Zero (330ml)",
-      "description": "Klasyczny napój w szklanej butelce.",
+      "name": "Aperol Free 0% (Koktajl)",
+      "description": "Syrop Orange Spritz, wino bezalkoholowe, woda gazowana, świeża pomarańcza.",
+      "price": "28 zł",
+      "image": "",
+      "isVege": true,
+      "isBestseller": true,
+      "isSpicy": false
+    },
+    {
+      "name": "Peach Free 0% / Mimoza Free 0% / Hugo Free 0%",
+      "description": "Autorskie koktajle bezalkoholowe na bazie win musujących 0% i owocowych puree.",
+      "price": "29 zł",
+      "image": "",
+      "isVege": true,
+      "isBestseller": false,
+      "isSpicy": false
+    },
+    {
+      "name": "Pepsi / Pepsi Zero / Mirinda / 7Up (0,2l)",
+      "description": "Zimne napoje gazowane w szklanych butelkach.",
       "price": "9 zł",
-      "image": "images/pinsa/pinsa5.webp",
+      "image": "",
       "isVege": true,
       "isBestseller": false,
       "isSpicy": false
     },
     {
-      "name": "Woda Acqua Panna / San Pellegrino (500ml)",
-      "description": "Oryginalna włoska woda niegazowana lub gazowana.",
-      "price": "11 zł",
-      "image": "images/pinsa/pinsa1.webp",
+      "name": "Lemoniada Smakowa (0,4l)",
+      "description": "Świeżo wyciskana lemoniada owocowa z lodem i miętą.",
+      "price": "18 zł",
+      "image": "",
+      "isVege": true,
+      "isBestseller": false,
+      "isSpicy": false
+    },
+    {
+      "name": "Woda Gazowana / Niegazowana (0,3l)",
+      "description": "Woda mineralna w butelce szklanej.",
+      "price": "8 zł",
+      "image": "",
+      "isVege": true,
+      "isBestseller": false,
+      "isSpicy": false
+    },
+    {
+      "name": "Soki Owocowe (0,2l)",
+      "description": "Sok pomarańczowy lub jabłkowy.",
+      "price": "10 zł",
+      "image": "",
       "isVege": true,
       "isBestseller": false,
       "isSpicy": false

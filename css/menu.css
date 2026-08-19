@@ -497,3 +497,27 @@ body.dark-theme .bg-striped {
         padding: 7px 16px;
     }
 }
+
+/* ===================================================
+   STYL DLA CZARNO-BIAŁEGO LOGO (BEZ POWIĘKSZANIA NA HOVER)
+====================================================== */
+.placeholder-wrapper {
+    background-color: var(--bg-color) !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--nav-border);
+}
+
+.img-placeholder-bw {
+    filter: grayscale(100%) opacity(0.6) !important;
+    object-fit: contain !important;
+    padding: 18px !important;
+    transform: none !important; 
+    transition: opacity 0.3s ease, filter 0.3s ease !important;
+}
+
+.menu-list-item:hover .img-placeholder-bw,
+.img-placeholder-bw:hover {
+    transform: none !important;
+}

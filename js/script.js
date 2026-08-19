@@ -188,12 +188,14 @@ async function loadMenuFromJSON() {
             const container = document.querySelector(`#${categoryKey} .menu-grid`);
             if (container) {
                 container.innerHTML = menuData[categoryKey].map(item => `
-                    <div class="menu-list-item ${!item.image ? 'no-image' : ''}">
-                        ${item.image ? `
-                            <div class="menu-item-img-wrapper">
-                                <img src="${item.image}" alt="${item.name}" loading="lazy" decoding="async">
-                            </div>
-                        ` : ''}
+                    <div class="menu-list-item">
+                        <div class="menu-item-img-wrapper ${!item.image ? 'placeholder-wrapper' : ''}">
+                            <img src="${item.image || 'images/logo.png'}" 
+                                 class="${!item.image ? 'img-placeholder-bw' : ''}" 
+                                 alt="${item.name}" 
+                                 loading="lazy" 
+                                 decoding="async">
+                        </div>
                         <div class="menu-item-content">
                             <div class="menu-item-header">
                                 <h3>${item.name}</h3>
