@@ -4,25 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- 1. Podstawowe metatagi SEO -->
-    <title>panodpinsy.pl</title>
-    <meta name="description" content="Odkryj prawdziwą włoską pinsę na gdańskiej Zaspie! Chrupiące, lekkostrawne ciasto dojrzewające przez kilkadziesiąt godzin. Zamów z odbiorem osobistym przy ul. Hynka 18.">
-    <meta name="keywords" content="pinseria gdańsk, pinsa zaspa, pizza zaspa, włoska pinseria gdańsk, spody do pinsy gdańsk, jedzenie na wynos zaspa">
-    <meta name="author" content="Pinseria Gdańsk">
+    <!-- 1. Kluczowe metatagi SEO -->
+    <title>Pan od Pinsy – Prawdziwa Włoska Pinsa Gdańsk | Lokale, Spody i Catering</title>
+    <meta name="description" content="Pan od Pinsy – pierwsza rzemieślnicza pinseria w Gdańsku (Zaspa & Morena). Zamów gotowe spody do pinsy z wysyłką, catering z piecem mobilnym na imprezy lub odwiedź nasze lokale!">
+    <meta name="keywords" content="pan od pinsy, pinsa gdańsk, pinseria gdańsk, pinsa zaspa, pinsa morena, spody do pinsy, rzemieślnicze spody do pinsy, piec mobilny gdańsk, catering pinsa wesele, pizza rzymska trójmiasto">
+    <meta name="author" content="Pan od Pinsy">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://pinseriagdansk.pl/">
+    <link rel="canonical" href="https://panodpinsy.pl/">
 
-    <!-- 2. Ikona w karcie przeglądarki (Twoje istniejące logo) -->
+    <!-- 2. Favicon -->
     <link rel="icon" href="images/logo.png" type="image/png">
 
-    <!-- 3. Czcionki i Style -->
-    <!-- Podpięcie DM Serif Display oraz Nunito z Google Fonts -->
+    <!-- 3. Czcionki i Style CSS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
         
-    <!-- Moduły CSS w folderze css/ -->
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/hero.css">
@@ -30,65 +28,112 @@
     <link rel="stylesheet" href="css/sections.css">
     <link rel="stylesheet" href="css/sklep.css">
 
-    <!-- 4. Podstawowy Open Graph dla social mediów (tytuł i opis bez zdjęcia) -->
+    <!-- 4. Open Graph dla Social Media i udostępniania linków -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://pinseriagdansk.pl/">
-    <meta property="og:title" content="Pinseria Gdańsk Zaspa – Prawdziwa Włoska Pinsa">
-    <meta property="og:description" content="Chrupiąca na zewnątrz, lekka i puszysta w środku. Spróbuj tradycyjnej receptury na gdańskiej Zaspie przy ul. Hynka 18!">
+    <meta property="og:url" content="https://panodpinsy.pl/">
+    <meta property="og:title" content="Pan od Pinsy – Prawdziwa Włoska Pinsa w Gdańsku">
+    <meta property="og:description" content="Rzemieślnicza pinsa na zakwasie w Gdańsku (Zaspa & Morena), sklep z włoskimi produktami, gotowe spody oraz mobilny piec na imprezy plenerowe.">
+    <meta property="og:image" content="https://panodpinsy.pl/images/pinsa_r/Margherita.webp">
     <meta property="og:locale" content="pl_PL">
 
-    <!-- 5. Strukturalne Dane Google dla Restauracji (Schema.org / JSON-LD) -->
+    <!-- 5. Strukturalne Dane Schema.org (JSON-LD) dla Marki i Obu Lokali -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "FastFoodRestaurant",
-      "name": "Pinseria Gdańsk Zaspa",
-      "@id": "https://pinseriagdansk.pl/#restaurant",
-      "url": "https://pinseriagdansk.pl/",
-      "telephone": "+48720996677",
-      "priceRange": "$$",
-      "servesCuisine": ["Italian", "Pinsa", "Pizza"],
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "ul. Hynka 18",
-        "addressLocality": "Gdańsk",
-        "postalCode": "80-465",
-        "addressCountry": "PL"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 54.3981,
-        "longitude": 18.5991
-      },
-      "openingHoursSpecification": [
+      "@graph": [
         {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
-          "opens": "13:00",
-          "closes": "21:00"
+          "@type": "Organization",
+          "@id": "https://panodpinsy.pl/#organization",
+          "name": "Pan od Pinsy",
+          "url": "https://panodpinsy.pl/",
+          "logo": "https://panodpinsy.pl/images/logo.png",
+          "email": "pizzeria.pinseria@gmail.com",
+          "sameAs": [
+            "https://www.facebook.com/p/PinseriaGdansk-61558180975096/",
+            "https://www.instagram.com/pinseria.gdansk/",
+            "https://www.tiktok.com/@pan_od_pins",
+            "https://www.youtube.com/@Panodpinsy"
+          ]
         },
         {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Friday",
-          "opens": "13:00",
-          "closes": "22:00"
+          "@type": "Restaurant",
+          "@id": "https://panodpinsy.pl/#zaspa",
+          "name": "Pan od Pinsy – Gdańsk Zaspa",
+          "parentOrganization": { "@id": "https://panodpinsy.pl/#organization" },
+          "url": "https://panodpinsy.pl/",
+          "telephone": "+48720996677",
+          "priceRange": "$$",
+          "servesCuisine": ["Italian", "Pinsa", "Pizza"],
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "ul. Hynka 18/10",
+            "addressLocality": "Gdańsk",
+            "postalCode": "80-465",
+            "addressCountry": "PL"
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+              "opens": "13:00",
+              "closes": "21:00"
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Friday", "Saturday"],
+              "opens": "13:00",
+              "closes": "22:00"
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": "Sunday",
+              "opens": "12:00",
+              "closes": "21:00"
+            }
+          ]
         },
         {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Saturday",
-          "opens": "12:00",
-          "closes": "22:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Sunday",
-          "opens": "12:00",
-          "closes": "21:00"
+          "@type": "Restaurant",
+          "@id": "https://panodpinsy.pl/#morena",
+          "name": "Pan od Pinsy – Gdańsk Morena",
+          "parentOrganization": { "@id": "https://panodpinsy.pl/#organization" },
+          "url": "https://panodpinsy.pl/",
+          "telephone": "+48726767814",
+          "priceRange": "$$",
+          "servesCuisine": ["Italian", "Pinsa", "Pizza"],
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Królewskie Wzgórze 1",
+            "addressLocality": "Gdańsk",
+            "postalCode": "80-283",
+            "addressCountry": "PL"
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+              "opens": "12:00",
+              "closes": "21:00"
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Friday", "Saturday"],
+              "opens": "12:00",
+              "closes": "22:00"
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": "Sunday",
+              "opens": "12:00",
+              "closes": "21:00"
+            }
+          ]
         }
       ]
     }
     </script>
 </head>
+
 <body>
     <!-- Ekran ładowania (Preloader) z symetryczną pizzą -->
 <div id="loader-wrapper">
