@@ -1,28 +1,27 @@
 /* ===================================================
-   SKLEP.CSS - SKLEPIK B2C, KOSZYK I FORMULARZ ZAMÓWIENIA
+   SKLEP.CSS - SKLEPIK B2C, KOSZYK I ZAMÓWIENIA
 ====================================================== */
 
-/* 1. SEKCJA SKLEPIK & BANNER INFORMACYJNY */
 .sklep-section {
-    padding: 90px 5%;
+    padding: 85px 5%;
     text-align: center;
 }
 
 .sklep-container {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
 .sklep-section h2 {
     font-size: 2.2rem;
     color: var(--primary-color);
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .sklep-subtitle {
-    font-size: 1.05rem;
+    font-size: 1.02rem;
     opacity: 0.85;
-    margin-bottom: 25px;
+    margin-bottom: 22px;
 }
 
 .sklep-info-banner {
@@ -31,13 +30,13 @@
     gap: 12px;
     background-color: rgba(36, 152, 84, 0.08);
     border: 1px solid var(--secondary-color);
-    padding: 14px 20px;
+    padding: 12px 18px;
     border-radius: 12px;
-    font-size: 0.92rem;
+    font-size: 0.88rem;
     text-align: left;
-    margin-bottom: 35px;
+    margin-bottom: 30px;
     color: var(--text-color);
-    line-height: 1.5;
+    line-height: 1.45;
 }
 
 .sklep-info-banner svg {
@@ -45,50 +44,51 @@
     flex-shrink: 0;
 }
 
-/* 2. SIATKA I KAFELKI PRODUKTÓW */
+/* Siatka produktów */
 .sklep-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 22px;
 }
 
 .product-card {
     background-color: var(--card-bg);
     border: 1px solid var(--nav-border);
     border-radius: 16px;
-    padding: 20px;
+    padding: 18px;
     display: flex;
     flex-direction: column;
     text-align: left;
-    box-shadow: 0 4px 15px var(--shadow);
-    transition: box-shadow 0.3s ease;
+    box-shadow: 0 4px 14px var(--shadow);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .product-card:hover {
-    box-shadow: 0 8px 25px var(--shadow);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px var(--shadow);
 }
 
 .product-card img {
     width: 100%;
-    height: 160px;
+    height: 155px;
     object-fit: cover;
     border-radius: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     background-color: var(--nav-border);
 }
 
 .product-card h3 {
-    font-size: 1.1rem;
-    margin-bottom: 8px;
+    font-size: 1.05rem;
+    margin-bottom: 6px;
     color: var(--text-color);
 }
 
 .product-card p {
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     opacity: 0.8;
     line-height: 1.4;
     flex: 1;
-    margin-bottom: 15px;
+    margin-bottom: 14px;
 }
 
 .product-bottom {
@@ -99,32 +99,29 @@
 }
 
 .product-price {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     font-weight: 800;
     color: var(--primary-color);
 }
 
-/* 3. STABILNE PRZYCISKI I KONTROLER ILOŚCI (SZTYWNE 34px - BEZ SKOKÓW) */
 .product-action {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    height: 34px;
+    height: 32px;
 }
 
 .add-to-cart-btn {
     background-color: var(--secondary-color);
     color: #ffffff;
     border: none;
-    padding: 0 16px;
-    height: 34px;
+    padding: 0 14px;
+    height: 32px;
     border-radius: 20px;
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     font-weight: 700;
     cursor: pointer;
     transition: background-color 0.2s ease;
-    display: flex;
-    align-items: center;
 }
 
 .add-to-cart-btn:hover {
@@ -134,61 +131,54 @@
 .store-qty-control {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     background-color: var(--card-bg);
     border: 1.5px solid var(--secondary-color);
-    padding: 0 6px;
-    height: 34px;
+    padding: 0 5px;
+    height: 32px;
     border-radius: 20px;
-    box-sizing: border-box;
 }
 
 .store-qty-btn {
-    width: 24px;
-    height: 24px;
+    width: 22px;
+    height: 22px;
     border-radius: 50%;
     border: none;
     background-color: var(--secondary-color);
     color: #ffffff;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     font-weight: 800;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    line-height: 1;
-    transition: background-color 0.2s ease;
-}
-
-.store-qty-btn:hover {
-    background-color: #1b7a42;
 }
 
 .store-qty-num {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 800;
-    min-width: 18px;
+    min-width: 16px;
     text-align: center;
     color: var(--text-color);
 }
 
-/* 4. PŁYWAJĄCY PRZYCISK KOSZYKA (LEWY DOLNY RÓG) */
+/* Pływający koszyk */
 .cart-float-btn {
     position: fixed;
-    bottom: 30px;
-    left: 30px;
+    bottom: 25px;
+    left: 25px;
     background-color: var(--primary-color);
     color: #ffffff;
     border: none;
-    width: 58px;
-    height: 58px;
+    width: 54px;
+    height: 54px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    box-shadow: 0 6px 20px rgba(184, 43, 51, 0.4);
-    z-index: 998;
+    box-shadow: 0 6px 20px rgba(184, 43, 51, 0.35);
+    z-index: 995;
     transition: background-color 0.2s ease;
 }
 
@@ -198,14 +188,14 @@
 
 .cart-count-badge {
     position: absolute;
-    top: -4px;
-    right: -4px;
+    top: -3px;
+    right: -3px;
     background-color: var(--secondary-color);
     color: #ffffff;
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     font-weight: 800;
-    width: 22px;
-    height: 22px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -213,7 +203,7 @@
     border: 2px solid #ffffff;
 }
 
-/* 5. MODAL / DRAWER BOCZNY KOSZYKA */
+/* Drawer Koszyka */
 .cart-modal {
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
@@ -240,23 +230,21 @@
 .cart-modal-content {
     position: relative;
     width: 100%;
-    max-width: 440px;
+    max-width: 420px;
     height: 100%;
     background-color: var(--card-bg);
     display: flex;
     flex-direction: column;
-    padding: 25px;
+    padding: 22px;
     box-shadow: -5px 0 25px rgba(0, 0, 0, 0.25);
     transform: translateX(100%);
     transition: transform 0.3s ease;
     z-index: 2;
-    box-sizing: border-box;
 }
 
 .cart-modal.active .cart-modal-content {
     transform: translateX(0);
 }
-
 
 .cart-view {
     display: none;
@@ -274,12 +262,12 @@
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid var(--nav-border);
-    padding-bottom: 15px;
-    margin-bottom: 20px;
+    padding-bottom: 12px;
+    margin-bottom: 16px;
 }
 
 .cart-header h3 {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     color: var(--primary-color);
     margin: 0;
 }
@@ -287,16 +275,11 @@
 .close-cart-btn {
     background: none;
     border: none;
-    font-size: 2rem;
+    font-size: 1.8rem;
     line-height: 1;
     cursor: pointer;
     color: var(--text-color);
     opacity: 0.7;
-    transition: opacity 0.2s;
-}
-
-.close-cart-btn:hover {
-    opacity: 1;
 }
 
 .back-cart-btn {
@@ -304,39 +287,37 @@
     border: none;
     color: var(--secondary-color);
     font-weight: 700;
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     cursor: pointer;
     padding: 0;
 }
 
-/* 6. LISTA POZYCJI W KOSZYKU */
 .cart-items-list {
     flex: 1;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    padding-right: 4px;
+    gap: 10px;
 }
 
 .cart-item-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px;
+    padding: 10px 12px;
     background-color: var(--bg-color);
     border: 1px solid var(--nav-border);
     border-radius: 12px;
 }
 
 .cart-item-info h4 {
-    font-size: 0.92rem;
-    margin-bottom: 4px;
+    font-size: 0.88rem;
+    margin-bottom: 2px;
     color: var(--text-color);
 }
 
 .cart-item-info p {
-    font-size: 0.82rem;
+    font-size: 0.78rem;
     opacity: 0.8;
     margin: 0;
 }
@@ -344,12 +325,12 @@
 .cart-item-qty {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
 }
 
 .qty-btn {
-    width: 26px;
-    height: 26px;
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
     border: 1px solid var(--nav-border);
     background: var(--card-bg);
@@ -359,50 +340,43 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    line-height: 1;
-    transition: background-color 0.2s;
 }
 
-.qty-btn:hover {
-    background-color: var(--nav-border);
-}
-
-/* 7. PODSUMOWANIE I FORMULARZ ZAMÓWIENIA (CHECKOUT) */
 .cart-footer {
     border-top: 1px solid var(--nav-border);
-    padding-top: 18px;
-    margin-top: 15px;
+    padding-top: 16px;
+    margin-top: 12px;
 }
 
 .cart-total-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 1.15rem;
-    margin-bottom: 16px;
+    font-size: 1.05rem;
+    margin-bottom: 14px;
 }
 
 .cart-total-row strong {
     color: var(--primary-color);
-    font-size: 1.3rem;
+    font-size: 1.25rem;
 }
 
 .checkout-form {
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    margin-top: 15px;
+    gap: 10px;
+    margin-top: 12px;
 }
 
 .cart-form-group {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 3px;
     text-align: left;
 }
 
 .cart-form-group label {
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     font-weight: 700;
     opacity: 0.85;
 }
@@ -410,94 +384,37 @@
 .cart-input,
 .cart-textarea {
     width: 100%;
-    padding: 10px 12px;
+    padding: 9px 11px;
     border: 1px solid var(--nav-border);
     border-radius: 8px;
     background-color: var(--bg-color);
     color: var(--text-color);
     font-family: inherit;
-    font-size: 0.88rem;
-    box-sizing: border-box;
-}
-
-.cart-input:focus,
-.cart-textarea:focus {
-    outline: none;
-    border-color: var(--primary-color);
+    font-size: 0.85rem;
 }
 
 .cart-textarea {
     resize: vertical;
-    min-height: 55px;
+    min-height: 50px;
 }
 
 .checkout-summary-box {
     background-color: rgba(36, 152, 84, 0.08);
     border: 1px solid var(--secondary-color);
-    padding: 10px 12px;
+    padding: 9px 11px;
     border-radius: 8px;
-    font-size: 0.78rem;
-    opacity: 0.9;
-    margin-top: 5px;
+    font-size: 0.75rem;
     line-height: 1.4;
 }
 
-.w-100 {
-    width: 100%;
-    text-align: center;
-}
-
-/* 8. RESPONSYWNOŚĆ DLA SMARTFONÓW */
-@media (max-width: 480px) {
-    .cart-float-btn {
-        bottom: 20px;
-        left: 20px;
-        width: 52px;
-        height: 52px;
-    }
-
-    .cart-modal-content {
-        padding: 18px;
-    }
-
-    .sklep-info-banner {
-        flex-direction: column;
-        align-items: flex-start;
-        font-size: 0.85rem;
-    }
-
-    .product-bottom {
-        gap: 8px;
-    }
-
-    .store-qty-control {
-        gap: 6px;
-        padding: 0 4px;
-    }
-
-    .store-qty-btn {
-        width: 22px;
-        height: 22px;
-        font-size: 0.85rem;
-    }
-
-    .store-qty-num {
-        font-size: 0.85rem;
-        min-width: 14px;
-    }
-}
-
-/* Komunikat statusu wysyłki pod przyciskiem formularza */
 .order-status-msg {
     display: none;
-    margin-top: 12px;
-    padding: 12px 15px;
-    border-radius: 10px;
-    font-size: 0.85rem;
+    margin-top: 10px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 0.82rem;
     font-weight: 600;
-    line-height: 1.4;
     text-align: center;
-    animation: fadeInMsg 0.3s ease-in-out;
 }
 
 .order-status-msg.success {
@@ -512,9 +429,4 @@
     background-color: rgba(184, 43, 51, 0.12);
     border: 1px solid var(--primary-color);
     color: var(--primary-color);
-}
-
-@keyframes fadeInMsg {
-    from { opacity: 0; transform: translateY(-6px); }
-    to { opacity: 1; transform: translateY(0); }
 }

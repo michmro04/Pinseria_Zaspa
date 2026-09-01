@@ -1,36 +1,25 @@
-/* ================================
-   MAIN.CSS - ZMIENNE, RESET I STYLE GLOBALNE
-=================================== */
-
-/* Płynne przewijanie + zapas miejsca na przyklejony navbar na górze */
+/* Płynne przewijanie i odstęp pod przyklejony navbar */
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 50px; /* Wysokość Twojego navbaru + delikatny zapas */
+    scroll-padding-top: 60px;
 }
 
-/* Zabezpieczenie dla wszystkich sekcji z ID */
 section[id] {
-    scroll-margin-top: 5px;
+    scroll-margin-top: 10px;
 }
 
-/* Zaktualizowany fragment :root (jasny motyw) */
+/* 1. ZMIENNE MOTYWU (JASNY / CIEMNY) */
 :root {
-    --font-heading: 'DM Serif Display', 'TAN Mon Cheri', serif;
+    --font-heading: 'DM Serif Display', serif;
     --bg-color: #f2e9d3; 
     --text-color: #403e3d; 
-    --nav-bg: #f5f3eea5; 
+    --nav-bg: rgba(245, 243, 238, 0.95); 
     --primary-color: #b82b33; 
     --secondary-color: #249854; 
     --card-bg: #fcfbfa; 
     --shadow: rgba(0, 0, 0, 0.06);
     --nav-border: rgba(0, 0, 0, 0.1);
     --navbar-base-bg: #f5f3ee;
-}
-
-h1, h2, h3, .hero-text h1, .promocje-section h2 {
-    font-family: var(--font-heading);
-    font-weight: 400;
-    letter-spacing: 0.5px;
 }
 
 body.dark-theme {
@@ -45,72 +34,93 @@ body.dark-theme {
     --navbar-base-bg: #181818f3;
 }
 
+/* 2. RESET I BAZA */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/* Zabezpieczenie wszystkich zdjęć przed przeciąganiem i zaznaczaniem */
-img {
-    -webkit-user-drag: none;
-    -moz-user-drag: none;
-    -ms-user-drag: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
 body {
     font-family: 'Nunito', sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
-    transition: background-color 0.4s, color 0.4s;
+    transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-/* Klasy pomocnicze tła */
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+/* Zabezpieczenie grafik przed przeciąganiem i zaznaczaniem */
+img {
+    -webkit-user-drag: none;
+    -moz-user-drag: none;
+    -ms-user-drag: none;
+    user-select: none;
+}
+
+/* 3. TŁA SEKCJI (NAPRZEMIENNIE) */
+section {
+    background-color: var(--bg-color);
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
 .bg-white {
-    background-color: #ffffff; 
+    background-color: #ffffff !important;
 }
 
 body.dark-theme .bg-white {
-    background-color: #1a1a1a; 
+    background-color: #1a1a1a !important;
 }
 
 .bg-striped {
-    background-color: var(--card-bg); 
+    background-color: var(--card-bg) !important;
 }
 
 body.dark-theme .bg-striped {
-    background-color: #202020;
+    background-color: #202020 !important;
 }
 
-/* Przyciski główne */
+/* 4. PRZYCISKI GŁÓWNE */
+.btn {
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+}
+
 .primary-btn {
     display: inline-block;
     background-color: var(--primary-color);
-    color: #fff;
-    padding: 14px 25px;
+    color: #ffffff !important;
+    padding: 13px 26px;
     border-radius: 30px;
     text-decoration: none;
-    font-weight: 350;
-    font-size: 1.0rem;
-    transition: transform 0.3s, background-color 0.3s;
+    font-weight: 600;
+    font-size: 0.95rem;
     font-family: var(--font-heading);
-    letter-spacing: 1px;
+    letter-spacing: 0.8px;
+    transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .primary-btn:hover {
     background-color: #a01820;
-    transform: translateY(-3px);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(184, 43, 51, 0.25);
 }
 
-/* Animacje wejścia (Fade In) */
+.w-100 {
+    width: 100%;
+    text-align: center;
+}
+
+/* 5. ANIMACJA WEJŚCIA (FADE IN) */
 .fade-in {
     opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    transform: translateY(35px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
 }
 
 .fade-in.appear {
@@ -118,7 +128,7 @@ body.dark-theme .bg-striped {
     transform: translateY(0);
 }
 
-/* Ekran Ładowania (Preloader) */
+/* 6. PRELOADER */
 #loader-wrapper {
     position: fixed;
     top: 0;
@@ -139,11 +149,10 @@ body.dark-theme .bg-striped {
 }
 
 .loader-text {
-    margin-top: 20px;
-    font-family: inherit;
-    font-size: 1.15rem;
+    margin-top: 18px;
+    font-size: 1.1rem;
     font-weight: 700;
-    color: var(--primary-color, #b82b33);
+    color: var(--primary-color);
     letter-spacing: 0.5px;
     animation: textPulse 1.5s ease-in-out infinite alternate;
 }
@@ -155,7 +164,7 @@ body.dark-theme .bg-striped {
 
 @keyframes pulsePizza {
     0% { scale: 0.95; }
-    100% { scale: 1.1; }
+    100% { scale: 1.08; }
 }
 
 @keyframes textPulse {
@@ -168,29 +177,37 @@ body.dark-theme .bg-striped {
     visibility: hidden;
 }
 
-/* Strzałka powrotu na górę */
+/* 7. STRZAŁKA POWROTU NA GÓRĘ STRONY */
 .scroll-top-btn {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
+    bottom: 25px;
+    right: 25px;
     background-color: var(--primary-color);
-    color: white;
-    width: 50px;
-    height: 50px;
+    color: #ffffff;
+    width: 48px;
+    height: 48px;
     border: none;
     border-radius: 50%;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     cursor: pointer;
     opacity: 0;
     visibility: hidden;
     transform: translateY(20px);
-    transition: all 0.4s ease;
+    transition: all 0.3s ease;
     box-shadow: 0 4px 15px var(--shadow);
-    z-index: 999;
+    z-index: 990;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .scroll-top-btn.visible {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+}
+
+.scroll-top-btn:hover {
+    background-color: #a01820;
+    transform: translateY(-3px);
 }

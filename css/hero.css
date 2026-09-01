@@ -1,15 +1,16 @@
-/* ================================
-   HERO.CSS - SEKCJA GŁÓWNA I SLIDER ZDJĘĆ
-=================================== */
+/* ===================================================
+   HERO.CSS - SEKCJA POWITALNA ORAZ SLIDER
+====================================================== */
 
 .hero {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* Duży padding z góry robi miejsce na wielkie logo na środku */
-    padding: 240px 5% 60px; 
+    padding: 160px 5% 60px; 
     text-align: center;
     gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .hero-text {
@@ -18,39 +19,39 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    padding-right: 40px; /* Odstęp od slidera po prawej */
+    padding-right: 20px;
 }
 
 .hero-text h1 {
     font-size: 2.8rem;
     color: var(--primary-color);
-    margin-bottom: 15px;
+    margin-bottom: 14px;
     line-height: 1.15;
 }
 
 .hero-description {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     line-height: 1.6;
     margin-bottom: 20px;
     opacity: 0.9;
+    text-align: left;
 }
 
-/* Lista wyróżników z ikonami */
 .hero-features {
     list-style: none;
     padding: 0;
-    margin: 0 0 30px 0; /* Dolny margines odpycha przycisk w dół */
+    margin: 0 0 28px 0;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
 }
 
 .hero-features li {
     display: flex;
     align-items: center;
-    gap: 12px;
-    font-size: 0.98rem;
-    font-weight: 500;
+    gap: 10px;
+    font-size: 0.95rem;
+    font-weight: 600;
     color: var(--text-color);
 }
 
@@ -58,12 +59,11 @@
     font-size: 1.2rem;
 }
 
-/* Przycisk CTA przesunięty na dół */
 .hero-btn {
     display: inline-block;
-    padding: 12px 30px;
+    padding: 13px 30px;
     background-color: var(--primary-color);
-    color: white !important;
+    color: #ffffff !important;
     text-decoration: none;
     font-weight: 600;
     font-size: 1.05rem;
@@ -79,26 +79,12 @@
     box-shadow: 0 10px 25px rgba(184, 43, 51, 0.35);
 }
 
-.hero-content h1 {
-    font-size: 3rem;
-    line-height: 1.1;
-    margin-bottom: 20px;
-    color: var(--primary-color);
-}
-
-.hero-image {
-    width: 100%;
-    max-width: 500px;
-    border-radius: 20px;
-    box-shadow: 0 15px 40px var(--shadow);
-}
-
 /* ================================
-   SLIDER ZDJĘĆ W SEKCJI HERO
+   SLIDER ZDJĘĆ
 =================================== */
 .slider-container {
     width: 100%;
-    max-width: 500px;
+    max-width: 480px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -109,15 +95,16 @@
     width: 100%;
     aspect-ratio: 4 / 3;
     border-radius: 20px;
-    box-shadow: 0 15px 40px var(--shadow);
+    box-shadow: 0 12px 35px var(--shadow);
     overflow: hidden;
+    border: 1px solid var(--nav-border);
 }
 
 .slides-wrapper {
     display: flex;
     width: 100%;
     height: 100%;
-    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .slide {
@@ -127,21 +114,20 @@
     object-fit: cover;
 }
 
-/* Wygląd strzałek nawigacyjnych */
 .slider-arrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(255, 255, 255, 0.85);
+    background-color: rgba(255, 255, 255, 0.88);
     color: var(--primary-color);
     border: none;
-    width: 40px;
-    height: 40px;
+    width: 38px;
+    height: 38px;
     border-radius: 50%;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     cursor: pointer;
     z-index: 10;
-    transition: background-color 0.3s, transform 0.3s;
+    transition: background-color 0.25s, transform 0.25s;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -149,36 +135,31 @@
 }
 
 .slider-arrow:hover {
-    background-color: #fff;
-    transform: translateY(-50%) scale(1.1);
+    background-color: #ffffff;
+    transform: translateY(-50%) scale(1.08);
 }
 
-.left-arrow { left: 15px; }
-.right-arrow { right: 15px; }
+.left-arrow { left: 12px; }
+.right-arrow { right: 12px; }
 
-/* Kropki pod sliderem */
 .slider-dots {
     display: flex;
-    gap: 10px;
-    margin-top: 20px;
+    gap: 8px;
+    margin-top: 16px;
     justify-content: center;
 }
 
 .dot {
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
     background-color: #ccc;
     border-radius: 50%;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
+    transition: all 0.25s ease;
 }
 
 body.dark-theme .dot {
     background-color: #444;
-}
-
-.dot:hover {
-    background-color: #999;
 }
 
 .dot.active {
@@ -186,27 +167,24 @@ body.dark-theme .dot {
     transform: scale(1.3);
 }
 
-/* ================================
-   RESPONSYWNOŚĆ SEKCJI HERO
-=================================== */
-
-/* Media Query dla PC (min-width: 992px) */
+/* Responsywność Hero */
 @media (min-width: 992px) {
     .hero {
         flex-direction: row;
         text-align: left;
-        padding: 200px 10% 100px;
+        padding: 160px 5% 80px;
     }
-    .hero-content { flex: 1; }
-    .hero-image { flex: 1; }
 }
 
-/* Drobne poprawki dla urządzeń mobilnych (max-width: 991px) */
 @media (max-width: 991px) {
     .hero-text {
         padding-right: 0;
         text-align: center;
         align-items: center;
+    }
+
+    .hero-description {
+        text-align: center;
     }
 
     .hero-features {
@@ -215,39 +193,12 @@ body.dark-theme .dot {
     }
 }
 
-/* Widok mobilny (Poniżej 1050px) */
-@media (max-width: 1050px) {
-    .slider-container {
-        display: none;
-    }
-
+@media (max-width: 480px) {
     .hero {
-        padding-top: 180px; 
-    }
-}
-
-/* Dopasowanie dla bardzo małych ekranów (max-width: 380px) */
-@media (max-width: 380px) {
-    .hero {
-        padding-top: 220px;
+        padding-top: 130px;
     }
 
     .hero-text h1 {
-        font-size: 1.8rem;
-        margin-bottom: 10px;
-    }
-
-    .hero-description {
-        font-size: 0.9rem;
-        line-height: 1.45;
-        margin-bottom: 15px;
-    }
-
-    .hero-features {
-        gap: 8px;
-    }
-
-    .hero-features li {
-        font-size: 0.82rem;
+        font-size: 2.1rem;
     }
 }

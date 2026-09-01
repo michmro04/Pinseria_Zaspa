@@ -1,486 +1,145 @@
-/* ================================
-   1. SEKCJA PROMOCJE
-=================================== */
-.promocje-section {
-    padding: 100px 5%;
-    background-color: var(--bg-color);
-    text-align: center;
-}
+/* ===================================================
+   SECTIONS.CSS - SPODY, CATERING, B2B, SOCIALE, FORMULARZ, FOOTER & MODALE
+====================================================== */
 
-.promocje-container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.promocje-section h2 {
-    font-size: 2.2rem;
-    color: var(--primary-color);
-    margin-bottom: 15px;
-}
-
-.promocje-subtitle {
-    font-size: 1.1rem;
-    margin-bottom: 50px;
-    opacity: 0.8;
-}
-
-.promocje-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.promocja-card {
-    position: relative;
-    background-color: var(--card-bg);
-    padding: 40px 30px 30px;
-    border-radius: 20px;
-    box-shadow: 0 8px 25px var(--shadow);
-    transition: transform 0.3s, box-shadow 0.3s;
-    text-align: left;
-    overflow: hidden;
-    border: 1px solid var(--nav-border);
-}
-
-.promocja-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px var(--shadow);
-}
-
-.promo-badge {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background-color: var(--primary-color);
-    color: white;
-    font-size: 0.75rem;
-    font-weight: bold;
-    padding: 5px 12px;
-    border-radius: 20px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.promocja-card h3 {
-    font-size: 1.4rem;
-    color: var(--text-color);
-    margin-bottom: 15px;
-}
-
-.promocja-card p {
-    font-size: 1rem;
-    line-height: 1.6;
-    opacity: 0.85;
-    margin-bottom: 25px;
-}
-
-.promo-info {
-    display: block;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--secondary-color);
-    border-top: 1px solid var(--nav-border);
-    padding-top: 15px;
-}
-
-/* ================================
-   2. SEKCJA NASZE LOKALE / KONTAKT
-=================================== */
-.contact-section {
-    padding: 80px 5%;
-    background-color: var(--card-bg);
-    text-align: center;
-}
-
-.contact-container {
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.contact-section h2 {
-    font-size: 2.2rem;
-    color: var(--primary-color);
-    margin-bottom: 10px;
-}
-
-.contact-subtitle {
-    font-size: 1.1rem;
-    margin-bottom: 50px;
-    opacity: 0.8;
-}
-
-.contact-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-}
-
-.contact-card {
-    text-align: center;
-    padding: 35px 20px;
-    border-radius: 15px;
-    background-color: var(--bg-color);
-    box-shadow: 0 4px 15px var(--shadow);
-    transition: transform 0.3s;
-}
-
-.contact-card h3 {
-    margin-bottom: 15px;
-    font-size: 1.2rem;
-    color: var(--primary-color);
-}
-
-.phone-link {
-    font-size: 1.3rem;
-    font-weight: bold;
-    color: var(--text-color);
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.phone-link:hover {
-    color: var(--primary-color);
-}
-
-/* Kafelki 2 Lokalizacji */
-.contact-grid-two-locations {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
-    margin-top: 30px;
-}
-
-.location-card {
-    text-align: left;
-    padding: 30px;
-    border-radius: 20px;
-    background-color: var(--card-bg);
-    border: 1px solid var(--nav-border);
-    box-shadow: 0 6px 20px var(--shadow);
-}
-
-.location-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 8px;
-    gap: 12px;
-}
-
-.location-header h3 {
-    font-size: 1.5rem;
-    color: var(--primary-color);
-    margin: 0;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    line-height: 1;
-}
-
-.location-header h3 svg {
-    display: block;
-    stroke: var(--primary-color);
-    flex-shrink: 0;
-}
-
-.map-link {
-    font-size: 0.9rem;
-    color: var(--secondary-color);
-    text-decoration: none;
-    font-weight: 700;
-    padding: 6px 14px;
-    border: 1px solid var(--secondary-color);
-    border-radius: 20px;
-    transition: all 0.2s ease;
-    white-space: nowrap;
-}
-
-.map-link:hover {
-    background-color: var(--secondary-color);
-    color: #ffffff;
-    transform: translateY(-2px);
-}
-
-.location-address {
-    font-size: 0.95rem;
-    font-weight: 600;
-    margin-bottom: 14px;
-    opacity: 0.85;
-}
-
-.location-phone {
+.section-tag {
     display: inline-block;
-    font-size: 1.2rem;
+    font-size: 0.78rem;
     font-weight: 800;
-    color: white;
-    background-color: var(--secondary-color);
-    padding: 8px 16px;
-    border-radius: 25px;
-    text-decoration: none;
-    margin-bottom: 20px;
-}
-
-.phone-accent {
-    background-color: var(--primary-color);
-}
-
-.location-phone-clean {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 1.35rem;
-    font-weight: 800;
-    color: var(--primary-color);
-    text-decoration: none;
-    margin-bottom: 22px;
-    line-height: 1;
-    transition: transform 0.2s ease, opacity 0.2s ease;
-}
-
-.location-phone-clean svg {
-    display: block;
-    stroke: var(--secondary-color);
-    flex-shrink: 0;
-}
-
-.location-phone-clean:hover {
-    transform: translateX(3px);
-    opacity: 0.9;
-}
-
-.location-hours h4 {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.98rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--secondary-color);
+    background-color: rgba(36, 152, 84, 0.1);
+    padding: 4px 12px;
+    border-radius: 20px;
     margin-bottom: 12px;
-    color: var(--text-color);
-    line-height: 1;
 }
 
-.location-hours h4 svg {
-    display: block;
-    stroke: var(--text-color);
-    opacity: 0.85;
-    flex-shrink: 0;
-}
-
-.hours-table {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    max-width: 280px;
-}
-
-.hours-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-}
-
-.hours-row .day {
-    text-align: right;
-    font-weight: 600;
-    opacity: 0.9;
-    font-size: 0.9rem;
-}
-
-.hours-row .time {
-    text-align: left;
-    opacity: 0.8;
-    font-size: 0.9rem;
-}
-
-/* ================================
-   3. SEKCJA "O NAS"
-=================================== */
-.about-section {
-    padding: 100px 5%;
-    overflow: hidden;
-}
-
-.about-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    position: relative;
-}
-
-.about-text {
-    flex: 1;
-    background-color: var(--bg-color); 
-    padding: 50px;
-    border-radius: 20px;
-    box-shadow: 0 10px 40px var(--shadow);
-    margin-right: -120px; 
-    z-index: 2;
-}
-
-.about-text h2 {
-    font-size: 2.2rem;
-    color: var(--primary-color);
-    margin-bottom: 25px;
-}
-
-.about-text p {
-    font-size: 1.1rem;
-    margin-bottom: 20px;
-    line-height: 1.8;
-    opacity: 0.9;
-}
-
-.about-image-wrapper {
-    flex: 1;
-    position: relative;
-}
-
-.about-img {
-    width: 100%;
-    min-height: 450px;
-    object-fit: cover;
-    border-radius: 20px;
-    box-shadow: 0 15px 40px var(--shadow);
-    filter: brightness(0.8); 
-}
-
-@media (max-width: 991px) {
-    .about-container {
-        flex-direction: column-reverse; 
-    }
-    .about-text {
-        margin-right: 0;
-        margin-top: -60px;
-        padding: 35px 25px;
-    }
-    .about-img {
-        min-height: 350px;
-    }
-}
-
-/* ================================
-   4. SEKCJA SPODY
-=================================== */
-.spody-section {
-    padding: 100px 5%;
-    overflow: hidden;
-}
-
-.spody-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    position: relative;
-}
-
-.spody-image-wrapper {
-    flex: 1;
-    position: relative;
-}
-
-.spody-img {
-    width: 100%;
-    min-height: 450px;
-    object-fit: cover;
-    border-radius: 20px;
-    filter: brightness(0.5); 
-    box-shadow: 0 15px 40px var(--shadow);
-}
-
-.spody-text {
-    flex: 1;
-    background-color: var(--card-bg);
-    padding: 50px;
-    border-radius: 20px;
-    box-shadow: 0 10px 40px var(--shadow);
-    margin-left: -120px; 
-    z-index: 2;
-}
-
-.spody-text h2 {
-    font-size: 2.2rem;
-    color: var(--primary-color);
-    margin-bottom: 25px;
-}
-
-.spody-text p {
-    font-size: 1.1rem;
-    margin-bottom: 20px;
-    line-height: 1.8;
-    opacity: 0.9;
-}
-
-@media (max-width: 991px) {
-    .spody-container {
-        flex-direction: column;
-    }
-    .spody-text {
-        margin-left: 0;
-        margin-top: -60px;
-        padding: 35px 25px;
-    }
-    .spody-img {
-        min-height: 350px;
-    }
-}
-
-/* ================================
-   5. SEKCJA PIEC MOBILNY / CATERING
-=================================== */
+/* ===================================================
+   1. SPODY DO PINSY & 2. CATERING I SZKOLENIA (WIDEO REELS)
+====================================================== */
+.spody-section,
 .eventy-section {
-    padding: 100px 5%;
-    overflow: hidden;
+    padding: 85px 5%;
 }
 
+.spody-container,
 .eventy-container {
-    max-width: 1200px;
+    max-width: 1080px;
     margin: 0 auto;
     display: flex;
     align-items: center;
-    gap: 50px;
+    justify-content: center;
+    gap: 24px;
 }
 
+.spody-text,
 .eventy-text {
     flex: 1;
+    background-color: var(--card-bg);
+    border: 1px solid var(--nav-border);
+    padding: 36px 30px;
+    border-radius: 24px;
+    box-shadow: 0 8px 30px var(--shadow);
     text-align: left;
 }
 
+.spody-text h2,
 .eventy-text h2 {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
     color: var(--primary-color);
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 .eventy-subtitle {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     font-weight: 700;
     color: var(--secondary-color);
-    margin-bottom: 20px;
+    margin-bottom: 16px;
     line-height: 1.4;
 }
 
-.eventy-text p {
-    font-size: 1.05rem;
-    line-height: 1.7;
-    opacity: 0.9;
+.spody-specs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: 18px 0 22px 0;
+}
+
+.spody-spec-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--bg-color);
+    border: 1px solid var(--nav-border);
+    padding: 9px 12px;
+    border-radius: 12px;
+}
+
+.spody-spec-item strong {
+    display: block;
+    font-size: 0.88rem;
+    color: var(--text-color);
+}
+
+.spody-spec-item small {
+    font-size: 0.74rem;
+    opacity: 0.75;
+}
+
+.spody-cta-row,
+.eventy-cta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.spody-phone-btn {
+    font-weight: 700;
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 0.95rem;
+    padding: 12px 22px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 30px;
+    transition: all 0.2s ease;
+}
+
+.spody-phone-btn:hover {
+    background-color: var(--secondary-color);
+    color: #ffffff;
+}
+
+.training-info-card {
+    background-color: var(--bg-color);
+    border: 1px solid var(--nav-border);
+    padding: 14px 18px;
+    border-radius: 14px;
+    margin: 18px 0;
+}
+
+.training-info-card h4 {
+    font-size: 0.95rem;
+    color: var(--primary-color);
+    margin-bottom: 8px;
 }
 
 .eventy-features {
     list-style: none;
     padding: 0;
-    margin: 25px 0 35px 0;
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 8px;
 }
 
 .eventy-features li {
     display: flex;
     align-items: flex-start;
-    gap: 12px;
-    font-size: 1rem;
-    line-height: 1.5;
+    gap: 10px;
+    font-size: 0.92rem;
+    line-height: 1.45;
 }
 
 .eventy-features li svg {
@@ -489,98 +148,206 @@
     margin-top: 2px;
 }
 
-.eventy-image-wrapper {
-    flex: 1;
-}
-
-.eventy-img {
+/* Kontenery wideo pionowego (9:16) */
+.reel-container {
+    flex: 0 0 300px;
+    max-width: 300px;
     width: 100%;
-    min-height: 420px;
+    display: flex;
+    justify-content: center;
+}
+
+.reel-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 14px 35px var(--shadow);
+    border: 2px solid var(--nav-border);
+    background-color: #000;
+}
+
+.reel-video {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
+    display: block;
+}
+
+.sound-toggle-btn {
+    position: absolute;
+    bottom: 12px;
+    right: 18px;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    padding: 6px 12px;
     border-radius: 20px;
-    box-shadow: 0 15px 40px var(--shadow);
+    font-size: 0.76rem;
+    font-weight: 700;
+    cursor: pointer;
+    backdrop-filter: blur(4px);
+    z-index: 5;
+    transition: all 0.2s ease;
 }
 
-@media (max-width: 991px) {
-    .eventy-container {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .eventy-text {
-        text-align: center;
-    }
-
-    .eventy-features li {
-        text-align: left;
-    }
-
-    .eventy-img {
-        min-height: 300px;
-    }
+.sound-toggle-btn:hover {
+    background-color: var(--secondary-color);
 }
 
-/* ================================
-   6. SEKCJA SOCIAL MEDIA
-=================================== */
+.sound-toggle-btn.unmuted {
+    background-color: var(--primary-color);
+}
+
+/* ===================================================
+   3. OFERTA DLA GASTRONOMII (B2B)
+====================================================== */
+.gastro-section {
+    padding: 85px 5%;
+    text-align: center;
+}
+
+.gastro-container {
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.gastro-header {
+    margin-bottom: 40px;
+}
+
+.gastro-header h2 {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.gastro-subtitle {
+    font-size: 1.02rem;
+    opacity: 0.85;
+    max-width: 720px;
+    margin: 0 auto;
+    line-height: 1.55;
+}
+
+.gastro-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 22px;
+    margin-bottom: 35px;
+}
+
+.gastro-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--nav-border);
+    border-radius: 18px;
+    padding: 28px 20px;
+    text-align: left;
+    box-shadow: 0 6px 20px var(--shadow);
+    transition: transform 0.25s ease;
+}
+
+.gastro-card:hover {
+    transform: translateY(-4px);
+}
+
+.gastro-icon {
+    font-size: 2rem;
+    margin-bottom: 12px;
+}
+
+.gastro-card h3 {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-bottom: 8px;
+}
+
+.gastro-card p {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    opacity: 0.85;
+    margin: 0;
+}
+
+.gastro-bottom-box {
+    background-color: var(--card-bg);
+    border: 1px dashed var(--secondary-color);
+    padding: 22px 18px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    max-width: 620px;
+    margin: 0 auto;
+}
+
+.gastro-bottom-box p {
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+/* ===================================================
+   4. SOCIAL MEDIA
+====================================================== */
 .socials-section {
     padding: 80px 5%;
     text-align: center;
 }
 
 .socials-container {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
 .socials-section h2 {
     font-size: 2.2rem;
     color: var(--primary-color);
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .socials-subtitle {
-    font-size: 1.05rem;
-    margin-bottom: 40px;
+    font-size: 1.02rem;
+    margin-bottom: 35px;
     opacity: 0.85;
 }
 
 .socials-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
 }
 
 .social-card {
     background-color: var(--card-bg);
     border: 1px solid var(--nav-border);
-    padding: 30px 20px;
-    border-radius: 20px;
+    padding: 28px 18px;
+    border-radius: 18px;
     text-decoration: none;
     color: var(--text-color);
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: 0 6px 20px var(--shadow);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 18px var(--shadow);
+    transition: transform 0.25s ease;
 }
 
 .social-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 30px var(--shadow);
+    transform: translateY(-5px);
 }
 
 .social-card-icon {
-    width: 55px;
-    height: 55px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
     background-color: rgba(0, 0, 0, 0.03);
     border: 1px solid var(--nav-border);
-    transition: all 0.3s ease;
+    transition: all 0.25s ease;
 }
 
 body.dark-theme .social-card-icon {
@@ -588,104 +355,208 @@ body.dark-theme .social-card-icon {
 }
 
 .social-card:hover .social-card-icon {
-    transform: scale(1.1);
+    transform: scale(1.08);
 }
 
 .social-card h3 {
-    font-size: 1.3rem;
-    margin-bottom: 4px;
+    font-size: 1.25rem;
+    margin-bottom: 3px;
 }
 
 .social-card p {
-    font-size: 0.9rem;
+    font-size: 0.86rem;
     opacity: 0.7;
-    margin-bottom: 18px;
+    margin-bottom: 16px;
 }
 
 .social-card-btn {
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     font-weight: 700;
-    padding: 6px 16px;
+    padding: 5px 14px;
     border-radius: 20px;
     border: 1px solid var(--nav-border);
-    transition: all 0.2s ease;
 }
 
-/* Akcenty kolorystyczne Social Media */
-.fb-card .social-card-icon { 
-    color: #1877f2; 
-}
-.fb-card:hover .social-card-icon { 
-    background-color: #1877f2; 
-    color: #ffffff; 
-    border-color: #1877f2; 
-}
-.fb-card:hover .social-card-btn { 
-    background-color: #1877f2; 
-    color: #ffffff; 
-    border-color: #1877f2; 
-}
+/* Akcenty kolorystyczne */
+.fb-card .social-card-icon { color: #1877f2; }
+.fb-card:hover .social-card-icon, .fb-card:hover .social-card-btn { background-color: #1877f2; color: #fff; border-color: #1877f2; }
 
-.ig-card .social-card-icon .ig-icon-path {
-    fill: url(#ig-grad);
-    transition: fill 0.3s ease;
-}
-.ig-card:hover .social-card-icon { 
+.ig-card .social-card-icon .ig-icon-path { fill: url(#ig-grad); }
+.ig-card:hover .social-card-icon, .ig-card:hover .social-card-btn { 
     background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
-    border-color: transparent; 
+    color: #fff; border-color: transparent; 
 }
-.ig-card:hover .social-card-icon .ig-icon-path {
-    fill: #ffffff !important; 
-}
-.ig-card:hover .social-card-btn { 
-    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
-    color: #ffffff; 
-    border-color: transparent; 
+.ig-card:hover .social-card-icon .ig-icon-path { fill: #ffffff !important; }
+
+.tt-card .social-card-icon { color: var(--text-color); }
+.tt-card:hover .social-card-icon, .tt-card:hover .social-card-btn { background-color: #000; color: #fff; border-color: #000; }
+
+.yt-card .social-card-icon { color: #ff0000; }
+.yt-card:hover .social-card-icon, .yt-card:hover .social-card-btn { background-color: #ff0000; color: #fff; border-color: #ff0000; }
+
+/* ===================================================
+   5. FORMULARZ KONTAKTOWY
+====================================================== */
+.contact-form-section {
+    padding: 85px 5%;
+    text-align: center;
 }
 
-.tt-card .social-card-icon { 
-    color: var(--text-color); 
-}
-.tt-card .social-card-icon svg {
-    filter: drop-shadow(-1.5px 1.5px 0px #25F4EE) drop-shadow(1.5px -1.5px 0px #FE2C55);
-    transition: filter 0.3s ease;
-}
-.tt-card:hover .social-card-icon { 
-    background-color: #000000; 
-    color: #ffffff; 
-    border-color: #000000; 
-}
-.tt-card:hover .social-card-icon svg {
-    filter: drop-shadow(-2px 2px 0px #25F4EE) drop-shadow(2px -2px 0px #FE2C55);
-}
-.tt-card:hover .social-card-btn { 
-    background-color: #000000; 
-    color: #ffffff; 
-    border-color: #000000; 
-    box-shadow: -2px 2px 0px #25F4EE, 2px -2px 0px #FE2C55; 
+.contact-form-container {
+    max-width: 720px;
+    margin: 0 auto;
+    background-color: var(--card-bg);
+    border: 1px solid var(--nav-border);
+    padding: 38px 28px;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px var(--shadow);
 }
 
-.yt-card .social-card-icon { 
-    color: #ff0000; 
-}
-.yt-card:hover .social-card-icon { 
-    background-color: #ff0000; 
-    color: #ffffff; 
-    border-color: #ff0000; 
-}
-.yt-card:hover .social-card-btn { 
-    background-color: #ff0000; 
-    color: #ffffff; 
-    border-color: #ff0000; 
+.contact-form-container h2 {
+    font-size: 2.1rem;
+    color: var(--primary-color);
+    margin-bottom: 8px;
 }
 
-/* ================================
-   7. STOPKA (FOOTER)
-=================================== */
+.contact-form-subtitle {
+    font-size: 0.92rem;
+    opacity: 0.85;
+    line-height: 1.5;
+    margin-bottom: 26px;
+}
+
+.main-contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: left;
+}
+
+.form-row-two {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.form-field label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    opacity: 0.85;
+}
+
+.rodo-checkbox-group {
+    margin: 6px 0 10px 0;
+    text-align: left;
+}
+
+.rodo-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 0.76rem;
+    line-height: 1.4;
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+.rodo-label input[type="checkbox"] {
+    margin-top: 2px;
+    accent-color: var(--secondary-color);
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+}
+
+.rodo-label a {
+    color: var(--primary-color);
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.contact-success-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background-color: rgba(36, 152, 84, 0.12);
+    border: 1.5px solid var(--secondary-color);
+    padding: 14px 18px;
+    border-radius: 16px;
+    margin-top: 16px;
+    text-align: left;
+    animation: alertFadeIn 0.3s ease-out;
+}
+
+.contact-success-card .success-icon {
+    width: 32px;
+    height: 32px;
+    background-color: var(--secondary-color);
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    flex-shrink: 0;
+}
+
+.contact-success-card .success-content h4 {
+    margin: 0 0 2px 0;
+    color: var(--secondary-color);
+    font-size: 0.95rem;
+}
+
+.contact-success-card .success-content p {
+    margin: 0;
+    font-size: 0.82rem;
+    line-height: 1.35;
+}
+
+.contact-error-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background-color: rgba(184, 43, 51, 0.12);
+    border: 1.5px solid var(--primary-color);
+    padding: 14px 18px;
+    border-radius: 16px;
+    margin-top: 16px;
+    text-align: left;
+}
+
+.contact-error-card .error-content h4 {
+    margin: 0 0 2px 0;
+    color: var(--primary-color);
+    font-size: 0.95rem;
+}
+
+.contact-error-card .error-content p {
+    margin: 0;
+    font-size: 0.82rem;
+}
+
+.contact-error-card a {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+@keyframes alertFadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===================================================
+   6. STOPKA (FOOTER)
+====================================================== */
 .footer {
     background-color: #1a1a1a;
     color: #eaeaea;
-    padding: 70px 5% 20px;
+    padding: 65px 5% 20px;
 }
 
 body.dark-theme .footer {
@@ -693,30 +564,30 @@ body.dark-theme .footer {
 }
 
 .footer-content {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
-    margin-bottom: 50px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 35px;
+    margin-bottom: 45px;
 }
 
 .footer-brand h3 {
     color: var(--primary-color);
-    font-size: 1.5rem;
-    margin-bottom: 15px;
+    font-size: 1.45rem;
+    margin-bottom: 12px;
 }
 
 .footer-brand p {
     opacity: 0.7;
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     line-height: 1.6;
 }
 
 .footer-links h4, .footer-socials h4 {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-    color: #fff;
+    font-size: 1.15rem;
+    margin-bottom: 16px;
+    color: #ffffff;
 }
 
 .footer-links ul {
@@ -724,14 +595,15 @@ body.dark-theme .footer {
 }
 
 .footer-links li {
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .footer-links a, .footer-socials a {
     color: #eaeaea;
     text-decoration: none;
     opacity: 0.7;
-    transition: opacity 0.3s, color 0.3s;
+    font-size: 0.88rem;
+    transition: opacity 0.25s, color 0.25s;
 }
 
 .footer-links a:hover, .footer-socials a:hover {
@@ -739,39 +611,31 @@ body.dark-theme .footer {
     color: var(--primary-color);
 }
 
-.social-icons {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
 .footer-bottom {
     text-align: center;
-    padding-top: 25px;
+    padding-top: 22px;
     border-top: 1px solid rgba(255,255,255,0.1);
-    font-size: 0.85rem;
-    opacity: 0.7;
+    font-size: 0.84rem;
+    opacity: 0.75;
 }
 
-.footer-author-link{
+.footer-author-link {
     color: #eaeaea;
     text-decoration: none;
     font-weight: 800;
-    padding: 3px 9px;
-    border-radius: 20px;
+    padding: 3px 8px;
+    border-radius: 15px;
+    transition: all 0.2s ease;
 }
 
 .footer-author-link:hover {
     color: #ffffff;
-    background-color: var(--secondary-color);
-    transition: all 0.2s ease;
+    background-color: var(--primary-color);
 }
 
-
-
-/* ================================
-   RESPONSYWNY MODAL SOCIAL MEDIA NA DZIEŃ DOBRY
-=================================== */
+/* ===================================================
+   7. MODALE: SOCIAL WELCOME & RODO
+====================================================== */
 .social-welcome-modal {
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
@@ -801,18 +665,15 @@ body.dark-theme .footer {
     position: relative;
     background-color: var(--card-bg);
     border: 1px solid var(--nav-border);
-    padding: 30px 20px 20px;
+    padding: 28px 18px 18px;
     border-radius: 20px;
-    max-width: 460px;
+    max-width: 440px;
     width: 100%;
-    max-height: 88vh;
-    overflow-y: auto;
     text-align: center;
     box-shadow: 0 15px 35px var(--shadow);
     z-index: 2;
-    transform: scale(0.9);
-    transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    box-sizing: border-box;
+    transform: scale(0.92);
+    transition: transform 0.35s ease;
 }
 
 .social-welcome-modal.active .social-welcome-content {
@@ -821,66 +682,54 @@ body.dark-theme .footer {
 
 .close-welcome-btn {
     position: absolute;
-    top: 8px;
-    right: 14px;
+    top: 8px; right: 12px;
     background: none;
     border: none;
-    font-size: 1.8rem;
-    line-height: 1;
+    font-size: 1.7rem;
     color: var(--text-color);
     cursor: pointer;
     opacity: 0.7;
-    transition: opacity 0.2s;
-}
-
-.close-welcome-btn:hover {
-    opacity: 1;
 }
 
 .welcome-header h2 {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     color: var(--primary-color);
-    margin-bottom: 6px;
+    margin-bottom: 4px;
 }
 
 .welcome-header p {
-    font-size: 0.88rem;
+    font-size: 0.85rem;
     opacity: 0.85;
-    line-height: 1.4;
-    margin-bottom: 18px;
+    margin-bottom: 16px;
 }
 
-/* Siatka kafelków */
 .welcome-social-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    gap: 8px;
 }
 
 .welcome-card {
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 10px 12px;
+    gap: 8px;
+    padding: 8px 10px;
     background-color: var(--bg-color);
     border: 1px solid var(--nav-border);
     border-radius: 12px;
     text-decoration: none;
     color: var(--text-color);
     text-align: left;
-    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    transition: transform 0.2s ease;
 }
 
 .welcome-card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px var(--shadow);
 }
 
-/* Kółeczko ikonki – neutralne na start */
 .welcome-card-icon {
-    width: 38px;
-    height: 38px;
-    min-width: 38px;
+    width: 34px;
+    height: 34px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -888,1229 +737,98 @@ body.dark-theme .footer {
     background-color: var(--card-bg);
     border: 1px solid var(--nav-border);
     flex-shrink: 0;
-    transition: all 0.3s ease;
-}
-
-.welcome-card-info {
-    flex: 1;
-    overflow: hidden;
 }
 
 .welcome-card-info h3 {
-    font-size: 0.88rem;
+    font-size: 0.82rem;
     margin: 0;
-    line-height: 1.2;
 }
 
 .welcome-card-info p {
-    font-size: 0.72rem;
+    font-size: 0.68rem;
     margin: 0;
     opacity: 0.75;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 .welcome-card-arrow {
-    font-size: 0.85rem;
-    font-weight: bold;
-    opacity: 0.4;
-    transition: transform 0.2s ease, opacity 0.2s ease, color 0.2s ease;
-}
-
-.welcome-card:hover .welcome-card-arrow {
-    opacity: 1;
-    transform: translateX(2px);
-    color: var(--primary-color);
-}
-
-.welcome-card:hover .welcome-card-icon {
-    transform: scale(1.08);
-}
-
-/* ===================================================
-   EFEKTY HOVER DLA IKONEK W MODALU (AKCENTY KOLORISTYCZNE)
-====================================================== */
-
-/* 1. Facebook */
-.welcome-card.fb-card .welcome-card-icon { 
-    color: #1877f2; 
-}
-.welcome-card.fb-card:hover .welcome-card-icon { 
-    background-color: #1877f2; 
-    color: #ffffff; 
-    border-color: #1877f2; 
-}
-
-/* 2. YouTube */
-.welcome-card.yt-card .welcome-card-icon { 
-    color: #ff0000; 
-}
-.welcome-card.yt-card:hover .welcome-card-icon { 
-    background-color: #ff0000; 
-    color: #ffffff; 
-    border-color: #ff0000; 
-}
-
-/* 3. TikTok */
-.welcome-card.tt-card .welcome-card-icon { 
-    color: var(--text-color); 
-}
-.welcome-card.tt-card .welcome-card-icon svg {
-    filter: drop-shadow(-1.5px 1.5px 0px #25F4EE) drop-shadow(1.5px -1.5px 0px #FE2C55);
-    transition: filter 0.3s ease;
-}
-.welcome-card.tt-card:hover .welcome-card-icon { 
-    background-color: #000000; 
-    color: #ffffff; 
-    border-color: #000000; 
-}
-.welcome-card.tt-card:hover .welcome-card-icon svg {
-    filter: drop-shadow(-2px 2px 0px #25F4EE) drop-shadow(2px -2px 0px #FE2C55);
-}
-
-/* 4. Instagram */
-.welcome-card.ig-card .welcome-card-icon { 
-    color: #dc2743; 
-}
-.welcome-card.ig-card:hover .welcome-card-icon { 
-    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
-    color: #ffffff; 
-    border-color: transparent; 
-}
-
-/* Dopasowanie dla bardzo wąskich telefonów (<= 360px) */
-@media (max-width: 360px) {
-    .welcome-social-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* ================================
-   SEKCJA NASZE LOKALE & O NAS
-=================================== */
-.contact-section {
-    padding: 90px 5%;
-    background-color: var(--bg-color);
-    text-align: center;
-}
-
-.contact-container {
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-/* Pudełko "O nas" z opisem receptury */
-.about-intro-box {
-    background-color: var(--card-bg);
-    border: 1px solid var(--nav-border);
-    padding: 40px 30px;
-    border-radius: 20px;
-    box-shadow: 0 8px 30px var(--shadow);
-    margin-bottom: 45px;
-    text-align: center;
-}
-
-.about-intro-box h2 {
-    font-size: 2.2rem;
-    color: var(--primary-color);
-    margin-bottom: 15px;
-}
-
-.about-lead {
-    font-size: 1.05rem;
-    line-height: 1.7;
-    opacity: 0.9;
-    max-width: 900px;
-    margin: 0 auto 20px auto;
-}
-
-.lokale-email-info {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background-color: rgba(184, 43, 51, 0.06);
-    padding: 8px 18px;
-    border-radius: 20px;
-    font-size: 0.92rem;
-    font-weight: 600;
-}
-
-.lokale-email-info a {
-    color: var(--primary-color);
-    text-decoration: none;
-    font-weight: 700;
-}
-
-.lokale-heading {
-    font-size: 1.8rem;
-    color: var(--text-color);
-    margin-bottom: 30px;
-}
-
-/* Kafelki Lokali */
-.contact-grid-two-locations {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
-}
-
-.location-card {
-    position: relative;
-    text-align: left;
-    padding: 35px 25px 25px;
-    border-radius: 20px;
-    background-color: var(--card-bg);
-    border: 1px solid var(--nav-border);
-    box-shadow: 0 8px 25px var(--shadow);
-}
-
-.location-badge {
-    position: absolute;
-    top: -12px;
-    left: 25px;
-    background-color: var(--primary-color);
-    color: #ffffff;
-    font-size: 0.78rem;
-    font-weight: 800;
-    padding: 4px 12px;
-    border-radius: 12px;
-    letter-spacing: 0.5px;
-}
-
-.location-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 6px;
-}
-
-.location-header h3 {
-    font-size: 1.45rem;
-    color: var(--primary-color);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin: 0;
-}
-
-.map-link {
-    font-size: 0.82rem;
-    color: var(--secondary-color);
-    text-decoration: none;
-    font-weight: 700;
-    padding: 5px 12px;
-    border: 1px solid var(--secondary-color);
-    border-radius: 20px;
-    transition: all 0.2s ease;
-}
-
-.map-link:hover {
-    background-color: var(--secondary-color);
-    color: #ffffff;
-}
-
-.location-address {
-    font-size: 0.95rem;
-    font-weight: 600;
-    margin-bottom: 12px;
-    opacity: 0.85;
-}
-
-.location-phone-clean {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 1.3rem;
-    font-weight: 800;
-    color: var(--text-color);
-    text-decoration: none;
-    margin-bottom: 18px;
-    transition: color 0.2s;
-}
-
-.location-phone-clean:hover {
-    color: var(--primary-color);
-}
-
-/* Banerek dostawy wewnątrz kafelka lokalu */
-.location-delivery-box {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgba(36, 152, 84, 0.08);
-    border: 1px dashed var(--secondary-color);
-    padding: 12px 16px;
-    border-radius: 12px;
-    margin-bottom: 20px;
-    gap: 10px;
-}
-
-.delivery-info {
-    display: flex;
-    flex-direction: column;
-}
-
-.delivery-info strong {
-    font-size: 0.92rem;
-    color: var(--secondary-color);
-}
-
-.delivery-info span {
-    font-size: 0.78rem;
-    opacity: 0.85;
-}
-
-.delivery-order-btn {
-    background-color: var(--secondary-color);
-    color: #ffffff !important;
-    text-decoration: none;
-    font-size: 0.82rem;
-    font-weight: 700;
-    padding: 8px 12px;
-    border-radius: 20px;
-    white-space: nowrap;
-    transition: background-color 0.2s;
-}
-
-.delivery-order-btn:hover {
-    background-color: #1b7a42;
-}
-
-.location-hours h4 {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 0.95rem;
-    margin-bottom: 10px;
-}
-
-.hours-table {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.hours-row {
-    display: grid;
-    grid-template-columns: 90px 1fr;
-    font-size: 0.88rem;
-}
-
-.hours-row .day {
-    font-weight: 600;
-    opacity: 0.85;
-}
-
-.hours-row .time {
-    opacity: 0.8;
-}
-
-@media (max-width: 480px) {
-    .location-delivery-box {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .delivery-order-btn {
-        width: 100%;
-        text-align: center;
-    }
-}
-
-/* ===================================================
-   STYLE SEKCJI SPODY DO PINSY & SPECYFIKACJA
-====================================================== */
-.section-tag {
-    display: inline-block;
     font-size: 0.8rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--secondary-color);
-    background-color: rgba(36, 152, 84, 0.1);
-    padding: 4px 12px;
-    border-radius: 20px;
-    margin-bottom: 12px;
+    opacity: 0.4;
 }
 
-.spody-specs-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    margin: 20px 0 25px 0;
-}
-
-.spody-spec-item {
-    display: flex;
+/* Modal RODO */
+.custom-modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background-color: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(6px);
+    z-index: 99999;
+    justify-content: center;
     align-items: center;
-    gap: 10px;
-    background-color: var(--bg-color);
+    padding: 20px;
+}
+
+.privacy-modal-content {
+    position: relative;
+    background-color: var(--card-bg);
     border: 1px solid var(--nav-border);
-    padding: 10px 14px;
-    border-radius: 12px;
-    text-align: left;
-}
-
-.spec-icon {
-    font-size: 1.3rem;
-}
-
-.spody-spec-item strong {
-    display: block;
-    font-size: 0.9rem;
+    max-width: 560px;
+    width: 100%;
+    max-height: 85vh;
+    padding: 28px;
+    border-radius: 22px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
     color: var(--text-color);
-    line-height: 1.2;
+    text-align: left;
+    overflow-y: auto;
 }
 
-.spody-spec-item small {
-    font-size: 0.75rem;
-    opacity: 0.75;
-}
-
-.spody-cta-row {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-top: 24px;
-}
-
-.spody-phone-btn {
-    font-weight: 700;
-    color: var(--secondary-color);
-    text-decoration: none;
-    font-size: 1.0rem;
-    padding: 14px 25px;
-    border: 1px solid var(--secondary-color);
-    border-radius: 30px;
-    transition: all 0.2s ease;
-}
-
-.spody-phone-btn:hover {
-    background-color: var(--secondary-color);
-    color: #ffffff;
-}
-
-
-
-/* ===================================================
-   STYLE SEKCJI OFERTA DLA GASTRONOMII (B2B)
-====================================================== */
-.gastro-section {
-    padding: 90px 5%;
-    text-align: center;
-}
-
-.gastro-container {
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-.gastro-header {
-    margin-bottom: 45px;
-}
-
-.gastro-header h2 {
-    font-size: 2.2rem;
+.privacy-modal-content h3 {
+    font-size: 1.25rem;
     color: var(--primary-color);
-    margin-bottom: 12px;
+    margin-bottom: 14px;
 }
 
-.gastro-subtitle {
-    font-size: 1.05rem;
-    opacity: 0.85;
-    max-width: 750px;
-    margin: 0 auto;
+.privacy-modal-body {
+    font-size: 0.84rem;
     line-height: 1.6;
+    margin-bottom: 18px;
+    opacity: 0.9;
 }
 
-.gastro-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    margin-bottom: 40px;
+.privacy-modal-body ul {
+    margin: 6px 0 10px 18px;
 }
 
-.gastro-card {
-    background-color: var(--card-bg);
-    border: 1px solid var(--nav-border);
-    border-radius: 18px;
-    padding: 30px 22px;
-    text-align: left;
-    box-shadow: 0 6px 20px var(--shadow);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.gastro-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 28px var(--shadow);
-}
-
-.gastro-icon {
-    font-size: 2rem;
-    margin-bottom: 15px;
-}
-
-.gastro-card h3 {
-    font-size: 1.2rem;
-    color: var(--text-color);
-    margin-bottom: 10px;
-}
-
-.gastro-card p {
-    font-size: 0.9rem;
-    line-height: 1.5;
-    opacity: 0.85;
-    margin: 0;
-}
-
-.gastro-bottom-box {
-    background-color: var(--card-bg);
-    border: 1px dashed var(--secondary-color);
-    padding: 25px 20px;
-    border-radius: 16px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    max-width: 650px;
-    margin: 0 auto;
-}
-
-.gastro-bottom-box p {
-    font-size: 1rem;
-    font-weight: 600;
-    margin: 0;
-}
-
-/* Responsywność dla małych telefonów */
-@media (max-width: 600px) {
-    .spody-specs-grid {
-        grid-template-columns: 1fr;
+/* Responsywność Sections */
+@media (max-width: 991px) {
+    .spody-container {
+        flex-direction: column-reverse;
+        gap: 22px;
     }
-    
-    .spody-cta-row {
+
+    .eventy-container {
         flex-direction: column;
-        align-items: stretch;
+        gap: 22px;
     }
 
-    .spody-cta-row a {
-        text-align: center;
+    .spody-text, .eventy-text {
+        width: 100%;
+        padding: 26px 20px;
     }
-}
 
-/* ===================================================
-   CATERING, SZKOLENIA & GŁÓWNY FORMULARZ KONTAKTOWY
-====================================================== */
-.training-info-card {
-    background-color: var(--bg-color);
-    border: 1px solid var(--nav-border);
-    padding: 16px 20px;
-    border-radius: 14px;
-    margin: 20px 0 25px 0;
-    text-align: left;
-}
-
-.training-info-card h4 {
-    font-size: 1rem;
-    color: var(--primary-color);
-    margin-bottom: 10px;
-}
-
-.training-info-card .eventy-features {
-    margin: 0;
-    gap: 8px;
-}
-
-.eventy-cta {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-/* Formularz Kontaktowy Ogólny */
-.contact-form-section {
-    padding: 90px 5%;
-    text-align: center;
-}
-
-.contact-form-container {
-    max-width: 750px;
-    margin: 0 auto;
-    background-color: var(--card-bg);
-    border: 1px solid var(--nav-border);
-    padding: 40px 30px;
-    border-radius: 20px;
-    box-shadow: 0 8px 30px var(--shadow);
-}
-
-.contact-form-container h2 {
-    font-size: 2.2rem;
-    color: var(--primary-color);
-    margin-bottom: 10px;
-}
-
-.contact-form-subtitle {
-    font-size: 0.95rem;
-    opacity: 0.85;
-    line-height: 1.5;
-    margin-bottom: 30px;
-}
-
-.main-contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    text-align: left;
-}
-
-.form-row-two {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-}
-
-.form-field {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.form-field label {
-    font-size: 0.82rem;
-    font-weight: 700;
-    opacity: 0.85;
-}
-
-select.cart-input {
-    cursor: pointer;
+    .reel-container {
+        max-width: 270px;
+    }
 }
 
 @media (max-width: 600px) {
     .form-row-two {
         grid-template-columns: 1fr;
-        gap: 14px;
     }
 
-    .contact-form-container {
-        padding: 30px 18px;
-    }
-
-    .eventy-cta {
-        flex-direction: column;
-        align-items: stretch;
-    }
-    
-    .eventy-cta a {
-        text-align: center;
-    }
-}
-
-/* ===================================================
-   IDEALNIE RÓWNY, ZWARTY ODSTĘP W SPODACH I CATERINGU
-====================================================== */
-.spody-container,
-.eventy-container {
-    max-width: 1080px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px; /* Zwarty odstęp identyczny jak w Spodach */
-}
-
-/* Kafelki z tekstem - jednakowa szerokość i brak marginesów */
-.spody-text,
-.eventy-text {
-    flex: 1;
-    max-width: 720px;
-    background-color: var(--card-bg);
-    border: 1px solid var(--nav-border);
-    padding: 38px 32px;
-    border-radius: 24px;
-    box-shadow: 0 10px 35px var(--shadow);
-    text-align: left;
-    margin: 0 !important;
-    box-sizing: border-box;
-}
-
-/* Kontenery wideo - zablokowane na stałą szerokość telefonu bez rozpychania */
-.reel-container,
-.spody-image-wrapper,
-.eventy-image-wrapper {
-    flex: 0 0 310px !important; /* Stała szerokość bez pustej przestrzeni */
-    max-width: 310px;
-    width: 100%;
-    margin: 0 !important;
-    display: flex;
-    justify-content: center;
-}
-
-.reel-wrapper {
-    width: 100%;
-    max-width: 310px;
-    aspect-ratio: 9 / 16;
-    border-radius: 24px;
-    overflow: hidden;
-    box-shadow: 0 16px 40px var(--shadow);
-    border: 2px solid var(--nav-border);
-    background-color: #000;
-    position: relative;
-}
-
-/* Responsywność na telefonach */
-@media (max-width: 991px) {
-    .spody-container {
-        flex-direction: column-reverse;
-        gap: 24px;
-    }
-
-    .eventy-container {
-        flex-direction: column;
-        gap: 24px;
-    }
-
-    .spody-text,
-    .eventy-text {
-        max-width: 100%;
-        width: 100%;
-        padding: 28px 20px;
-    }
-
-    .reel-container,
-    .spody-image-wrapper,
-    .eventy-image-wrapper {
-        flex: 0 0 auto !important;
-        max-width: 280px;
-    }
-}
-
-/* ===================================================
-   PIONOWY ODTWARZACZ REELS Z MASKOWANIEM ZNAKU WODNEGO
-====================================================== */
-.reel-container {
-    flex: 0.9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-
-.reel-wrapper {
-    position: relative;
-    width: 100%;
-    max-width: 310px;
-    aspect-ratio: 9 / 16;
-    border-radius: 24px;
-    overflow: hidden; /* Odcina przeskalowane krawędzie ze znakiem wodnym */
-    box-shadow: 0 16px 40px var(--shadow);
-    border: 2px solid var(--nav-border);
-    background-color: #000;
-}
-
-.reel-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    /* Skalowanie o 12.1% wypycha znak wodny poza widoczny obszar */
-    transform: scale(1.0);
-    transform-origin: center center;
-}
-
-/* Przycisk dźwięku na rolce */
-.sound-toggle-btn {
-    position: absolute;
-    bottom: 12px;
-    right: 24px;
-    background-color: rgba(0, 0, 0, 0.75);
-    color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.35);
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 0.78rem;
-    font-weight: 700;
-    cursor: pointer;
-    backdrop-filter: blur(5px);
-    z-index: 5;
-    transition: background-color 0.2s ease, transform 0.2s ease;
-}
-
-.sound-toggle-btn:hover {
-    background-color: var(--secondary-color);
-    transform: scale(1.05);
-}
-
-.sound-toggle-btn.unmuted {
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
-}
-
-/* ===================================================
-   RESPONSYWNOŚĆ (TABLETY I TELEFONY)
-====================================================== */
-@media (max-width: 991px) {
-    /* Spody: odwracamy kolejność, by tekst był na górze, a wideo na dole */
-    .spody-container {
-        flex-direction: column-reverse;
-        gap: 30px;
-    }
-
-    /* Catering: zachowujemy kolejność domyślną (tekst góra, wideo dół) */
-    .eventy-container {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .spody-text,
-    .eventy-text {
-        width: 100%;
-        padding: 30px 22px;
-    }
-
-    .reel-wrapper {
-        max-width: 270px;
-    }
-}
-
-@media (max-width: 480px) {
-    .spody-text h2,
-    .eventy-text h2 {
-        font-size: 1.7rem;
-    }
-
-    .spody-text,
-    .eventy-text {
-        padding: 24px 18px;
-    }
-}
-
-
-/* Sekcja standardowa */
-section {
-    background-color: var(--bg-color);
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* Co druga sekcja (ciemniejszy beż w jasnym / jaśniejsza szarość w ciemnym) */
-.bg-alt,
-.bg-striped {
-    background-color: var(--bg-alt) !important;
-}
-
-/* Wygląd kafelków z subtelną ramką */
-.card,
-.menu-loc-card,
-.spody-text,
-.eventy-text,
-.gastro-card,
-.contact-form-container,
-.about-intro-box,
-.location-card,
-.menu-item-card {
-    background-color: var(--card-bg) !important;
-    border: 1px solid var(--nav-border) !important;
-    color: var(--text-color);
-}
-
-/* ===================================================
-   CHECKBOXY RODO & MODAL POLITYKI PRYWATNOŚCI
-====================================================== */
-.rodo-checkbox-group {
-    margin: 8px 0 12px 0;
-    text-align: left;
-}
-
-.rodo-label {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    font-size: 0.78rem;
-    line-height: 1.4;
-    cursor: pointer;
-    opacity: 0.9;
-}
-
-.rodo-label input[type="checkbox"] {
-    margin-top: 2px;
-    accent-color: var(--secondary-color);
-    width: 16px;
-    height: 16px;
-    flex-shrink: 0;
-    cursor: pointer;
-}
-
-.rodo-label a {
-    color: var(--primary-color);
-    text-decoration: underline;
-    font-weight: 600;
-}
-
-/* Modal Polityki */
-.privacy-modal-content {
-    background-color: var(--card-bg);
-    border: 1px solid var(--nav-border);
-    max-width: 580px;
-    width: 90%;
-    padding: 30px 25px;
-    border-radius: 20px;
-    box-shadow: 0 15px 40px var(--shadow);
-    color: var(--text-color);
-    text-align: left;
-    max-height: 80vh;
-    overflow-y: auto;
-}
-
-.privacy-modal-content h3 {
-    font-size: 1.3rem;
-    color: var(--primary-color);
-    margin-bottom: 15px;
-}
-
-.privacy-modal-body {
-    font-size: 0.85rem;
-    line-height: 1.6;
-    margin-bottom: 20px;
-    opacity: 0.9;
-}
-
-.privacy-modal-body ul {
-    margin: 6px 0 12px 20px;
-}
-
-/* ===================================================
-   MODAL RODO - WYŻSZY PRIORYTET NIŻ KOSZYK
-====================================================== */
-.custom-modal-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.75);
-    backdrop-filter: blur(6px);
-    z-index: 99999; /* Wartość wyższa niż panel koszyka (np. 1000 / 2000) */
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-.privacy-modal-content {
-    position: relative;
-    background-color: var(--card-bg);
-    border: 1px solid var(--nav-border);
-    max-width: 580px;
-    width: 100%;
-    max-height: 85vh;
-    padding: 30px;
-    border-radius: 24px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
-    color: var(--text-color);
-    text-align: left;
-    overflow-y: auto;
-    animation: modalFadeIn 0.25s ease-out;
-    z-index: 100000;
-}
-
-/* ===================================================
-   ZIELONY KAFELEK POWIADOMIENIA O WYSŁANIU WIADOMOŚCI
-====================================================== */
-.contact-success-card {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    background-color: rgba(36, 152, 84, 0.12);
-    border: 1.5px solid var(--secondary-color);
-    padding: 16px 20px;
-    border-radius: 18px;
-    margin-top: 18px;
-    text-align: left;
-    animation: alertFadeIn 0.3s ease-out;
-}
-
-.contact-success-card .success-icon {
-    width: 36px;
-    height: 36px;
-    background-color: var(--secondary-color);
-    color: #ffffff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    font-weight: 800;
-    flex-shrink: 0;
-}
-
-.contact-success-card .success-content h4 {
-    margin: 0 0 4px 0;
-    color: var(--secondary-color);
-    font-size: 1rem;
-    font-weight: 700;
-}
-
-.contact-success-card .success-content p {
-    margin: 0;
-    font-size: 0.85rem;
-    color: var(--text-color);
-    opacity: 0.9;
-    line-height: 1.4;
-}
-
-/* Kafelek błędu */
-.contact-error-card {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    background-color: rgba(184, 43, 51, 0.12);
-    border: 1.5px solid var(--primary-color);
-    padding: 16px 20px;
-    border-radius: 18px;
-    margin-top: 18px;
-    text-align: left;
-}
-
-.contact-error-card .error-icon {
-    font-size: 1.5rem;
-    flex-shrink: 0;
-}
-
-.contact-error-card .error-content h4 {
-    margin: 0 0 4px 0;
-    color: var(--primary-color);
-    font-size: 1rem;
-    font-weight: 700;
-}
-
-.contact-error-card .error-content p {
-    margin: 0;
-    font-size: 0.85rem;
-    color: var(--text-color);
-}
-
-.contact-error-card a {
-    color: var(--primary-color);
-    font-weight: 700;
-    text-decoration: underline;
-}
-
-@keyframes alertFadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(8px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* ===================================================
-   ZINTEGROWANY HUB: LOKALE & KARTA MENU
-====================================================== */
-.lokale-menu-hub {
-    padding: 85px 5% 70px;
-    text-align: center;
-    position: relative;
-}
-
-.hub-header {
-    margin-bottom: 28px;
-}
-
-.hub-header h2 {
-    font-size: 2.3rem;
-    color: var(--primary-color);
-    margin-bottom: 8px;
-}
-
-.hub-subtitle {
-    font-size: 1.05rem;
-    opacity: 0.85;
-    margin: 0;
-}
-
-/* Siatka 2 większych kafelków lokali */
-.locations-cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    gap: 24px;
-    max-width: 960px;
-    margin: 0 auto 28px auto;
-}
-
-.hub-location-card {
-    background-color: var(--card-bg) !important;
-    border: 1px solid var(--nav-border) !important;
-    border-radius: 20px;
-    padding: 26px 24px;
-    text-align: left;
-    box-shadow: 0 8px 25px var(--shadow);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.hub-location-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 30px var(--shadow);
-}
-
-/* Górny pasek kafelka (Nazwa i ulica po lewej, linki po prawej) */
-.hub-loc-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 15px;
-    padding-bottom: 16px;
-    border-bottom: 1px solid var(--nav-border);
-    margin-bottom: 16px;
-}
-
-.hub-loc-title h3 {
-    font-size: 1.35rem;
-    color: var(--primary-color);
-    margin: 0 0 6px 0;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.hub-loc-street {
-    font-size: 0.95rem;
-    font-weight: 600;
-    margin: 0;
-    opacity: 0.85;
-}
-
-.hub-loc-links {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 8px;
-    flex-shrink: 0;
-}
-
-.hub-loc-phone {
-    font-size: 0.92rem;
-    font-weight: 800;
-    color: var(--primary-color);
-    text-decoration: none;
-    background-color: rgba(184, 43, 51, 0.08);
-    padding: 4px 10px;
-    border-radius: 12px;
-    white-space: nowrap;
-    transition: all 0.2s ease;
-}
-
-.hub-loc-phone:hover {
-    background-color: var(--primary-color);
-    color: #ffffff !important;
-}
-
-/* Godziny otwarcia */
-.hub-loc-hours h4 {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 0.92rem;
-    margin: 0 0 10px 0;
-    color: var(--text-color);
-}
-
-.hub-hours-table {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
-.hub-hour-row {
-    display: grid;
-    grid-template-columns: 95px 1fr;
-    font-size: 0.86rem;
-}
-
-.hub-hour-row .day {
-    font-weight: 700;
-    opacity: 0.85;
-}
-
-.hub-hour-row .time {
-    opacity: 0.8;
-}
-
-/* Płynny mostek: Baner dostawy */
-.hub-delivery-banner {
-    max-width: 800px;
-    margin: 0 auto 20px auto;
-    background-color: var(--card-bg);
-    border: 1.5px solid var(--secondary-color);
-    padding: 10px 18px;
-    border-radius: 16px;
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    text-align: left;
-    box-shadow: 0 4px 15px var(--shadow);
-}
-
-.hub-delivery-icon {
-    font-size: 2.2rem;
-    flex-shrink: 0;
-}
-
-.hub-delivery-text strong {
-    display: block;
-    font-size: 0.90rem;
-    color: var(--secondary-color);
-    margin-bottom: 3px;
-}
-
-.hub-delivery-text p {
-    font-size: 0.70rem;
-    margin: 0;
-    opacity: 0.85;
-    line-height: 1.4;
-}
-
-.hub-delivery-text span {
-    font-weight: 700;
-    text-decoration: underline;
-}
-
-/* Obszar Menu */
-.hub-menu-wrapper {
-    margin-top: 10px;
-}
-
-/* Responsywność */
-@media (max-width: 768px) {
-    .locations-cards-grid {
+    .welcome-social-grid {
         grid-template-columns: 1fr;
-        gap: 16px;
-    }
-
-    .hub-loc-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
-    }
-
-    .hub-loc-links {
-        flex-direction: row;
-        align-items: center;
-        width: 100%;
-        justify-content: space-between;
-    }
-
-    .hub-delivery-banner {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-        padding: 14px 18px;
     }
 }

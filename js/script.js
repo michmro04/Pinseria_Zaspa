@@ -130,25 +130,32 @@ if (slides.length > 0 && wrapper) {
     startInterval();
 }
 
-// 6. ScrollSpy (Podświetlanie linków)
-const pageSections = document.querySelectorAll('section');
+// 6. ScrollSpy (Niezawodne podświetlanie linków dla sekcji o dowolnej wysokości)
+const pageSections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-center a');
 
-const scrollSpyObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const currentId = entry.target.getAttribute('id');
+function updateScrollSpy() {
+    const scrollPosition = window.scrollY + 120; // Przesunięcie uwzględniające wysokość paska nawigacji
+
+    pageSections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        const sectionId = section.getAttribute('id');
+
+        // Sprawdzamy, czy użytkownik znajduje się wewnątrz danej sekcji
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
             navLinks.forEach(link => {
                 link.classList.remove('active-link');
-                if (link.getAttribute('href') === `#${currentId}`) {
+                if (link.getAttribute('href') === `#${sectionId}`) {
                     link.classList.add('active-link');
                 }
             });
         }
     });
-}, { threshold: 0.3 });
+}
 
-pageSections.forEach(section => scrollSpyObserver.observe(section));
+window.addEventListener('scroll', updateScrollSpy);
+window.addEventListener('DOMContentLoaded', updateScrollSpy);
 
 // 7. Zakładki w sekcji Menu (Tabs)
 const tabButtons = document.querySelectorAll('.tab-btn');

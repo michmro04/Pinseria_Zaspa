@@ -1,58 +1,263 @@
-/* ================================
-   MENU.CSS - SEKCJA MENU, ZAKŁADKI I KAFELKI DAŃ
-=================================== */
+/* ===================================================
+   MENU.CSS - ZINTEGROWANY HUB: LOKALE & KARTA MENU
+====================================================== */
 
-/* Alternatywne tło pasów */
-.bg-striped {
-    background-color: var(--card-bg); 
-}
-
-body.dark-theme .bg-striped {
-    background-color: #202020;
-}
-
-.menu-section {
-    padding: 100px 5%;
+.lokale-menu-hub {
+    padding: 85px 5% 70px;
     text-align: center;
+    position: relative;
 }
 
 .menu-container {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
-.menu-section h2 {
-    font-size: 2.2rem;
-    color: var(--primary-color);
-    margin-bottom: 10px;
+/* 1. WSTĘP "O NAS" */
+.about-intro-box {
+    background-color: var(--card-bg);
+    border: 1px solid var(--nav-border);
+    padding: 35px 28px;
+    border-radius: 20px;
+    box-shadow: 0 6px 25px var(--shadow);
+    margin-bottom: 40px;
+    text-align: center;
 }
 
-.menu-subtitle {
-    font-size: 1.1rem;
-    margin-bottom: 35px;
+.about-intro-box h2 {
+    font-size: 2.1rem;
+    color: var(--primary-color);
+    margin-bottom: 12px;
+}
+
+.about-lead {
+    font-size: 1.02rem;
+    line-height: 1.65;
+    opacity: 0.9;
+    max-width: 880px;
+    margin: 0 auto 18px auto;
+}
+
+.lokale-email-info {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: rgba(184, 43, 51, 0.06);
+    padding: 7px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.lokale-email-info a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+/* 2. NAGŁÓWEK HUBA I KAFELKI LOKALI */
+.hub-header {
+    margin-bottom: 24px;
+}
+
+.hub-header h2 {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 6px;
+}
+
+.hub-subtitle {
+    font-size: 1.02rem;
+    opacity: 0.85;
+    margin: 0;
+}
+
+.locations-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 22px;
+    max-width: 920px;
+    margin: 0 auto 24px auto;
+}
+
+.hub-location-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--nav-border);
+    border-radius: 18px;
+    padding: 24px 22px;
+    text-align: left;
+    box-shadow: 0 6px 20px var(--shadow);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.hub-location-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px var(--shadow);
+}
+
+.hub-loc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--nav-border);
+    margin-bottom: 14px;
+}
+
+.hub-loc-title h3 {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin: 0 0 4px 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.hub-loc-street {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin: 0;
+    opacity: 0.85;
+}
+
+.hub-loc-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.map-link {
+    font-size: 0.78rem;
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 700;
+    padding: 4px 10px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 14px;
+    transition: all 0.2s ease;
+}
+
+.map-link:hover {
+    background-color: var(--secondary-color);
+    color: #ffffff;
+}
+
+.hub-loc-phone {
+    font-size: 0.88rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    text-decoration: none;
+    background-color: rgba(184, 43, 51, 0.08);
+    padding: 4px 10px;
+    border-radius: 12px;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+.hub-loc-phone:hover {
+    background-color: var(--primary-color);
+    color: #ffffff !important;
+}
+
+.hub-loc-hours h4 {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.88rem;
+    margin: 0 0 8px 0;
+    color: var(--text-color);
+}
+
+.hub-hours-table {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.hub-hour-row {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    font-size: 0.84rem;
+}
+
+.hub-hour-row .day {
+    font-weight: 700;
+    opacity: 0.85;
+}
+
+.hub-hour-row .time {
     opacity: 0.8;
 }
 
-/* Przyciski zakładek (Tabs) */
+/* 3. BANER DOSTAWY I ZAMAWIANIA */
+.hub-delivery-banner {
+    max-width: 920px;
+    margin: 0 auto 35px auto;
+    background-color: var(--card-bg);
+    border: 1.5px solid var(--secondary-color);
+    padding: 14px 20px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    text-align: left;
+    box-shadow: 0 4px 14px var(--shadow);
+}
+
+.hub-delivery-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.hub-delivery-text strong {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--secondary-color);
+    margin-bottom: 2px;
+}
+
+.hub-delivery-text p {
+    font-size: 0.84rem;
+    margin: 0;
+    opacity: 0.85;
+    line-height: 1.4;
+}
+
+.hub-delivery-text span {
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+/* 4. ZAKŁADKI KATEGORII (TABS) */
+.hub-menu-wrapper {
+    margin-top: 10px;
+}
+
 .menu-tabs {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 12px;
-    margin-bottom: 40px;
+    gap: 10px;
+    margin-bottom: 30px;
 }
 
 .tab-btn {
     background-color: transparent;
     color: var(--text-color);
     border: 1px solid var(--nav-border);
-    padding: 10px 22px;
+    padding: 9px 20px;
     border-radius: 30px;
-    font-size: 1rem;
+    font-size: 0.92rem;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s ease;
-    font-family: 'Poppins', sans-serif;
+    transition: all 0.25s ease;
+    font-family: inherit;
 }
 
 .tab-btn:hover {
@@ -60,18 +265,16 @@ body.dark-theme .bg-striped {
     color: var(--primary-color);
 }
 
-/* Aktywna zakładka */
 .tab-btn.active {
     background-color: var(--primary-color);
     color: #ffffff;
     border-color: var(--primary-color);
-    box-shadow: 0 4px 15px rgba(184, 43, 51, 0.3);
+    box-shadow: 0 4px 12px rgba(184, 43, 51, 0.25);
 }
 
-/* Ukrywanie i pokazywanie kategorii */
 .menu-category {
     display: none;
-    animation: fadeInCategory 0.5s ease-in-out;
+    animation: fadeInCategory 0.4s ease-in-out;
 }
 
 .menu-category.active {
@@ -79,93 +282,110 @@ body.dark-theme .bg-striped {
 }
 
 @keyframes fadeInCategory {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-/* ================================
-   UKŁAD LISTY MENU (JEDEN POD DRUGIM)
-=================================== */
+/* 5. UKŁAD LISTY DAŃ */
 .menu-grid {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 16px !important;
-    max-width: 1080px; /* Rozszerzenie do krawędzi pierwszego i ostatniego tabsa */
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-width: 1000px;
     width: 100%;
-    margin: 30px auto 0 auto;
+    margin: 0 auto;
 }
+
 .menu-list-item {
     display: flex;
     align-items: center;
     background-color: var(--card-bg);
     border: 1px solid var(--nav-border);
     border-radius: 16px;
-    padding: 16px 20px;
-    gap: 20px;
+    padding: 14px 18px;
+    gap: 18px;
     text-align: left;
-    box-shadow: 0 8px 25px var(--shadow);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 16px var(--shadow);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* Obrazek po lewej z powiększaniem (hover) */
+.menu-list-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px var(--shadow);
+}
+
 .menu-item-img-wrapper {
-    width: 110px;
-    height: 110px;
+    width: 105px;
+    height: 105px;
     flex-shrink: 0;
     border-radius: 12px;
     overflow: hidden;
+    background-color: var(--bg-color);
 }
 
 .menu-item-img-wrapper img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.4s ease;
+    transition: transform 0.35s ease;
     display: block;
 }
 
 .menu-item-img-wrapper img:hover {
-    transform: scale(1.15);
+    transform: scale(1.12);
 }
 
-/* Środek - Nazwa, opisy, tagi, alergeny */
+/* Placeholder dla braku zdjęcia */
+.placeholder-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--nav-border);
+}
+
+.img-placeholder-bw {
+    filter: grayscale(100%) opacity(0.5) !important;
+    object-fit: contain !important;
+    padding: 16px !important;
+    transform: none !important;
+}
+
+.menu-list-item:hover .img-placeholder-bw {
+    filter: grayscale(100%) opacity(0.65) !important;
+    transform: none !important;
+}
+
+/* Treść dania */
 .menu-item-content {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 5px;
 }
 
 .menu-item-header {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
     flex-wrap: wrap;
 }
 
 .menu-item-content h3 {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     color: var(--text-color);
     margin: 0;
 }
 
-/* Badge / Plakietki */
 .menu-item-badges {
     display: flex;
     gap: 6px;
 }
 
 .badge {
-    font-size: 0.72rem;
-    font-weight: 600;
+    font-size: 0.7rem;
+    font-weight: 700;
     padding: 3px 8px;
-    border-radius: 12px;
+    border-radius: 10px;
     white-space: nowrap;
 }
 
@@ -174,123 +394,106 @@ body.dark-theme .bg-striped {
 .badge-spicy { background-color: #e74c3c; color: #fff; }
 
 .menu-item-desc {
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     line-height: 1.4;
     opacity: 0.85;
     margin: 0;
 }
 
 .menu-item-allergens {
-    font-size: 0.75rem;
+    font-size: 0.74rem;
     opacity: 0.65;
     font-style: italic;
 }
 
-/* Prawa strona - Cena */
 .menu-item-price-col {
     flex-shrink: 0;
     text-align: right;
 }
 
 .menu-item-price-col .price {
-    font-size: 1.3rem;
-    font-weight: 700;
+    font-size: 1.25rem;
+    font-weight: 800;
     color: var(--primary-color);
     white-space: nowrap;
 }
 
-/* Stare klasy menu-item (jeśli używane awaryjnie) */
-.menu-highlights {
-    padding: 80px 5%;
-    text-align: center;
-}
-
-.menu-item {
-    background-color: var(--card-bg);
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 8px 25px var(--shadow);
-    transition: transform 0.3s;
-    max-width: 450px; 
-    margin: 0 auto; 
-    width: 100%;
-}
-
-.menu-item:hover {
-    transform: translateY(-8px);
-}
-
-.menu-item img {
-    width: 100%;
-    height: 140px;
-    object-fit: cover;
-    background-color: var(--nav-border);
-    border-radius: 12px;
-    display: block;
-}
-
-.price {
-    display: block;
-    font-size: 1.4rem;
-    font-weight: bold;
+/* 6. PŁYWAJĄCY PRZYCISK POWROTU DO MENU */
+.menu-scroll-pill {
+    position: fixed;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background-color: var(--bg-color);
     color: var(--primary-color);
-    margin-top: 10px;
+    border: 1.5px solid var(--primary-color);
+    padding: 8px 18px;
+    border-radius: 25px;
+    font-size: 0.84rem;
+    font-weight: 700;
+    box-shadow: 0 8px 25px var(--shadow);
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 90;
+    white-space: nowrap;
 }
 
-/* ================================
-   RESPONSYWNOŚĆ MENU (TABLETY I TELEFONY)
-=================================== */
+.menu-scroll-pill.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.menu-scroll-pill:hover {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+.menu-scroll-pill.docked {
+    position: absolute;
+    bottom: 20px;
+    top: auto;
+}
+
+/* Responsywność Menu */
 @media (max-width: 768px) {
-    .menu-section {
-        padding: 60px 4%;
+    .locations-cards-grid {
+        grid-template-columns: 1fr;
     }
 
-    .menu-section h2 {
-        font-size: 1.8rem;
+    .hub-loc-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .hub-loc-links {
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .hub-delivery-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 12px 16px;
     }
 
     .menu-tabs {
-        gap: 8px;
-        margin-bottom: 25px;
-        justify-content: flex-start;
         overflow-x: auto;
         flex-wrap: nowrap;
-        padding-bottom: 10px;
-        scrollbar-width: none; 
+        justify-content: flex-start;
+        padding-bottom: 8px;
+        scrollbar-width: none;
     }
-    
-    .menu-tabs::-webkit-scrollbar {
-        display: none;
-    }
+    .menu-tabs::-webkit-scrollbar { display: none; }
 
     .tab-btn {
-        font-size: 0.85rem;
-        padding: 8px 16px;
         flex-shrink: 0;
-    }
-
-    .menu-item {
-        padding: 15px;
-    }
-
-    .menu-item h3 {
-        font-size: 1.1rem;
-    }
-
-    .menu-item p {
-        font-size: 0.85rem;
-    }
-
-    .price {
-        font-size: 1.1rem;
-    }
-
-    .menu-item img {
-        width: 100%;
-        height: 120px;
-        object-fit: cover;
-        border-radius: 12px;
-        margin-bottom: 10px;
     }
 }
 
@@ -313,211 +516,4 @@ body.dark-theme .bg-striped {
         border-top: 1px dashed var(--nav-border);
         padding-top: 8px;
     }
-}
-/* ===================================================
-   KOMPAKTOWE KAFELKI LOKALI NAD MENU (LINIA: NAZWA - ADRES)
-====================================================== */
-.menu-order-wrapper {
-    max-width: 760px;
-    margin: 0 auto 35px auto;
-    background-color: var(--card-bg);
-    border: 1px solid var(--nav-border);
-    border-radius: 16px;
-    padding: 14px 18px 16px;
-    box-shadow: 0 4px 15px var(--shadow);
-}
-
-.menu-delivery-badge {
-    font-size: 0.88rem;
-    color: var(--secondary-color);
-    margin-bottom: 12px;
-    padding-bottom: 8px;
-    border-bottom: 1px dashed var(--nav-border);
-    text-align: center;
-}
-
-.menu-locations-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-}
-
-.menu-loc-card {
-    background-color: var(--bg-color);
-    border: 1px solid var(--nav-border);
-    border-radius: 12px;
-    padding: 10px 14px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 8px;
-    transition: transform 0.2s ease, border-color 0.2s ease;
-}
-
-.menu-loc-card:hover {
-    transform: translateY(-2px);
-    border-color: var(--primary-color);
-}
-
-/* Górny rząd: Nazwa po lewej, Adres po prawej */
-.menu-loc-top-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    gap: 8px;
-}
-
-.menu-loc-header {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    flex-shrink: 0;
-}
-
-.menu-loc-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background-color: var(--secondary-color);
-    flex-shrink: 0;
-}
-
-.menu-loc-header h4 {
-    font-size: 0.95rem;
-    margin: 0;
-    color: var(--text-color);
-    font-weight: 700;
-    white-space: nowrap;
-}
-
-.menu-loc-address {
-    font-size: 0.8rem;
-    opacity: 0.85;
-    margin: 0;
-    text-align: right;
-    white-space: nowrap;
-}
-
-/* Dolny rząd: Przycisk z telefonem na całą szerokość kafelka */
-.menu-loc-phone {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    padding: 6px 12px;
-    border-radius: 15px;
-    font-size: 0.82rem;
-    font-weight: 700;
-    color: #ffffff !important;
-    text-decoration: none;
-    transition: opacity 0.2s ease, transform 0.2s ease;
-    width: 100%;
-    box-sizing: border-box;
-    background-color: var(--secondary-color); /* Domyślna zieleń */
-    color: #ffffff !important;
-}
-
-.menu-loc-phone:hover {
-    opacity: 0.92;
-    transform: translateY(-1px);
-    background-color: #4bb49a; /* Ciemniejsza zieleń po najechaniu */
-}
-
-/* Responsywność dla małych ekranów smartfonów */
-@media (max-width: 580px) {
-    .menu-locations-grid {
-        grid-template-columns: 1fr;
-        gap: 10px;
-    }
-
-    .menu-order-wrapper {
-        padding: 12px;
-    }
-}
-
-@media (max-width: 360px) {
-    .menu-loc-header h4 {
-        font-size: 0.85rem;
-    }
-    
-    .menu-loc-address {
-        font-size: 0.74rem;
-    }
-}
-
-/* ===================================================
-   PŁYWAJĄCA STRZAŁKA POWROTU NA POCZĄTEK MENU
-====================================================== */
-.menu-scroll-pill {
-    position: fixed;
-    bottom: 25px;
-    left: 50%;
-    transform: translateX(-50%) translateY(20px);
-    background-color: var(--bg-color);
-    color: var(--primary-color);
-    border: 1.5px solid var(--primary-color);
-    padding: 8px 18px;
-    border-radius: 25px;
-    font-size: 0.85rem;
-    font-weight: 700;
-    box-shadow: 0 8px 25px var(--shadow);
-    cursor: pointer;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    z-index: 90;
-    white-space: nowrap;
-}
-
-#menu {
-    position: relative;
-}
-
-.menu-scroll-pill.visible {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-50%) translateY(0);
-}
-
-.menu-scroll-pill:hover {
-    background-color: var(--primary-color);
-    color: #ffffff;
-}
-
-.menu-scroll-pill.docked {
-    position: absolute;
-    bottom: 20px;
-    top: auto;
-}
-
-@media (max-width: 480px) {
-    .menu-scroll-pill {
-        font-size: 0.8rem;
-        padding: 7px 16px;
-    }
-}
-
-/* ===================================================
-   STYL DLA CZARNO-BIAŁEGO LOGO (BEZ POWIĘKSZANIA NA HOVER)
-====================================================== */
-.placeholder-wrapper {
-    background-color: var(--bg-color) !important;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid var(--nav-border);
-}
-
-.img-placeholder-bw {
-    filter: grayscale(100%) opacity(0.6) !important;
-    object-fit: contain !important;
-    padding: 18px !important;
-    transform: none !important; 
-    transition: opacity 0.3s ease, filter 0.3s ease !important;
-}
-
-.menu-list-item:hover .img-placeholder-bw,
-.img-placeholder-bw:hover {
-    transform: none !important;
 }

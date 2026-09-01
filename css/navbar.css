@@ -1,8 +1,7 @@
-/* ================================
-   NAVBAR.CSS - RESPONSYWNY UKŁAD (DESKTOP / TABLET / MOBILE)
-=================================== */
+/* ===================================================
+   NAVBAR.CSS - RESPONSYWNA NAWIGACJA
+====================================================== */
 
-/* Główny kontener paska nawigacji */
 .navbar {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -14,10 +13,10 @@
     z-index: 1000;
     background-color: var(--navbar-base-bg);
     border-bottom: 1px solid var(--nav-border); 
-    transition: all 0.4s ease;
+    transition: all 0.35s ease;
 }
 
-/* 1. Lewa strona (Logo) */
+/* 1. Logo i Hamburger */
 .nav-left {
     display: flex;
     align-items: center;
@@ -26,12 +25,11 @@
 }
 
 .logo {
-    width: 95px; 
+    width: 90px; 
     transition: all 0.3s ease;
-    filter: drop-shadow(0 4px 6px var(--shadow));
+    filter: drop-shadow(0 3px 6px var(--shadow));
 }
 
-/* Przycisk Hamburgera (Ukryty na desktopie) */
 .hamburger-btn {
     display: none;
     flex-direction: column;
@@ -58,7 +56,7 @@
 .hamburger-btn.active span:nth-child(2) { opacity: 0; }
 .hamburger-btn.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
-/* 2. Środkowa sekcja z labelami (Desktop) */
+/* 2. Linki nawigacji (Desktop) */
 .nav-center {
     display: flex;
     align-items: center;
@@ -77,7 +75,7 @@
     border-radius: 30px;
     white-space: nowrap;
     flex-shrink: 0;
-    transition: all 0.3s ease;
+    transition: all 0.25s ease;
 }
 
 .nav-center a:hover,
@@ -88,64 +86,38 @@
     transform: translateY(-2px);
 }
 
-/* 3. Prawa strona (Telefony i Ikony - Desktop) */
+/* 3. Kółeczka Social Media & Motyw */
 .nav-right {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
     flex-shrink: 0;
 }
 
-.nav-contact-col {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 4px;
-    flex-shrink: 0;
-}
-
-.phone-btn small {
-    font-size: 0.72em;
-    opacity: 0.9;
-    font-weight: normal;
-}
-
-.phone-btn:hover {
-    transform: translateY(-2px);
-}
-
-/* Siatka dla małych ikonek w nawigacji */
 .nav-icons-col {
-    display: grid;
-    grid-template-columns: repeat(3, auto);
-    gap: 4px 6px;
-    border-left: 1px solid var(--nav-border);
-    padding-left: 10px;
+    display: flex;
+    gap: 6px;
     align-items: center;
-    flex-shrink: 0;
 }
 
 .social-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
-    min-width: 25px;
-    min-height: 25px;
-    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     color: var(--text-color);
     background-color: var(--card-bg);
     border: 1px solid var(--nav-border);
     cursor: pointer;
-    transition: all 0.3s ease;
-    box-sizing: border-box;
+    transition: all 0.25s ease;
+    text-decoration: none;
 }
 
 .social-icon svg {
-    width: 13px;
-    height: 13px;
+    width: 14px;
+    height: 14px;
     display: block;
 }
 
@@ -158,18 +130,16 @@
 /* Stan paska po przescrollowaniu */
 .navbar.scrolled {
     background-color: var(--nav-bg);
-    padding: 8px 30px;
+    padding: 7px 30px;
     box-shadow: 0 4px 15px var(--shadow);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(8px);
 }
 
 .navbar.scrolled .logo {
-    width: 75px;
+    width: 72px;
 }
 
-/* ===================================================
-   EKRANY ŚREDNIE / TABLETY (Gdy labele się nie mieszczą: <= 1150px)
-====================================================== */
+/* Tablety i średnie ekrany (<= 1150px) */
 @media (max-width: 1150px) {
     .navbar {
         padding: 8px 20px;
@@ -185,7 +155,7 @@
 
     .nav-center {
         position: fixed;
-        top: 62px;
+        top: 60px;
         left: 0; right: 0;
         background-color: var(--navbar-base-bg);
         border-bottom: 2px solid var(--nav-border);
@@ -213,88 +183,40 @@
     }
 }
 
-/* ===================================================
-   EKRANY MOBILNE (iPhone SE / 12 Pro / <= 680px)
-   RZRĄD 1: [LOGO] - [NUMERY TELEFONÓW] - [HAMBURGER]
-   RZĄD 2: [KÓŁECZKA Z SOCIALAMI I MOTYWEM]
-====================================================== */
+/* Smartfony (<= 680px) */
 @media (max-width: 680px) {
     .navbar {
-        padding: 8px 12px;
+        padding: 8px 14px;
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         justify-content: space-between;
     }
 
-    /* Rozpakowanie kontenerów, by móc użyć atrybutu 'order' */
-    .nav-left,
-    .nav-right {
+    .nav-left, .nav-right {
         display: contents;
     }
 
-    /* RZĄD 1 - ITEM 1: Logo po lewej stronie */
     .logo {
-        width: 48px !important;
+        width: 46px !important;
         order: 1;
-        flex-shrink: 0;
     }
 
-    /* RZĄD 1 - ITEM 2: Numery telefonów idealnie na środku */
-    .nav-contact-col {
-        order: 2;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 3px;
-        flex: 1;
-        padding: 0 4px;
-    }
-
-    .phone-btn {
-        padding: 3px 8px;
-        font-size: 0.68rem;
-        border-radius: 12px;
-        white-space: nowrap;
-    }
-
-    /* RZĄD 1 - ITEM 3: Hamburger menu po prawej stronie */
     .hamburger-btn {
         display: flex;
-        order: 3;
-        flex-shrink: 0;
+        order: 2;
     }
 
-    /* RZĄD 2: Kółeczka w osobnym rzędzie poniżej, rozłożone równomiernie */
     .nav-icons-col {
-        order: 4;
+        order: 3;
         width: 100%;
-        display: flex;
-        grid-template-columns: none;
         justify-content: space-evenly;
-        align-items: center;
-        border-left: none;
         border-top: 1px dashed var(--nav-border);
-        padding-left: 0;
         padding-top: 6px;
         margin-top: 4px;
     }
 
-    .social-icon {
-        width: 26px;
-        height: 26px;
-        min-width: 26px;
-        min-height: 26px;
-    }
-
-    .social-icon svg {
-        width: 13px;
-        height: 13px;
-    }
-
-    /* Pozycja rozwijanej listy nawigacyjnej */
     .nav-center {
-        top: 95px;
+        top: 92px;
     }
 }
