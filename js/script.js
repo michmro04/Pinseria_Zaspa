@@ -274,14 +274,25 @@ function renderSklepGrid() {
     grid.innerHTML = sklepProducts.map(prod => {
         const cartItem = cart.find(item => item.id === prod.id);
         const qty = cartItem ? cartItem.qty : 0;
+        const imgSrc = prod.image || 'images/logo.png';
 
         return `
             <div class="product-card" id="prod-card-${prod.id}">
-                <img src="${prod.image}" alt="${prod.name}" loading="lazy">
-                <h3>${prod.name}</h3>
-                <p>${prod.description}</p>
-                <div class="product-bottom">
-                    <span class="product-price">${prod.price} ${prod.unit}</span>
+                <div class="product-img-wrapper" 
+                     data-full-img="${imgSrc}" 
+                     data-name="${prod.name}" 
+                     title="Kliknij, aby powiększyć">
+                    <img src="${imgSrc}" 
+                         alt="${prod.name}" 
+                         loading="lazy"
+                         class="${!prod.image ? 'img-placeholder-bw' : ''}">
+                </div>
+                <div class="product-content">
+                    <h3>${prod.name}</h3>
+                    <p>${prod.description}</p>
+                </div>
+                <div class="product-right-col">
+                    <span class="product-price">${prod.price} zł</span>
                     <div class="product-action" id="prod-action-${prod.id}">
                         ${renderProductActionHtml(prod.id, prod.name, prod.price, qty)}
                     </div>
@@ -747,3 +758,51 @@ function closePrivacyModal(event) {
         document.body.style.overflow = ''; // Przywraca normalny scroll
     }
 }
+
+// ===================================================
+// OBSŁUGA LIGHTBOX (POWIĘKSZANIE ZDJĘĆ SKLEPIKU)
+// ===================================================
+function openImageLightbox(src, caption) {
+    const modal = document.getElementById('image-lightbox-modal');
+    const img = document.getElementById('lightbox-img');
+    const captionEl = document.getElementById('lightbox-caption');
+
+    if (!modal || !img) return;
+
+    img.src = src;
+    if (captionEl) captionEl.innerText = caption || '';
+
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Blokuje scroll w tle
+}
+
+function closeImageLightbox(event) {
+    if (event) event.preventDefault();
+    const modal = document.getElementById('image-lightbox-modal');
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
+
+// Delegacja zdarzenia kliknięcia w miniaturę produktu
+document.addEventListener('DOMContentLoaded', () => {
+    const sklepGrid = document.getElementById('sklep-grid');
+    if (sklepGrid) {
+        sklepGrid.addEventListener('click', (e) => {
+            const wrapper = e.target.closest('.product-img-wrapper');
+            if (wrapper) {
+                const fullImg = wrapper.getAttribute('data-full-img');
+                const name = wrapper.getAttribute('data-name');
+                openImageLightbox(fullImg, name);
+            }
+        });
+    }
+
+    // Zamknięcie klawiszem ESC
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeImageLightbox();
+        }
+    });
+});

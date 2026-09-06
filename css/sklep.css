@@ -8,7 +8,7 @@
 }
 
 .sklep-container {
-    max-width: 1100px;
+    max-width: 1080px;
     margin: 0 auto;
 }
 
@@ -27,16 +27,16 @@
 .sklep-info-banner {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 14px;
     background-color: rgba(36, 152, 84, 0.08);
     border: 1px solid var(--secondary-color);
-    padding: 12px 18px;
-    border-radius: 12px;
-    font-size: 0.88rem;
+    padding: 14px 20px;
+    border-radius: 14px;
+    font-size: 0.90rem;
     text-align: left;
     margin-bottom: 30px;
     color: var(--text-color);
-    line-height: 1.45;
+    line-height: 1.5;
 }
 
 .sklep-info-banner svg {
@@ -44,104 +44,137 @@
     flex-shrink: 0;
 }
 
-/* Siatka produktów */
+/* ===================================================
+   HORYZONTALNY UKŁAD PRODUKTÓW (LISTA STRIP)
+====================================================== */
 .sklep-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .product-card {
     background-color: var(--card-bg);
     border: 1px solid var(--nav-border);
     border-radius: 16px;
-    padding: 18px;
+    padding: 14px 20px;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    gap: 20px;
     text-align: left;
-    box-shadow: 0 4px 14px var(--shadow);
+    box-shadow: 0 4px 16px var(--shadow);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.product-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 22px var(--shadow);
+
+/* Zdjęcie po lewej stronie */
+.product-img-wrapper {
+    width: 105px;
+    height: 105px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: var(--bg-color);
+    border: 1px solid var(--nav-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.product-card img {
+.product-img-wrapper img {
     width: 100%;
-    height: 155px;
+    height: 100%;
     object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 12px;
-    background-color: var(--nav-border);
+    display: block;
+    transition: transform 0.35s ease;
 }
 
-.product-card h3 {
-    font-size: 1.05rem;
-    margin-bottom: 6px;
+.product-card:hover .product-img-wrapper img:not(.img-placeholder-bw) {
+    transform: scale(1.08);
+}
+
+/* Środek: Tytuł i opis */
+.product-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.product-content h3 {
+    font-size: 1.2rem;
+    margin: 0;
     color: var(--text-color);
 }
 
-.product-card p {
-    font-size: 0.82rem;
-    opacity: 0.8;
-    line-height: 1.4;
-    flex: 1;
-    margin-bottom: 14px;
+.product-content p {
+    font-size: 0.88rem;
+    line-height: 1.45;
+    opacity: 0.85;
+    margin: 0;
 }
 
-.product-bottom {
+/* Prawa kolumna: Cena i Przycisk */
+.product-right-col {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: auto;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 8px;
+    flex-shrink: 0;
+    min-width: 120px;
 }
 
 .product-price {
-    font-size: 1.15rem;
+    font-size: 1.25rem;
     font-weight: 800;
     color: var(--primary-color);
+    white-space: nowrap;
 }
 
 .product-action {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    height: 32px;
+    height: 34px;
 }
 
 .add-to-cart-btn {
     background-color: var(--secondary-color);
     color: #ffffff;
     border: none;
-    padding: 0 14px;
-    height: 32px;
+    padding: 0 16px;
+    height: 34px;
     border-radius: 20px;
-    font-size: 0.82rem;
+    font-size: 0.84rem;
     font-weight: 700;
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .add-to-cart-btn:hover {
     background-color: #1b7a42;
+    transform: translateY(-1px);
 }
 
+/* Licznik ilości w sklepie */
 .store-qty-control {
     display: inline-flex;
     align-items: center;
     gap: 6px;
     background-color: var(--card-bg);
     border: 1.5px solid var(--secondary-color);
-    padding: 0 5px;
-    height: 32px;
+    padding: 0 6px;
+    height: 34px;
     border-radius: 20px;
 }
 
 .store-qty-btn {
-    width: 22px;
-    height: 22px;
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
     border: none;
     background-color: var(--secondary-color);
@@ -154,15 +187,21 @@
     justify-content: center;
 }
 
+.store-qty-btn:hover {
+    background-color: #1b7a42;
+}
+
 .store-qty-num {
-    font-size: 0.85rem;
+    font-size: 0.88rem;
     font-weight: 800;
-    min-width: 16px;
+    min-width: 18px;
     text-align: center;
     color: var(--text-color);
 }
 
-/* Pływający koszyk */
+/* ===================================================
+   PŁYWAJĄCY KOSZYK & DRAWER BOCZNY
+====================================================== */
 .cart-float-btn {
     position: fixed;
     bottom: 25px;
@@ -179,11 +218,12 @@
     cursor: pointer;
     box-shadow: 0 6px 20px rgba(184, 43, 51, 0.35);
     z-index: 995;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .cart-float-btn:hover {
     background-color: #a01820;
+    transform: scale(1.05);
 }
 
 .cart-count-badge {
@@ -203,7 +243,6 @@
     border: 2px solid #ffffff;
 }
 
-/* Drawer Koszyka */
 .cart-modal {
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
@@ -429,4 +468,164 @@
     background-color: rgba(184, 43, 51, 0.12);
     border: 1px solid var(--primary-color);
     color: var(--primary-color);
+}
+
+/* ===================================================
+   RESPONSYWNOŚĆ DLA SMARTFONÓW (<= 600px)
+====================================================== */
+@media (max-width: 600px) {
+    .product-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 14px;
+    }
+
+    .product-img-wrapper {
+        width: 100%;
+        height: 160px;
+    }
+
+    .product-right-col {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px dashed var(--nav-border);
+        padding-top: 10px;
+    }
+
+    .cart-float-btn {
+        bottom: 20px;
+        left: 20px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .cart-modal-content {
+        padding: 16px;
+    }
+}
+/* ===================================================
+   LIGHTBOX - POWIĘKSZANIE ZDJĘCIA PO KLIKNIĘCIU
+====================================================== */
+
+/* Kursor lupy nad zdjęciem produktu */
+.product-img-wrapper {
+    cursor: zoom-in;
+    position: relative;
+}
+
+.product-img-wrapper::after {
+    content: "🔍";
+    position: absolute;
+    bottom: 6px;
+    right: 6px;
+    font-size: 0.75rem;
+    background: rgba(0, 0, 0, 0.45);
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    pointer-events: none;
+}
+
+.product-card:hover .product-img-wrapper::after {
+    opacity: 1;
+}
+
+/* Modal pełnoekranowy */
+.lightbox-modal {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 100005; /* Wyższy niż koszyk */
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.lightbox-modal.active {
+    display: flex;
+    animation: fadeInLightbox 0.25s ease-out;
+}
+
+.lightbox-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+}
+
+.lightbox-box {
+    position: relative;
+    z-index: 2;
+    max-width: 550px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--card-bg);
+    border: 1px solid var(--nav-border);
+    padding: 16px;
+    border-radius: 20px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+    animation: scaleInLightbox 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.2);
+}
+
+.lightbox-box img {
+    width: 100%;
+    max-height: 65vh;
+    object-fit: contain;
+    border-radius: 16px !important; 
+    display: block;
+    background-color: #ffffff;
+}
+
+.lightbox-caption {
+    margin-top: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-color);
+    text-align: center;
+}
+
+.close-lightbox-btn {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    z-index: 3;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+    font-size: 2rem;
+    line-height: 1;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.close-lightbox-btn:hover {
+    background: var(--primary-color);
+    transform: scale(1.1);
+}
+
+@keyframes fadeInLightbox {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes scaleInLightbox {
+    from { transform: scale(0.85); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
 }

@@ -1,34 +1,106 @@
 [
   {
-    "id": "spody-pinsa-300g",
-    "name": "Rzemieślniczy Spód do Pinsy (300g)",
-    "description": "Wypiekany na własnym zakwasie i 3 włoskich mąkach. Dołączona karta produktu. Gotowy do wypieku w 5 minut.",
+    "id": "spody-pinsa",
+    "name": "Rzemieślniczy Spód do Pinsy (300 g)",
+    "description": "Wypiekany na własnym zakwasie i autorskiej mieszance trzech włoskich mąk. Gotowy do wypieku w 5 minut. Dołączona karta produktu.",
     "price": 16,
     "unit": "zł / szt.",
-    "image": "images/zamow_spody.webp"
+    "image": "images/sklep/spody.webp"
   },
   {
-    "id": "oliwa-extra-vergine-500ml",
-    "name": "Oliwa Extra Vergine Niefiltrowana (500ml)",
-    "description": "Oryginalna włoska oliwa tłoczona na zimno z pierwszego zbioru. Idealna do skrapiania upieczonej pinsy.",
+    "id": "mozzarella-wiorki-2kg",
+    "name": "Ser Mozzarella wiórki bez skrobi (2 kg)",
+    "description": "Delikatna mozzarella o łagodnym, mlecznym smaku i doskonałej topliwości. Wygodna forma wiórków sprawdzi się szczególnie przy przygotowywaniu pinsy i pizzy.",
+    "price": 60,
+    "unit": "zł / 2 kg",
+    "image": "images/sklep/mozzarella_fior_di_latte.webp"
+  },
+  {
+    "id": "spianata-piccante",
+    "name": "Spianata Piccante (ok. 1,2 kg)",
+    "description": "Charakterystyczne włoskie salami o wyrazistym, pikantnym smaku. Przygotowane z wysokiej jakości wieprzowiny i słoniny, dojrzewa minimum 60 dni, dzięki czemu zyskuje intensywny aromat i odpowiednią strukturę. Idealne do pizzy, desek serów i włoskich przekąsek.",
+    "price": 55,
+    "unit": "zł / ok. 1,2 kg",
+    "image": "images/sklep/salami_spinata_piccante.webp"
+  },
+  {
+    "id": "pomidory-san-marzano-2550g",
+    "name": "Pomidory Pelati di San Marzano (2,55 kg)",
+    "description": "Całe, obrane pomidory w puszce, cenione za intensywny smak, delikatną kwasowość i naturalną słodycz. Doskonała baza do sosów, pizzy, makaronów i dań kuchni włoskiej.",
+    "price": 28,
+    "unit": "zł / puszka",
+    "image": "images/sklep/pomodori_pelati_interi.webp"
+  },
+  {
+    "id": "grancrema-tartufata-510g",
+    "name": "Grancrema Tartufata z letnią truflą (510 g)",
+    "description": "Kremowa pasta o intensywnym, charakterystycznym aromacie letniej trufli. Doskonała do pizzy, makaronów, risotto oraz jako dodatek do sosów i dań kuchni włoskiej.",
+    "price": 49,
+    "unit": "zł / słoik",
+    "image": "images/sklep/trufla_x1000.webp"
+  },
+  {
+    "id": "salsiccia-veneta",
+    "name": "Salsiccia Veneta vac. (ok. 0,45 kg)",
+    "description": "Tradycyjna włoska kiełbasa wieprzowa o wyrazistym smaku i aromacie. Świetnie sprawdzi się jako składnik pizzy, makaronów, sosów oraz dań kuchni włoskiej.",
     "price": 42,
-    "unit": "zł",
-    "image": "images/pinsa/pinsa1.webp"
+    "unit": "zł / kg",
+    "image": "images/sklep/salsiccia.webp"
   },
   {
-    "id": "sos-san-marzano-400g",
-    "name": "Włoskie Pomidory San Marzano DOP (400g)",
-    "description": "Słodkie pomidory z regionu Kampanii o niskiej kwasowości – baza naszego autorskiego sosu.",
-    "price": 14,
-    "unit": "zł",
-    "image": "images/pinsa/pinsa2.webp"
+    "id": "prosciutto-crudo-500g",
+    "name": "Prosciutto Crudo plastry (500 g)",
+    "description": "Delikatna, dojrzewająca szynka wieprzowa w cienkich plastrach, o intensywnym aromacie i charakterystycznym, lekko słonym smaku. Idealna do pizzy, focacci, desek włoskich przekąsek i kanapek.",
+    "price": 42,
+    "unit": "zł / 500 g",
+    "image": "images/sklep/crudo.webp"
   },
   {
-    "id": "oliwki-cerignola-300g",
-    "name": "Zielone Oliwki Bella di Cerignola (300g)",
-    "description": "Duże, mięsiste oliwki z Apulii w delikatnej solance. Wyśmienita włoska przekąska.",
-    "price": 19,
-    "unit": "zł",
-    "image": "images/pinsa/pinsa3.webp"
+    "id": "oliwa-extra-virgin-5l",
+    "name": "Oliwa Extra Virgin PET (5000 ml)",
+    "description": "Wysokiej jakości oliwa z oliwek extra virgin o wyrazistym smaku i aromacie. Doskonała do pizzy, sałatek, marynat oraz codziennego gotowania.",
+    "price": 155,
+    "unit": "zł / 5 l",
+    "image": "images/sklep/oliwa_ev.webp"
+  },
+  {
+    "id": "nduja-piccante-400g",
+    "name": "'Nduja Piccante Vacuum (ok. 400 g)",
+    "description": "Pikantna, miękka włoska kiełbasa z Kalabrii o intensywnym smaku i aromacie. Doskonała do pizzy, makaronów, sosów i dań, którym chcesz nadać wyrazistego, ostrego charakteru.",
+    "price": 38,
+    "unit": "zł / opak.",
+    "image": "images/sklep/nduja.webp"
+  },
+  {
+    "id": "pomidorki-podsuszane-770g",
+    "name": "Pomidorki koktajlowe podsuszane połówki (770 g)",
+    "description": "Aromatyczne połówki pomidorków o intensywnym, lekko słodkim smaku. Świetnie sprawdzą się jako dodatek do pizzy, makaronów, sałatek, focacci oraz włoskich przekąsek.",
+    "price": 46,
+    "unit": "zł / słoik",
+    "image": "images/sklep/pomidorki_koktajlowe_podsuszane.webp"
+  },
+  {
+    "id": "ser-stracciatella-250g",
+    "name": "Ser Stracciatella świeży (250 g)",
+    "description": "Delikatny, kremowy włoski ser o aksamitnej konsystencji i łagodnym, mlecznym smaku. Doskonały do pizzy, focacci, makaronów oraz świeżych sałatek.",
+    "price": 18,
+    "unit": "zł / opak.",
+    "image": "images/sklep/straciatella.webp"
+  },
+  {
+    "id": "burrata-125g",
+    "name": "Burrata (125 g)",
+    "description": "Świeży włoski ser o delikatnej, kremowej konsystencji i łagodnym, mlecznym smaku. Doskonała na pizzę, focaccię, sałatki oraz do serwowania na świeżo.",
+    "price": 11,
+    "unit": "zł / szt.",
+    "image": "images/sklep/burrata.webp"
+  },
+  {
+    "id": "salami-finocchiona-3200g",
+    "name": "Salami Finocchiona (ok. 3,2 kg)",
+    "description": "Tradycyjne włoskie salami z Toskanii, wyróżniające się delikatnym smakiem i aromatem nasion kopru włoskiego. Dojrzewa w naturalny sposób, dzięki czemu zyskuje charakterystyczny aromat i zwartą strukturę. Idealne na pizzę, deskę włoskich wędlin oraz do antipasti.",
+    "price": 220,
+    "unit": "zł / ok. 3,2 kg",
+    "image": "images/sklep/salami_fino.webp"
   }
 ]

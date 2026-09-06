@@ -256,8 +256,8 @@
         <div class="slider-container">
             <div class="hero-image-slider">
                 <div class="slides-wrapper" id="slides-wrapper">
-                    <img src="images/pinsa_r/Margherita.webp" alt="Pinsa Margherita" fetchpriority="high" class="slide">
-                    <img src="images/pinsa_b/Mortadella.webp" alt="Pinsa Mortadela 2.0 z pistacjami" fetchpriority="low" class="slide">
+                    <img src="images/gora1.webp" alt="gora1" fetchpriority="high" class="slide">
+                    <img src="images/gora2.webp" alt="gora2" fetchpriority="low" class="slide">
                     <img src="images/pinsa_r/Buratta2.webp" alt="Pinsa Burrata 2.0 z pikantną 'ndują" fetchpriority="low" class="slide">
                     <img src="images/pinsa_b/Carbonara.webp" alt="Pinsa Carbonara z guanciale" fetchpriority="low" class="slide">
                     <img src="images/przystawki/Dish_Composition.webp" alt="Deska włoskich wędlin i serów Antipasti" fetchpriority="low" class="slide">
@@ -911,6 +911,16 @@
                 <p><strong>4. Twoje prawa:</strong> Masz prawo wglądu do swoich danych, ich sprostowania, żądania usunięcia lub ograniczenia przetwarzania.</p>
             </div>
             <button class="btn primary-btn w-100" onclick="closePrivacyModal()">Rozumiem i akceptuję</button>
+        </div>
+    </div>
+    
+    <!-- Modal powiększenia zdjęcia produktu (Lightbox) -->
+    <div id="image-lightbox-modal" class="lightbox-modal" onclick="closeImageLightbox(event)">
+        <div class="lightbox-overlay"></div>
+        <button class="close-lightbox-btn" onclick="closeImageLightbox(event)" aria-label="Zamknij podgląd">&times;</button>
+        <div class="lightbox-box" onclick="event.stopPropagation()">
+            <img id="lightbox-img" src="" alt="Powiększone zdjęcie produktu">
+            <p id="lightbox-caption" class="lightbox-caption"></p>
         </div>
     </div>
 </body>
