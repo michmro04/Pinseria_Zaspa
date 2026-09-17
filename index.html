@@ -39,97 +39,42 @@
     <!-- 5. Strukturalne Dane Schema.org (JSON-LD) dla Marki i Obu Lokali -->
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@graph": [
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
         {
-          "@type": "Organization",
-          "@id": "https://panodpinsy.pl/#organization",
-          "name": "Pan od Pinsy",
-          "url": "https://panodpinsy.pl/",
-          "logo": "https://panodpinsy.pl/images/logo.png",
-          "email": "panodpinsy@gmail.com",
-          "sameAs": [
-            "https://www.facebook.com/p/PinseriaGdansk-61558180975096/",
-            "https://www.instagram.com/pinseria.gdansk/",
-            "https://www.tiktok.com/@pan_od_pins",
-            "https://www.youtube.com/@Panodpinsy"
-          ]
-        },
-        {
-          "@type": "Restaurant",
-          "@id": "https://panodpinsy.pl/#zaspa",
-          "name": "Pan od Pinsy – Gdańsk Zaspa",
-          "parentOrganization": { "@id": "https://panodpinsy.pl/#organization" },
-          "url": "https://panodpinsy.pl/",
-          "telephone": "+48720996677",
-          "priceRange": "$$",
-          "servesCuisine": ["Italian", "Pinsa", "Pizza"],
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "ul. Hynka 18/10",
-            "addressLocality": "Gdańsk",
-            "postalCode": "80-465",
-            "addressCountry": "PL"
-          },
-          "openingHoursSpecification": [
-            {
-              "@type": "OpeningHoursSpecification",
-              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
-              "opens": "13:00",
-              "closes": "21:00"
-            },
-            {
-              "@type": "OpeningHoursSpecification",
-              "dayOfWeek": ["Friday", "Saturday"],
-              "opens": "13:00",
-              "closes": "22:00"
-            },
-            {
-              "@type": "OpeningHoursSpecification",
-              "dayOfWeek": "Sunday",
-              "opens": "12:00",
-              "closes": "21:00"
-            }
-          ]
-        },
-        {
-          "@type": "Restaurant",
-          "@id": "https://panodpinsy.pl/#morena",
-          "name": "Pan od Pinsy – Gdańsk Morena",
-          "parentOrganization": { "@id": "https://panodpinsy.pl/#organization" },
-          "url": "https://panodpinsy.pl/",
-          "telephone": "+48726767814",
-          "priceRange": "$$",
-          "servesCuisine": ["Italian", "Pinsa", "Pizza"],
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Królewskie Wzgórze 1",
-            "addressLocality": "Gdańsk",
-            "postalCode": "80-283",
-            "addressCountry": "PL"
-          },
-          "openingHoursSpecification": [
-            {
-              "@type": "OpeningHoursSpecification",
-              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
-              "opens": "12:00",
-              "closes": "21:00"
-            },
-            {
-              "@type": "OpeningHoursSpecification",
-              "dayOfWeek": ["Friday", "Saturday"],
-              "opens": "12:00",
-              "closes": "22:00"
-            },
-            {
-              "@type": "OpeningHoursSpecification",
-              "dayOfWeek": "Sunday",
-              "opens": "12:00",
-              "closes": "21:00"
-            }
-          ]
+        "@type": "Question",
+        "name": "Gdzie zjeść pinsę na Morenie?",
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Jeśli szukasz pinsy na Morenie, zapraszamy do Pinserii Gdańsk na Królewskim Wzgórzu 1. Serwujemy rzymską pinsę na długo fermentowanym cieście."
         }
-      ]
+        },
+        {
+        "@type": "Question",
+        "name": "Gdzie zjeść pizzę na Morenie?",
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "W Pinserii Gdańsk na Królewskim Wzgórzu 1 przygotowujemy rzymską odmianę pizzy – pinsę na lekkim, długo fermentowanym cieście."
+        }
+        },
+        {
+        "@type": "Question",
+        "name": "Gdzie zjeść pinsę na Zaspie?",
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Zapraszamy do Pinserii Gdańsk przy ul. Hynka 18 na Zaspie. Przygotowujemy rzymską pinsę na cieście o wysokiej hydracji."
+        }
+        },
+        {
+        "@type": "Question",
+        "name": "Czym różni się pinsa od klasycznej pizzy?",
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pinsa rzymska charakteryzuje się wyższą hydracją, mieszanką mąk oraz wielogodzinną fermentacją. Jest lżejsza i bardziej chrupiąca niż tradycyjna pizza."
+        }
+        }
+    ]
     }
     </script>
 </head>
@@ -199,6 +144,7 @@
             <a href="#gastronomia">Dla Gastronomii</a>
             <a href="#socials">Social Media</a>
             <a href="#kontakt">Kontakt</a>
+            <a href="#faq">FAQ</a>
         </div>
         
         <!-- Prawa strona: Telefony i Social Media -->
@@ -518,7 +464,7 @@
                                 <svg class="loc-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                                 <span>Gdańsk Zaspa</span>
                             </h3>
-                            <p class="hub-loc-street">ul. Hynka 18/10, Gdańsk</p>
+                            <p class="hub-loc-street">ul. Hynka 18, Gdańsk</p>
                         </div>
                         <div class="hub-loc-links">
                             <a href="https://maps.app.goo.gl/xJwKAeDmVw5rhLiD9" target="_blank" rel="noopener" class="map-link">Pokaż na mapie ↗</a>
@@ -780,6 +726,110 @@
         </div>
     </section>
 
+
+    <!-- Sekcja: FAQ i Informacje Lokalne (SEO) -->
+    <section id="faq" class="faq-section">
+        <div class="faq-container">
+            <div class="faq-header fade-in">
+                <span class="section-tag">Warto wiedzieć</span>
+                <h2>Często zadawane pytania (FAQ)</h2>
+                <p class="faq-subtitle">Wszystko o naszych lokalach w Gdańsku, dostawie i rzemieślniczej pinsie rzymskiej.</p>
+            </div>
+
+            <div class="faq-columns-grid">
+                <!-- Kolumna 1: Gdańsk Morena -->
+                <div class="faq-column fade-in">
+                    <div class="faq-column-header">
+                        <span class="faq-loc-badge">📍 Gdańsk Morena</span>
+                        <h3>
+                            <a href="https://maps.app.goo.gl/Aip6JRei7L9Jjj7EA" target="_blank" rel="noopener" class="faq-map-link">Królewskie Wzgórze 1</a>
+                        </h3>
+                    </div>
+
+                    <details class="faq-item">
+                        <summary>Gdzie zjeść pinsę na Morenie?</summary>
+                        <div class="faq-answer">
+                            <p>Jeśli szukasz pinsy na Morenie, zapraszamy do Pinserii Gdańsk na Królewskim Wzgórzu. Serwujemy rzymską pinsę przygotowywaną na długo fermentowanym cieście, z wysoką hydracją i świeżymi składnikami. Pinsa jest wypiekana na miejscu i dostępna w różnych wariantach. Adres to <a href="https://maps.app.goo.gl/Aip6JRei7L9Jjj7EA" target="_blank" rel="noopener" class="faq-map-link"><strong>Królewskie Wzgórze 1</strong></a>.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Gdzie zjeść pizzę na Morenie?</summary>
+                        <div class="faq-answer">
+                            <p>Jeśli szukasz pizzy na Morenie, możesz spróbować jej rzymskiej odmiany – pinsy. W Pinserii Gdańsk na Królewskim Wzgórzu przygotowujemy lekkie, długo fermentowane ciasto i wypiekamy je na miejscu. To propozycja dla osób, które chcą spróbować czegoś innego niż klasyczna pizza. Adres to <a href="https://maps.app.goo.gl/Aip6JRei7L9Jjj7EA"" target="_blank" rel="noopener" class="faq-map-link"><strong>Królewskie Wzgórze 1</strong></a>.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Czy pinsa jest dostępna na Królewskim Wzgórzu?</summary>
+                        <div class="faq-answer">
+                            <p>Tak. Pinsa jest dostępna w Pinserii Gdańsk na <a href="https://maps.app.goo.gl/Aip6JRei7L9Jjj7EA" target="_blank" rel="noopener" class="faq-map-link">Królewskim Wzgórzu 1</a>. Przygotowujemy ją na miejscu z długo fermentowanego ciasta i świeżych składników. Możesz zjeść ją w lokalu, zamówić na wynos lub skorzystać z dostawy.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Czym różni się pinsa od klasycznej pizzy?</summary>
+                        <div class="faq-answer">
+                            <p>Pinsa rzymska ma inne ciasto i sposób przygotowania niż klasyczna pizza. Wysoka hydracja oraz długi proces fermentacji sprawiają, że po wypieczeniu pinsa ma lekkie i puszyste wnętrze oraz chrupiącą powierzchnię. Charakterystyczny jest również jej wydłużony, nieregularny kształt.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Czy Pinseria Morena oferuje dostawę?</summary>
+                        <div class="faq-answer">
+                            <p>Tak, Pinseria Gdańsk na Morenie oferuje możliwość zamówienia pinsy z dostawą. Dostępny jest również odbiór osobisty oraz możliwość zjedzenia na miejscu. Aktualne informacje dotyczące dostawy i sposobów zamawiania znajdziesz przy składaniu zamówienia telefonicznego.</p>
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Kolumna 2: Gdańsk Zaspa -->
+                <div class="faq-column fade-in">
+                    <div class="faq-column-header">
+                        <span class="faq-loc-badge">📍 Gdańsk Zaspa</span>
+                        <h3>
+                            <a href="https://maps.app.goo.gl/1H65njY1kKWsZpte9" target="_blank" rel="noopener" class="faq-map-link">ul. Hynka 18</a>
+                        </h3>
+                    </div>
+
+                    <details class="faq-item">
+                        <summary>Gdzie zjeść pinsę na Zaspie?</summary>
+                        <div class="faq-answer">
+                            <p>Jeśli szukasz pinsy na Zaspie, zapraszamy do Pinserii Gdańsk przy ul. Hynka 18. Przygotowujemy rzymską pinsę na długo fermentowanym cieście, z wysoką hydracją i świeżymi składnikami. Pinsa jest wypiekana na miejscu i podawana z różnymi dodatkami. Adres to <a href="https://maps.app.goo.gl/1H65njY1kKWsZpte9" target="_blank" rel="noopener" class="faq-map-link"><strong>Hynka 18</strong></a>.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Gdzie zjeść dobrą pizzę na Zaspie?</summary>
+                        <div class="faq-answer">
+                            <p>Jeśli masz ochotę na pizzę na Zaspie, warto spróbować jej rzymskiej odmiany – pinsy. W Pinserii Gdańsk przygotowujemy ręcznie formowane ciasto, które dzięki długiej fermentacji i wysokiej hydracji ma lekkie wnętrze oraz charakterystycznie chrupiące brzegi. Adres to <a href="https://maps.app.goo.gl/1H65njY1kKWsZpte9" target="_blank" rel="noopener" class="faq-map-link"><strong>Hynka 18 Gdańsk</strong></a>.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Czym różni się pinsa od pizzy?</summary>
+                        <div class="faq-answer">
+                            <p>Pinsa rzymska różni się od klasycznej pizzy przede wszystkim rodzajem ciasta, jego przygotowaniem oraz sposobem wypieku. Ciasto na pinsę charakteryzuje się wysoką hydracją i długą fermentacją, dzięki czemu po wypieczeniu jest lekkie w środku i chrupiące na zewnątrz. Pinsa ma również charakterystyczny, podłużny kształt.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Czy Pinseria na Zaspie oferuje dostawę?</summary>
+                        <div class="faq-answer">
+                            <p>Tak, Pinseria Gdańsk na Zaspie oferuje dostawę. Możesz również zamówić pinsę z odbiorem osobistym lub zjeść ją na miejscu. Obszar dostawy wynosi do 6 km od lokalu.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Gdzie znajduje się Pinseria Gdańsk na Zaspie?</summary>
+                        <div class="faq-answer">
+                            <p>Pinseria Gdańsk znajduje się przy <a href="https://maps.app.goo.gl/1H65njY1kKWsZpte9" target="_blank" rel="noopener" class="faq-map-link">ul. Hynka 18</a> na Zaspie. To lokal, w którym możesz zjeść pinsę na miejscu, zamówić ją na wynos lub skorzystać z dostawy. W menu znajdziesz zarówno klasyczne, jak i bardziej charakterystyczne połączenia składników.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Stopka (Footer) -->
     <footer class="footer">
         <div class="footer-content">
@@ -791,12 +841,14 @@
                 <h4>Na skróty</h4>
                 <ul>
                     <li><a href="#home">Strona główna</a></li>
-                    <li><a href="#menu">Menu</a></li>
                     <li><a href="#sklep">Sklep</a></li>
-                    <li><a href="#about">O nas</a></li>
-                    <li><a href="#spody">Zamów spody</a></li>
-                    <li><a href="#contact">Kontakt</a></li>
-
+                    <li><a href="#spody">Spody do pinsy</a></li>
+                    <li><a href="#catering">Catering & Szkolenia</a></li>
+                    <li><a href="#lokale">Lokale & Menu</a></li>
+                    <li><a href="#gastronomia">Dla Gastronomii</a></li>
+                    <li><a href="#socials">Social Media</a></li>
+                    <li><a href="#kontakt">Kontakt</a></li>
+                    <li><a href="#faq">Pytania i odpowiedzi (FAQ)</a></li>
                 </ul>
             </div>
             <div class="footer-socials">
@@ -804,6 +856,8 @@
                 <div class="social-icons">
                     <a href="https://www.facebook.com/p/PinseriaGdansk-61558180975096/" target="_blank" rel="noopener noreferrer">Facebook</a>
                     <a href="https://www.instagram.com/pinseria.gdansk/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    <a href="https://www.tiktok.com/@pan_od_pins" target="_blank" rel="noopener noreferrer">TikTok</a>
+                    <a href="https://www.youtube.com/@Panodpinsy" target="_blank" rel="noopener noreferrer">YouTube</a>
                 </div>
             </div>
         </div>
