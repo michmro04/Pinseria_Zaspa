@@ -206,3 +206,12 @@ body.dark-theme .dot {
         font-size: 2.1rem;
     }
 }
+
+/* Wideo wewnątrz slidera */
+video.slide {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none; /* Blokuje pauzowanie przy przypadkowym kliknięciu myszą */
+    background-color: #000;
+}

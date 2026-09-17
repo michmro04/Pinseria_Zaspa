@@ -97,6 +97,18 @@ if (slides.length > 0 && wrapper) {
         wrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
         dots.forEach(d => d.classList.remove('active'));
         if (dots[currentSlide]) dots[currentSlide].classList.add('active');
+
+        // Obsługa wideo wewnątrz slidera
+        slides.forEach((slide, i) => {
+            if (slide.tagName === 'VIDEO') {
+                if (i === currentSlide) {
+                    slide.currentTime = 0;
+                    slide.play().catch(() => {});
+                } else {
+                    slide.pause();
+                }
+            }
+        });
     }
 
     if (prevBtn) {

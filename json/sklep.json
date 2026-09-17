@@ -3,7 +3,7 @@
     "id": "spody-pinsa",
     "name": "Rzemieślniczy Spód do Pinsy (300 g)",
     "description": "Wypiekany na własnym zakwasie i autorskiej mieszance trzech włoskich mąk. Gotowy do wypieku w 5 minut. Dołączona karta produktu.",
-    "price": 16,
+    "price": 13,
     "unit": "zł / szt.",
     "image": "images/sklep/spody.webp"
   },
@@ -102,5 +102,21 @@
     "price": 220,
     "unit": "zł / ok. 3,2 kg",
     "image": "images/sklep/salami_fino.webp"
+  },
+  {
+    "id": "mortadela-pistacjami-500g",
+    "name": "Mortadela z pistacjami (500 g)",
+    "description": "Włoska, delikatna wędlina o kremowej strukturze, wzbogacona chrupiącymi pistacjami. Klasyczny smak idealny do pinsy, focacci i desek antipasti.",
+    "price": 30,
+    "unit": "zł / 500 g",
+    "image": "images/sklep/mortadella.webp"
+  },
+  {
+    "id": "oliwa-truflowa-250ml",
+    "name": "Oliwa truflowa (250 ml)",
+    "description": "Aromatyczna oliwa o intensywnym, charakterystycznym smaku i zapachu trufli. Idealna do wykończenia pinsy, makaronów, risotto i dań kuchni włoskiej.",
+    "price": 20,
+    "unit": "zł / 250 ml",
+    "image": "images/sklep/oliwa_truflowa.webp"
   }
 ]
